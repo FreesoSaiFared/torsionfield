@@ -1,0 +1,15 @@
+{
+  "schema": "torsionfield.forksense/1",
+  "name": "ForkSense",
+  "formalName": "Adaptive Repository Intelligence",
+  "status": "specified-reference-workflow",
+  "canonical": "https://forksense.torsionfield.de/",
+  "outputContract": "IntegrationIntelligencePacket/1",
+  "graphStoreContract": "RepositoryGraphStore/1",
+  "referenceGraphProvider": "cozo-local/1",
+  "strategyIsVersioned": true,
+  "currentEvidenceRequired": true,
+  "personDataPolicy": "public-purpose-limited-source-linked-removable",
+  "decisionAuthority": false,
+  "criticalPathImpact": "non-blocking-unless-external-code-is-selected"
+}

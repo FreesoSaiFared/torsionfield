@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ForkSense — Adaptive Repository Intelligence</title>
+  <meta name="description" content="ForkSense studies code, issues, rejected proposals, live forks, contributors and surrounding discourse before Torsionfield integrates external software.">
+  <link rel="canonical" href="https://forksense.torsionfield.de/">
+  <meta name="theme-color" content="#07110d">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/forksense/forksense.css">
+</head>
+<body>
+<header class="top">
+  <nav class="nav wrap">
+    <a class="brand" href="https://torsionfield.de">TORSION<i>FIELD</i></a>
+    <div class="links">
+      <a href="#method">Method</a>
+      <a href="#graph">Graph</a>
+      <a href="#integration">Integration</a>
+      <a href="https://spec.torsionfield.de/">Specification</a>
+    </div>
+  </nav>
+</header>
+<main>
+<section class="fs-hero">
+  <div class="eyebrow">ADAPTIVE REPOSITORY INTELLIGENCE · 2 AUGUST 2026</div>
+  <h1>Read the repository.<br>Then read what it refused to become.</h1>
+  <p class="dek">ForkSense turns commits, issues, review decisions, forks, contributor trajectories and adjacent public discourse into an evidence graph for safer and more strategically intelligent software integration.</p>
+  <div class="statusline"><span class="active">SPECIFIED</span><span>REFERENCE WORKFLOW</span><span>LOCAL GRAPH PILOT NEXT</span></div>
+</section>
+<section class="signal-grid">
+  <article><b>CODE REALITY</b><p>Current source, releases, build paths, tests, defects, TODOs and recent change velocity.</p></article>
+  <article><b>REJECTED FUTURES</b><p>Closed proposals, declined pull requests, abandoned branches and the reasons maintainers gave.</p></article>
+  <article><b>FORK ECOLOGY</b><p>Active divergences, unique patches, upstream lag, adoption, maintenance quality and strategic intent.</p></article>
+  <article><b>HUMAN CONTEXT</b><p>Public contribution history, adjacent repositories, technical interests and collaboration patterns.</p></article>
+</section>
+<article class="fs-article" id="method">
+  <h2>The workflow learns while it researches.</h2>
+  <p>ForkSense does not apply one fixed checklist to every repository. It begins with a provisional research strategy, records why each source is being examined, and revises the strategy whenever the evidence reveals a better route.</p>
+  <div class="loop">
+    <div><strong>1 · ORIENT</strong><span>Map architecture, known problems, TODOs, outstanding issues, release state and recent commits.</span></div>
+    <div><strong>2 · DIVERGE</strong><span>Trace denied proposals, unresolved disagreements, active forks and alternative implementations.</span></div>
+    <div><strong>3 · CONTEXTUALIZE</strong><span>Study contributors, adjacent repositories, public interests and external discussion only where relevant.</span></div>
+    <div><strong>4 · REVISE</strong><span>Change categories, priorities and search routes; preserve the old strategy as provenance.</span></div>
+  </div>
+  <h2>Evidence is typed, current and revisable.</h2>
+  <table class="fs-table">
+    <thead><tr><th>Object</th><th>Question answered</th><th>Failure avoided</th></tr></thead>
+    <tbody>
+      <tr><td>RepoSnapshot</td><td>What is actually current?</td><td>Integrating against stale documentation.</td></tr>
+      <tr><td>IssueOpportunity</td><td>Which known problems align with our needs?</td><td>Rebuilding what maintainers already understand.</td></tr>
+      <tr><td>RejectionSignal</td><td>What future was declined, and on what stated grounds?</td><td>Treating maintainer scope as technical impossibility.</td></tr>
+      <tr><td>ForkDivergence</td><td>Where did that future continue?</td><td>Ignoring working alternatives outside upstream.</td></tr>
+      <tr><td>ContributorContext</td><td>Who understands this seam deeply?</td><td>Evaluating patches without their technical lineage.</td></tr>
+      <tr><td>StrategyRevision</td><td>Why did the research plan change?</td><td>Opaque LLM wandering and hindsight rationalization.</td></tr>
+      <tr><td>IntegrationCandidate</td><td>What should Superfluid adopt, wrap, fork or reject?</td><td>Choosing by popularity or code volume alone.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>A denied proposal is not automatically a good idea.</h2>
+  <p>ForkSense classifies rejection evidence instead of romanticizing it. Technical unsoundness, poor tests, security risk, duplication, timing, product scope, governance conflict and explicit maintainer strategy are distinct causes. Motive is never asserted where the record only supports inference.</p>
+  <div class="case">
+    <div class="case-label">LIVE EXAMPLE · GEMINI CLI</div>
+    <p>A provider-agnostic backend proposal was closed as a low-priority backlog item. A later 31-commit multi-provider pull request was also closed after implementing Google, Anthropic and OpenAI-compatible providers; its author explicitly stated that a separate fork would remain if upstream declined the change.</p>
+    <p class="case-conclusion">ForkSense records this as: <strong>demonstrated demand + implemented alternative + upstream strategy mismatch + fork opportunity</strong>, not merely “closed issue.”</p>
+  </div>
+</article>
+
+<section class="graph-section" id="graph">
+  <div>
+    <div class="eyebrow">LOCAL INTELLIGENCE GRAPH</div>
+    <h2>Fast enough to become cumulative memory.</h2>
+    <p>The reference architecture keeps raw API responses and cloned Git objects content-addressed, stores normalized evidence in a local graph, and exports portable snapshots. The first provider target is <code>cozo-local/1</code>; the contract permits Kuzu, SQLite-derived or remote graph providers later.</p>
+  </div>
+  <pre>Repository ──HAS_COMMIT────▶ Commit
+Repository ──HAS_ISSUE─────▶ Issue
+Issue ───────PROPOSES──────▶ Capability
+Decision ───REJECTS────────▶ Proposal
+Fork ───────IMPLEMENTS─────▶ Proposal
+Contributor ─AUTHORED──────▶ Commit
+Contributor ─MAINTAINS─────▶ Repository
+Discourse ──DISCUSSES──────▶ Issue
+Strategy ───REVISED_BY─────▶ Evidence</pre>
+</section>
+<article class="fs-article" id="integration">
+  <h2>How ForkSense changes Superfluid development.</h2>
+  <div class="impact-grid">
+    <article><b>ADOPT</b><p>Use upstream directly when current maintenance, interfaces and governance already satisfy the capability contract.</p></article>
+    <article><b>WRAP</b><p>Preserve upstream while adding a provider adapter when the missing behavior belongs above implementation identity.</p></article>
+    <article><b>FORK</b><p>Continue a rejected but viable direction when evidence shows persistent demand, competent maintainers and sustainable divergence.</p></article>
+    <article><b>EXTRACT</b><p>Lift one proven seam or patch instead of inheriting an entire repository and its governance constraints.</p></article>
+    <article><b>ALLY</b><p>Contact contributors or fork maintainers whose public work demonstrates ownership of the exact technical boundary.</p></article>
+    <article><b>DECLINE</b><p>Reject attractive code when freshness, tests, licensing, security or maintenance evidence is insufficient.</p></article>
+  </div>
+
+  <h2>Torsionfield integration boundary.</h2>
+  <p>ForkSense supplies evidence to the existing Prompt Commit, capability-promotion, verification and release gates. It does not gain authority to merge code, rank people, infer private beliefs or convert social popularity into technical truth.</p>
+  <div class="contract"><code>cap.repo.intelligence.build({
+  target: "owner/repository",
+  question: "Should Superfluid adopt, wrap, fork, extract or reject?",
+  freshness: "current",
+  fanoutBudget: { repositories: 40, people: 20, externalSources: 30 },
+  requiredEvidence: ["commits", "issues", "pulls", "forks", "releases"],
+  output: "IntegrationIntelligencePacket/1"
+})</code></div>
+
+  <h2>Minimum vertical slice.</h2>
+  <ol>
+    <li>Ingest one target repository, its current issues, pull requests, releases and recent commit graph.</li>
+    <li>Detect one declined proposal and identify active forks or successor repositories implementing it.</li>
+    <li>Build a public-work graph for the directly relevant contributors only.</li>
+    <li>Generate two competing integration strategies and their evidence dependencies.</li>
+    <li>Run a clean-room build or bounded test against the leading candidate.</li>
+    <li>Emit a signed Integration Intelligence Packet with freshness, uncertainty and rollback guidance.</li>
+  </ol>
+
+  <h2>Human boundary.</h2>
+  <p>Public profile and collaboration data may guide where to look next. It must not be used to infer sensitive traits, assign reputation scores, or treat friendships, follows or stars as proof of competence. Every person-level observation remains source-linked, purpose-limited and removable from the local graph.</p>
+</article>
+</main>
+<footer class="footer"><div class="wrap"><b>ForkSense · Adaptive Repository Intelligence</b><p>A Torsionfield subsystem for learning from code, disagreement, divergence and the living ecology around repositories.</p></div></footer>
+</body>
+</html>

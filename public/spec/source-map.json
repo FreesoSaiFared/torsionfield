@@ -1,0 +1,470 @@
+[
+  {
+    "section": 1,
+    "sourceTitle": "PURPOSE AND DELIVERY TARGET",
+    "displayTitle": "Purpose and delivery target",
+    "anchor": "section-1",
+    "status": "first-release",
+    "sourceLines": [
+      18,
+      42
+    ],
+    "sourceBodySha256": "6a2adfbede46d6ac205d482b5ac3c71340f6690448444441f66064a9cd2c0cc7"
+  },
+  {
+    "section": 2,
+    "sourceTitle": "ARCHITECTURAL INVARIANTS",
+    "displayTitle": "Architectural invariants",
+    "anchor": "section-2",
+    "status": "first-release",
+    "sourceLines": [
+      43,
+      114
+    ],
+    "sourceBodySha256": "cac774907d0286485a7d72014b46753d7294ca34a3c4376d2ead83030bfd16f0"
+  },
+  {
+    "section": 3,
+    "sourceTitle": "VERIFIED SCRIPTCAT BASELINE AND REQUIRED EXTENSIONS",
+    "displayTitle": "Verified ScriptCat baseline and required extensions",
+    "anchor": "section-3",
+    "status": "first-release",
+    "sourceLines": [
+      115,
+      151
+    ],
+    "sourceBodySha256": "86e66206c3a21983fc5291ca969748043317bbe89db5a12132a2f46dd94c175d"
+  },
+  {
+    "section": 4,
+    "sourceTitle": "SYSTEM ARCHITECTURE",
+    "displayTitle": "System architecture",
+    "anchor": "section-4",
+    "status": "first-release",
+    "sourceLines": [
+      152,
+      228
+    ],
+    "sourceBodySha256": "fb4d57b2d29e75325cff878cdf30181710f25f89b9583414a8a53b8f80142e7b"
+  },
+  {
+    "section": 5,
+    "sourceTitle": "REPOSITORY AND DELIVERABLE LAYOUT",
+    "displayTitle": "Repository and deliverable layout",
+    "anchor": "section-5",
+    "status": "first-release",
+    "sourceLines": [
+      229,
+      306
+    ],
+    "sourceBodySha256": "1476594498b154bf78f214e38cc5b62d7a3e783f526522355859e6d6a78f477a"
+  },
+  {
+    "section": 6,
+    "sourceTitle": "CANONICAL IDENTITIES AND DATA MODEL",
+    "displayTitle": "Canonical identities and data model",
+    "anchor": "section-6",
+    "status": "first-release",
+    "sourceLines": [
+      307,
+      372
+    ],
+    "sourceBodySha256": "5bfe43862fec32cea67963216f1f9b67c7bb4b242eb107cc271da3cba3086c33"
+  },
+  {
+    "section": 7,
+    "sourceTitle": "ROUTER CORE AND OPERATION SEMANTICS",
+    "displayTitle": "Router core and operation semantics",
+    "anchor": "section-7",
+    "status": "first-release",
+    "sourceLines": [
+      373,
+      459
+    ],
+    "sourceBodySha256": "a209e5019591ae3810e80828028395bc30c3812b39a4952cff553937e3e81fa9"
+  },
+  {
+    "section": 8,
+    "sourceTitle": "MOTHER SCRIPT AND COMMAND PROTOCOL",
+    "displayTitle": "Mother script and command protocol",
+    "anchor": "section-8",
+    "status": "first-release",
+    "sourceLines": [
+      460,
+      631
+    ],
+    "sourceBodySha256": "d24d6e9ddb85400d4f5f55dcdf9420d22565a7e34b7234d6c7f8b01580a6f136"
+  },
+  {
+    "section": 9,
+    "sourceTitle": "SCRIPT MUTATION AND INSTALLATION",
+    "displayTitle": "Script mutation and installation",
+    "anchor": "section-9",
+    "status": "first-release",
+    "sourceLines": [
+      632,
+      699
+    ],
+    "sourceBodySha256": "6daa9bc5a2e07b23b3cf05b4352ebad548d67f37fde73f913fd3d2e291216060"
+  },
+  {
+    "section": 10,
+    "sourceTitle": "USER-GUIDED TARGET SELECTION",
+    "displayTitle": "User-guided target selection",
+    "anchor": "section-10",
+    "status": "first-release",
+    "sourceLines": [
+      700,
+      768
+    ],
+    "sourceBodySha256": "1b5c40e8f1ce80e1dc4be3c23f38534f1a051fe2af44f811611504cc2fe23412"
+  },
+  {
+    "section": 11,
+    "sourceTitle": "PROVIDER ADAPTER SUBSYSTEM",
+    "displayTitle": "Provider adapter subsystem",
+    "anchor": "section-11",
+    "status": "first-release",
+    "sourceLines": [
+      769,
+      1584
+    ],
+    "sourceBodySha256": "400e40410a18b2af388268dbb6f0072a878af967a0f7dbf46d92ea3adcbb0689"
+  },
+  {
+    "section": 12,
+    "sourceTitle": "AGENT TAB MANAGER",
+    "displayTitle": "Agent tab manager",
+    "anchor": "section-12",
+    "status": "first-release",
+    "sourceLines": [
+      1585,
+      1664
+    ],
+    "sourceBodySha256": "223f6fde54e185335b9947e2374e5254627887be063b5d6ad89c60442f7f4011"
+  },
+  {
+    "section": 13,
+    "sourceTitle": "PROPOSED CAT API EXTENSIONS",
+    "displayTitle": "Proposed cat API extensions",
+    "anchor": "section-13",
+    "status": "first-release",
+    "sourceLines": [
+      1665,
+      1784
+    ],
+    "sourceBodySha256": "a530ef46bddcd46bc6c8a15b3c33826f870d2f766970076170f7550cb47a4c95"
+  },
+  {
+    "section": 14,
+    "sourceTitle": "NETWORKSCRIPT MODEL",
+    "displayTitle": "NetworkScript model",
+    "anchor": "section-14",
+    "status": "first-release",
+    "sourceLines": [
+      1785,
+      1850
+    ],
+    "sourceBodySha256": "895163bd6e967379236beb30aa002bbacdc0d6077e4f832d949204a5326e750a"
+  },
+  {
+    "section": 15,
+    "sourceTitle": "TORSION NODE DAEMON",
+    "displayTitle": "Torsion node daemon",
+    "anchor": "section-15",
+    "status": "first-release",
+    "sourceLines": [
+      1851,
+      1945
+    ],
+    "sourceBodySha256": "c5d6dfba0304cb689290c15890295947cf7222feded43ed8e3a17996847f8f31"
+  },
+  {
+    "section": 16,
+    "sourceTitle": "IDENTITY, PAIRING, AND MESSAGE PROTECTION",
+    "displayTitle": "Identity, pairing, and message protection",
+    "anchor": "section-16",
+    "status": "first-release",
+    "sourceLines": [
+      1946,
+      2009
+    ],
+    "sourceBodySha256": "4ff1acb3f38b7aa0b4bd193ed72e0d7706e428bf7ef53b71c8e0d14b95c720ce"
+  },
+  {
+    "section": 17,
+    "sourceTitle": "PEER NETWORKING AND CLOUD CONTROL",
+    "displayTitle": "Peer networking and cloud control",
+    "anchor": "section-17",
+    "status": "first-release",
+    "sourceLines": [
+      2010,
+      2122
+    ],
+    "sourceBodySha256": "797d3980b8a864934e382f3b2541bc1995b9271a42ac2e2c144ab0ac33fef524"
+  },
+  {
+    "section": 18,
+    "sourceTitle": "PERMISSION AND CAPABILITY MODEL",
+    "displayTitle": "Permission and capability model",
+    "anchor": "section-18",
+    "status": "first-release",
+    "sourceLines": [
+      2123,
+      2185
+    ],
+    "sourceBodySha256": "dbf1f8948b980dcc06e6af8e55b83a62cf70176305003eb4adba79fcb2bb79dd"
+  },
+  {
+    "section": 19,
+    "sourceTitle": "STATE, RECOVERY, FAILURE, AND OBSERVABILITY",
+    "displayTitle": "State, recovery, failure, and observability",
+    "anchor": "section-19",
+    "status": "first-release",
+    "sourceLines": [
+      2186,
+      2341
+    ],
+    "sourceBodySha256": "785ef444c9aac2d279333901f6be1a94890db6efd3ed3fb38fd5529b4618a957"
+  },
+  {
+    "section": 20,
+    "sourceTitle": "OPTIONAL CHROMIUM-DERIVED INTEGRATION",
+    "displayTitle": "Optional chromium-derived integration",
+    "anchor": "section-20",
+    "status": "optional-native",
+    "sourceLines": [
+      2342,
+      2381
+    ],
+    "sourceBodySha256": "abfb508364797bd31a4ce0eb46e801995b17df3135c5fca9becc0d08a3c8d996"
+  },
+  {
+    "section": 21,
+    "sourceTitle": "IMPLEMENTATION WORK PACKET",
+    "displayTitle": "Implementation work packet",
+    "anchor": "section-21",
+    "status": "first-release",
+    "sourceLines": [
+      2382,
+      2414
+    ],
+    "sourceBodySha256": "aeaecae925cc8ff09df9e8c075c6ac953bf72b918ca814442e8def499520edd1"
+  },
+  {
+    "section": 22,
+    "sourceTitle": "ACCEPTANCE CRITERIA",
+    "displayTitle": "Acceptance criteria",
+    "anchor": "section-22",
+    "status": "first-release",
+    "sourceLines": [
+      2415,
+      2587
+    ],
+    "sourceBodySha256": "2fc0edf1025f2fbc399c851e2ba453bdba4512f081a68814ae230e5dd9eea166"
+  },
+  {
+    "section": 23,
+    "sourceTitle": "IMPLEMENTATION RULES",
+    "displayTitle": "Implementation rules",
+    "anchor": "section-23",
+    "status": "first-release",
+    "sourceLines": [
+      2588,
+      2609
+    ],
+    "sourceBodySha256": "62d70106ac7913177940126b578b94d7c82706c792d766f46452a4c05a8bacd4"
+  },
+  {
+    "section": 24,
+    "sourceTitle": "PRODUCT COMPLETENESS AND IMPLEMENTATION CLOSURE",
+    "displayTitle": "Product completeness and implementation closure",
+    "anchor": "section-24",
+    "status": "first-release",
+    "sourceLines": [
+      2610,
+      2657
+    ],
+    "sourceBodySha256": "10baba7a903ba58fb81547f0d99c69f0ca2050f3bdcf41f309ddd978275607b4"
+  },
+  {
+    "section": 25,
+    "sourceTitle": "EXTENSION INCORPORATION PROGRAM AND KILLER FEATURES",
+    "displayTitle": "Extension incorporation program and killer features",
+    "anchor": "section-25",
+    "status": "staged-target",
+    "sourceLines": [
+      2658,
+      2712
+    ],
+    "sourceBodySha256": "9d318d25ad20f17998d1b57c8d1360f681e4412287dde85e5497eecd9fc08685"
+  },
+  {
+    "section": 26,
+    "sourceTitle": "SUPERFLUID PROMPT-COMMIT WORKFLOW",
+    "displayTitle": "Superfluid prompt-commit workflow",
+    "anchor": "section-26",
+    "status": "staged-target",
+    "sourceLines": [
+      2713,
+      2828
+    ],
+    "sourceBodySha256": "4b5159f32edad124b660ae35099d5eb4e1febdea03c064d835c21de4a2f20338"
+  },
+  {
+    "section": 27,
+    "sourceTitle": "WEB PRODUCT, DOMAIN, AND NETWORK ARCHITECTURE",
+    "displayTitle": "Web product, domain, and network architecture",
+    "anchor": "section-27",
+    "status": "staged-target",
+    "sourceLines": [
+      2829,
+      2892
+    ],
+    "sourceBodySha256": "b7a7ba5732c464c6ae361c3da69db90ee5a07027b07d335766f426c42c7e86cd"
+  },
+  {
+    "section": 28,
+    "sourceTitle": "PRODUCT PRESENTATION, ADOPTION, AND USER EXPERIENCE",
+    "displayTitle": "Product presentation, adoption, and user experience",
+    "anchor": "section-28",
+    "status": "staged-target",
+    "sourceLines": [
+      2893,
+      2954
+    ],
+    "sourceBodySha256": "8d07899ffcaf89838c7454f8fbad01d61672bd22d2453298d7d5a12ea6ef68f4"
+  },
+  {
+    "section": 29,
+    "sourceTitle": "CONFIGURATION CONTINUUM AND SUPERFLUID BUILD MATRIX",
+    "displayTitle": "Configuration continuum and superfluid build matrix",
+    "anchor": "section-29",
+    "status": "staged-target",
+    "sourceLines": [
+      2955,
+      3087
+    ],
+    "sourceBodySha256": "93d09bdec55bfcf3c2bc41097008eddb0b293055a8bd47ab2d7527e441c2f9f1"
+  },
+  {
+    "section": 30,
+    "sourceTitle": "PARTICIPATORY DEVELOPMENT AND WORK DONATION",
+    "displayTitle": "Participatory development and work donation",
+    "anchor": "section-30",
+    "status": "staged-target",
+    "sourceLines": [
+      3088,
+      3210
+    ],
+    "sourceBodySha256": "a445c076b08afafb2e810e95dca47c1396b7565f6f2ee7db9dbae29e67ef5968"
+  },
+  {
+    "section": 31,
+    "sourceTitle": "SOURCE GENERATION POOL AND PROVIDER EXECUTION BOUNDARY",
+    "displayTitle": "Source generation pool and provider execution boundary",
+    "anchor": "section-31",
+    "status": "staged-target",
+    "sourceLines": [
+      3211,
+      3266
+    ],
+    "sourceBodySha256": "4cc3922945aefeb2cf11392f9d354cc99611445fdb5a79c33aba69dfdd7b74f0"
+  },
+  {
+    "section": 32,
+    "sourceTitle": "SIGNED TASK BUNDLES, SCRIPTVAULT, MCP NOTARY, AND VERIFICATION",
+    "displayTitle": "Signed task bundles, ScriptVault, MCP notary, and verification",
+    "anchor": "section-32",
+    "status": "staged-target",
+    "sourceLines": [
+      3267,
+      3429
+    ],
+    "sourceBodySha256": "baec15873b2370c6132e29a8ca394acf65095cffa935f42739c6fc1338963c2a"
+  },
+  {
+    "section": 33,
+    "sourceTitle": "TF API AND SCRIPTCAT COMPATIBILITY",
+    "displayTitle": "TF API and ScriptCat compatibility",
+    "anchor": "section-33",
+    "status": "first-release",
+    "sourceLines": [
+      3430,
+      3547
+    ],
+    "sourceBodySha256": "1da48619761eb8c1ffcdae731188a0278520c7054b19c56c28f86d16725eb82c"
+  },
+  {
+    "section": 34,
+    "sourceTitle": "SELF-MODIFICATION AND DEMOCRATIC BUILD GOVERNANCE",
+    "displayTitle": "Self-modification and democratic build governance",
+    "anchor": "section-34",
+    "status": "staged-target",
+    "sourceLines": [
+      3548,
+      3646
+    ],
+    "sourceBodySha256": "46ac2d7e4e9ef1ff1c1068e886e4a4f694a69473e1e5ffb40031489cea750877"
+  },
+  {
+    "section": 35,
+    "sourceTitle": "TORSIONFIELD SEMANTIC CAPABILITY LAYER",
+    "displayTitle": "Torsionfield semantic capability layer",
+    "anchor": "section-35",
+    "status": "staged-target",
+    "sourceLines": [
+      3647,
+      3706
+    ],
+    "sourceBodySha256": "c5efb82bf326c0fbcbc3ea00e10e95ed48396996bf7c77d41e39971532254568"
+  },
+  {
+    "section": 36,
+    "sourceTitle": "PARTICIPANT TRUST, DELEGATED AUTHORITY, AND ACCEPTANCE",
+    "displayTitle": "Participant trust, delegated authority, and acceptance",
+    "anchor": "section-36",
+    "status": "first-release",
+    "sourceLines": [
+      3707,
+      4034
+    ],
+    "sourceBodySha256": "b5590156802d2e7d70e099133f300c059359dd5a1e906c1821e882fbb0a1e6aa"
+  },
+  {
+    "section": 37,
+    "sourceTitle": "PARTICIPANT EDGE PLANE",
+    "displayTitle": "Participant edge plane",
+    "anchor": "section-37",
+    "status": "staged-target",
+    "sourceLines": [
+      4035,
+      4307
+    ],
+    "sourceBodySha256": "a12cf150fa8e95be6a8cc34feb0175137493931e2bd0403a7c049371c02d9f0e"
+  },
+  {
+    "section": 38,
+    "sourceTitle": "ADAPTIVE REPOSITORY INTELLIGENCE \u2014 FORKSENSE",
+    "displayTitle": "Adaptive repository intelligence \u2014 forksense",
+    "anchor": "section-38",
+    "status": "staged-target",
+    "sourceLines": [
+      4308,
+      4524
+    ],
+    "sourceBodySha256": "41cd9d99dab58f867730c74e177191671246e24c991b79b28024c81334fa52c9"
+  },
+  {
+    "section": 39,
+    "sourceTitle": "REFERENCES",
+    "displayTitle": "References",
+    "anchor": "section-39",
+    "status": "reference",
+    "sourceLines": [
+      4525,
+      4629
+    ],
+    "sourceBodySha256": "7cfa93318a0a75e9ab2297c4502fd76e7df70d91e3db637508f3ca03b9dd0853"
+  }
+]

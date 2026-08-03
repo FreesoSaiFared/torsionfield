@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+.print-profile/
+evidence-*/
+artifacts/
+*.log
+*.tmp
+.env
+.env.*
+!.env.example

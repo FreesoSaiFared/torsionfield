@@ -1,0 +1,272 @@
+37. PARTICIPANT EDGE PLANE
+
+37.1 Decision, scope, and non-disruption
+
+Torsionfield adopts the Participant Edge Plane as a normative staged target. A participant edge cell is a persistent cloud runtime that is provisioned and coordinated through Torsionfield but remains administratively owned, inspectable, revocable, exportable, and replaceable by the participant or an organization the participant explicitly represents.
+
+The first reference provider binding is cloudflare-oauth-cell/1. Cloudflare is the initial implementation target, not part of the portable capability meaning and not the permanent exclusive provider.
+
+The Participant Edge Plane adds the missing operational position between the intermittently reachable Local Node Plane and the centrally possessed Superfluid Coordination Plane. It supplies persistent presence, encrypted buffering, project endpoints, bounded execution, release-state reporting, and local-node handoff without requiring the central operator to own every runtime or every plaintext object.
+
+This section does not replace or postpone the direct ScriptCat-first implementation. Sections 3 through 23 and section 34.5 remain the release-critical path. The Participant Edge Plane begins as a bounded parallel pilot consisting of contracts, schemas, provider manifests, a reference cell, export, conformance, and threat-model tests.
+
+37.2 Constitutional role
+
+The governing formulation is:
+
+Centralized constitution, distributed execution, cryptographically partitioned knowledge.
+
+Superfluid remains authoritative for the canonical namespace, membership, project graph, capability vocabulary, routing, release channels, governance decisions, public metadata, compatibility policy, and accepted release manifests.
+
+Participant-owned cells provide independently administered persistent infrastructure. The local Torsionfield runtime remains the principal holder of root identity keys, provider sessions, project decryption keys, local files, high-authority capabilities, and plaintext execution.
+The network may organize the cell, but it must not silently become the owner of the cell, the identity, or the contents.
+
+37.3 Four cooperating layers
+
+Superfluid Nexus
+
+The centrally operated nexus owns or coordinates namespace, membership, cell registration, project topology, routing, public indexing, task coordination, governance, compatibility, abuse policy, and official release channels.
+
+Participant Edge Cell
+
+The participant-owned cell provides one stable gateway, encrypted object persistence, signed-message receipt, message buffering, public or project-scoped endpoints, static interfaces, release-state reporting, export, health, and bounded maintenance. Specialized project Workers or services are created only when isolation or materially different resource requirements justify them.
+
+Local Torsionfield Runtime
+
+The extension and Torsion Node retain root identity, device identity, provider credentials, browser sessions, local files, high-authority signing, project decryption, plaintext work, user confirmation, and local acceptance.
+
+Governed source and release infrastructure
+
+Git revisions, Prompt Commits, CapabilityContracts, reproducible builds, migration declarations, security review, signatures, canaries, transparency, and rollback determine which cell software is accepted.
+
+37.4 Authority separation
+
+The architecture represents five independent authorities.
+
+Infrastructure authority authorizes provider-account actions such as deployment, resource creation, migration, route configuration, and status inspection.
+
+Torsionfield capability authority authorizes semantic operations such as project participation, endpoint publication, encrypted-object receipt, task acceptance, storage contribution, and migration.
+Data-decryption authority determines who can read protected project and task content.
+
+Release-activation authority determines which software revision is accepted for deployment.
+
+Acceptance authority determines who is willing to rely on a specific result, artifact, deployment, or state for a declared purpose.
+
+A valid OAuth token may permit code upload. It does not establish Torsionfield identity, capability authority, decryption authority, release acceptance, or semantic correctness.
+
+37.5 Identity and key hierarchy
+
+The Participant Edge Plane extends the existing identity model with:
+
+- Root User Identity;
+- Device Identity;
+- Cell Identity;
+- Cell Service Key;
+- Project Identity;
+- Project Content Key;
+- Project Membership Key Envelope;
+- Task Key;
+- Release Keys.
+
+The Root User Identity signs device, recovery, and cell identities and is never stored in a participant edge cell.
+
+A Cell Identity identifies one persistent cell and is signed by an authorized user or device identity. Replacing a cell or changing providers does not replace the participant identity.
+
+The Cell Service Key signs cell-generated receipts and protocol responses. It does not act as the participant root identity.
+
+The Cloudflare account identifier or any future provider account identifier is a provider locator, not a Torsionfield identity.
+
+37.6 Data classes and cryptographic boundary
+
+Every remotely persisted schema field belongs to one declared disclosure class:
+
+- public and indexable;
+- protected routing metadata;
+- end-to-end encrypted content;
+- local-only material.
+Public and indexable fields may include public project names, public endpoint descriptors, release versions, capability declarations, health, and public artifact digests.
+
+Protected routing metadata may include pseudonymous participant identifiers, private project identifiers, object types, sequence numbers, membership epochs, and delivery state.
+
+End-to-end encrypted content includes private source, messages, task inputs, unpublished artifacts, private project state, and private result data. Encryption occurs before provider storage unless an explicit project policy declares otherwise.
+
+Local-only material includes root private keys, provider cookies, model credentials, unrestricted filesystem credentials, local recovery secrets, and plaintext not authorized for remote persistence.
+
+The cell stores, routes, and validates signed or encrypted objects. High-trust signing, decryption, and acceptance remain in the signed extension, Torsion Node, or another independently verified client.
+
+Cell-hosted web code does not receive raw root or project keys merely because it is served from an official cell. A dashboard requests cryptographic operations through a narrow, origin-bound, capability-checked bridge whose assurance level is visible.
+
+Encryption does not hide all metadata. Provider and network observers may still learn request timing, IP information, endpoint names, object sizes, access frequency, public routing metadata, and resource consumption. The system does not claim zero knowledge without a precisely implemented and tested property.
+
+37.7 Portable capabilities and provider assurance
+
+The first Participant Edge capability package is:
+
+cap.edge.identity/1
+cap.edge.endpoint/1
+cap.edge.object-store/1
+cap.edge.message-buffer/1
+cap.edge.presence/1
+cap.edge.static-interface/1
+cap.edge.project-index/1
+cap.edge.release-state/1
+cap.edge.export/1
+cap.edge.health/1
+
+Later candidates may include scheduled tasks, queues, artifact caches, relays, previews, workflows, and bounded light builds.
+
+The first provider manifest is cloudflare-oauth-cell/1. It may use Workers, static assets, D1, KV, R2, Queues, Workflows, Durable Objects, or Cron Triggers only where the selected profile and participant authorization require them.
+Provider assurance states what is actually supported: provider-hosted availability, provider-managed isolation, signed-and-observed state integrity, client-encrypted confidentiality, receipt-based execution observation, and unattested execution.
+
+A participant edge cell does not replace unrestricted local process execution, private browser-session execution, GPU work, arbitrary filesystem access, trusted execution, semantic verification, or user acceptance.
+
+Cloudflare Service Bindings may optimize communication inside one account. They are not the cross-account federation protocol. Cross-account cells communicate through authenticated HTTPS or WebSocket using Torsionfield signatures, encryption, replay protection, and unknown-outcome reconciliation.
+
+37.8 Cell identity and deployment declarations
+
+Every cell publishes a signed CellIdentity record containing protocol version, cell and owner identities, provider binding, endpoint, runtime revision, artifact and capability digests, public keys, key epoch, capabilities, assurance declarations, and signature.
+
+Every official deployment publishes a signed CellDeployment record connecting the live revision to source, Prompt Commits, resolved profile, artifact and migration digests, release policy, previous deployment, rollback artifact, and release and cell signatures.
+
+Provider upload success is not release acceptance. The live cell exposes the deployment declaration currently in effect.
+
+37.9 Cross-account protocol and unknown outcomes
+
+A consequential edge message contains stable message and operation identities, sender, recipient, project, method, sequence, timestamp, expiry, nonce, capability grant, payload digest, ciphertext, and signature.
+
+Transport delivery is at least once. Stable operation identity, deduplication, observed postconditions, and reconciliation provide effectively-once target effects.
+
+A timeout does not prove that no effect occurred. Deployment, migration, storage, and invocation preserve the existing unknown_outcome state before any non-idempotent retry.
+37.10 Onboarding and deployment-control modes
+
+A participant enters two distinct relationships: membership in Superfluid and ownership of an infrastructure account. The interface displays the selected account, requested OAuth scopes, resources created, release revision, centrally visible metadata, encrypted data classes, export, deletion, revocation, quota, and cost responsibility.
+
+Managed mode allows the central deployment service to retain revocable, least-privilege OAuth authorization for approved updates.
+
+Sovereign mode keeps deployment authorization local to the signed extension or Torsion Node and performs infrastructure changes only while the participant client is available.
+
+Split mode is the recommended target. The central service may deploy only artifacts satisfying an accepted release policy, while high-authority operations and project plaintext remain cryptographically participant-controlled.
+
+A preview or temporary deployment may precede account authorization when the provider supports it. Preview convenience does not reduce ownership, authority, or release requirements.
+
+37.11 Resource and economic model
+
+A participant account primarily runs that participant's cell and projects. Shared resource contribution occurs only through explicit, bounded, revocable WorkOffers.
+
+The system does not treat independently created free-tier accounts as a concealed fungible quota pool for unrelated central workloads.
+
+Every cell displays current provider plan, observed requests, storage, project-specific use, shared-contribution use, configured budgets, quota exhaustion, scheduled work, and pause and kill controls.
+
+Paid-plan overage requires separate explicit authorization. Exhausted quotas produce visible degraded or unavailable capability states rather than silent substitution.
+37.12 Threat model and trust consequences
+
+The reference implementation tests compromise or failure of the OAuth deployment service, malicious accepted and unaccepted releases, participant provider-account compromise, infrastructure-provider access, malicious cells, browser-delivered key exfiltration, key loss, replay and equivocation, quota exhaustion, Sybil accounts, provider policy changes, and abusive participant content.
+
+A compromised deployment authority may disrupt availability or present deceptive infrastructure. It does not by itself forge participant signatures, decrypt default private project content, replace accepted history, create accepted releases, or grant new Torsionfield capabilities.
+
+Provider hosting is not execution attestation. A signature authenticates its signer but does not prove semantic truth. Encryption protects declared content classes but does not erase traffic and resource metadata.
+
+37.13 Acceptance gates
+
+Ownership gate. The participant can identify resources, revoke OAuth, retain or delete resources, export the cell, and migrate identity to another cell.
+
+Cryptographic-separation gate. Compromise of the central database, a participant database, an ordinary cell Worker, or a routing service does not disclose default project plaintext or user root keys.
+
+Release-integrity gate. A client rejects or visibly quarantines a deployment whose digest is not accepted by the configured release policy.
+
+Capability-integrity gate. A software update cannot silently expand semantic authority.
+
+Revocation gate. Provider OAuth, project capability, and cell identity revocation are separate and independently tested.
+
+Recovery gate. Device loss, OAuth revocation, provider-account loss, database corruption, partial migration, key rotation, quota exhaustion, central outage, local-node outage, and unknown deployment outcome are handled explicitly.
+
+No-hidden-pooling gate. No shared workload runs without an active WorkOffer and visible budget.
+
+Provider-independence gate. A cell export validates without Cloudflare-specific identity assumptions.
+
+Observability gate. Consequential actions record operation identity, actor, authority, deployment revision, project, outcome or unknown outcome, evidence, resource effect, and rollback or reconciliation state.
+
+Honest-assurance gate. The UI does not represent OAuth as identity proof, provider hosting as attestation, signatures as truth, encryption as complete metadata privacy, central acceptance as universal truth, or participant ownership as freedom from provider policy.
+37.14 Repository and bounded implementation package
+
+edge/
+  contracts/
+  providers/
+    cloudflare-oauth-cell/
+      worker/
+      migrations/
+      static/
+      deployment/
+      tests/
+  protocol/
+  crypto/
+  export/
+  conformance/
+cloud/
+  oauth-broker/
+  cell-registry/
+  deployment-audit/
+
+The first bounded pilot implements one Cell Gateway Worker, one D1 schema for encrypted objects and operational metadata, a static diagnostics interface, a cell identity endpoint, signed-message receipt, encrypted object storage, local-node inbox, export, health, and a signed deployment declaration.
+
+The pilot includes no generic public compute donation, participant model credentials, unrestricted remote code deployment, or claim of trusted execution.
+
+A public production OAuth client remains blocked until ownership, cryptographic separation, release integrity, recovery, observability, and no-hidden-pooling gates pass.
+
+37.15 Normative Participant Edge requirements
+
+TF-EDGE-R001 — Independent ownership. A participant edge cell MUST be deployed into infrastructure independently controlled by the participant or an organization the participant explicitly represents.
+
+TF-EDGE-R002 — Optionality. Local Torsionfield operation MUST remain possible without a participant edge account.
+
+TF-EDGE-R003 — Identity independence. A Cloudflare account or other provider account MUST NOT constitute the participant's root Torsionfield identity.
+
+TF-EDGE-R004 — Authority separation. Infrastructure authority, Torsionfield capability authority, data-decryption authority, release authority, and acceptance authority MUST be represented separately.
+
+TF-EDGE-R005 — Least privilege. OAuth authorization MUST request only the scopes required for the selected cell profile.
+
+TF-EDGE-R006 — Revocation continuity. The participant MUST be able to revoke provider authorization without losing export instructions, signed project history, or Torsionfield identity.
+
+TF-EDGE-R007 — No password or global-key collection. Superfluid MUST NOT request provider passwords, global API keys, or equivalent unrestricted credentials.
+
+TF-EDGE-R008 — Root-key exclusion. User root private keys MUST NOT be stored in a participant edge cell or central control plane.
+
+TF-EDGE-R009 — Encrypted content by default. Private project content persisted in participant edge infrastructure MUST be encrypted before provider storage unless an explicit project policy declares otherwise.
+
+TF-EDGE-R010 — Data classification. Every remotely persisted schema field MUST declare its disclosure class.
+
+TF-EDGE-R011 — Signed operations. Consequential cross-account operations MUST be signed, replay-protected, and bound to a stable operation identity.
+
+TF-EDGE-R012 — Release declaration. Every running official cell revision MUST expose a signed deployment declaration connecting it to source, build, capability, migration, release, and rollback evidence.
+
+TF-EDGE-R013 — Unaccepted-deployment detection. Clients MUST detect and visibly report cell code that does not match an accepted release policy.
+
+TF-EDGE-R014 — Capability-expansion consent. A software update MUST NOT silently increase semantic capability authority.
+
+TF-EDGE-R015 — Export. A participant MUST be able to export encrypted objects, public metadata, signed journals, and deployment declarations in a provider-independent format.
+
+TF-EDGE-R016 — Migration. Cell replacement or provider migration MUST preserve participant and project identity without treating the new provider account as the same cryptographic identity.
+
+TF-EDGE-R017 — No hidden quota pooling. Participant infrastructure MUST NOT be used for unrelated shared workloads without an explicit active WorkOffer.
+
+TF-EDGE-R018 — Budget enforcement. Shared contribution MUST be bounded by participant-visible request, storage, compute, schedule, and cost policy.
+
+TF-EDGE-R019 — Honest assurance. Provider hosting MUST NOT be represented as proof of semantic correctness or execution attestation.
+
+TF-EDGE-R020 — Unknown outcomes. Deployment and cross-cell operations MUST support unknown-outcome reconciliation and idempotent retry semantics.
+
+TF-EDGE-R021 — Central continuity without universal custody. The Superfluid Nexus MAY remain authoritative for official namespace, membership, topology, release channels, and governance without acquiring universal decryption authority.
+
+TF-EDGE-R022 — Provider portability. Portable CapabilityContracts MUST NOT require Cloudflare-specific identifiers or APIs.
+
+TF-EDGE-R023 — Deletion clarity. The system MUST distinguish deletion from Superfluid indexes, deletion from the participant cell, and destruction of local decryption keys.
+
+TF-EDGE-R024 — Web-code boundary. Cell-hosted web code MUST NOT receive unrestricted access to root or project keys merely because it is served from an official cell.
+
+37.16 Resolution and implementation status
+
+Torsionfield approves the Participant Edge Plane as a normative staged component and cloudflare-oauth-cell/1 as its first reference provider binding.
+
+The architecture is approved for immediate bounded implementation, not general availability. It does not designate Cloudflare as the permanent exclusive provider, create a second scheduler or permission model, remove Torsion Node or libp2p, centralize participant plaintext, authorize hidden quota pooling, or change the first-release ScriptCat path.
+
+The implementation may advance from pilot to controlled network use only after the acceptance gates in this section pass and the generated requirements manifest maps every TF-EDGE requirement to conformance evidence.

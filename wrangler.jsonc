@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "torsionfield-runtime",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-07-31",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "torsionfield.de/*", "zone_name": "torsionfield.de" },
+    { "pattern": "www.torsionfield.de", "custom_domain": true },
+    { "pattern": "spec.torsionfield.de", "custom_domain": true },
+    { "pattern": "forksense.torsionfield.de", "custom_domain": true },
+    { "pattern": "docs.torsionfield.de", "custom_domain": true }
+  ],
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/*"], "html_handling": "none", "not_found_handling": "none" },
+  "d1_databases": [{ "binding": "NETWORK_DB", "database_name": "torsionfield-network", "database_id": "1d74b8ef-50ad-4366-8a2c-b7001a769777" }],
+  "observability": { "enabled": true }
+}

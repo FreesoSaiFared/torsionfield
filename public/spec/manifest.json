@@ -1,0 +1,32 @@
+{
+    "protocol":  "torsionfield-spec/1",
+    "version":  "3.2",
+    "date":  "2 August 2026",
+    "generatedAt":  "2026-08-02T09:11:46.098523+00:00",
+    "source":  {
+                   "title":  "Torsionfield Runtime",
+                   "version":  "2.4+participant-edge+forksense",
+                   "sha256":  "e2b72c22c97adb845435b4fed52faeabd1fd3938683fca46533194ca454f4091",
+                   "characters":  186941,
+                   "sections":  39
+               },
+    "output":  {
+                   "canonical":  "https://spec.torsionfield.de/",
+                   "requirements":  170,
+                   "formats":  [
+                                   "html",
+                                   "css-paged-media",
+                                   "pdf",
+                                   "markdown",
+                                   "json-manifests"
+                               ]
+               },
+    "implementationEvidence":  {
+                                   "date":  "2026-08-02",
+                                   "status":  "VERIFIED_HOST",
+                                   "debian13":  "NEEDS_REPAIR",
+                                   "upstream":  "scriptscat/scriptcat@413bee9593259179e9db72be61d98f060fcf5738",
+                                   "archiveSha256":  "0f7b10780a7ab9c71b6697c7510b0e1ae56f2d8851af029ddfe84beadbd9bcea",
+                                   "url":  "https://spec.torsionfield.de/spec/implementation-evidence-2026-08-02.html"
+                               }
+}

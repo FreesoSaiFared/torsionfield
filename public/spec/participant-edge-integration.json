@@ -1,0 +1,13 @@
+{
+  "schema": "torsionfield.participant-edge-integration/1",
+  "version": "3.1",
+  "sections": 38,
+  "requirements": 118,
+  "edgeRequirements": 24,
+  "firstEdgeRequirement": "TF-S37-R001",
+  "lastEdgeRequirement": "TF-S37-R024",
+  "providerBinding": "cloudflare-oauth-cell/1",
+  "status": "normative-staged-target",
+  "generalAvailability": false,
+  "scriptCatFirstCriticalPathPreserved": true
+}

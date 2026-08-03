@@ -1,0 +1,1561 @@
+[
+  {
+    "requirementId": "TF-S01-R001",
+    "section": 1,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The delivered system MUST provide, as one integrated build:",
+    "sha256": "e0fc28910be1294aeff8e51eb2530c5989a5bdb8170319c5b0b17c5ff41887ec"
+  },
+  {
+    "requirementId": "TF-S02-R001",
+    "section": 2,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "The Mother Script MUST be able to replace its active operational core from model output. Staging, validation, versioning, leases, and rollback protect continuity; they MUST NOT reduce self-mutation to manual copy-and-paste.",
+    "sha256": "1ff4e7068de940c6674476c3fa2f87b5b1046cfadc46f4a70cea1b32278a4fee"
+  },
+  {
+    "requirementId": "TF-S02-R002",
+    "section": 2,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "A generated userscript MUST be installable into ScriptCat\u2019s canonical script registry with its full metadata block, source, grants, matches, resources, version, enabled state, and durable identity. A downloaded .user.js file is only a compatibility fallback.",
+    "sha256": "53b1c352ca1b711bc71026f40da47bc2b35265edc8045ebde1afbd92af297a54"
+  },
+  {
+    "requirementId": "TF-S02-R003",
+    "section": 2,
+    "keywords": [
+      "MAY",
+      "MUST NOT"
+    ],
+    "text": "GM storage MAY hold durable state, snapshots, deduplication records, and recovery markers. It MUST NOT be the primary request/response bus. Runtime messages pass through the extension service worker and, where needed, an offscreen runtime, using explicit source, destination, operation, attempt, generation, epoch, and reply information.",
+    "sha256": "c4533a5f9e95033135fb60350e3c7d0100f8edf49a018f019e20105b0e0e4762"
+  },
+  {
+    "requirementId": "TF-S02-R004",
+    "section": 2,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "A dispatched click, synthetic event, or API call is not itself success. Prompt insertion, submission, attachment, mutation, installation, and remote invocation MUST return postcondition evidence. Boolean-only success results are insufficient for routed effects.",
+    "sha256": "c5bdb302f49176ee3a17529aaf32183c71422a6aba1f28f5a48d1bf3a42558c1"
+  },
+  {
+    "requirementId": "TF-S02-R005",
+    "section": 2,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The policy engine MUST support restrictive profiles and explicitly unrestricted profiles. The software records and displays the selected authority; it does not substitute a narrower policy without the user\u2019s decision.",
+    "sha256": "0e8d8ab3a341285f2d261f6ed770d6b5d2a73697a03f15de7355512d63f1a1c6"
+  },
+  {
+    "requirementId": "TF-S02-R006",
+    "section": 2,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Protection includes ownership, routing identity, group/workspace placement, focus and input policy, navigation policy, anti-discard behavior, close handling, and restoration. A stock extension cannot make a tab literally uncloseable; it restores a protected tab after closure. A Chromium-derived build MAY enforce native close inhibition.",
+    "sha256": "baa1aa5c443f21d815b541ccca80a002ad014725f55f09d7fd1fd40446f68fea"
+  },
+  {
+    "requirementId": "TF-S02-R007",
+    "section": 2,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Peer and project tasks run through each participant\u2019s own configured provider sessions and capabilities. The architecture MUST NOT require centralized possession of participants\u2019 model-account credentials.",
+    "sha256": "6e9b792ce358c56cb4e12e59eb50d9b5a3fc9a4a7290ed7f7d4a2a8ed603285e"
+  },
+  {
+    "requirementId": "TF-S03-R001",
+    "section": 3,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Implementation MUST be based on the ScriptCat source and documented interfaces present at build time, not on signatures inferred from earlier design discussion.",
+    "sha256": "64245feecc08ae11a9a16d4b46705d7c39b7a98f912b8b852ea95425f6fa716e"
+  },
+  {
+    "requirementId": "TF-S03-R002",
+    "section": 3,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "The implementation SHOULD reuse an existing CAT.agent.* operation when it already meets the requirement. The following are explicit extension additions:",
+    "sha256": "07615960a9d6de7e236b8abedc9686d5035a2db284c62d7266db52c5eb50ae15"
+  },
+  {
+    "requirementId": "TF-S03-R003",
+    "section": 3,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "A background userscript MUST NOT be treated as if it directly owns unrestricted chrome.tabs, chrome.tabGroups, chrome.scripting, or native-messaging objects. Privileged browser functions belong to the extension and are exposed through typed, granted CAT APIs.",
+    "sha256": "08e15ee52cfd80ef24e3922682e1ee7968abac86b85827814d40516d96a29172"
+  },
+  {
+    "requirementId": "TF-S05-R001",
+    "section": 5,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "The integrated repository SHOULD use this layout:",
+    "sha256": "3b55b97f8479e65d2893ec2a40bed9ad9826f750af64f5a6ebab3afb630a9d93"
+  },
+  {
+    "requirementId": "TF-S07-R001",
+    "section": 7,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The Router Core MUST:",
+    "sha256": "03e3e0faf889be10e8f3071d50b19b30dd297989110312e9385368eaf4b05e95"
+  },
+  {
+    "requirementId": "TF-S07-R002",
+    "section": 7,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "unknown_outcome means the effect may have occurred but confirmation was lost. A non-idempotent operation in this state MUST be observed before any retry.",
+    "sha256": "a7a1b4ac0410a688ec010a39dd42ead85ef679bea98842d65d0ed877acf9559c"
+  },
+  {
+    "requirementId": "TF-S07-R003",
+    "section": 7,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Read-only operations MAY be retried automatically. Non-idempotent operations MAY be retried only after the target state proves that the effect did not occur.",
+    "sha256": "607abf28bc6579a9bc30c4964e39ef49de90d368f18bf35fb4485622c4bef2d9"
+  },
+  {
+    "requirementId": "TF-S08-R001",
+    "section": 8,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "The implementation MUST NOT invent undocumented GM_sendMessage or GM_addMessageListener signatures. The fork\u2019s source and type definitions are authoritative.",
+    "sha256": "cbf7e4e8ef9f61a03d38ce65f4df2d79318b5decb2aee91d6dd80bf99db159de"
+  },
+  {
+    "requirementId": "TF-S08-R002",
+    "section": 8,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "The parser MUST NOT rescan document.body.textContent on every mutation. The ProviderAdapter identifies assistant-message roots. A scoped MutationObserver tracks:",
+    "sha256": "ae900de48849282d9e3d82276141eb8c91f4247e6ea518b900d1c68384b5f9c1"
+  },
+  {
+    "requirementId": "TF-S09-R001",
+    "section": 9,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "mother.mutateCore MUST:",
+    "sha256": "e698f82e3cfbde3d5c3ec0b5127e96bb1c8fd7de1c978f8c8775d833a1c2c20f"
+  },
+  {
+    "requirementId": "TF-S11-R001",
+    "section": 11,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "It does not contain a dedicated Claude adapter in this registry. Claude remains a required extensible provider target, but its implementation MUST be independently sourced or verified and MUST NOT be described as repository-derived until that is true.",
+    "sha256": "8894edca9693005711605e034d8ee7c3b13296af3de3f95c072fff1271fb93fe"
+  },
+  {
+    "requirementId": "TF-S11-R002",
+    "section": 11,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The factory-based registry MUST:",
+    "sha256": "c954e4cf6659bec8d60dabfa467e8e441ed571ed101785c67f09af25b98f00fa"
+  },
+  {
+    "requirementId": "TF-S11-R003",
+    "section": 11,
+    "keywords": [
+      "MAY",
+      "MUST NOT"
+    ],
+    "text": "Navigation is detected through history.pushState, history.replaceState, popstate, hashchange, and extension tab URL events. A low-frequency reconciliation probe MAY exist, but permanent high-frequency URL polling MUST NOT be duplicated in every adapter.",
+    "sha256": "63044e9efcb80326a72912ba3202d6e4330aeab6742207e2857445374ac2a905"
+  },
+  {
+    "requirementId": "TF-S11-R004",
+    "section": 11,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Contenteditable driver Uses Selection and Range without destroying editor-owned root attributes. It preserves provider-appropriate line breaks, emits beforeinput/input, and verifies accessible and DOM text. It MUST NOT replace innerHTML indiscriminately.",
+    "sha256": "3e37981b704c3859fbc66807beb6dea42591c38c0c3a1ac95c949d7b99b93a63"
+  },
+  {
+    "requirementId": "TF-S11-R005",
+    "section": 11,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "On x.com, the adapter requires a Grok route or surrounding Grok chat fingerprint and MUST NOT bind to ordinary X compose boxes. Placeholder-only selectors receive low confidence.",
+    "sha256": "54f059334e21fffc9574599bd2a37f3044708eedb1b7f9b3cd4270c4f21f39ba"
+  },
+  {
+    "requirementId": "TF-S11-R006",
+    "section": 11,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The repository delegates part of submission and attachment behavior to legacy chatInputHandler code. The port MUST trace and move that behavior into the descriptor and shared drivers. Until verified postconditions exist, text insertion may be healthy while form submission or attachment remains DEGRADED.",
+    "sha256": "e2b05fc91d4e144bf8999b05948016ef6dd923b3afc5ab06f530e0c618795631"
+  },
+  {
+    "requirementId": "TF-S11-R007",
+    "section": 11,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The winning candidate MUST exceed a threshold and lead the runner-up by a minimum margin. Otherwise the adapter enters AWAITING_USER_SELECTION.",
+    "sha256": "8b0ceae47bc40c8f93bf2422a0ecf4492e1089930a1a105dc08393a833170e8d"
+  },
+  {
+    "requirementId": "TF-S11-R008",
+    "section": 11,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Send controls are searched first within the owning form and nearest composer container. GenericAdapter MUST NOT click an arbitrary last button.",
+    "sha256": "45b8b163d9ea2338e7d12d348f1297fe8ba962a102031107f9a592f10b8547b5"
+  },
+  {
+    "requirementId": "TF-S11-R009",
+    "section": 11,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "An adapter pack activates only after schema validation, compatibility checks, signature verification under the configured trust policy, fixture tests, and dry-run health checks. Users MAY authorize unsigned local packs and additional signing keys.",
+    "sha256": "d4d9a94682f4616869bd91187b913cc4e4a870a0cd7bab817f43bd80b2717fd8"
+  },
+  {
+    "requirementId": "TF-S11-R010",
+    "section": 11,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Health is capability-scoped. A site may remain healthy for insertion while attachment is degraded. The user MAY override quarantine; the choice and resulting evidence are recorded.",
+    "sha256": "fb308768eabb57a93b3fcfadd2beddd35244115d7df672b24ce7429d55270828"
+  },
+  {
+    "requirementId": "TF-S11-R011",
+    "section": 11,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "A lost acknowledgement after submission remains UNKNOWN_OUTCOME until the user message or assistant response is observed. The prompt MUST NOT be blindly resubmitted.",
+    "sha256": "9fdd929a1d39b0149ebbc0c93383c148ae6f39a1612746618c84c38b3ddb7843"
+  },
+  {
+    "requirementId": "TF-S11-R012",
+    "section": 11,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Default remote diagnostics exclude prompts, responses, file contents, credentials, and full DOM. They MAY include adapter ID, selector candidate ID, failure code, UI fingerprint hashes, extension version, and postcondition results. Broader sharing is user-configurable.",
+    "sha256": "b0ed56f17e44f0aad51b89ba2e3141d67e78a10ab969664c2c93e6e196e2263d"
+  },
+  {
+    "requirementId": "TF-S11-R013",
+    "section": 11,
+    "keywords": [
+      "SHOULD",
+      "MUST NOT"
+    ],
+    "text": "The source adapter code SHOULD be ported with license attribution and normalized into descriptors and shared drivers. Thirteen copies of URL polling, observer setup, event setup, file transfer, button insertion, and cleanup MUST NOT be retained when one tested shared implementation suffices.",
+    "sha256": "aa834d0853779c35c475485228e1f5bbb12bd3910ec5174f197fa8117853cfff"
+  },
+  {
+    "requirementId": "TF-S12-R001",
+    "section": 12,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "In the Chromium-derived build, protected tabs MAY carry a native close disposition. Force release remains available through explicit management UI or command.",
+    "sha256": "fc852d456fc15ddeeda08cf7a971f1a7f21f4e098788bf6357772f302a275ed0"
+  },
+  {
+    "requirementId": "TF-S14-R001",
+    "section": 14,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Users MAY intentionally define broad endpoints and wildcard scopes. The platform records and enforces the explicit policy rather than imposing a hidden ceiling.",
+    "sha256": "1013fd658b3bd46e8e312e8f629aa60759b5051bc95a86ce9264bb166a306fd9"
+  },
+  {
+    "requirementId": "TF-S15-R001",
+    "section": 15,
+    "keywords": [
+      "SHOULD",
+      "MAY"
+    ],
+    "text": "The production daemon SHOULD be a Rust workspace producing one signed executable per platform. Rust is preferred for resident footprint, strong protocol typing, service integration, and mature libp2p support. A Node.js reference client MAY remain for interoperability tests.",
+    "sha256": "273d6285f92f49a62fff216632676d50fd179c6d583c0571a370c45d6eb20c9a"
+  },
+  {
+    "requirementId": "TF-S16-R001",
+    "section": 16,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Browser private keys SHOULD be non-extractable CryptoKeys where possible. Daemon keys SHOULD use the OS key store or encrypted local storage. Exportable mode remains available when the user enables it.",
+    "sha256": "1b740f2bc54d543ec6e7319d8231f58ff4a71a7531df4c862dd06ba52cfcc566"
+  },
+  {
+    "requirementId": "TF-S16-R002",
+    "section": 16,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "TOFU-only pairing MAY be selected for automated local VM deployments.",
+    "sha256": "df589bce60c35851df30f04404c155170b35214efac4edb411e2a2a988a7cb70"
+  },
+  {
+    "requirementId": "TF-S17-R001",
+    "section": 17,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Durable Object WebSocket Hibernation SHOULD maintain idle sessions without pinning active compute.",
+    "sha256": "d036fec59add547e9e06e56166da63e496f49c78a98832c66a963c16c381f153"
+  },
+  {
+    "requirementId": "TF-S17-R002",
+    "section": 17,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Cloudflare Tunnel is optional. It MAY expose a user-authorized local endpoint under a stable hostname, with or without Access. It is not the mandatory peer data path.",
+    "sha256": "b20468899586754fa5596329bb432a9892cbc8db2a05a8b73ecc660a6f46719c"
+  },
+  {
+    "requirementId": "TF-S18-R001",
+    "section": 18,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The system MUST support an explicit wildcard profile, for example:",
+    "sha256": "8d1313bb4e7ecac51bbc00100c933819322e360c5629f17a7c3a3301a3cf3e84"
+  },
+  {
+    "requirementId": "TF-S20-R001",
+    "section": 20,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "Any nonstandard web-platform behavior MUST be behind an explicit build or runtime feature flag. Undocumented flags MUST NOT be required where an extension or daemon bridge provides the capability.",
+    "sha256": "246ec9acb29a720f3aa35f1e23d7e9e35235bb532b60e25b8f12d8b28df3e7b7"
+  },
+  {
+    "requirementId": "TF-S21-R001",
+    "section": 21,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The engineering pass MUST:",
+    "sha256": "1257e138f60a1f6cddc58a039fb295bea9402153b303d033d690b2a483e2eb24"
+  },
+  {
+    "requirementId": "TF-S24-R001",
+    "section": 24,
+    "keywords": [
+      "SHOULD",
+      "MUST"
+    ],
+    "text": "24.1 Completeness assessment This specification is architecturally complete enough to define the intended product, its trust boundaries, its principal runtime components, and its major execution flows. It is not yet implementation-complete in the stronger sense that an engineering team could build every component without making additional product, protocol, storage, user-interface, packaging, and operational decisions. For planning purposes, the current state SHOULD be treated as approximately complete at three different levels: - product and architectural intent: substantially complete; - build specification: partially complete and still requiring closure artifacts; - production and operational specification: incomplete until deployment, update, support, security, and service procedures are fixed. These percentages are engineering judgement rather than measured facts. The important distinction is that architecture answers what the system is, while implementation closure fixes exactly how each component is patched, configured, tested, shipped, upgraded, recovered, and operated. 24.2 Required implementation-closure artifacts Before the specification may be declared final for production, the repository MUST contain: 1. an exact ScriptCat baseline commit, fork branch, and patch manifest identifying every modified file, exported symbol, database migration, permission, build flag, and user-interface route; 2. complete JSON Schemas plus generated TypeScript and Rust types for every CAT API, Router message, operation state, adapter pack, prompt commit, incorporation record, network message, first-party website message, and daemon command; 3. extension UI wireframes and state models for the popup, side panel, script list, editor, visual recorder, workflow builder, Agent Workspace, NetworkScript Manager, Adapter Inspector, Permission Inspector, Incorporation Dashboard, update center, and onboarding flow; 4. a browser-permission matrix covering required, optional, requested-at-use, host, native-messaging, downloads, debugger, scripting, tab, storage, offscreen, and browser-specific permissions; 5. storage schemas, migration rules, retention policy, backup/export, corruption recovery, and version compatibility for extension storage, OPFS, daemon SQLite, local artifacts, and cloud control-plane state; 6. a security and abuse model covering secret storage, identity recovery, key rotation, lost devices, malicious scripts, malicious peers, compromised upstream repositories, prompt-injection boundaries, supply-chain attacks, denial of service, and revocation; 7. provider fixtures, golden traces, replayable frontend snapshots, browser/version matrices, and automated canary accounts sufficient to test provider adapters without relying only on live manual inspection; 8. installers, signing keys, update channels, rollback channels, release manifests, browser-store submission plans, unattended update policy, and reproducible-build instructions; 9. import and migration specifications for ScriptCat, Tampermonkey, Violentmonkey, exported userscript archives, settings, values, update URLs, and compatibility modes; 10. the torsionfield.de registration, pairing, membership, device, node, project, and revocation protocols described in machine-readable form; 11. service-level objectives, privacy defaults, telemetry fields, support bundles, incident response, status reporting, and compatibility support windows; 12. contribution, plugin, adapter, capability-pack, and incorporated-extension SDK documentation; 13. an acceptance manifest that maps every normative requirement to one or more automated tests and release gates. A feature is specification-complete only when its contract, user surface, state model, storage, permissions, failure behavior, migration, observability, tests, rollback, documentation, and ownership are all defined. A prose description of desired behavior alone is not implementation closure. 24.3 Exact ScriptCat modification dossier The fork MUST include docs/scriptcat-patch-dossier.md and a machine-readable patch-dossier.json. Each patch entry contains: - upstream ScriptCat commit and file path; - upstream symbol or component; - reason for modification; - added or changed behavior; - public CAT API or internal service affected; - storage or migration impact; - permission impact; - UI impact; - tests and acceptance IDs; - upstream-conflict risk; - rebase strategy; - rollback strategy. No requirement may remain expressed only as \u201cmodify ScriptCat to support X.\u201d The dossier MUST identify the concrete extension source boundary where X is implemented. 24.4 Product modes The final product has three progressively enabled modes: Browser Runtime The extension works as a superior userscript manager without an account or daemon. It provides userscript compatibility, import, editing, visual recording, AI-assisted generation, script diagnostics, self-healing selectors, local workflow execution, session snapshots, and provider adapters. Local Node Pairing the Torsion Node daemon adds filesystem and process tools, local models, MCP servers, artifact storage, durable background work, trusted input fallbacks, desktop automation bridges, and stronger recovery. Network Node Registration through torsionfield.de adds signed membership, rendezvous, relay discovery, projects, peer invocation, NetworkScript exposure, replicated work, capability exchange, and participation in transductive.science, transductive.art, and transductive.org. Users MUST gain substantial value in Browser Runtime mode. Registration and daemon installation unlock capabilities; they are not prerequisites for ordinary userscript management.",
+    "sha256": "095ce7b57c58f5a598956e66b65b9928b574bda3b93045176048e231bb51a3ca"
+  },
+  {
+    "requirementId": "TF-S25-R001",
+    "section": 25,
+    "keywords": [
+      "MUST",
+      "MUST NOT",
+      "SHOULD"
+    ],
+    "text": "25.1 Incorporation principle The product MUST be able to absorb useful capabilities from external browser extensions without becoming a pile of copied repositories. \u201cIncorporation\u201d means one of four explicitly recorded strategies: 1. direct source integration when the license, architecture, provenance, and maintenance burden permit it; 2. clean behavioral reimplementation from documented behavior and black-box tests; 3. protocol, file-format, metadata, import/export, or API compatibility without source copying; 4. an optional isolated bridge or plugin that keeps the external component separable. Every incorporated capability MUST retain upstream attribution, license analysis, source commit or release identity, extracted capability contracts, transformation history, tests, and a future update path. Proprietary code and license-incompatible code MUST NOT be copied. Copyleft projects may be used only under a distribution strategy that satisfies their complete license obligations. Researching an extension does not authorize source incorporation. 25.2 Priority source projects and capability targets The initial incorporation registry SHOULD evaluate at least the following projects: Violentmonkey and Tampermonkey compatibility Target capabilities: mature userscript metadata and GM API compatibility, import/export, update checks, value migration, script search, per-site enablement, sync concepts, and low-friction migration. Violentmonkey is the preferred open-source compatibility reference. Tampermonkey behavior may be targeted through interoperability tests rather than current-source incorporation. Nanobrowser, AIPex, and BrowserOS Target capabilities: multi-agent side panels, conversation history, provider switching, bring-your-own-key and local-model routing, MCP tools, browser-agent task views, accessibility-tree and optimized-DOM representations, agent CLI concepts, and evaluation harnesses. Architecture and license determine whether each capability is reimplemented, bridged, or directly reused. MCPMonkey and Algonius Browser Target capabilities: typed MCP exposure, extension-to-native-host bridges, stdio/WebSocket transport, schema validation, browser tools, fine-grained tool permissions, and integration-test patterns. Automa Target capabilities: visual block workflows, scheduling, reusable blocks, workflow sharing, parameterized runs, standalone workflow export, and marketplace ergonomics. Its visual model SHOULD compile to the same typed operations used by scripts and agents rather than creating a second runtime. UI.Vision RPA, Skyvern, and Magnitude Target capabilities: visual recording, macro import/export, OCR and computer-vision fallback, visual assertions, screenshot-based element recovery, Playwright/Selenium interoperability, and resilient validation when DOM selectors are insufficient. SingleFile Target capabilities: reproducible Web Capsules containing page state, resources, selected scripts, prompt commits, adapter revision, traces, screenshots, and evidence sufficient to replay or audit an operation. Vimium and related keyboard-first extensions Target capabilities: universal command palette, link hints, keyboard navigation, site-specific mappings, operation search, and one-keystroke execution of scripts, workflows, and NetworkScripts. Tab Session Manager and session-management extensions Target capabilities: named workspace snapshots, automatic recovery, task-bound tab groups, agent-pool restoration, versioned session state, and shareable project workspaces. 25.3 Killer-feature portfolio The final extension SHOULD make the following capabilities first-class product features: One-click Agentify This Site From the page context menu or command palette, the user selects a goal. The extension records page structure and interaction evidence, opens a coding agent, generates a maintainable userscript plus a typed workflow and optional NetworkScript endpoint, executes tests, and installs the result with rollback. Record Once, Compile Three Ways A visual recorder produces three synchronized artifacts: a replayable workflow, readable userscript source, and a callable endpoint contract. Editing any representation regenerates the others through a shared intermediate operation graph. Self-Healing Userscripts Scripts may declare semantic targets and postconditions. When selectors drift, the runtime compares DOM, accessibility, visual, and historical fingerprints; validates alternatives through canaries; proposes or applies a signed repair; and preserves the original script identity and provenance. Universal Command Palette and Link Hints Scripts, workflows, agents, tabs, peers, projects, tools, and recent operations are searchable from one keyboard interface. Link-hint mode allows deterministic keyboard selection of visible elements and can feed the recorder or element selector. Time-Travel Workspaces The user can capture, name, diff, restore, and share a browser workspace containing tabs, groups, selected form state, installed scripts, active versions, agent bindings, operations, and local artifacts. Sensitive fields are excluded by policy. Reproducible Web Capsules A capsule packages sufficient page and runtime context to reproduce a bug, demonstrate a workflow, publish research evidence, or transfer an automation. Capsules are content-addressed, inspectable, redactable, and signed. Multi-Provider Agent Console A side panel manages web-session providers, API providers, local models, MCP servers, and peer endpoints through one routing policy. Tasks can fail over without losing operation identity, but provider changes and cost/privacy implications remain visible. Visual Trust Ledger Every autonomous task exposes a concise Perceive\u2013Plan\u2013Act\u2013Verify timeline backed by the operation trace. Users can inspect the target selected, evidence observed, action attempted, postcondition obtained, model/provider used, and any recovery or rollback. Script and Workflow Marketplace torsionfield.de hosts signed metadata and discovery, while packages may be downloaded from their declared source. Listings expose permissions, capabilities, compatible sites, provenance, reproducibility evidence, health across browser versions, selector-drift status, update source, license, and peer reviews. Zero-Friction Migration On first run, the extension detects supported managers and archives, previews the import, preserves enabled state and values where possible, flags incompatible grants, and leaves the original manager untouched until the user completes verification. Local and Desktop Tool Bridge The daemon exposes configurable local commands, files, MCP servers, OCR, image tools, browser drivers, and desktop automation through the same evidence-based operation model. Browser-only workflows degrade explicitly when a local capability is unavailable. Capability Contribution Users may opt in to expose idle local capabilities or authenticated provider tabs to selected peers or projects. Contribution is disabled by default, bounded by explicit profiles, rate limits, budgets, schedules, revocation, and visible activity. The core product MUST NOT depend on speculative tokens or hidden resource leasing. 25.4 Unified intermediate representation Visual workflows, recorded macros, generated userscripts, agent plans, imported Selenium/Playwright steps, and NetworkScript endpoints SHOULD compile to a common Operation Graph. Nodes describe typed reads, writes, navigation, waits, assertions, scripts, model calls, daemon calls, branches, loops, artifacts, and subflows. Edges describe control, data, compensation, and evidence dependencies. The Operation Graph allows one execution engine, debugger, trace model, permission system, test runner, and marketplace format to serve every authoring surface.",
+    "sha256": "6b7bd0d16aa77f4aac9492bc37c9028c7552d93b1c1e973df357fb9d3fd321d3"
+  },
+  {
+    "requirementId": "TF-S27-R001",
+    "section": 27,
+    "keywords": [
+      "SHOULD",
+      "MUST NOT",
+      "MUST",
+      "MAY"
+    ],
+    "text": "27.1 Product naming The public product SHOULD use a coherent stack: Torsionfield Runtime The complete local-first browser automation platform. Torsionfield Extension The evolved ScriptCat-compatible userscript manager, agent runtime, recorder, workflow studio, and browser control surface. Torsion Node The optional local daemon providing durable execution, local tools, models, artifacts, identity, and peer networking. Torsionfield Network The signed P2P membership, rendezvous, relay, capability, and project coordination layer. Transductive Workspaces The science, art, and general collaboration applications built on the Runtime and Network. The product MUST NOT be presented primarily as \u201ca modified ScriptCat.\u201d ScriptCat is the compatible foundation and an acknowledged upstream; the product is a local-first userscript and browser-agent runtime with reproducible automation, self-healing, local tools, and optional peer collaboration. 27.2 torsionfield.de responsibilities torsionfield.de is the canonical technology, distribution, identity, and network-administration site. It MUST provide: - product presentation and interactive demonstrations; - extension and daemon downloads; - signed release, update, adapter-pack, capability-pack, and incorporation manifests; - documentation, API references, compatibility information, and migration guides; - account and public-identity registration for users who choose Network Node mode; - browser, daemon, and device pairing; - P2P node registration, membership issuance, relay and rendezvous configuration, invitations, and revocation; - node, device, endpoint, project, budget, permission, and activity dashboards; - script, workflow, capsule, adapter, and capability discovery; - security advisories, status, privacy policy, transparency reports, and changelog; - developer portal, SDKs, Prompt Commit provenance, upstream attribution, and incorporation health. Local browser use MUST remain possible without registration. The site stores public identity and membership metadata required for network operation; it MUST NOT receive browser cookies, provider session credentials, local model secrets, or private keys. 27.3 Network registration and pairing The standard Network Node registration flow is: 1. the user installs the extension and may import existing scripts; 2. the user optionally installs Torsion Node and completes local browser-daemon pairing; 3. the browser or daemon generates local root/device identities; 4. torsionfield.de/pair creates a short-lived challenge, QR code, and signed deep link; 5. the extension and daemon sign the challenge and return public identity claims; 6. the user selects display identity, discoverability, relay use, project memberships, contribution policy, budgets, and capability profile; 7. the server issues a signed membership credential and bootstrap/relay configuration; 8. the node completes direct and relayed connectivity health tests; 9. the dashboard displays the node, active devices, advertised endpoints, and current health; 10. credentials can be rotated or revoked from either the local product or the site. Account recovery MUST NOT silently replace a lost cryptographic identity. Recovery creates or authorizes a new device identity according to the configured root-identity and social/administrative recovery policy. 27.4 Transductive domains transductive.org General collaboration, community, public projects, workflow and NetworkScript discovery, participatory development, documentation, governance, and cross-domain identity. It is the broad workspace layer rather than the infrastructure control plane. transductive.science Research projects, task queues, evidence contracts, replicated execution, reproducible Web Capsules, datasets, provenance, result comparison, review, and publication assembly. Scientific tasks can request specific providers, tools, replicas, evidence, and conflict-resolution procedures. transductive.art Creative workflows, media-generation pipelines, prompt/script compositions, collaborative productions, asset provenance, reusable project packs, galleries, and optional peer rendering or tool contribution. All three sites integrate with the extension, local daemon, and background services through signed first-party protocols. They MUST NOT depend on fragile DOM scraping for core first-party functions. 27.5 First-party site integration contract The extension MUST provide a FirstPartySiteAdapter for approved Torsionfield and Transductive origins. The adapter supports: - authenticated site-to-extension discovery; - signed challenge and pairing exchange; - project join/leave; - task preview, acceptance, refusal, progress, and result submission; - artifact and capsule transfer with explicit user policy; - endpoint and capability publication; - local health and compatibility summaries; - opening extension views, agent workspaces, or local dashboards; - revocation and sign-out. Communication uses a versioned postMessage or MessageChannel bridge bound to exact origins and nonces, plus extension runtime messaging. Large or durable transfers use the daemon or signed upload URLs. Custom URL schemes or extension deep links MAY be used for installation and pairing, but every request is authenticated, replay-protected, user-attributable, and capability-checked. 27.6 Background services The background control plane SHOULD expose separate services for identity/membership, device registration, node presence, relay/rendezvous, projects, tasks, package manifests, provenance, marketplace metadata, notifications, and status. Durable Objects or equivalent stateful actors MAY own node, project, and task sessions; object storage MAY hold signed packages and encrypted artifacts; relational storage MAY hold accounts, memberships, metadata, and audit events. The P2P network remains the preferred data path for peer execution and artifact exchange when available. The web control plane coordinates identity, discovery, invitations, leases, and fallback transport without becoming the owner of participant model credentials or all task data.",
+    "sha256": "0b37eb0804348aaaa02156817bb1a7dce91a315bae1bb132c8f02b7c89e38dec"
+  },
+  {
+    "requirementId": "TF-S28-R001",
+    "section": 28,
+    "keywords": [
+      "SHOULD",
+      "MUST"
+    ],
+    "text": "28.1 Positioning The primary promise is: Turn any website into a reliable personal tool\u2014record it, script it, repair it with AI, run it locally, and share it as a verified workflow when you choose. The website and extension SHOULD demonstrate a complete transformation rather than lead with architectural terminology: 1. record a repetitive browser task; 2. compile it into a readable workflow and userscript; 3. show the generated tests and permissions; 4. break a selector and demonstrate self-repair; 5. run it locally, through another model, or on an authorized peer; 6. inspect the evidence ledger and reproducible capsule. 28.2 No-brainer installation criteria Installation is compelling only when the product is immediately useful before the user learns the network architecture. The release MUST provide: - a three-minute guided setup; - one-click import from supported userscript managers; - a familiar script-manager mode for ordinary users; - a recorder that produces a successful first automation without code; - an AI-assisted editor that explains changes as diffs and tests; - transparent, progressive permission requests rather than an unexplained maximum-permission wall; - browser-only operation with clear optional daemon and network upgrades; - a sample workflow gallery and an interactive demo before account creation; - local-first defaults, visible data paths, and plain-language security explanations; - signed downloads, reproducible-build information, open-source provenance, and public issue tracking; - graceful uninstall/export so users never fear lock-in. 28.3 Principal product surfaces Extension popup Fast per-site script control, recent workflows, command palette entry, recording, Agentify, health, and active operation status. Side panel Agent console, workflow runner, recorder timeline, task queue, model/provider routing, evidence ledger, and first-party project interaction. Script and Workflow Studio Code editor, visual graph, synchronized recorder steps, metadata, values, permissions, tests, versions, provenance, and deployment targets. Agent Workspace Protected agent tabs, pools, provider health, current work, budgets, recovery, and release controls. Incorporation Dashboard Tracked upstream extensions, pinned revisions, license strategy, extracted capabilities, available updates, Prompt Commit runs, pull-request evidence, canary health, and rollback. Torsion Node Dashboard Local services, models, MCP servers, commands, files, peers, projects, endpoints, artifacts, logs, budgets, updates, and identity. Web dashboards Account, devices, node membership, projects, marketplace, invitations, releases, provenance, security, and status. 28.4 Professional presentation requirements The public site MUST include architecture diagrams, permission and data-flow diagrams, a live or simulated operation trace, a compatibility matrix, concrete productivity benchmarks, video demonstrations, security documentation, API documentation, changelog, roadmap, and source/provenance links. Claims such as \u201cself-healing,\u201d \u201cprivate,\u201d \u201cdecentralized,\u201d \u201creproducible,\u201d or \u201cprovider-independent\u201d require visible qualification and test evidence. The presentation MUST distinguish local-only, daemon-enabled, and network-enabled behavior. 28.5 Additional implementation and acceptance gates Sections 21 and 22 are extended with the following mandatory work: - implement the unified Operation Graph and converters for recorder, visual workflow, userscript, imported macro, and NetworkScript representations; - implement the incorporation registry, Capability Contracts, Prompt Commit runner, semantic diff pipeline, provenance ledger, and canary rollback; - implement zero-friction migration and compatibility tests against supported managers; - implement command palette, link hints, recorder, visual workflow studio, Web Capsules, workspace snapshots, self-healing scripts, and evidence ledger; - implement FirstPartySiteAdapter and torsionfield.de registration/pairing protocols; - implement the torsionfield.de, transductive.org, transductive.science, and transductive.art integration contracts and background services; - produce the ScriptCat patch dossier and full implementation-closure artifact set. Release acceptance additionally requires: - import of a representative ScriptCat, Violentmonkey, and Tampermonkey archive without silent data loss; - recording one task and compiling it into synchronized workflow, userscript, and endpoint artifacts; - repair of a deliberately drifted target through semantic/fingerprint recovery with evidence and rollback; - creation, restoration, export, and import of a workspace snapshot and Web Capsule; - discovery and replay of an upstream incorporation update through a Prompt Commit with license and test gates; - browser-only onboarding without account or daemon; - daemon pairing and local-tool execution; - torsionfield.de network registration, membership issuance, relay health, revocation, and device rotation; - project/task exchange with each Transductive first-party site through the signed site bridge; - end-to-end evidence showing which component, identity, provider, script, capability revision, Prompt Commit, and artifact produced every result.",
+    "sha256": "1d6a29a765e360c080eb792f5bdd075801deccb4d193dce85a674979533afa49"
+  },
+  {
+    "requirementId": "TF-S29-R001",
+    "section": 29,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "Torsionfield MUST treat compile-time flags, link-time selection, packaging choices, installation profile, project policy, startup configuration, and runtime feature state as successive lowering stages of one declarative configuration model. Compile-time selection is configuration that is resolved earlier; it MUST NOT create an unrelated architecture.",
+    "sha256": "923f094521f9b0e908304173a345ec3edde76b08da672c74dc9b686a0a6fe1b2"
+  },
+  {
+    "requirementId": "TF-S29-R002",
+    "section": 29,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The generated artifacts MUST retain the profile digest and the complete resolution explanation. A user, verifier, or governance process can therefore ask why a capability exists in a binary and receive the exact profile rule, dependency, source revision, and build evidence that caused its inclusion.",
+    "sha256": "cc98f68b7f5dc2a8200de052b7993841326f7bb5a4b74bf2ea2354e96607c59c"
+  },
+  {
+    "requirementId": "TF-S29-R003",
+    "section": 29,
+    "keywords": [
+      "MAY",
+      "MUST NOT"
+    ],
+    "text": "Capability modules MAY provide provider adapters, browser personas, Tor/Arti transport, libp2p, local mesh, Blender execution, visual workflows, MCP bridges, remote rendering, fingerprint auditing, model routing, website services, or project-specific functions. Modules communicate through versioned contracts and MUST NOT reach across layers through undocumented global state.",
+    "sha256": "2325f143765efb6ec76720644f863aef706ee0280ecb667c1f61004ac3a5fc3e"
+  },
+  {
+    "requirementId": "TF-S29-R004",
+    "section": 29,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The dependency structure MUST be a capability graph, not a growing set of nested conditional branches. A profile resolver rejects incompatible capability combinations before compilation.",
+    "sha256": "ba97123a31b68451d90f4e1ecbc4e470c82e4bcdd0a6b452545d74529b805b51"
+  },
+  {
+    "requirementId": "TF-S29-R005",
+    "section": 29,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "The same repository MAY produce multiple official variants, including:",
+    "sha256": "22e95cd47ce1a4099dcf8976d00bef4c659394ab517f1cc6026d149a3ff9d646"
+  },
+  {
+    "requirementId": "TF-S29-R006",
+    "section": 29,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "All variants expose the same canonical TF API namespace. Capability discovery reports which contracts are present, absent, degraded, or remotely supplied. Software MUST fail explicitly on an unavailable capability rather than silently substituting a semantically different one.",
+    "sha256": "5d23f1f9c6b05ed5eea4d591caaa8b12b6e962f8aeb63bc87aef5591f3378005"
+  },
+  {
+    "requirementId": "TF-S29-R007",
+    "section": 29,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "ChromiumFish-style functionality SHOULD be incorporated through separable capability contracts rather than by making every Torsionfield build depend on a permanent browser fork.",
+    "sha256": "dace7b3ef3b56ddef9449941bbc1becff6458ceb4efe1c49396234d43c18c872"
+  },
+  {
+    "requirementId": "TF-S29-R008",
+    "section": 29,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The persona engine, uniform profile, Arti transport, storage partition, and account/session policy MUST be resolved together. Changing only the User-Agent or only the network proxy is not a valid privacy profile.",
+    "sha256": "a6735c90ce91ada31da179eb5222a8e0db4a3d2f9b9975b92c8cb0b957deaa7c"
+  },
+  {
+    "requirementId": "TF-S29-R009",
+    "section": 29,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Prompt Commits MAY transform not only source code but also TFProfiles, capability graphs, build recipes, migrations, test matrices, and packaging. An upstream browser or daemon change triggers only the affected profile resolutions and variants.",
+    "sha256": "f4a085bf887d331160bf88940d3011e7868f44450668abe7f23ee94f7794be05"
+  },
+  {
+    "requirementId": "TF-S29-R010",
+    "section": 29,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The build service MUST:",
+    "sha256": "5230934bbc90d1fbe2ce0f7b70b13ee2bbdff7844124525ee901d6804954f817"
+  },
+  {
+    "requirementId": "TF-S30-R001",
+    "section": 30,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Every installation MUST present Torsionfield itself as the first available project. Participation is not limited to donating idle CPU or GPU resources. Members can donate source generation, coding, compilation, testing, reproduction, static analysis, security review, documentation, benchmarking, adapter repair, build verification, world assets, moderation work, or governance review.",
+    "sha256": "c21af3232b329173b16b5e9f504c408b6929011b3e097e63bf8eb67797894074"
+  },
+  {
+    "requirementId": "TF-S30-R002",
+    "section": 30,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "When the product encounters a reproducible defect, missing adapter, failed build, untranslated text, documentation gap, degraded capability, or unmet test, it MAY create a local ProblemRecord and offer the user explicit choices:",
+    "sha256": "195ef3429f181c1850cb08cbe6c0fad6930fd9faeae9b923b8515319da12ee69"
+  },
+  {
+    "requirementId": "TF-S30-R003",
+    "section": 30,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Priority is computed transparently from configured factors such as safety severity, number of blocked users, dependency centrality, release deadline, age, available solvers, and project governance decisions. A high resource donor MUST NOT receive unilateral power to assign priority.",
+    "sha256": "d725d75aa6898d4d81592b4fd5dec477f30f86e2d48e50176955ad349933440e"
+  },
+  {
+    "requirementId": "TF-S30-R004",
+    "section": 30,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The extension side panel and Torsion Node dashboard MUST make project contribution central but non-coercive. The interface displays:",
+    "sha256": "b7edda12fcea8d7153aeaccef1bde4fda41dfbfec4b9f6a02e85bdd1cdd24d21"
+  },
+  {
+    "requirementId": "TF-S30-R005",
+    "section": 30,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The interface MUST distinguish donation of model execution, local compute, code, review, and governance participation. Contribution remains opt-in and revocable.",
+    "sha256": "525f045fbfac71aba6e95b077f553e767a9fd3b3c70ecb81c32bacc53b64836d"
+  },
+  {
+    "requirementId": "TF-S31-R001",
+    "section": 31,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "The colloquial \u201cCodex token pool\u201d is implemented as the Source Generation Pool or Model Work Pool. It MUST NOT pool, transfer, lease, reveal, or centrally store provider account credentials, browser cookies, API keys, subscription access, or usage entitlements.",
+    "sha256": "1bedc3b0e484a50f08f1039b9f61ac97c47d432a98b883c6fc86065806fa922b"
+  },
+  {
+    "requirementId": "TF-S31-R002",
+    "section": 31,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Without a provider-signed request/response receipt or a trustworthy attested execution path, the system cannot cryptographically prove that a remote proprietary model ran an exact unmodified prompt. The specification MUST state this limitation directly.",
+    "sha256": "dc6232077da19552e85f91699c512fe49b72fe9fabd9a72d9d854350597b7355"
+  },
+  {
+    "requirementId": "TF-S32-R001",
+    "section": 32,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Base64 is an encoding and provides no confidentiality or integrity. Large task inputs SHOULD be packaged as a deterministic archive, preferably tar plus Zstandard or a profile-approved ZIP form, and encrypted with a random per-task data-encryption key using a modern authenticated-encryption envelope.",
+    "sha256": "1935eef86cbbf25c5fdd6e6fcbfbf8822da5548e69d33b9089f02d3dc3e77ed5"
+  },
+  {
+    "requirementId": "TF-S32-R002",
+    "section": 32,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Passwords MUST NOT be inserted into model prompts. A password visible to the model or contributor cannot prove that the result was honestly generated.",
+    "sha256": "d756c904ba0628ba567b1f276e20a9dc7ae5cb5a5ef97185ae4c869e13a64e95"
+  },
+  {
+    "requirementId": "TF-S32-R003",
+    "section": 32,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "ScriptVault is the local trust and secret boundary for browser-based execution. It MAY use non-extractable WebCrypto keys, WebAuthn, OS credential storage, TPM-backed keys, or paired Torsion Node storage.",
+    "sha256": "850735d19a230e9f0df63486c7a8e3c09954d251808611f6c6ea4cef36ff6219"
+  },
+  {
+    "requirementId": "TF-S32-R004",
+    "section": 32,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "The centrally hosted MCP service is a Notary and Coordinator, not an oracle that declares model output true. It MAY:",
+    "sha256": "f966d120437790c3bfa3ff1e7e9611a771df6f48fe067b441b878dc3e4bee20c"
+  },
+  {
+    "requirementId": "TF-S32-R005",
+    "section": 32,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "It MUST NOT claim that a valid receipt proves semantic correctness or proves proprietary model execution. Compromise of the Notary MUST NOT permit silent release replacement; threshold release keys, transparency, independent mirrors, and client-side verification protect the final activation path.",
+    "sha256": "2045a4a910ac23aec4e19f4a8e842ab428dab0c10c4e22ee9324784d878c41f4"
+  },
+  {
+    "requirementId": "TF-S32-R006",
+    "section": 32,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "The raw prompt and response MAY remain private while their digests and permitted evidence are published.",
+    "sha256": "96c1d1790daa296a5d05ad35f98fa932770ec074ea7b9a834ab720b6469a801c"
+  },
+  {
+    "requirementId": "TF-S32-R007",
+    "section": 32,
+    "keywords": [
+      "SHOULD",
+      "MAY"
+    ],
+    "text": "Torsionfield provenance SHOULD be compatible in spirit and structure with SLSA provenance, in-toto step attestations, reproducible-build records, Sigstore-style transparency, and TUF-style threshold update metadata. Compatibility MAY be implemented directly or through adapters, but the internal model remains provider-independent.",
+    "sha256": "614223eed3313a81f718f06c9277e3ece580e9745232736f7e553de5233dabab"
+  },
+  {
+    "requirementId": "TF-S33-R001",
+    "section": 33,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "New code SHOULD use TF.*. Imported ScriptCat scripts continue to use supported GM and CAT names through generated compatibility shims and declared grants.",
+    "sha256": "3e43619aff73aabbd87dd0de417c794a5ae5a5bdc41928d3d29e6328495b8041"
+  },
+  {
+    "requirementId": "TF-S34-R001",
+    "section": 34,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "Torsionfield MUST remain capable of modifying its userscripts, extension modules, adapters, website, Rust services, build profiles, tests, and governed runtime policies through observable proposals and reproducible builds. Self-modification MUST NOT mean that arbitrary model output can overwrite the active system.",
+    "sha256": "6ad2783f7d33526d18e36f525ea3a7f4b6b71e9ff165dab550f6f2166a8b19e5"
+  },
+  {
+    "requirementId": "TF-S34-R002",
+    "section": 34,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Subject to constitutional constraints, governance MAY replace or modify:",
+    "sha256": "07c8dbb2cb0a3f16aac8da2ee09687432264e41378ef6ad7b83585bb0b149302"
+  },
+  {
+    "requirementId": "TF-S34-R003",
+    "section": 34,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "The public website and cloud control plane SHOULD be built from the governed repository through signed profiles and reproducible pipelines. Content, onboarding, API defaults, and network policies become reviewable changes with previews and rollback rather than silent administrator edits.",
+    "sha256": "db091791adfbfb59fb22f2c34bfcc9bf6659f4e67236ffbd1a247947e6e62441"
+  },
+  {
+    "requirementId": "TF-S34-R004",
+    "section": 34,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Emergency maintainers MAY issue short-lived security interventions under a narrowly defined emergency rule. Emergency changes expire unless ratified, remain transparent, and cannot silently alter identity ownership, export, governance rights, or threshold keys.",
+    "sha256": "f56c48f6f51214b9c573bd3adb074ecfa8dbeb9422f0b36bf562144b58d7b71a"
+  },
+  {
+    "requirementId": "TF-S34-R005",
+    "section": 34,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The initial source-generation launch MUST deliver a vertical slice rather than the entire future governance system:",
+    "sha256": "cbf38a0763a412f3108ff290cfd0506a5137b2d670ed414a7a03bba90559607d"
+  },
+  {
+    "requirementId": "TF-S34-R006",
+    "section": 34,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "This vertical slice is the foundation for later anonymous transport, distributed Blender construction, multiple browser variants, and democratic activation. It MUST be architected with the final contracts even when the first deployment uses a centralized coordinator and human review.",
+    "sha256": "c58ab55625d2585413ed75e9f87ec850263a505fc5efb9ed08a8d643988df5ea"
+  },
+  {
+    "requirementId": "TF-S35-R001",
+    "section": 35,
+    "keywords": [
+      "MUST",
+      "MUST NOT",
+      "SHOULD",
+      "MAY"
+    ],
+    "text": "35.1 Scope and non-disruption This section defines the architecture of meaning above the concrete runtime. It clarifies how Torsionfield capabilities may acquire multiple implementations and may later move downward into browser-native or operating-system-native layers. It does not replace, postpone, or broaden the direct implementation milestone. Sections 3 through 23 and section 34.5 remain the authoritative first implementation path: fork and extend the current ScriptCat baseline; implement the Router Core, Mother Script, mutation and installation transactions, provider adapters, Agent Tab Manager, Torsion Node, Debian 13 runner, signed task bundles, work donation, scanning, verification, and release rollback. No Chromium fork, Minefield-native provider, Android runtime, Arti-WASM client, standards process, or automatic capability-promotion system is required for that vertical slice. The semantic layer MUST be implemented initially as lightweight contracts, schemas, provider descriptors, assurance declarations, and conformance tests around the direct implementation. It MUST NOT create a second runtime, scheduler, permission model, operation model, or repository fork. 35.2 Capability semantics rather than implementation identity A Torsionfield capability describes an observable intention and its guarantees independently of the component currently satisfying it. Each CapabilityContract SHOULD define: - capability identifier and semantic version; - intent and non-goals; - input, output, streaming, and event schemas; - preconditions and postconditions; - required permissions and delegable scopes; - state transitions, cancellation, timeout, and unknown-outcome behavior; - failure families and recovery obligations; - evidence and provenance requirements; - privacy, security, locality, and resource assumptions; - assurance levels and permitted degradation; - conformance fixtures, property tests, and acceptance tests; - compatible provider bindings and version ranges. TF.* is the canonical developer binding used by the present product. It is not the ontology itself. CAT.* is the first compatibility and reference binding. A future Minefield, Android, server, peer, WASM, or alternative-browser binding can satisfy the same CapabilityContract without reproducing the same internal call path. 35.3 Provider bindings and assurance A capability provider advertises the contracts it implements, implementation revision, dependencies, resource limits, isolation boundary, evidence type, and assurance level. Initial assurance vocabulary SHOULD include: - emulated; - best-effort; - observed; - restorable; - isolated; - native-enforced; - attested. Different bindings are not silently equivalent. An extension may satisfy tab protection at restorable assurance by recreating a closed tab; Minefield may later satisfy the same semantic contract at native-enforced assurance by rejecting ordinary closure. A request that requires a stronger assurance than any available provider supplies MUST fail explicitly or obtain an explicit policy-approved degradation. The first release may expose only the ScriptCat-derived extension and Torsion Node providers. Provider multiplicity is a compatibility property of the contract model, not a launch prerequisite. 35.4 Bidirectional semantic evolution The long-term architecture permits two governed directions of evolution. Upward promotion observes repeated userscript, workflow, adapter, and agent patterns and may propose a new or refined CapabilityContract when the behavior has become stable and broadly useful. Downward promotion may replace an extension or daemon implementation with a browser-native, operating-system-native, remote, or hardware-assisted provider while preserving the observable contract and declaring any stronger guarantees. Semantic migration may also adapt an implementation when Chromium, ScriptCat, Android, Rust dependencies, provider frontends, or other upstream systems change. A semantic migration record describes the capability intention, invariants, affected subsystems, old and new insertion points, compatibility impact, and required tests rather than relying only on line-oriented patches. This evolution is conceptual and governed. It does not authorize automatic source promotion or autonomous activation. Every generated migration or native-promotion proposal remains subject to the existing Prompt Commit, quarantine, license, contract-test, independent-review, reproducible-build, canary, provenance, and rollback requirements. 35.5 Implementation preservation rule The direct implementation MUST continue to optimize for one working ScriptCat-first system rather than prematurely constructing a standards organization or a complete matrix of runtimes. The immediate repository additions required by this section are limited to: shared/capabilities/contracts/ shared/capabilities/schemas/ shared/capabilities/provider-manifests/ shared/capabilities/conformance/ shared/capabilities/assurance/ Existing CAT and TF implementation methods MAY remain where they are while these artifacts describe their semantics and map them to current providers. Refactoring a working implementation solely to resemble a hypothetical future native API is prohibited unless it removes real duplication, fixes an identified boundary defect, or is required by a conformance test. Minefield remains an optional optimized provider and experimental native target. It is not on the critical path to the first useful Torsionfield release. 35.6 Promotion criteria A behavior becomes a candidate stable capability or native primitive only when evidence demonstrates: 1. repeated use across independent scripts, workflows, agents, or projects; 2. a stable intent that is not merely one implementation convenience; 3. explicit permissions, privacy consequences, and abuse analysis; 4. testable postconditions and failure semantics; 5. a conformance suite independent of one provider; 6. measurable deficiencies in the current userscript, extension, or daemon implementation; 7. a realistic second provider or a justified native-assurance requirement; 8. compatibility, migration, and rollback paths; 9. no unnecessary dependence on Chromium-specific concepts where a portable resource model is possible. Promotion is therefore evidence-driven optimization, not architectural speculation. The ScriptCat ecosystem remains the innovation and observation layer; native runtimes become selective implementation targets only after capabilities prove themselves. 35.7 Version 2.4 interpretation Version 2.4 preserves the committed delivery sequence while adding two conceptual layers above it. Torsionfield is understood as a semantic capability layer with movable implementations and as a participant-trust architecture for delegated authority, evidence, verification, and acceptance. The product being built first remains the integrated ScriptCat-derived extension, Torsion Node, source-generation runner, provider-adapter system, work-donation queue, and verification pipeline already specified.",
+    "sha256": "b8bd73b7034bf2c30bcc28f4bba5cd1e97736d48d713ee59a06dcc43006f89b4"
+  },
+  {
+    "requirementId": "TF-S36-R001",
+    "section": 36,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "Sections 3 through 23 and section 34.5 remain the authoritative direct implementation path. The Router Core, Mother Script, provider adapters, Agent Tab Manager, Torsion Node, Debian 13 runner, signed task bundles, work-donation queue, scanning, verification, packaging, and rollback remain unchanged. The participant-trust layer MUST initially be implemented as additional records, policies, explanations, fixtures, and user-interface states around those components. It MUST NOT introduce another scheduler, operation model, permission system, or execution runtime.",
+    "sha256": "86843f0ec7cedc1611a5487a37b24d31bd123c2e06b3cf0b77536d1158b0fd3a"
+  },
+  {
+    "requirementId": "TF-S36-R002",
+    "section": 36,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "These dimensions MUST remain independent. A highly trusted participant may operate from a compromised device. A low-history participant may produce a strongly reproducible result. A locally permitted operation may remain unacceptable to a project release. A signed statement authenticates its signer but does not establish its truth.",
+    "sha256": "3ea4ee5009066c324e8ac476e3d4e0aabbb83536aeb64bb85370592ae6bdee2a"
+  },
+  {
+    "requirementId": "TF-S36-R003",
+    "section": 36,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Torsionfield MUST NOT use one scalar reputation score to control consequential authority.",
+    "sha256": "2ae15ed6c329b6b76b3e5186bc8270292eb3d7b54a39db173376ccc188dca5c4"
+  },
+  {
+    "requirementId": "TF-S36-R004",
+    "section": 36,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Compute contribution, wealth, popularity, task volume, or social influence MUST NOT automatically purchase consequential authority or governance power.",
+    "sha256": "b11176a079d47305b0168f054142861548e76e33c304f755037d34debeffeaf0"
+  },
+  {
+    "requirementId": "TF-S36-R005",
+    "section": 36,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "New participants begin with bounded authority rather than zero participation. They MAY contribute through low-consequence work, calibration tasks, reproducible execution, review, or explicitly local self-directed operation.",
+    "sha256": "e3cee91e63718f5c39a81539155f477e6fb0c378cd5e73af3e7ea022a5f8b8fd"
+  },
+  {
+    "requirementId": "TF-S36-R006",
+    "section": 36,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Qualification SHOULD include:",
+    "sha256": "f385518966155606a050562af8a4d728ac661c71fdc41aa252333a21245d1227"
+  },
+  {
+    "requirementId": "TF-S36-R007",
+    "section": 36,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Correctly reporting impossibility, insufficient evidence, conflict of interest, or uncertainty is positive evidence. The system MUST NOT reward unsupported certainty merely because it resembles successful completion.",
+    "sha256": "d20dd70b6788251a66b2fdf8951d319688a02cac29c928e6794649728b70af39"
+  },
+  {
+    "requirementId": "TF-S36-R008",
+    "section": 36,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Producer selection SHOULD consider domain competence, recent calibration, evidence quality, task history, confidentiality eligibility, device and provider state, unresolved disputes, availability, and consequence level.",
+    "sha256": "a115dd5a07b1cba84dc219f700883636b49f130b463736d972d407c882be906f"
+  },
+  {
+    "requirementId": "TF-S36-R009",
+    "section": 36,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Verifier selection SHOULD additionally consider verification accuracy, independence from the producer and other verifiers, shared control domains, organization, infrastructure, model family, toolchain, prior exposure, and declared conflicts. Different keys or network addresses do not by themselves establish independence.",
+    "sha256": "d8c7b79cf8906159b3c62c95e9bdeff45677a02b61d46185d953e14c6ee6b426"
+  },
+  {
+    "requirementId": "TF-S36-R010",
+    "section": 36,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Trust MUST decay or be requalified where context changes. A recent device compromise may suspend device-specific authority without erasing unrelated competence history. A failure in one domain does not automatically erase trust in another domain.",
+    "sha256": "bdc298f75bf26660983e5f640c601dd4a00fdcb935582e7cd89a062814ff8e95"
+  },
+  {
+    "requirementId": "TF-S36-R011",
+    "section": 36,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Shared authority and active leases MUST be revocable. Rehabilitation MUST remain possible through probation, new evidence, corrected performance, and domain-limited requalification. Rehabilitation does not erase the original failure.",
+    "sha256": "1f5ed092623cd19dcaa8cd02201201b3e3b1554202292b3b6991fb53f3c11d6f"
+  },
+  {
+    "requirementId": "TF-S36-R012",
+    "section": 36,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Every consequential result MUST distinguish at least the following states:",
+    "sha256": "6ca74239c28a687a78bf939e1ecc4a64b13ef6cfe8b090cbdd52a187cc80dd6a"
+  },
+  {
+    "requirementId": "TF-S36-R013",
+    "section": 36,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "The interface MUST NOT collapse local acceptance, independent verification, project acceptance, and release acceptance into one success indicator.",
+    "sha256": "90b7bd42dbddada14e76d11ad6184261a40e2eac2d9409975de39fe68973e5a9"
+  },
+  {
+    "requirementId": "TF-S36-R014",
+    "section": 36,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "An unrestricted local owner profile remains available. Its use MUST identify the accepting participant, scope, duration, affected providers, evidence limitations, and irreversible consequences. Local owner authority does not automatically transfer to peers, projects, verifiers, or release systems.",
+    "sha256": "b05e4bbe059e93a8c2466cb7dc61e335528cb8f205b27577914aa881c92bf3a4"
+  },
+  {
+    "requirementId": "TF-S36-R015",
+    "section": 36,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The first implementation MUST preserve the current repository and execution architecture.",
+    "sha256": "f0f88a38d54406462ae4fd8cf9d74cdb691dfaaadda05879fa2025ad56822736"
+  },
+  {
+    "requirementId": "TF-S36-R016",
+    "section": 36,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The project MUST radically revise the trust model when:",
+    "sha256": "30fa005ff5e62b2efa10cb6d917d4e352db62a3de6328ee9dcea5fd9b3f86ecb"
+  },
+  {
+    "requirementId": "TF-S36-R017",
+    "section": 36,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "A failed trust model MUST be replaced or simplified. The response MUST NOT be to hide capability reach or inflate the number of trust dimensions.",
+    "sha256": "12971be0a581a9e9163defc457db715f5f64664f4c476117155b05354be152ed"
+  },
+  {
+    "requirementId": "TF-S37-R001",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R001 \u2014 Independent ownership. A participant edge cell MUST be deployed into infrastructure independently controlled by the participant or an organization the participant explicitly represents.",
+    "sha256": "07a6bdeb8987a6e309a8954fc7e589611e2c493275674fbf591f92a0c6ac84fd"
+  },
+  {
+    "requirementId": "TF-S37-R002",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R002 \u2014 Optionality. Local Torsionfield operation MUST remain possible without a participant edge account.",
+    "sha256": "cf515996bc9b44ae37011d665fb28d6348541a24d09a52bb2c033f13f4a2f5ea"
+  },
+  {
+    "requirementId": "TF-S37-R003",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R003 \u2014 Identity independence. A Cloudflare account or other provider account MUST NOT constitute the participant's root Torsionfield identity.",
+    "sha256": "705bcc54c4a7cc517f892768281f85114c63ca7bff19f59b673c84aa012b00bd"
+  },
+  {
+    "requirementId": "TF-S37-R004",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R004 \u2014 Authority separation. Infrastructure authority, Torsionfield capability authority, data-decryption authority, release authority, and acceptance authority MUST be represented separately.",
+    "sha256": "0d36f15389b3f4586e980a6eba2d6c56a5918da1a8c11713e2b8e6bc48c369ef"
+  },
+  {
+    "requirementId": "TF-S37-R005",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R005 \u2014 Least privilege. OAuth authorization MUST request only the scopes required for the selected cell profile.",
+    "sha256": "5772030c9b99932b7b9e28fba5a90a22a846c9ca6b0b59c20156fa21a0482b51"
+  },
+  {
+    "requirementId": "TF-S37-R006",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R006 \u2014 Revocation continuity. The participant MUST be able to revoke provider authorization without losing export instructions, signed project history, or Torsionfield identity.",
+    "sha256": "6cd48fd1e2540a9af0ac30b07cde0af2c8f6afa3e799d407fc6c8803ee11c0f7"
+  },
+  {
+    "requirementId": "TF-S37-R007",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R007 \u2014 No password or global-key collection. Superfluid MUST NOT request provider passwords, global API keys, or equivalent unrestricted credentials.",
+    "sha256": "a879a8fb8f6864ca6b6d12ca53de0d68108c21a80c51c9c323328846934c32a2"
+  },
+  {
+    "requirementId": "TF-S37-R008",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R008 \u2014 Root-key exclusion. User root private keys MUST NOT be stored in a participant edge cell or central control plane.",
+    "sha256": "830f22ba8ff57d51f7717d8c4e2046f4fca9285891b5ffa62a7bc2dab02b7886"
+  },
+  {
+    "requirementId": "TF-S37-R009",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R009 \u2014 Encrypted content by default. Private project content persisted in participant edge infrastructure MUST be encrypted before provider storage unless an explicit project policy declares otherwise.",
+    "sha256": "2ee8d23534c425456e9deadf8d132a9ba8d8c4b2f205f8a978e1cd55e35db83d"
+  },
+  {
+    "requirementId": "TF-S37-R010",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R010 \u2014 Data classification. Every remotely persisted schema field MUST declare its disclosure class.",
+    "sha256": "cd5e6f107df32ce96f986e76a917daf9314f7489f5e05a8a385f4c8c06652a84"
+  },
+  {
+    "requirementId": "TF-S37-R011",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R011 \u2014 Signed operations. Consequential cross-account operations MUST be signed, replay-protected, and bound to a stable operation identity.",
+    "sha256": "432149233b5a434302d01d8796d4937f522e0c9500880fd549fe3c5345bd03cb"
+  },
+  {
+    "requirementId": "TF-S37-R012",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R012 \u2014 Release declaration. Every running official cell revision MUST expose a signed deployment declaration connecting it to source, build, capability, migration, release, and rollback evidence.",
+    "sha256": "c7cff3220de557445ad7498e1963fc16661ff82f8c3a65c8200f7ebc85abff66"
+  },
+  {
+    "requirementId": "TF-S37-R013",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R013 \u2014 Unaccepted-deployment detection. Clients MUST detect and visibly report cell code that does not match an accepted release policy.",
+    "sha256": "712a68f4023f994fd4d90445566a968d78ecff0849f5897de948772d3e23ef5b"
+  },
+  {
+    "requirementId": "TF-S37-R014",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R014 \u2014 Capability-expansion consent. A software update MUST NOT silently increase semantic capability authority.",
+    "sha256": "09ab220f708a497cf9bd7e68ef173b98900e077b13022fb86195d4751143ca09"
+  },
+  {
+    "requirementId": "TF-S37-R015",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R015 \u2014 Export. A participant MUST be able to export encrypted objects, public metadata, signed journals, and deployment declarations in a provider-independent format.",
+    "sha256": "3ec87c9c0b627698bbc38851f0ab3346b4524d0afadd4b24c21ae345e1284eab"
+  },
+  {
+    "requirementId": "TF-S37-R016",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R016 \u2014 Migration. Cell replacement or provider migration MUST preserve participant and project identity without treating the new provider account as the same cryptographic identity.",
+    "sha256": "60f07e0f8f65cd4cc682b4814d8d42fb7e4441802bd0a352111f2ecc454bb428"
+  },
+  {
+    "requirementId": "TF-S37-R017",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R017 \u2014 No hidden quota pooling. Participant infrastructure MUST NOT be used for unrelated shared workloads without an explicit active WorkOffer.",
+    "sha256": "079b5692f0bb601ee2760189ee43e62c5ca734281437bd83ef029892c6db2f58"
+  },
+  {
+    "requirementId": "TF-S37-R018",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R018 \u2014 Budget enforcement. Shared contribution MUST be bounded by participant-visible request, storage, compute, schedule, and cost policy.",
+    "sha256": "cc0264da63ab09583364f5346c13d73d6cd6719c85d8ed324209a6137f547a0c"
+  },
+  {
+    "requirementId": "TF-S37-R019",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R019 \u2014 Honest assurance. Provider hosting MUST NOT be represented as proof of semantic correctness or execution attestation.",
+    "sha256": "bb6af7e33063f44409b8f4317b4d6ccd5b17b56eba1d5821042fea3b2a23ff7e"
+  },
+  {
+    "requirementId": "TF-S37-R020",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R020 \u2014 Unknown outcomes. Deployment and cross-cell operations MUST support unknown-outcome reconciliation and idempotent retry semantics.",
+    "sha256": "3014e6f80dcced3053399807b3fb5708818d5a973aa8ddc1db5f56fb8044e0d6"
+  },
+  {
+    "requirementId": "TF-S37-R021",
+    "section": 37,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "TF-EDGE-R021 \u2014 Central continuity without universal custody. The Superfluid Nexus MAY remain authoritative for official namespace, membership, topology, release channels, and governance without acquiring universal decryption authority.",
+    "sha256": "cc70704b93c491f7bc1bd893764e74442fe69b8d9a624d722153987d098992eb"
+  },
+  {
+    "requirementId": "TF-S37-R022",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R022 \u2014 Provider portability. Portable CapabilityContracts MUST NOT require Cloudflare-specific identifiers or APIs.",
+    "sha256": "1b5db311a36b23102dcc91fb28720f7b3857867344af1d006bf431995521ba71"
+  },
+  {
+    "requirementId": "TF-S37-R023",
+    "section": 37,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-EDGE-R023 \u2014 Deletion clarity. The system MUST distinguish deletion from Superfluid indexes, deletion from the participant cell, and destruction of local decryption keys.",
+    "sha256": "ea3870c69ead7e103fc7927a0001a22eb35964dfb07f710f33baacb79020c7ae"
+  },
+  {
+    "requirementId": "TF-S37-R024",
+    "section": 37,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-EDGE-R024 \u2014 Web-code boundary. Cell-hosted web code MUST NOT receive unrestricted access to root or project keys merely because it is served from an official cell.",
+    "sha256": "b4ce34908247a62aa4572608d4b8e99e7a97a32fd21b1e5e506f11c9e5e1092d"
+  },
+  {
+    "requirementId": "TF-S38-R001",
+    "section": 38,
+    "keywords": [
+      "MUST NOT",
+      "SHOULD"
+    ],
+    "text": "ForkSense is a staged implementation target and an external-code integration gate. It MUST NOT delay work that does not depend on selecting or incorporating external code. When an external repository, library, unit, patch set, or fork is selected for consequential integration, the decision SHOULD be supported by an IntegrationIntelligencePacket.",
+    "sha256": "711ece60d81012d4024c57e3db233a421a7f6135fe899361a4bdbbd0bc306973"
+  },
+  {
+    "requirementId": "TF-S38-R002",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The ResearchStrategy MUST be revisable during execution. Every material revision MUST record the evidence that caused the revision, the categories added or removed, the search path abandoned or introduced, and the effect on the decision question.",
+    "sha256": "286d8e2938ad6ae1eb1085503238db30b65ad13f1965d8ca9bcdaeace7a9dad1"
+  },
+  {
+    "requirementId": "TF-S38-R003",
+    "section": 38,
+    "keywords": [
+      "MAY",
+      "MUST NOT"
+    ],
+    "text": "A fixed checklist MAY seed the investigation. It MUST NOT be treated as complete when the repository, issue, contributor, or integration question requires a different workflow.",
+    "sha256": "93e15e5fcc41532c7a966bf70fe9c9f6bfdcfb74d414967734c71601bb6df08c"
+  },
+  {
+    "requirementId": "TF-S38-R004",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "The first pass SHOULD establish:",
+    "sha256": "b7948be93d7c941293535d28acf1d1eccf0fe55b0d257b20c624eff686eda160"
+  },
+  {
+    "requirementId": "TF-S38-R005",
+    "section": 38,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Closed issues and pull requests MAY contain strategically valuable capabilities that do not fit the upstream owner's product, provider, governance, or timing constraints.",
+    "sha256": "f3f3ffeeecb002961859a8b298c2f67062d4b848d2d33dc0f74e0a1e8727b7ae"
+  },
+  {
+    "requirementId": "TF-S38-R006",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "ForkSense MUST distinguish at least:",
+    "sha256": "149d9b069599c427fc6b7f47b66898917e10e6b3fa42144cc752403ff1eb8a20"
+  },
+  {
+    "requirementId": "TF-S38-R007",
+    "section": 38,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "A rejection category MUST be grounded in the recorded issue, review, timeline, commit, or maintainer statement. Suspected motive MUST be labelled as inference and MUST NOT be presented as fact.",
+    "sha256": "3fd27267821b3cd31a84dbdc1495f73679f5bd5bc01f8f9fbe72171551d0b18b"
+  },
+  {
+    "requirementId": "TF-S38-R008",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "A rejected proposal MUST NOT receive positive weight merely because it was rejected. Strategic value arises only when demand, implementation evidence, compatibility, maintainability, and relevance to the Torsionfield requirement are independently supported.",
+    "sha256": "489b6d0a6e1618fa639b5f248adaae6352519d13a3de49e05d784c803f6afde0"
+  },
+  {
+    "requirementId": "TF-S38-R009",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Fork analysis SHOULD identify active forks and successor repositories whose current commits materially diverge from upstream.",
+    "sha256": "04acc47a8a39f47006f0c1315da1b993d385648a0eae56aa57cfc095f4484c8a"
+  },
+  {
+    "requirementId": "TF-S38-R010",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "For each relevant fork, the investigation SHOULD record:",
+    "sha256": "0d2d3f223bda5426c1f3258bee24eeaba47cfffc07369ba9da9384f9d590ed9a"
+  },
+  {
+    "requirementId": "TF-S38-R011",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "A fork with many stars or followers MUST NOT be treated as technically superior without execution and maintenance evidence.",
+    "sha256": "5d76508a4dd1ac67add2ac15cf117bb630001f9f2b881b4cbbd270b68b50717d"
+  },
+  {
+    "requirementId": "TF-S38-R012",
+    "section": 38,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "ForkSense MAY study public contribution history, repositories, starred repositories, organizations, followers, following relationships, and adjacent technical work when that context is directly relevant to the integration question.",
+    "sha256": "bfafdacad730767152a13aaf1ce0391a6c204f5abf0fbf0c2d3c35218fccf2f9"
+  },
+  {
+    "requirementId": "TF-S38-R013",
+    "section": 38,
+    "keywords": [
+      "MUST",
+      "MUST NOT"
+    ],
+    "text": "Person-level collection MUST be purpose-limited, source-linked, removable, and restricted to public professional or technical evidence. The system MUST NOT infer sensitive traits, private relationships, ideology, health, ethnicity, religion, sexuality, or other protected characteristics.",
+    "sha256": "06753ea85dd85db6f7e62ba36c2845a24a723bc1b094e91cc473bafd65095643"
+  },
+  {
+    "requirementId": "TF-S38-R014",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Stars, follows, friendship-like proximity, employer affiliation, and repository popularity MUST NOT be converted into authority, trust, or competence scores. Contributor context is a search-routing signal, not a verdict on a person.",
+    "sha256": "26a89022112e36ac08819090ed192dd40411b1d4670391d97b953d3f144a219a"
+  },
+  {
+    "requirementId": "TF-S38-R015",
+    "section": 38,
+    "keywords": [
+      "MAY"
+    ],
+    "text": "Research MAY fan out to successor repositories, package registries, standards discussions, Hacker News, Reddit, technical forums, blogs, release notes, conference material, and other public sources when a recorded evidence path connects the source to the integration question.",
+    "sha256": "22a9304195a014cdcf3eef36567896fc1d7d3db773507c2ce6694d8b8b0fcf6c"
+  },
+  {
+    "requirementId": "TF-S38-R016",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Every external observation MUST identify its source, retrieval time, relevant author or publisher when available, quoted or normalized claim, and relation to the target repository or capability.",
+    "sha256": "087cd32030c8d2076abe169bd2bb80cb66258d35e8d1de40161d6150eb08e258"
+  },
+  {
+    "requirementId": "TF-S38-R017",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "Public discussion is evidence of demand, experience, disagreement, or discovery. It MUST NOT be treated as proof that an implementation is correct, secure, maintained, or legally usable.",
+    "sha256": "b42566a74f10bbc811a19bb7f425c7276f3cebf8f0e9fc3ddf1a41700fe229ed"
+  },
+  {
+    "requirementId": "TF-S38-R018",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Fan-out MUST remain bounded by the ResearchStrategy. The workflow MUST expose repository, person, external-source, token, time, and storage budgets, plus explicit stop conditions.",
+    "sha256": "6fdef21f783a5af10921c9ea20efc19b9cc11dffc483043c3a7b6d53b3901e78"
+  },
+  {
+    "requirementId": "TF-S38-R019",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "ForkSense decisions are based on snapshots, not timeless descriptions. Every repository, branch, issue, pull request, release, contributor, and external-source observation MUST record a retrieval time and the strongest available revision identity, commit, event ID, ETag, or content digest.",
+    "sha256": "2a2394be9cf39ff7795bed4565ccf6600eb043c088e329b6676862883dd8b5dd"
+  },
+  {
+    "requirementId": "TF-S38-R020",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The IntegrationIntelligencePacket MUST declare the freshness of each load-bearing observation and the conditions under which the decision expires or requires revalidation.",
+    "sha256": "c923e4d53096c2cf92534455a09cf54beda9ec5aa73e7af6184c045e6d949de2"
+  },
+  {
+    "requirementId": "TF-S38-R021",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "A current commit graph SHOULD receive greater decision weight than an old README claim when they conflict. Historical evidence remains available to explain trajectory and intent.",
+    "sha256": "fb7047960587198ae5eceb9fd0a67397be806d596be7c09d5fe842f2134bf78f"
+  },
+  {
+    "requirementId": "TF-S38-R022",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "The reference implementation SHOULD maintain three separable layers:",
+    "sha256": "9276425da325031d82fc2f40e4b03dd6ad247753fd27a21201ffb48de0ce8f40"
+  },
+  {
+    "requirementId": "TF-S38-R023",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "The semantic storage contract is RepositoryGraphStore/1. It MUST support transactions, recursive traversal, temporal snapshots, source-linked facts, strategy revisions, bounded deletion, and provider-independent export.",
+    "sha256": "cd58936e9f9e739ee9c3b24467a0e431745164485135e42879c1a40335b61c57"
+  },
+  {
+    "requirementId": "TF-S38-R024",
+    "section": 38,
+    "keywords": [
+      "MAY",
+      "MUST NOT"
+    ],
+    "text": "The first reference provider is cozo-local/1. A Kuzu, SQLite-derived, remote, or other graph provider MAY replace it when it satisfies the same contract. Portable graph objects MUST NOT depend on database-specific identifiers or query syntax.",
+    "sha256": "f1fd900deabec569d4818593447c4f75e6263a6190b57dd5ee8eb8c74d838977"
+  },
+  {
+    "requirementId": "TF-S38-R025",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "Typed relationships SHOULD include:",
+    "sha256": "3d0a811455493b0da024ceb26380075fd07ef228ee0b35281c47b572787072bb"
+  },
+  {
+    "requirementId": "TF-S38-R026",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "Facts, interpretations, hypotheses, and recommendations MUST remain distinguishable in the graph. An LLM-generated relation MUST identify its supporting observations and confidence, and MUST remain revisable.",
+    "sha256": "2bfcaecaf8b7984ef9a66d7c8faeec41236651c9d17f7860fc5d51eca5098c8b"
+  },
+  {
+    "requirementId": "TF-S38-R027",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "IntegrationIntelligencePacket/1 is the portable decision artifact produced by ForkSense. It SHOULD contain:",
+    "sha256": "8541fa72990f46e9657b3d17eab23aff4be8b114418061d5bd13e156139a0396"
+  },
+  {
+    "requirementId": "TF-S38-R028",
+    "section": 38,
+    "keywords": [
+      "MAY",
+      "MUST NOT"
+    ],
+    "text": "A language model MAY generate, criticize, compare, or revise the packet. Model output MUST NOT itself authorize source incorporation, license acceptance, deployment, release, or governance activation.",
+    "sha256": "4333dfbd2a90c895e31ddef4dd071f397af0a71f487f8fdcb2ad58be2e20d445"
+  },
+  {
+    "requirementId": "TF-S38-R029",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "ForkSense feeds the existing Prompt Commit, incorporation, semantic-capability, provenance, quarantine, verification, release, migration, and rollback mechanisms. It MUST NOT create a parallel source-ingestion authority, scheduler, permission system, or release process.",
+    "sha256": "8e10cee21fe1293801574d0706a45161758a41f8df7ad2c932e373ab0ac79527"
+  },
+  {
+    "requirementId": "TF-S38-R030",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "The first implementable slice SHOULD:",
+    "sha256": "5aba6cbd211f0108460c09039a351a72fa826b7aa1c51fbe4236d21bcb2fb170"
+  },
+  {
+    "requirementId": "TF-S38-R031",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R001 \u2014 Strategy declaration. Every consequential ForkSense investigation MUST begin with a versioned ResearchStrategy.",
+    "sha256": "f60f366a9a696234146581ec401ba29acbf8ddd3bf287a6e09fc600932cbc33e"
+  },
+  {
+    "requirementId": "TF-S38-R032",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R002 \u2014 Adaptive provenance. Every material strategy revision MUST record the evidence and reasoning that caused it.",
+    "sha256": "2a4ff1f2da9524edaa503b08d73c50bd9e13350bc28c9985ec73105195e6ab5e"
+  },
+  {
+    "requirementId": "TF-S38-R033",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R003 \u2014 Current orientation. Repository analysis MUST identify the current default branch, recent commits, releases, issues, pull requests, and known-problem surfaces at retrieval time.",
+    "sha256": "bd9fab5e02e0a3a35cb2393d21ffe4d9ebb2424ca41bcb3063dc623a8fd4e319"
+  },
+  {
+    "requirementId": "TF-S38-R034",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R004 \u2014 Rejection classification. A declined or closed proposal MUST be classified from recorded evidence rather than treated as a generic negative signal.",
+    "sha256": "cc1623550834cfc7b9bdf4af678446fa2c984b8f70d7c16973142f128cd91b39"
+  },
+  {
+    "requirementId": "TF-S38-R035",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-FORK-R005 \u2014 Motive restraint. Unrecorded maintainer or contributor motives MUST NOT be represented as fact.",
+    "sha256": "48a53bd1de30e8786fcff1f9c2837273013f0e4ab13fff9de14e13e0e58f22de"
+  },
+  {
+    "requirementId": "TF-S38-R036",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R006 \u2014 Fork lineage. A recommended fork or successor implementation MUST identify its upstream ancestry and material divergence.",
+    "sha256": "51814f4914fc57cd8fa30b239c5ae22a80ceab8696696c24c14cdc81b772734d"
+  },
+  {
+    "requirementId": "TF-S38-R037",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-FORK-R007 \u2014 Execution evidence. Popularity, prose, or demand signals MUST NOT substitute for build, test, runtime, security, or maintenance evidence.",
+    "sha256": "58590c5785d66ca05c30ad4102adb094382673564ad9facd9e9e67f5e4152881"
+  },
+  {
+    "requirementId": "TF-S38-R038",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R008 \u2014 Purpose-limited people data. Contributor context MUST remain public, relevant to the active question, source-linked, removable, and bounded by retention policy.",
+    "sha256": "06babc47552c7da0f0d2eedc796f7de1e578bf6ed973f57aaa3570fe67fd26cb"
+  },
+  {
+    "requirementId": "TF-S38-R039",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-FORK-R009 \u2014 Sensitive inference prohibition. ForkSense MUST NOT infer or store sensitive personal traits from repository or social data.",
+    "sha256": "9ef99d7252b24973bad7d7acc34b4967ec7ed6bd5513ca5811429444d6a82b53"
+  },
+  {
+    "requirementId": "TF-S38-R040",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-FORK-R010 \u2014 No social authority score. Stars, follows, affiliations, and social proximity MUST NOT be converted into technical authority or governance power.",
+    "sha256": "456abf436043c445262a9b10252be5c72ec9619bd69b5aafa1456c6ea4e49c92"
+  },
+  {
+    "requirementId": "TF-S38-R041",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R011 \u2014 External-source provenance. Every external-discourse observation used in a decision MUST preserve source, time, and relation to the target question.",
+    "sha256": "ab96bbf22a18079c298a32a0816258dd1f05dca4d89633763130ebbf9e1d49af"
+  },
+  {
+    "requirementId": "TF-S38-R042",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R012 \u2014 Bounded fan-out. Repository, person, external-source, time, token, and storage exploration MUST remain within visible budgets and stop conditions.",
+    "sha256": "f5797eca74c87074a9775f58f8e206b4d7a8577585ad79017fbef036aefc64e5"
+  },
+  {
+    "requirementId": "TF-S38-R043",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R013 \u2014 Temporal identity. Every load-bearing observation MUST record retrieval time and the strongest available revision identity or digest.",
+    "sha256": "f0d12cb36d0a50aa11e2b877b968cbac2bf40bf29e6038e89b0dda205ec4f2f1"
+  },
+  {
+    "requirementId": "TF-S38-R044",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R014 \u2014 Decision freshness. IntegrationIntelligencePacket MUST declare expiration or revalidation conditions for its recommendation.",
+    "sha256": "9f277c9d94b8f9e824f2a1b8dc3e58b09f09ba0e5d3d1a4e681390ccaa53a5fc"
+  },
+  {
+    "requirementId": "TF-S38-R045",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-FORK-R015 \u2014 Provider-independent graph. Portable repository-intelligence objects MUST NOT depend on one graph database's identifiers or query language.",
+    "sha256": "095ca4ecaed3929273a3786f440753dbf956dd2560ef3fb8eb404fa5b92f7296"
+  },
+  {
+    "requirementId": "TF-S38-R046",
+    "section": 38,
+    "keywords": [
+      "SHOULD"
+    ],
+    "text": "TF-FORK-R016 \u2014 Raw-evidence preservation. Load-bearing normalized facts SHOULD retain links to immutable or content-addressed raw evidence.",
+    "sha256": "94666cbf33e4c00a0a14710e500eb4992238156f63318b40a5bff5be99fb446f"
+  },
+  {
+    "requirementId": "TF-S38-R047",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R017 \u2014 Fact/inference separation. Facts, interpretations, hypotheses, and recommendations MUST remain distinguishable and independently revisable.",
+    "sha256": "4afe5b225bdc6c9d4a939db319688569fac0e805e8f1e2869ed7870def540d2a"
+  },
+  {
+    "requirementId": "TF-S38-R048",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R018 \u2014 Competing strategies. When multiple viable integration paths remain, the packet MUST preserve at least two candidates rather than silently collapsing them.",
+    "sha256": "820357ca2bc524e50fa178bf19ef87444f84742b42d0a0ec8f444e7ad5cb9c54"
+  },
+  {
+    "requirementId": "TF-S38-R049",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-FORK-R019 \u2014 No autonomous incorporation. ForkSense or its language models MUST NOT independently merge, license, deploy, or activate external source.",
+    "sha256": "b4337839733dc92cdb8da296e3ab2af149e457736a13cb60045799966271190c"
+  },
+  {
+    "requirementId": "TF-S38-R050",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R020 \u2014 Existing gates preserved. ForkSense recommendations MUST still pass Torsionfield provenance, license, security, test, build, verification, acceptance, release, and rollback gates.",
+    "sha256": "868a0cfab811815a7d0c58fc8740b317cf777aaed28ea5d4e5f76e50d55628eb"
+  },
+  {
+    "requirementId": "TF-S38-R051",
+    "section": 38,
+    "keywords": [
+      "MUST"
+    ],
+    "text": "TF-FORK-R021 \u2014 Sustainable divergence. A recommendation to fork MUST include upstream synchronization, maintenance ownership, migration, exit, and rollback analysis.",
+    "sha256": "d21b46f349ba8909a03df73aae006bae637ac38342f6c66991a7f2865a4ae65e"
+  },
+  {
+    "requirementId": "TF-S38-R052",
+    "section": 38,
+    "keywords": [
+      "MUST NOT"
+    ],
+    "text": "TF-FORK-R022 \u2014 Critical-path preservation. ForkSense MUST NOT delay the direct ScriptCat-first implementation unless that work currently depends on an unresolved external-code selection.",
+    "sha256": "3b8db9bf72faacf3b3085d0e38e41f02036b3a461ee3061328edd92ea907ba00"
+  }
+]

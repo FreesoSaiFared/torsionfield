@@ -1,2 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://torsionfield.de/</loc></url><url><loc>https://docs.torsionfield.de/</loc></url><url><loc>https://docs.torsionfield.de/getting-started</loc></url><url><loc>https://docs.torsionfield.de/product-completeness</loc></url><url><loc>https://docs.torsionfield.de/architecture</loc></url><url><loc>https://docs.torsionfield.de/killer-features</loc></url><url><loc>https://docs.torsionfield.de/prompt-commits</loc></url><url><loc>https://docs.torsionfield.de/incorporation</loc></url><url><loc>https://docs.torsionfield.de/source-map</loc></url><url><loc>https://docs.torsionfield.de/source-userscripts</loc></url><url><loc>https://docs.torsionfield.de/source-agents</loc></url><url><loc>https://docs.torsionfield.de/source-workflows</loc></url><url><loc>https://docs.torsionfield.de/source-capture</loc></url><url><loc>https://docs.torsionfield.de/adapters</loc></url><url><loc>https://docs.torsionfield.de/node-network</loc></url><url><loc>https://docs.torsionfield.de/security</loc></url><url><loc>https://docs.torsionfield.de/sites</loc></url><url><loc>https://docs.torsionfield.de/implementation</loc></url><url><loc>https://docs.torsionfield.de/glossary</loc></url><url><loc>https://torsionfield.de/scientific-evolution-protocol/</loc></url>  <url><loc>https://forksense.torsionfield.de/</loc></url>
-<url><loc>https://torsionfield.de/cloudflare/</loc></url><url><loc>https://docs.torsionfield.de/cloudflare-free-tier</loc></url><url><loc>https://spec.torsionfield.de/spec/implementation-evidence-2026-08-02.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://torsionfield.de/</loc></url>
+  <url><loc>https://torsionfield.de/cloudflare/</loc></url>
+  <url><loc>https://torsionfield.de/scientific-evolution-protocol/</loc></url>
+  <url><loc>https://spec.torsionfield.de/</loc></url>
+  <url><loc>https://forksense.torsionfield.de/</loc></url>
+  <url><loc>https://docs.torsionfield.de/</loc></url>
+  <url><loc>https://docs.torsionfield.de/getting-started</loc></url>
+  <url><loc>https://docs.torsionfield.de/product-completeness</loc></url>
+  <url><loc>https://docs.torsionfield.de/architecture</loc></url>
+  <url><loc>https://docs.torsionfield.de/killer-features</loc></url>
+  <url><loc>https://docs.torsionfield.de/adapters</loc></url>
+  <url><loc>https://docs.torsionfield.de/node-network</loc></url>
+  <url><loc>https://docs.torsionfield.de/security</loc></url>
+  <url><loc>https://docs.torsionfield.de/implementation</loc></url>
+  <url><loc>https://docs.torsionfield.de/prompt-commits</loc></url>
+  <url><loc>https://docs.torsionfield.de/incorporation</loc></url>
+  <url><loc>https://docs.torsionfield.de/source-map</loc></url>
+  <url><loc>https://docs.torsionfield.de/source-userscripts</loc></url>
+  <url><loc>https://docs.torsionfield.de/source-agents</loc></url>
+  <url><loc>https://docs.torsionfield.de/source-workflows</loc></url>
+  <url><loc>https://docs.torsionfield.de/source-capture</loc></url>
+  <url><loc>https://docs.torsionfield.de/cloudflare-free-tier</loc></url>
+  <url><loc>https://docs.torsionfield.de/sites</loc></url>
+  <url><loc>https://docs.torsionfield.de/glossary</loc></url>
+</urlset>

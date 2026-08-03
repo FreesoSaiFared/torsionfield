@@ -1,86 +1,23 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Architecture — Torsionfield Docs</title><meta name="description" content="The runtime planes, durable identities and evidence-based operation flow."><meta name="theme-color" content="#070b0a"><link rel="icon" href="/favicon.svg"><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/styles.css"></head><body><header class="top"><nav class="nav wrap"><a class="brand" href="https://torsionfield.de">TORSION<i>FIELD</i></a><div class="links"><a href="https://torsionfield.de/#product">Product</a><a href="https://torsionfield.de/#features">Features</a><a href="https://docs.torsionfield.de">Documentation</a><a class="pill" href="https://torsionfield.de/#network">Join alpha</a></div></nav></header><main class="docs wrap"><aside class="side"><input id="doc-search" class="doc-search" type="search" placeholder="Filter documentation"><a href="https://torsionfield.de">← Product site</a><a data-doc href="/" class="">Overview</a><a data-doc href="/getting-started" class="">Getting started</a><a data-doc href="/product-completeness" class="">Product completeness</a><a data-doc href="/architecture" class="">Architecture</a><a data-doc href="/killer-features" class="">Killer features</a><a data-doc href="/prompt-commits" class="">Prompt commits</a><a data-doc href="/incorporation" class="">Incorporation system</a><a data-doc href="/source-map" class="">Source map</a><a data-doc href="/source-userscripts" class="">Userscript managers</a><a data-doc href="/source-agents" class="">Browser agents</a><a data-doc href="/source-workflows" class="">Workflow engines</a><a data-doc href="/source-capture" class="">Capture & sessions</a><a data-doc href="/adapters" class="">Provider adapters</a><a data-doc href="/node-network" class="">Torsion Node & network</a><a data-doc href="/cloudflare-free-tier" class="active">Cloudflare free tier</a><a data-doc href="/security" class="">Security & authority</a><a data-doc href="/sites" class="">First-party sites</a><a data-doc href="/implementation" class="">Implementation closure</a><a data-doc href="/glossary" class="">Glossary</a></aside><article class="article"><span class="tag">FIELD GUIDE / VERIFIED 2 AUGUST 2026</span>
-<h1>Cloudflare Free-tier capability composition</h1>
-<p class="lead">A precise, dated map of the free primitives that can be combined into real applications - plus a reusable reasoning prompt that forces quota math, failure behavior and honest deployment boundaries.</p>
-<div class="callout"><b>Verification rule.</b> This snapshot is useful for design, not a permanent contract. Re-check the linked official pages before deployment, especially Workflows after 10 August 2026. Quotas use different windows and some invocations also consume Workers limits.</div>
-<h2>Capability and limit matrix</h2>
-<div class="table-scroll"><table class="matrix"><thead><tr><th>Service</th><th>Free-tier envelope</th><th>Best role</th><th>Primary source</th></tr></thead><tbody>
-<tr><th>Workers</th><td>100,000 requests/day; 10 ms CPU/request; 128 MB memory; 50 external and 1,000 internal subrequests; 6 simultaneous outgoing connections; 3 MB Worker size; 100 Workers; 5 Cron triggers; 20,000 static assets/version; 25 MiB/asset.</td><td>Stateless API, edge logic, auth gateway, HTML rewriting and service composition.</td><td><a href="https://developers.cloudflare.com/workers/platform/limits/">Official limits</a></td></tr>
-<tr><th>Pages</th><td>500 builds/month; 1 concurrent build; 20-minute build timeout; 100 custom domains/project; 20,000 files/site; 25 MiB/file. Pages Functions consume Workers quotas.</td><td>Static sites and client-heavy apps; move immutable files out of compute.</td><td><a href="https://developers.cloudflare.com/pages/platform/limits/">Official limits</a></td></tr>
-<tr><th>Workers KV</th><td>100,000 reads/day; 1,000 writes/day; 1,000 deletes/day; 1,000 lists/day; 1 GB stored; 25 MiB/value; same key at most one write/second.</td><td>Read-heavy config, feature flags, cached manifests and routing hints; not a transactional database.</td><td><a href="https://developers.cloudflare.com/kv/platform/limits/">Official limits</a></td></tr>
-<tr><th>D1</th><td>10 databases; 500 MB/database; 5 GB/account; 5 million rows read/day; 100,000 rows written/day; 50 queries/Worker invocation; 7-day Time Travel.</td><td>Relational metadata, membership, indexes, ledgers and small application state.</td><td><a href="https://developers.cloudflare.com/d1/platform/limits/">Official limits</a></td></tr>
-<tr><th>R2</th><td>10 GB-month storage; 1 million Class A operations/month; 10 million Class B operations/month; Internet egress is free.</td><td>Artifacts, uploads, datasets, static release bundles and content-addressed evidence.</td><td><a href="https://developers.cloudflare.com/r2/pricing/">Official limits</a></td></tr>
-<tr><th>Durable Objects</th><td>Free plan uses SQLite-backed objects; 100,000 requests/day; 13,000 GB-s/day; 5 million rows read/day; 100,000 rows written/day; 5 GB total. Unlimited objects, 100 classes, 10 GB/object, 32 MiB WebSocket message, default 30 s CPU/request.</td><td>Per-room/per-user coordination, WebSockets, locks, counters and strongly ordered state.</td><td><a href="https://developers.cloudflare.com/durable-objects/platform/limits/">Official limits</a></td></tr>
-<tr><th>Queues</th><td>10,000 operations/day; up to 10,000 queues; 24-hour retention; 128 KB/message; 100 retries; batch size 100; 5,000 messages/second; 25 GB backlog.</td><td>Asynchronous fan-out, retry isolation, ingestion buffers and quota smoothing.</td><td><a href="https://developers.cloudflare.com/queues/platform/limits/">Official limits</a></td></tr>
-<tr><th>Workflows</th><td>Free: 3-day state retention, 3,000 steps/day and 1 GB-month storage; 10 ms CPU/step, unlimited wall time/step, 1 MiB non-stream result. Pricing changes begin 10 August 2026, so re-verify.</td><td>Durable multi-step jobs, waits, retries, human gates and long-running orchestration.</td><td><a href="https://developers.cloudflare.com/workflows/platform/limits/">Official limits</a></td></tr>
-<tr><th>Workers AI</th><td>10,000 neurons/day on Free.</td><td>Small inference, embeddings, classification and routing when neuron budget is explicit.</td><td><a href="https://developers.cloudflare.com/workers-ai/platform/pricing/">Official limits</a></td></tr>
-</tbody></table></div>
-<h2>Composition patterns that earn their complexity</h2>
-<div class="grid">
-<div class="card"><b>Static-first application</b><p>Pages or Workers Static Assets + client-side state + a tiny Worker gateway. Spend compute only on authority boundaries and mutations.</p></div>
-<div class="card"><b>Relational command plane</b><p>Worker + D1 + Queues. Mutations enter an idempotent command table, then queues isolate retries and batch expensive work.</p></div>
-<div class="card"><b>Realtime rooms</b><p>Worker + Durable Object + WebSockets + D1 snapshots. One object owns ordering; D1 stores searchable durable summaries.</p></div>
-<div class="card"><b>Artifact network</b><p>R2 + D1 content index + signed Worker URLs. Large immutable evidence avoids database and egress pressure.</p></div>
-<div class="card"><b>Durable jobs</b><p>Workflow + Queue + R2. Workflow holds state and waits; Queue absorbs bursts; R2 stores intermediate and final artifacts.</p></div>
-<div class="card"><b>Budgeted intelligence</b><p>Workers AI + KV cache + D1 ledger + local/client fallback. A neuron ledger prevents inference from silently consuming the product.</p></div>
-</div>
-<h2>Important design traps</h2>
-<ul>
-<li>KV is eventually consistent and write-constrained; do not use one hot key as a global counter or queue.</li>
-<li>D1 limits are row-based. A broad scan can exhaust reads even when request count looks small.</li>
-<li>Workers CPU is not wall-clock duration. Waiting on network or Durable Objects is different from computation.</li>
-<li>Queue delivery and workflow retries require idempotency keys and an effect journal.</li>
-<li>Free-tier daily, monthly and per-object budgets cannot be treated as one interchangeable pool.</li>
-<li>Pages Functions and related server-side calls still consume Workers allocations.</li>
-</ul>
-<h2>ChatGPT 5.6 Sol - free-tier composition prompt</h2>
-<p>Paste app ideas and the current verified matrix into this prompt. It asks for multiple architectures rather than one reflexive stack, and requires every design to expose its quota assumptions and paid boundary.</p>
-<pre class="prompt-block">SYSTEM ROLE: CLOUDFLARE FREE-TIER COMPOSITION ARCHITECT
-
-You are given one or more app ideas. Use deep reasoning to discover non-obvious combinations of Cloudflare Free-tier services that make the ideas deployable, useful and maintainable without silently crossing into paid capacity.
-
-INPUT
-APP IDEAS:
-[PASTE IDEAS]
-
-USERS / REGIONS / TRAFFIC:
-[ESTIMATES OR UNKNOWN]
-
-DATA TYPES AND SENSITIVITY:
-[PUBLIC, PRIVATE, PERSONAL, LARGE BLOBS, REAL-TIME STATE]
-
-HARD CONSTRAINTS:
-[FREE-TIER ONLY, LATENCY, OFFLINE, CLIENT-SIDE CRYPTO, ETC.]
-
-VERIFIED LIMITS SNAPSHOT:
-[PASTE THE DATED MATRIX FROM TORSIONFIELD.DE/CLOUDFLARE]
-
-METHOD
-1. Decompose each idea into capabilities: static delivery, stateless compute, relational state, key-value configuration, blobs, coordination, queues, durable workflows, inference, identity and observability.
-2. Generate at least six materially different service graphs. Include conventional and surprising combinations. Do not rename the same graph.
-3. For every graph, map every capability to a specific Cloudflare service and state why that service fits.
-4. Calculate a quota ledger for a normal day, peak day and failure/retry day. Show requests, CPU, reads, writes, storage, queue operations, workflow steps, AI neurons and build counts where relevant.
-5. Mark each number as VERIFIED LIMIT, USER ASSUMPTION or DERIVED ESTIMATE. Never invent a limit.
-6. Specify consistency, idempotency, deduplication, hot-key avoidance, retry and backpressure behavior.
-7. Specify graceful degradation before a quota is exhausted. Prefer static/client-side/local execution when it preserves the product.
-8. Classify data by sensitivity. Minimize server-side plaintext. Explain encryption, key ownership, retention and deletion.
-9. Give a concrete repository/deployment layout: Workers, Pages/assets, D1 migrations, KV namespaces, R2 buckets, Durable Object classes, Queues, Workflows, tests and wrangler configuration.
-10. Define acceptance tests and observability that prove the design stays within its quota envelope.
-11. Identify any capability that cannot honestly fit the Free tier and name the smallest paid or non-Cloudflare escape hatch.
-12. Rank the designs by product fit, quota headroom, failure isolation, operational complexity, migration cost and novelty.
-
-OUTPUT
-A. Capability decomposition.
-B. Six or more candidate service graphs.
-C. Quota ledger for each graph.
-D. Failure and degradation plan.
-E. Security and data-boundary plan.
-F. Minimum viable Cloudflare architecture.
-G. Creative stretch architecture.
-H. Exact deployment file tree and first implementation packet.
-I. Rejected combinations and why.
-J. Facts that must be re-verified against current official documentation before deployment.
-
-Treat Cloudflare services as composable primitives, not a checklist. Optimize for a useful application, not for consuming every free service.</pre>
-<p><a class="btn primary" href="https://torsionfield.de/cloudflare/chatgpt56-sol-prompt.txt" download>Download the prompt</a> <a class="btn" href="https://docs.torsionfield.de/cloudflare-free-tier">Documentation version</a></p>
-<h2>Torsionfield application</h2>
-<p>Torsionfield can use this method to generate participant-owned control planes without pretending Cloudflare is an infinite distributed computer. Static releases belong in assets/R2, relational membership in D1, short-lived routing hints in KV, ordered rooms in Durable Objects, burst isolation in Queues and long waits in Workflows. Each project still needs a quota ledger and graceful local fallback.</p></article></main><footer class="footer"><div class="wrap"><b>Torsionfield Runtime</b><p>Local-first browser automation, userscripts, agents, workflows and peer capabilities. Alpha product architecture — 31 July 2026.</p></div></footer><script src="/app.js" defer></script></body></html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Participant Edge / Cloudflare — Torsionfield Docs</title><meta name="description" content="Cloudflare is the first reference provider for participant-owned edge cells, not the identity of the architecture.">
+<meta name="theme-color" content="#07100c"><link rel="canonical" href="https://docs.torsionfield.de/cloudflare-free-tier">
+<link rel="icon" href="/favicon.svg"><link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/styles.css"></head><body><header class="top"><nav class="nav wrap">
+<a class="brand" href="https://torsionfield.de/">TORSION<i>FIELD</i></a>
+<button class="menu-button" type="button" aria-label="Open navigation" data-menu-button>Menu</button>
+<div class="links" data-menu>
+<a href="https://torsionfield.de/#runtime">Runtime</a>
+<a href="https://torsionfield.de/#first-release">First release</a>
+<a href="https://spec.torsionfield.de/">Specification</a>
+<a href="https://docs.torsionfield.de/">Documentation</a>
+<a class="pill" href="https://torsionfield.de/#network">Join alpha</a>
+</div></nav></header><main class="docs wrap"><aside class="side"><input id="doc-search" class="doc-search" type="search" placeholder="Filter documentation"><a href="https://torsionfield.de/">← Product site</a><a data-doc href="/">Overview</a><a data-doc href="/getting-started">Getting started</a><a data-doc href="/product-completeness">Product completeness</a><a data-doc href="/architecture">Architecture</a><a data-doc href="/killer-features">Capabilities</a><a data-doc href="/adapters">Provider adapters</a><a data-doc href="/node-network">Torsion Node and network</a><a data-doc href="/security">Authority and evidence</a><a data-doc href="/implementation">Implementation path</a><a data-doc href="/prompt-commits">Prompt commits</a><a data-doc href="/incorporation">External source reuse</a><a data-doc href="/source-map">Specification map</a><a data-doc href="/source-userscripts">Userscript foundation</a><a data-doc href="/source-agents">Browser agents</a><a data-doc href="/source-workflows">Workflow representations</a><a data-doc href="/source-capture">Capture and recovery</a><a data-doc href="/cloudflare-free-tier" class="active">Participant Edge / Cloudflare</a><a data-doc href="/sites">First-party sites</a><a data-doc href="/glossary">Glossary</a></aside><article class="article"><span class="tag">DOCUMENTATION · SPEC v3.2</span><h1>Participant Edge / Cloudflare</h1><p class="lead">Cloudflare is the first reference provider for participant-owned edge cells, not the identity of the architecture.</p>
+<h2>What a cell does</h2><p>A participant edge cell can provide one stable gateway, encrypted object persistence, signed-message receipt, buffering, static diagnostics, release-state reporting, export, health, and local-node inbox/outbox behavior.</p>
+<h2>What remains local</h2><p>Root identity keys, provider cookies, model credentials, project plaintext, unrestricted files/processes, high-authority signing, and user acceptance.</p>
+<h2>First bounded pilot</h2><p>One Gateway Worker, one D1 schema for encrypted objects and operational metadata, one diagnostics interface, cell identity endpoint, signed-message receipt, export, health, and signed deployment declaration.</p>
+<h2>Explicit exclusions</h2><p>No hidden free-tier quota pooling, no global API keys or passwords, no participant model credentials, no unrestricted remote code deployment, and no claim of trusted execution.</p>
+<p><a href="https://spec.torsionfield.de/#section-37">Specification §37 →</a> · <a href="https://torsionfield.de/cloudflare/">Open the public edge-plane page →</a></p></article></main><footer class="footer"><div class="wrap footer-grid">
+<div><b>Torsionfield Runtime</b><p>A ScriptCat-first programmable browser runtime with local execution, explicit authority, observable effects, recovery, and optional participant-owned edge infrastructure.</p></div>
+<div><a href="https://spec.torsionfield.de/">Specification v3.2</a><a href="https://docs.torsionfield.de/">Documentation</a><a href="https://github.com/FreesoSaiFared/torsionfield">Source</a></div>
+</div></footer><script src="/app.js" defer></script></body></html>

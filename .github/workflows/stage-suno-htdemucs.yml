@@ -1,0 +1,46 @@
+name: Stage SUNO HTDemucs model
+
+on:
+  push:
+    paths:
+      - '.github/workflows/stage-suno-htdemucs.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download pinned official checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p payload
+          url='https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th'
+          curl --fail --location --retry 5 --retry-all-errors --output payload/955717e8-8726e21a.th "$url"
+          sha256sum payload/955717e8-8726e21a.th | tee payload/SHA256SUMS
+          full=$(cut -d' ' -f1 payload/SHA256SUMS)
+          test "${full:0:8}" = '8726e21a'
+          printf "models: ['955717e8']\n" > payload/htdemucs.yaml
+          cat > payload/PROVENANCE.txt <<'EOF'
+          component: Demucs HTDemucs v4 default checkpoint
+          signature: 955717e8
+          filename: 955717e8-8726e21a.th
+          source: https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th
+          upstream_repo: https://github.com/facebookresearch/demucs
+          demucs_package_target: 4.0.1
+          verification: SHA-256 prefix must equal 8726e21a
+          EOF
+          cat > payload/LICENSE.txt <<'EOF'
+          Demucs code is distributed under the MIT License by Meta Platforms, Inc. and affiliates.
+          See upstream license: https://github.com/facebookresearch/demucs/blob/main/LICENSE
+          This bundle preserves upstream provenance and does not modify the checkpoint.
+          EOF
+      - name: Upload staged checkpoint
+        uses: actions/upload-artifact@v4
+        with:
+          name: suno-htdemucs-955717e8
+          path: payload/
+          if-no-files-found: error
+          retention-days: 7

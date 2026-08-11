@@ -1,0 +1,35 @@
+name: Anything Analyzer WPR converter
+
+on:
+  push:
+    branches:
+      - chatgpt/anything-analyzer-wpr-20260811
+    paths:
+      - 'tools/anything-analyzer-replay/**'
+      - '.github/workflows/anything-analyzer-replay.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/anything-analyzer-replay
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.12'
+          cache: false
+      - name: Download locked dependencies
+        run: go mod download
+      - name: Verify module graph is already canonical
+        run: |
+          go mod tidy
+          git diff --exit-code -- go.mod go.sum
+      - name: Verify dependency checksums
+        run: go mod verify
+      - name: Test converter against WprGo reader and matcher
+        run: go test -v ./...
+      - name: Build aa2wpr
+        run: go build -o aa2wpr .

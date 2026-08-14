@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Torsionfield Autogenic Browser Bridge",
-  "version": "0.1.0",
-  "description": "Persistent Chrome-side bridge to the privileged Torsionfield resident.",
+  "version": "0.2.0",
+  "description": "Persistent Chrome-side bridge from ChatGPT/ScriptCat to the privileged Torsionfield resident.",
   "permissions": ["tabs", "scripting", "storage", "userScripts"],
   "host_permissions": ["http://127.0.0.1:17373/*", "https://chatgpt.com/*", "https://chat.openai.com/*"],
   "background": {"service_worker": "service_worker.js", "type": "module"},

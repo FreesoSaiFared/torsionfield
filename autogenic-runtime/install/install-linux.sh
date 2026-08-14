@@ -7,6 +7,7 @@ STATE=/var/lib/torsionfield
 install -d -m 0755 "$ROOT/resident" "$ROOT/extension" "$ROOT/userscript" "$STATE"
 install -m 0755 "$SRC/resident/tf_resident.py" "$ROOT/resident/tf_resident.py"
 install -m 0755 "$SRC/resident/browser_recover.mjs" "$ROOT/resident/browser_recover.mjs"
+install -m 0755 "$SRC/resident/browser_control.mjs" "$ROOT/resident/browser_control.mjs"
 cp "$SRC/extension/"*.js "$SRC/extension/manifest.json" "$ROOT/extension/"
 cp "$SRC/userscript/torsionfield-autogenic.user.js" "$ROOT/userscript/"
 python3 - <<'PY'

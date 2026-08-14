@@ -4,6 +4,9 @@ const ALLOWED_PATHS = new Set([
   '/v1/health', '/v1/exec', '/v1/process/start', '/v1/process/kill', '/v1/process/list',
   '/v1/fs/read', '/v1/fs/write', '/v1/fs/delete',
   '/v1/browser/launch', '/v1/browser/restart', '/v1/browser/status',
+  '/v1/browser/targets', '/v1/browser/open', '/v1/browser/close', '/v1/browser/activate',
+  '/v1/browser/navigate', '/v1/browser/reload', '/v1/browser/evaluate', '/v1/browser/screenshot',
+  '/v1/userscript/refresh',
 ]);
 
 function allowedSender(sender) {

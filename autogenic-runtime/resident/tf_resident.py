@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlopen
 
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 17373
 
@@ -196,6 +196,41 @@ def find_node():
         if path.exists():
             return str(path)
     return None
+
+
+def browser_control(operation, payload):
+    node = find_node()
+    helper = Path(__file__).resolve().with_name("browser_control.mjs")
+    if not node:
+        raise RuntimeError("node-not-found")
+    if not helper.exists():
+        raise RuntimeError(f"browser-control-helper-missing: {helper}")
+    spec = browser_status()
+    if not spec.get("cdp_ready"):
+        raise RuntimeError("managed browser CDP is not ready")
+    body = dict(payload or {})
+    if operation not in {"targets", "open"} and not any(body.get(key) for key in ("target_id", "target_url", "url_contains", "title_contains")):
+        if spec.get("url"):
+            body["target_url"] = spec["url"]
+    request = {"op": operation, "port": int(spec.get("debug_port") or 9222), "payload": body}
+    timeout = max(5.0, float(body.get("timeout") or body.get("timeout_seconds") or 60.0))
+    cp = subprocess.run([node, str(helper)], input=json.dumps(request), text=True, capture_output=True, timeout=timeout)
+    parsed = None
+    for stream in (cp.stdout, cp.stderr):
+        for line in reversed([line.strip() for line in stream.splitlines() if line.strip()]):
+            try:
+                candidate = json.loads(line)
+                if isinstance(candidate, dict):
+                    parsed = candidate
+                    break
+            except Exception:
+                continue
+        if parsed is not None:
+            break
+    if cp.returncode != 0 or not isinstance(parsed, dict) or not parsed.get("ok"):
+        detail = parsed.get("error") if isinstance(parsed, dict) else (cp.stderr.strip() or cp.stdout.strip())
+        raise RuntimeError(f"browser-control {operation} failed: {detail}")
+    return parsed.get("result")
 
 
 def autogenic_recover(spec):
@@ -523,6 +558,31 @@ class Handler(BaseHTTPRequestHandler):
             return browser_restart(payload)
         if path == "/v1/browser/status":
             return browser_status()
+        if path == "/v1/browser/targets":
+            return browser_control("targets", payload)
+        if path == "/v1/browser/open":
+            return browser_control("open", payload)
+        if path == "/v1/browser/close":
+            return browser_control("close", payload)
+        if path == "/v1/browser/activate":
+            return browser_control("activate", payload)
+        if path == "/v1/browser/navigate":
+            return browser_control("navigate", payload)
+        if path == "/v1/browser/reload":
+            return browser_control("reload", payload)
+        if path == "/v1/browser/evaluate":
+            return browser_control("evaluate", payload)
+        if path == "/v1/browser/screenshot":
+            return browser_control("screenshot", payload)
+        if path == "/v1/userscript/refresh":
+            spec = browser_status()
+            recovery = autogenic_recover(spec)
+            state = STATE.load_browser()
+            state["autogenic_recovery"] = recovery
+            STATE.save_browser(state)
+            if not recovery.get("ok"):
+                raise RuntimeError(f"userscript refresh failed: {recovery}")
+            return recovery
         raise ValueError(f"unknown operation: {path}")
 
 

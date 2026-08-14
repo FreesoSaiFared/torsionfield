@@ -34,6 +34,9 @@ The resident bearer credential is deliberately absent from userscript source. It
 - `browser.launch`
 - `browser.restart`
 - `browser.status`
+- `browser.targets` / `browser.open` / `browser.close` / `browser.activate`
+- `browser.navigate` / `browser.reload` / `browser.evaluate` / `browser.screenshot`
+- `userscript.refresh`
 
 Browser launch/restart on ChatGPT URLs runs the resident-owned `browser_recover.mjs` helper. It uses raw CDP to restore ScriptCat, its Chrome 138+ `userScriptsAccess` gate, the autogenic userscript, the exact ChatGPT target and the elevated-resident page handshake.
 
@@ -86,7 +89,7 @@ TF_RESIDENT_TOKEN=... python3 tests/smoke.py
 Live authenticated full-loop acceptance, against an already-running dedicated browser:
 
 ```bash
-node tests/live_markup_loop.mjs --port 9448 --version 0.2.2
+node tests/live_markup_loop.mjs --port 9448 --version 0.3.0
 ```
 
 That test creates a fresh ChatGPT conversation, asks the model to emit one unique benign `TF_ACTION`, and requires exactly one automatic `TORSIONFIELD MACHINE RESULT /1` turn carrying the same machine stdout marker.
@@ -111,5 +114,4 @@ Two live editor/runtime failures discovered during acceptance were repaired rath
 Not yet claimed:
 
 - physical Windows reboot acceptance of at-logon recovery;
-- a generic typed CDP/tab/evaluate action family exposed directly as `TF_ACTION` operations. Raw CDP is already resident-owned internally through the recovery helper, and arbitrary local commands are available through `exec`;
 - transplantation of every useful donor-environment capability. Those are implementation extensions, not permission limits.

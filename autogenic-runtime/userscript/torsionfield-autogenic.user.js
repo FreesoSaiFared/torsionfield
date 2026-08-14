@@ -1,26 +1,50 @@
 // ==UserScript==
 // @name         Torsionfield Autogenic Runtime Bridge
 // @namespace    https://torsionfield.de/
-// @version      0.1.1
-// @description  Connect ChatGPT's page/session to the local privileged Torsionfield resident.
+// @version      0.2.0
+// @description  Connect ChatGPT's page/session to the privileged Torsionfield browser bridge and resident.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
-// @grant        GM_xmlhttpRequest
-// @connect      127.0.0.1
+// @grant        none
 // @run-at       document-start
 // ==/UserScript==
 
 (() => {
   'use strict';
-  const VERSION='0.1.1', RESIDENT='http://127.0.0.1:17373', TOKEN='__TF_RESIDENT_TOKEN__';
+  const VERSION='0.2.0';
+  const CALL='TORSIONFIELD_PAGE_CALL', RESULT='TORSIONFIELD_PAGE_RESULT', PING='TORSIONFIELD_BRIDGE_PING', READY='TORSIONFIELD_BRIDGE_READY';
   const HANDOFF_PATTERNS=[/WHAT I NEED FROM YOU NOW/i,/\bType CONTINUE\b/i,/\b(?:please\s+)?run (?:this|the following) command\b/i,/\bopen (?:DevTools|chrome:\/\/extensions)\b/i,/\breload (?:the )?(?:extension|userscript|browser|Chrome)\b/i,/\brestart (?:the )?(?:browser|Chrome|Chromium)\b/i,/\binstall (?:this|the )?userscript\b/i,/\bsend me (?:the )?(?:log|output|result)\b/i];
   const ACTION_RE=/\[\[TF_ACTION\/1\s*([\s\S]*?)\s*\[\[\/TF_ACTION\]\]/g;
-  const processed=new WeakSet(); let recoveryDepth=0,running=false,observer=null;
+  const processed=new WeakSet(); let recoveryDepth=0,running=false,observer=null,bridgeReady=false,bridgeWait=null;
 
-  function residentCall(path,payload={}){return new Promise((resolve,reject)=>GM_xmlhttpRequest({method:'POST',url:`${RESIDENT}${path}`,headers:{Authorization:`Bearer ${TOKEN}`,'Content-Type':'application/json'},data:JSON.stringify(payload),timeout:300000,onload(response){try{const value=JSON.parse(response.responseText||'{}');if(response.status<200||response.status>=300||!value.ok)return reject(new Error(value.detail||value.error||`resident HTTP ${response.status}`));resolve(value.result);}catch(error){reject(error);}},onerror:()=>reject(new Error('resident network error')),ontimeout:()=>reject(new Error('resident timeout'))}));}
-  function health(){return new Promise((resolve,reject)=>GM_xmlhttpRequest({method:'GET',url:`${RESIDENT}/v1/health`,timeout:5000,onload:r=>{try{const value=JSON.parse(r.responseText||'{}');if(!value.ok)return reject(new Error(value.error||'resident unhealthy'));resolve(value);}catch(e){reject(e);}},onerror:()=>reject(new Error('resident unavailable')),ontimeout:()=>reject(new Error('resident health timeout'))}));}
+  function id(){return globalThis.crypto?.randomUUID?.()||`tf-${Date.now()}-${Math.random().toString(16).slice(2)}`;}
   function root(){return document.documentElement;}
   function mark(name,value){const node=root();if(node)node.dataset[name]=String(value);}
+  function awaitBridge(timeoutMs=5000){
+    if(bridgeReady)return Promise.resolve(true);
+    if(bridgeWait)return bridgeWait;
+    bridgeWait=new Promise((resolve,reject)=>{
+      let done=false;
+      const finish=(ok,error)=>{if(done)return;done=true;clearInterval(pulse);clearTimeout(timer);window.removeEventListener('message',onMessage);bridgeWait=null;ok?resolve(true):reject(error)};
+      const onMessage=(event)=>{if(event.source===window&&event.data?.channel===READY){bridgeReady=true;mark('tfExtensionBridge','ready');finish(true);}};
+      window.addEventListener('message',onMessage);
+      const ping=()=>window.postMessage({channel:PING},'*');
+      const pulse=setInterval(ping,200); const timer=setTimeout(()=>finish(false,new Error('Torsionfield extension bridge unavailable')),timeoutMs); ping();
+    });
+    return bridgeWait;
+  }
+  async function residentCall(path,args={},timeoutMs=300000){
+    await awaitBridge();
+    return new Promise((resolve,reject)=>{
+      const requestId=id(); let settled=false;
+      const finish=(ok,value)=>{if(settled)return;settled=true;clearTimeout(timer);window.removeEventListener('message',onMessage);ok?resolve(value):reject(new Error(String(value||'resident bridge error')))};
+      const onMessage=(event)=>{const d=event.data;if(event.source!==window||d?.channel!==RESULT||d.id!==requestId)return;finish(Boolean(d.ok),d.ok?d.result:d.error);};
+      const timer=setTimeout(()=>finish(false,`resident bridge timeout after ${timeoutMs}ms`),timeoutMs);
+      window.addEventListener('message',onMessage);
+      window.postMessage({channel:CALL,id:requestId,path,args},'*');
+    });
+  }
+  async function health(){return residentCall('/v1/health',{},5000);}
   async function handshake(){mark('tfAutogenic','connecting');mark('tfAutogenicVersion',VERSION);try{const h=await health();mark('tfAutogenic','ready');mark('tfResidentPid',h.pid||'');mark('tfResidentElevated',Boolean(h.elevated));return h;}catch(error){mark('tfAutogenic','resident-error');mark('tfResidentError',String(error?.message||error).slice(0,300));throw error;}}
   function composer(){return document.querySelector('#prompt-textarea, form textarea, form [contenteditable="true"][role="textbox"], form [contenteditable="true"]');}
   function composerText(node){return !node?'':typeof node.value==='string'?node.value:(node.innerText||node.textContent||'');}

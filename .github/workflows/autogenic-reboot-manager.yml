@@ -29,6 +29,7 @@ jobs:
           python -m py_compile autogenic-runtime/reboot-manager/browser_bridge.py
           python -m py_compile autogenic-runtime/reboot-manager/browser_roots.py
           python -m py_compile autogenic-runtime/reboot-manager/reboot_supervisor.py
+          python -m py_compile autogenic-runtime/reboot-manager/reboot_console.py
           python -m py_compile autogenic-runtime/tests/test_reboot_manager.py
           python -m py_compile autogenic-runtime/tests/test_browser_bridge.py
           python -m py_compile autogenic-runtime/tests/test_browser_roots.py
@@ -44,3 +45,5 @@ jobs:
         run: python autogenic-runtime/tests/test_browser_roots.py
       - name: Strict supervisor self-test
         run: python autogenic-runtime/reboot-manager/reboot_supervisor.py --self-test
+      - name: Management console self-test
+        run: python autogenic-runtime/reboot-manager/reboot_console.py --self-test

@@ -116,16 +116,25 @@ async function servedUserScriptVersion() {
 }
 
 async function openInstaller(browser) {
-  const original = await createTarget(browser, userScriptUrl);
-  const deadline = Date.now() + 12000;
+  const deadline = Date.now() + 35000;
+  let attempts = 0;
   while (Date.now() < deadline) {
-    const list = await targets();
-    const current = list.find((item) => item.id === original.id);
-    if (current?.url?.includes('/src/install.html?url=') && current.url.includes(encodeURI(userScriptUrl))) return current;
-    if (current?.url?.includes('/src/install.html?url=')) return current;
-    await sleep(100);
+    attempts += 1;
+    const original = await createTarget(browser, userScriptUrl);
+    const attemptDeadline = Math.min(deadline, Date.now() + 4500);
+    while (Date.now() < attemptDeadline) {
+      const list = await targets();
+      const current = list.find((item) => item.id === original.id);
+      if (current?.url?.includes('/src/install.html?url=')) {
+        current.interceptAttempts = attempts;
+        return current;
+      }
+      await sleep(100);
+    }
+    await closeTarget(browser, original);
+    await sleep(Math.min(1500, 250 * attempts));
   }
-  throw new Error('ScriptCat did not intercept the resident .user.js URL');
+  throw new Error(`ScriptCat did not intercept the resident .user.js URL after ${attempts} bounded attempts`);
 }
 
 function extensionIdFromInstaller(installer) {
@@ -157,6 +166,24 @@ async function withExtensionsPage(browser, fn) {
     client.close();
     await closeTarget(browser, page);
   }
+}
+
+async function extensionsInfo(browser) {
+  return withExtensionsPage(browser, async (page) => {
+    const expression = `(async()=>await new Promise((resolve,reject)=>chrome.developerPrivate.getExtensionsInfo({includeDisabled:true,includeTerminated:true},(items)=>{const e=chrome.runtime.lastError;if(e)reject(new Error(e.message));else resolve(items.map(info=>({id:info.id,name:info.name,state:info.state,userScriptsAccess:info.userScriptsAccess||null,disableReasons:info.disableReasons||null})));})))()`;
+    const result = await page.call('Runtime.evaluate', { expression, awaitPromise: true, returnByValue: true });
+    if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails));
+    return result.result?.value || [];
+  });
+}
+
+async function reloadExtension(browser, id) {
+  return withExtensionsPage(browser, async (page) => {
+    const expression = `(async()=>await new Promise((resolve,reject)=>chrome.developerPrivate.reload(${JSON.stringify(id)},{failQuietly:true,populateErrorForUnpacked:true},(loadError)=>loadError?reject(new Error(loadError.error||loadError.message||JSON.stringify(loadError))):resolve(true))))()`;
+    const result = await page.call('Runtime.evaluate', { expression, awaitPromise: true, returnByValue: true });
+    if (result.exceptionDetails) throw new Error(JSON.stringify(result.exceptionDetails));
+    return Boolean(result.result?.value);
+  });
 }
 
 async function extensionInfo(browser, id) {
@@ -234,18 +261,29 @@ async function main() {
   const served = await servedUserScriptVersion();
   if (!served.version) throw new Error('resident userscript has no @version');
   const { client: browser, version: browserVersion } = await browserClient();
-  let installer = await openInstaller(browser);
-  const scriptCatId = extensionIdFromInstaller(installer);
-  let scInfo = await extensionInfo(browser, scriptCatId);
-  if (!scInfo.userScriptsAccess?.isEnabled) {
-    scInfo = await enableUserScripts(browser, scriptCatId);
-    await closeTarget(browser, installer);
-    installer = await openInstaller(browser);
-  }
+  const extensionList = await extensionsInfo(browser);
+  let scInfo = extensionList.find((item) => /ScriptCat/i.test(String(item.name || '')));
+  if (!scInfo) throw new Error(`ScriptCat extension not present: ${JSON.stringify(extensionList.map(x=>({id:x.id,name:x.name,state:x.state})))}`);
+  const scriptCatId = scInfo.id;
+  if (!scInfo.userScriptsAccess?.isEnabled) scInfo = await enableUserScripts(browser, scriptCatId);
 
-  let worker = await waitForScriptCatWorker(scriptCatId, 12000);
-  if (!worker) throw new Error('ScriptCat service worker did not wake');
-  let registry = await scriptCatRegistry(worker);
+  await reloadExtension(browser, scriptCatId);
+  let worker = await waitForScriptCatWorker(scriptCatId, 15000);
+  if (!worker) throw new Error('ScriptCat service worker did not wake after deterministic reload');
+  let registry = null;
+  const registryDeadline = Date.now() + 15000;
+  while (Date.now() < registryDeadline) {
+    try {
+      registry = await scriptCatRegistry(worker);
+      if (registry?.userScriptsAvailable) break;
+    } catch (_) {}
+    await sleep(200);
+    worker = await waitForScriptCatWorker(scriptCatId, 3000) || worker;
+  }
+  if (!registry?.userScriptsAvailable) throw new Error('ScriptCat worker woke but chrome.userScripts never became available');
+  await sleep(600);
+  let installer = await openInstaller(browser);
+  scInfo = await extensionInfo(browser, scriptCatId);
 
   let chat = await findOrCreateChat(browser);
   let handshake = await reloadAndWait(chat, served.version, 10000);

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Torsionfield Autogenic Runtime Bridge
 // @namespace    https://torsionfield.de/
-// @version      0.2.0
+// @version      0.2.1
 // @description  Connect ChatGPT's page/session to the privileged Torsionfield browser bridge and resident.
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -11,7 +11,7 @@
 
 (() => {
   'use strict';
-  const VERSION='0.2.0';
+  const VERSION='0.2.1';
   const CALL='TORSIONFIELD_PAGE_CALL', RESULT='TORSIONFIELD_PAGE_RESULT', PING='TORSIONFIELD_BRIDGE_PING', READY='TORSIONFIELD_BRIDGE_READY';
   const HANDOFF_PATTERNS=[/WHAT I NEED FROM YOU NOW/i,/\bType CONTINUE\b/i,/\b(?:please\s+)?run (?:this|the following) command\b/i,/\bopen (?:DevTools|chrome:\/\/extensions)\b/i,/\breload (?:the )?(?:extension|userscript|browser|Chrome)\b/i,/\brestart (?:the )?(?:browser|Chrome|Chromium)\b/i,/\binstall (?:this|the )?userscript\b/i,/\bsend me (?:the )?(?:log|output|result)\b/i];
   const ACTION_RE=/\[\[TF_ACTION\/1\s*([\s\S]*?)\s*\[\[\/TF_ACTION\]\]/g;
@@ -20,7 +20,7 @@
   function id(){return globalThis.crypto?.randomUUID?.()||`tf-${Date.now()}-${Math.random().toString(16).slice(2)}`;}
   function root(){return document.documentElement;}
   function mark(name,value){const node=root();if(node)node.dataset[name]=String(value);}
-  function awaitBridge(timeoutMs=5000){
+  function awaitBridge(timeoutMs=10000){
     if(bridgeReady)return Promise.resolve(true);
     if(bridgeWait)return bridgeWait;
     bridgeWait=new Promise((resolve,reject)=>{
@@ -44,8 +44,8 @@
       window.postMessage({channel:CALL,id:requestId,path,args},'*');
     });
   }
-  async function health(){return residentCall('/v1/health',{},5000);}
-  async function handshake(){mark('tfAutogenic','connecting');mark('tfAutogenicVersion',VERSION);try{const h=await health();mark('tfAutogenic','ready');mark('tfResidentPid',h.pid||'');mark('tfResidentElevated',Boolean(h.elevated));return h;}catch(error){mark('tfAutogenic','resident-error');mark('tfResidentError',String(error?.message||error).slice(0,300));throw error;}}
+  async function health(){return residentCall('/v1/health',{},20000);}
+  async function handshake(){mark('tfAutogenic','connecting');mark('tfAutogenicVersion',VERSION);let lastError=null;for(const delay of [0,500,1500]){if(delay)await new Promise(r=>setTimeout(r,delay));try{const h=await health();mark('tfAutogenic','ready');mark('tfResidentPid',h.pid||'');mark('tfResidentElevated',Boolean(h.elevated));const node=root();if(node)delete node.dataset.tfResidentError;return h;}catch(error){lastError=error;mark('tfAutogenic','connecting');}}mark('tfAutogenic','resident-error');mark('tfResidentError',String(lastError?.message||lastError||'resident unavailable').slice(0,300));throw lastError;}
   function composer(){return document.querySelector('#prompt-textarea, form textarea, form [contenteditable="true"][role="textbox"], form [contenteditable="true"]');}
   function composerText(node){return !node?'':typeof node.value==='string'?node.value:(node.innerText||node.textContent||'');}
   function setComposer(text){const node=composer();if(!node)throw new Error('ChatGPT composer not found');if(composerText(node).trim())throw new Error('HUMAN_DRAFT_PRESENT');node.focus();if(typeof node.value==='string'){const proto=Object.getPrototypeOf(node),descriptor=proto&&Object.getOwnPropertyDescriptor(proto,'value');if(descriptor?.set)descriptor.set.call(node,text);else node.value=text;}else node.textContent=text;try{node.dispatchEvent(new InputEvent('input',{bubbles:true,composed:true,inputType:'insertText',data:text}));}catch(_){node.dispatchEvent(new Event('input',{bubbles:true}));}return node;}

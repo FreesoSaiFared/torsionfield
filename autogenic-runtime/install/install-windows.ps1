@@ -28,7 +28,8 @@ Copy-Item -Force (Join-Path $Source 'userscript\torsionfield-autogenic.user.js')
 $TokenPath = Join-Path $State 'token'
 if (-not (Test-Path $TokenPath)) {
   $bytes = New-Object byte[] 48
-  [Security.Cryptography.RandomNumberGenerator]::Fill($bytes)
+  $rng = [Security.Cryptography.RandomNumberGenerator]::Create()
+  try { $rng.GetBytes($bytes) } finally { $rng.Dispose() }
   $token = [Convert]::ToBase64String($bytes).TrimEnd('=').Replace('+','-').Replace('/','_')
   [IO.File]::WriteAllText($TokenPath, $token + [Environment]::NewLine, [Text.UTF8Encoding]::new($false))
 }

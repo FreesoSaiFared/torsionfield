@@ -10,6 +10,15 @@ VERSION = "0.1.0"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 17373
 
+def is_elevated() -> bool:
+    if os.name == "nt":
+        try:
+            import ctypes
+            return bool(ctypes.windll.shell32.IsUserAnAdmin())
+        except Exception:
+            return False
+    return bool(hasattr(os, "geteuid") and os.geteuid() == 0)
+
 def default_state_dir() -> Path:
     override = os.environ.get("TF_RESIDENT_STATE")
     if override: return Path(override).expanduser().resolve()
@@ -66,7 +75,7 @@ def find_chrome(explicit=None):
     if os.name=="nt":
         for name in ("PROGRAMFILES","PROGRAMFILES(X86)","LOCALAPPDATA"):
             root=os.environ.get(name)
-            if root: candidates += [str(Path(root)/"Google/Chrome/Application/chrome.exe"),str(Path(root)/"Chromium/Application/chrome.exe"),str(Path(root)/"Microsoft/Edge/Application/msedge.exe")]
+            if root: candidates += [str(Path(root)/"Google/Chrome/Application/chrome.exe"),str(Path(root)/"Google/Chrome SxS/Application/chrome.exe"),str(Path(root)/"Chromium/Application/chrome.exe"),str(Path(root)/"Microsoft/Edge/Application/msedge.exe")]
     else: candidates += ["chromium","chromium-browser","google-chrome","google-chrome-stable"]
     from shutil import which
     for candidate in filter(None,candidates):
@@ -121,7 +130,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_OPTIONS(self): self.send_response(204); self._cors(); self.end_headers()
     def do_GET(self):
         path=urlparse(self.path).path
-        if path=="/v1/health": return self._send(200,{"ok":True,"name":"torsionfield-resident","version":VERSION,"pid":os.getpid(),"platform":platform.platform(),"elevated":(os.name=="nt" or (hasattr(os,"geteuid") and os.geteuid()==0))})
+        if path=="/v1/health": return self._send(200,{"ok":True,"name":"torsionfield-resident","version":VERSION,"pid":os.getpid(),"platform":platform.platform(),"elevated":is_elevated()})
         if path=="/v1/state":
             if not self._authorized(): return self._send(401,{"ok":False,"error":"unauthorized"})
             return self._send(200,{"ok":True,"browser":STATE.load_browser(),"state_dir":str(STATE.state_dir)})

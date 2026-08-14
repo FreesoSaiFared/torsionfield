@@ -1,0 +1,56 @@
+name: Autogenic Reboot Manager v6
+
+on:
+  push:
+    branches:
+      - chatgpt/autogenic-runtime-v0
+    paths:
+      - 'autogenic-runtime/reboot-manager/**'
+      - 'autogenic-runtime/tests/test_reboot_manager.py'
+      - 'autogenic-runtime/tests/test_browser_bridge.py'
+      - 'autogenic-runtime/tests/test_browser_roots.py'
+      - '.github/workflows/autogenic-reboot-manager-v6.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-v6:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Python compile
+        run: |
+          python -m py_compile autogenic-runtime/reboot-manager/tf_reboot_manager.py
+          python -m py_compile autogenic-runtime/reboot-manager/browser_bridge.py
+          python -m py_compile autogenic-runtime/reboot-manager/browser_roots.py
+          python -m py_compile autogenic-runtime/reboot-manager/browser_roots_v3.py
+          python -m py_compile autogenic-runtime/reboot-manager/browser_roots_v4.py
+          python -m py_compile autogenic-runtime/reboot-manager/browser_roots_v5.py
+          python -m py_compile autogenic-runtime/reboot-manager/browser_roots_v6.py
+          python -m py_compile autogenic-runtime/reboot-manager/reboot_supervisor.py
+          python -m py_compile autogenic-runtime/reboot-manager/reboot_console.py
+          python -m py_compile autogenic-runtime/reboot-manager/reboot_console_v6.py
+          python -m py_compile autogenic-runtime/reboot-manager/live_acceptance_v5.py
+          python -m py_compile autogenic-runtime/tests/test_reboot_manager.py
+          python -m py_compile autogenic-runtime/tests/test_browser_bridge.py
+          python -m py_compile autogenic-runtime/tests/test_browser_roots.py
+      - name: JavaScript syntax
+        run: |
+          node --check autogenic-runtime/reboot-manager/reboot_cdp.mjs
+          node --check autogenic-runtime/reboot-manager/extension_bridge/reboot_bridge_v4.js
+          node --check autogenic-runtime/reboot-manager/extension_bridge/reboot_bridge_v5_patch.js
+          node --check autogenic-runtime/reboot-manager/extension_bridge/reboot_bridge_v6_patch.js
+      - name: Regression tests
+        run: |
+          python autogenic-runtime/tests/test_reboot_manager.py
+          python autogenic-runtime/tests/test_browser_bridge.py
+          python autogenic-runtime/tests/test_browser_roots.py
+      - name: Supervisor and console self-tests
+        run: |
+          python autogenic-runtime/reboot-manager/reboot_supervisor.py --self-test
+          python autogenic-runtime/reboot-manager/reboot_console_v6.py --self-test

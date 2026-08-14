@@ -28,8 +28,10 @@ jobs:
           python -m py_compile autogenic-runtime/reboot-manager/tf_reboot_manager.py
           python -m py_compile autogenic-runtime/reboot-manager/browser_bridge.py
           python -m py_compile autogenic-runtime/reboot-manager/browser_roots.py
+          python -m py_compile autogenic-runtime/reboot-manager/browser_roots_v3.py
           python -m py_compile autogenic-runtime/reboot-manager/reboot_supervisor.py
           python -m py_compile autogenic-runtime/reboot-manager/reboot_console.py
+          python -m py_compile autogenic-runtime/reboot-manager/reboot_console_v3.py
           python -m py_compile autogenic-runtime/tests/test_reboot_manager.py
           python -m py_compile autogenic-runtime/tests/test_browser_bridge.py
           python -m py_compile autogenic-runtime/tests/test_browser_roots.py
@@ -37,6 +39,7 @@ jobs:
         run: |
           node --check autogenic-runtime/reboot-manager/reboot_cdp.mjs
           node --check autogenic-runtime/reboot-manager/extension_bridge/reboot_bridge.js
+          node --check autogenic-runtime/reboot-manager/extension_bridge/reboot_bridge_v3.js
       - name: Legacy-manager regression test
         run: python autogenic-runtime/tests/test_reboot_manager.py
       - name: Browser bridge protocol test
@@ -47,3 +50,5 @@ jobs:
         run: python autogenic-runtime/reboot-manager/reboot_supervisor.py --self-test
       - name: Management console self-test
         run: python autogenic-runtime/reboot-manager/reboot_console.py --self-test
+      - name: Bounded v3 binding self-test
+        run: python autogenic-runtime/reboot-manager/reboot_console_v3.py --self-test

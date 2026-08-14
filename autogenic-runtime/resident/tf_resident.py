@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlopen
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 17373
 
@@ -260,7 +260,14 @@ def browser_status():
         if launcher_pid:
             pid = windows_direct_child(launcher_pid, Path(chrome_path).name) or pid
     alive = bool(cdp) or (pid > 0 and process_alive(pid))
-    changed = pid != int(spec.get("pid") or 0) or bool(cdp) != bool(spec.get("cdp_ready"))
+    migrated = False
+    if not spec.get("chrome_path") and spec.get("chrome"):
+        spec["chrome_path"] = spec.get("chrome")
+        migrated = True
+    if "extra_args" not in spec and isinstance(spec.get("args"), list):
+        spec["extra_args"] = legacy_extra_args(spec)
+        migrated = True
+    changed = migrated or pid != int(spec.get("pid") or 0) or bool(cdp) != bool(spec.get("cdp_ready"))
     spec.update({
         "pid": pid,
         "alive": alive,
@@ -270,6 +277,25 @@ def browser_status():
     if changed:
         STATE.save_browser({k: v for k, v in spec.items() if k != "alive"})
     return spec
+
+
+def legacy_extra_args(spec):
+    current = spec.get("extra_args")
+    if isinstance(current, list):
+        return [str(x) for x in current]
+    old = spec.get("args")
+    if not isinstance(old, list):
+        return []
+    url = str(spec.get("url") or "")
+    output = []
+    for index, item in enumerate(old):
+        value = str(item)
+        if index == 0 or value == url:
+            continue
+        if value.startswith("--user-data-dir=") or value.startswith("--remote-debugging-address=") or value.startswith("--remote-debugging-port="):
+            continue
+        output.append(value)
+    return output
 
 
 def browser_restart(payload):
@@ -295,7 +321,7 @@ def browser_restart(payload):
         "profile": previous.get("profile"),
         "debug_port": previous.get("debug_port"),
         "url": previous.get("url"),
-        "args": previous.get("extra_args") or [],
+        "args": legacy_extra_args(previous),
         "ready_timeout": previous.get("ready_timeout", 5),
         "require_cdp": previous.get("require_cdp", False),
     }

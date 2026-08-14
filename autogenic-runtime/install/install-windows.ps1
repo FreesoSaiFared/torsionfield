@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
 $principal = [Security.Principal.WindowsPrincipal]::new($identity)
@@ -7,7 +7,11 @@ if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administra
 }
 
 $Source = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$Root = Join-Path $env:ProgramData 'Torsionfield\AutogenicRuntime'
+$ProgramData = [Environment]::GetFolderPath('CommonApplicationData')
+if (-not $ProgramData) { $ProgramData = 'C:\ProgramData' }
+$LocalAppData = [Environment]::GetFolderPath('LocalApplicationData')
+if (-not $LocalAppData) { $LocalAppData = 'C:\Users\' + $env:USERNAME + '\AppData\Local' }
+$Root = Join-Path $ProgramData 'Torsionfield\AutogenicRuntime'
 $State = Join-Path $Root 'state'
 $Resident = Join-Path $Root 'resident'
 $Extension = Join-Path $Root 'extension'
@@ -48,7 +52,7 @@ set TF_RESIDENT_STATE=$State
 
 $TaskName = 'Torsionfield Autogenic Resident'
 $Action = New-ScheduledTaskAction -Execute $Launcher
-$Trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
+$Trigger = New-ScheduledTaskTrigger -AtLogOn -User $identity.Name
 $Settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -RestartCount 99 -RestartInterval (New-TimeSpan -Minutes 1) -ExecutionTimeLimit ([TimeSpan]::Zero) -MultipleInstances IgnoreNew
 $TaskPrincipal = New-ScheduledTaskPrincipal -UserId $identity.Name -LogonType Interactive -RunLevel Highest
 $Task = New-ScheduledTask -Action $Action -Trigger $Trigger -Settings $Settings -Principal $TaskPrincipal
@@ -70,7 +74,7 @@ $Bootstrap = Join-Path $Root 'bootstrap-browser.ps1'
 `$headers = @{ Authorization = "Bearer `$token" }
 `$body = @{
   url = 'https://chatgpt.com/'
-  profile = (Join-Path `$env:LOCALAPPDATA 'Torsionfield\ChromeProfile')
+  profile = '$LocalAppData\Torsionfield\ChromeProfile'
   args = @('--load-extension=$Extension')
 } | ConvertTo-Json -Depth 5
 Invoke-RestMethod -Method Post -Uri 'http://127.0.0.1:17373/v1/browser/restart' -Headers `$headers -ContentType 'application/json' -Body `$body

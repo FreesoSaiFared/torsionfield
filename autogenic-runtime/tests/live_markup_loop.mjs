@@ -133,17 +133,17 @@ async function main() {
   while (Date.now() < deadline) {
     try {
       const result = await page.call('Runtime.evaluate', {
-        expression: `(()=>{const users=[...document.querySelectorAll('[data-message-author-role="user"]')].map(n=>(n.innerText||n.textContent||'').trim());const assistants=[...document.querySelectorAll('[data-message-author-role="assistant"]')].map(n=>({text:(n.innerText||n.textContent||'').trim(),executed:n.dataset.tfAutogenicExecuted||null,intercepted:n.dataset.tfAutogenicIntercepted||null}));const results=users.filter(x=>x.startsWith('TORSIONFIELD MACHINE RESULT /1'));return {url:location.href,title:document.title,users,assistants,results,markerSeen:results.some(x=>x.includes(${JSON.stringify(marker)})),executed:assistants.filter(x=>x.executed==='1').length,actionAssistants:assistants.filter(x=>x.text.includes(${JSON.stringify(nonce)})).length,lastOp:document.documentElement.dataset.tfAutogenicLastOp||null,lastStatus:document.documentElement.dataset.tfAutogenicLastOpStatus||null,loopError:document.documentElement.dataset.tfAutogenicLoopError||null,composer:(document.querySelector('#prompt-textarea[contenteditable="true"]')?.innerText||'').trim()};})()`,
+        expression: `(()=>{const users=[...document.querySelectorAll('[data-message-author-role="user"]')].map(n=>(n.innerText||n.textContent||'').trim());const assistants=[...document.querySelectorAll('[data-message-author-role="assistant"]')].map(n=>({text:(n.innerText||n.textContent||'').trim(),executed:n.dataset.tfAutogenicExecuted||null,intercepted:n.dataset.tfAutogenicIntercepted||null}));const results=users.filter(x=>x.startsWith('TORSIONFIELD MACHINE RESULT /1'));const intercepts=users.filter(x=>x.startsWith('TORSIONFIELD AUTONOMY INTERCEPT /1'));return {url:location.href,title:document.title,users,assistants,results,intercepts,markerSeen:results.some(x=>x.includes(${JSON.stringify(marker)})),executed:assistants.filter(x=>x.executed==='1').length,actionAssistants:assistants.filter(x=>x.text.includes(${JSON.stringify(nonce)})).length,lastOp:document.documentElement.dataset.tfAutogenicLastOp||null,lastStatus:document.documentElement.dataset.tfAutogenicLastOpStatus||null,loopError:document.documentElement.dataset.tfAutogenicLoopError||null,composer:(document.querySelector('#prompt-textarea[contenteditable="true"]')?.innerText||'').trim(),streaming:Boolean(document.querySelector('button[data-testid="stop-button"],button[aria-label^="Stop"]'))};})()`,
         returnByValue: true,
       });
       observed = result.result?.value;
-      if (observed?.markerSeen && observed.results.length === 1 && observed.executed === 1) break;
+      if (observed?.markerSeen && observed.results.length === 1 && observed.executed === 1 && observed.intercepts.length === 0 && observed.users.length === 2 && observed.assistants.length === 2 && !observed.streaming && !observed.composer) break;
     } catch (_) {}
     await sleep(250);
   }
 
   const result = {
-    ok: Boolean(observed?.markerSeen && observed?.results?.length === 1 && observed?.executed === 1 && observed?.lastStatus === 'ok'),
+    ok: Boolean(observed?.markerSeen && observed?.results?.length === 1 && observed?.executed === 1 && observed?.actionAssistants === 1 && observed?.intercepts?.length === 0 && observed?.users?.length === 2 && observed?.assistants?.length === 2 && !observed?.streaming && !observed?.composer && !observed?.loopError && observed?.lastStatus === 'ok'),
     browser: version.Browser,
     expectedVersion,
     nonce,
@@ -153,6 +153,7 @@ async function main() {
     userTurns: observed?.users?.length || 0,
     assistantTurns: observed?.assistants?.length || 0,
     resultTurns: observed?.results?.length || 0,
+    autonomyInterceptTurns: observed?.intercepts?.length || 0,
     executedCount: observed?.executed || 0,
     actionAssistantCount: observed?.actionAssistants || 0,
     markerSeen: Boolean(observed?.markerSeen),
@@ -160,6 +161,7 @@ async function main() {
     lastStatus: observed?.lastStatus || null,
     loopError: observed?.loopError || null,
     composerEmpty: !observed?.composer,
+    settled: !observed?.streaming,
     actionPreview: observed?.assistants?.find((item) => item.text.includes(nonce))?.text?.slice(0, 1200) || null,
     resultPreview: observed?.results?.[0]?.slice(0, 1800) || null,
   };

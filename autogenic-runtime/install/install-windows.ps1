@@ -19,6 +19,7 @@ $Userscript = Join-Path $Root 'userscript'
 New-Item -ItemType Directory -Force -Path $Root,$State,$Resident,$Extension,$Userscript | Out-Null
 
 Copy-Item -Force (Join-Path $Source 'resident\tf_resident.py') $Resident
+Copy-Item -Force (Join-Path $Source 'resident\browser_recover.mjs') $Resident
 Copy-Item -Force (Join-Path $Source 'extension\manifest.json') $Extension
 Copy-Item -Force (Join-Path $Source 'extension\service_worker.js') $Extension
 Copy-Item -Force (Join-Path $Source 'extension\content_bridge.js') $Extension

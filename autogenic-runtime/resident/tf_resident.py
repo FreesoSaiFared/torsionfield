@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlopen
 
-VERSION = "0.2.1"
+VERSION = "0.3.0"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 17373
 
@@ -181,6 +181,67 @@ def windows_direct_child(parent_pid: int, exe_name: str):
     return None
 
 
+def find_node():
+    from shutil import which
+    candidates = [os.environ.get("TF_NODE"), which("node")]
+    if os.name == "nt":
+        for root_name in ("PROGRAMFILES", "LOCALAPPDATA"):
+            root = os.environ.get(root_name)
+            if root:
+                candidates.extend([str(Path(root) / "nodejs/node.exe"), str(Path(root) / "Programs/nodejs/node.exe")])
+    else:
+        candidates.extend(["/usr/bin/node", "/usr/local/bin/node"])
+    for candidate in filter(None, candidates):
+        path = Path(candidate)
+        if path.exists():
+            return str(path)
+    return None
+
+
+def autogenic_recover(spec):
+    node = find_node()
+    helper = Path(__file__).resolve().with_name("browser_recover.mjs")
+    if not node:
+        return {"ok": False, "error": "node-not-found"}
+    if not helper.exists():
+        return {"ok": False, "error": "browser-recover-helper-missing", "path": str(helper)}
+    resident_port = int(os.environ.get("TF_RESIDENT_PORT", DEFAULT_PORT))
+    command = [
+        node, str(helper),
+        "--port", str(int(spec.get("debug_port") or 9222)),
+        "--chat-url", str(spec.get("url") or "https://chatgpt.com/"),
+        "--userscript-url", f"http://127.0.0.1:{resident_port}/userscripts/torsionfield-autogenic.user.js",
+    ]
+    try:
+        cp = subprocess.run(command, text=True, capture_output=True, timeout=90)
+    except Exception as exc:
+        return {"ok": False, "error": type(exc).__name__, "detail": str(exc)}
+    parsed = None
+    for line in reversed([line.strip() for line in cp.stdout.splitlines() if line.strip()]):
+        try:
+            candidate = json.loads(line)
+            if isinstance(candidate, dict):
+                parsed = candidate
+                break
+        except Exception:
+            continue
+    if parsed is None:
+        for line in reversed([line.strip() for line in cp.stderr.splitlines() if line.strip()]):
+            try:
+                candidate = json.loads(line)
+                if isinstance(candidate, dict):
+                    parsed = candidate
+                    break
+            except Exception:
+                continue
+    result = {"ok": bool(cp.returncode == 0 and isinstance(parsed, dict) and parsed.get("ok")), "returncode": cp.returncode}
+    if parsed is not None:
+        result["helper"] = parsed
+    elif cp.stderr.strip():
+        result["error"] = cp.stderr.strip()[-2000:]
+    return result
+
+
 def browser_launch(payload):
     chrome = find_chrome(payload.get("chrome_path"))
     url = str(payload.get("url") or "https://chatgpt.com/")
@@ -190,6 +251,9 @@ def browser_launch(payload):
     extra_args = [str(x) for x in payload.get("args") or []]
     ready_timeout = max(0.0, float(payload.get("ready_timeout") or 5.0))
     require_cdp = bool(payload.get("require_cdp", False))
+    default_recovery = url.startswith("https://chatgpt.com/") or url.startswith("https://chat.openai.com/")
+    recover_autogenic = bool(payload.get("recover_autogenic", default_recovery))
+    require_recovery = bool(payload.get("require_recovery", recover_autogenic))
     args = [
         chrome,
         f"--user-data-dir={profile}",
@@ -236,11 +300,20 @@ def browser_launch(payload):
         "extra_args": extra_args,
         "ready_timeout": ready_timeout,
         "require_cdp": require_cdp,
+        "recover_autogenic": recover_autogenic,
+        "require_recovery": require_recovery,
         "cdp_ready": bool(cdp),
         "browser_version": cdp.get("Browser") if cdp else None,
         "launched_at": time.time(),
     }
     STATE.save_browser(spec)
+    if recover_autogenic:
+        recovery = autogenic_recover(spec)
+        spec["autogenic_recovery"] = recovery
+        STATE.save_browser(spec)
+        if require_recovery and not recovery.get("ok"):
+            STATE.log("browser.recovery", ok=False, recovery=recovery)
+            raise RuntimeError(f"browser launched but autogenic recovery failed: {recovery.get('error') or recovery.get('helper') or recovery}")
     STATE.log("browser.launch", **spec)
     return spec
 
@@ -324,6 +397,8 @@ def browser_restart(payload):
         "args": legacy_extra_args(previous),
         "ready_timeout": previous.get("ready_timeout", 5),
         "require_cdp": previous.get("require_cdp", False),
+        "recover_autogenic": previous.get("recover_autogenic", True),
+        "require_recovery": previous.get("require_recovery", True),
     }
     merged.update({k: v for k, v in payload.items() if k not in {"scope", "settle_seconds"}})
     return {"stopped": stopped, "launched": browser_launch(merged)}

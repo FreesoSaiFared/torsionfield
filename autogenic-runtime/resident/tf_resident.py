@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import base64, json, os, platform, secrets, signal, subprocess, threading, time
+import base64, hashlib, json, os, platform, secrets, signal, subprocess, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlopen
 
-VERSION = "0.4.0"
+VERSION = "0.5.0"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 17373
 
@@ -37,6 +37,7 @@ class ResidentState:
         self.state_dir.mkdir(parents=True, exist_ok=True)
         self.token_path = self.state_dir / "token"
         self.browser_path = self.state_dir / "browser.json"
+        self.actions_path = self.state_dir / "actions.json"
         self.log_path = self.state_dir / "resident.jsonl"
         self.token = self._load_or_create_token()
         self.lock = threading.RLock()
@@ -66,6 +67,22 @@ class ResidentState:
             return json.loads(self.browser_path.read_text(encoding="utf-8"))
         except Exception:
             return {}
+
+    def load_actions(self):
+        with self.lock:
+            try:
+                value = json.loads(self.actions_path.read_text(encoding="utf-8"))
+                return value if isinstance(value, dict) else {}
+            except Exception:
+                return {}
+
+    def save_actions(self, actions):
+        with self.lock:
+            ordered = sorted(actions.items(), key=lambda item: float(item[1].get("started_at") or 0), reverse=True)[:256]
+            compact = {key: value for key, value in ordered}
+            temp = self.actions_path.with_suffix(".tmp")
+            temp.write_text(json.dumps(compact, indent=2, ensure_ascii=False), encoding="utf-8")
+            temp.replace(self.actions_path)
 
 
 STATE = ResidentState()
@@ -439,6 +456,35 @@ def browser_restart(payload):
     return {"stopped": stopped, "launched": browser_launch(merged)}
 
 
+ACTION_PATHS = {
+    "exec": "/v1/exec",
+    "process.start": "/v1/process/start",
+    "process.kill": "/v1/process/kill",
+    "process.list": "/v1/process/list",
+    "fs.read": "/v1/fs/read",
+    "fs.write": "/v1/fs/write",
+    "fs.delete": "/v1/fs/delete",
+    "browser.launch": "/v1/browser/launch",
+    "browser.restart": "/v1/browser/restart",
+    "browser.status": "/v1/browser/status",
+    "browser.targets": "/v1/browser/targets",
+    "browser.open": "/v1/browser/open",
+    "browser.close": "/v1/browser/close",
+    "browser.activate": "/v1/browser/activate",
+    "browser.navigate": "/v1/browser/navigate",
+    "browser.reload": "/v1/browser/reload",
+    "browser.evaluate": "/v1/browser/evaluate",
+    "browser.screenshot": "/v1/browser/screenshot",
+    "userscript.refresh": "/v1/userscript/refresh",
+}
+
+
+def action_fingerprint(operation, args, context):
+    context_url = str((context or {}).get("url") or "")
+    canonical = json.dumps({"op": operation, "args": args or {}, "context_url": context_url}, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
 class Handler(BaseHTTPRequestHandler):
     server_version = f"TorsionfieldResident/{VERSION}"
 
@@ -511,7 +557,81 @@ class Handler(BaseHTTPRequestHandler):
             STATE.log("action", path=self.path, ok=False, error=repr(exc))
             return self._send(500, {"ok": False, "error": type(exc).__name__, "detail": str(exc)})
 
+    def _action_get(self, action_id):
+        action_id = str(action_id or "").strip()
+        if not action_id:
+            raise ValueError("action id required")
+        return STATE.load_actions().get(action_id)
+
+    def _action_execute(self, payload):
+        action_id = str(payload.get("id") or "").strip()
+        operation = str(payload.get("op") or "").strip()
+        args = dict(payload.get("args") or {})
+        context = dict(payload.get("context") or {})
+        if not action_id or len(action_id) > 200:
+            raise ValueError("explicit action id required (1..200 chars)")
+        if operation not in ACTION_PATHS:
+            raise ValueError(f"unsupported journaled action: {operation}")
+        fingerprint = action_fingerprint(operation, args, context)
+        deadline = time.time() + max(5.0, min(300.0, float(payload.get("wait_timeout") or 150.0)))
+
+        while True:
+            actions = STATE.load_actions()
+            existing = actions.get(action_id)
+            if existing:
+                if existing.get("fingerprint") != fingerprint:
+                    raise ValueError(f"action-id-conflict: {action_id}")
+                status = existing.get("status")
+                if status == "succeeded":
+                    return {"id": action_id, "status": status, "replayed": True, "result": existing.get("result")}
+                if status == "failed":
+                    raise RuntimeError(f"journaled action failed: {existing.get('error')}")
+                if status == "running":
+                    if time.time() >= deadline:
+                        raise TimeoutError(f"journaled action still running: {action_id}")
+                    time.sleep(0.1)
+                    continue
+            break
+
+        actions = STATE.load_actions()
+        actions[action_id] = {
+            "id": action_id, "op": operation, "args": args,
+            "context": {"url": str(context.get("url") or "")},
+            "fingerprint": fingerprint, "status": "running",
+            "started_at": time.time(),
+        }
+        STATE.save_actions(actions)
+        STATE.log("action.journal.begin", id=action_id, op=operation)
+
+        run_args = dict(args)
+        if operation == "browser.restart" and not run_args.get("url"):
+            origin = str(context.get("url") or "")
+            if origin.startswith("https://chatgpt.com/") or origin.startswith("https://chat.openai.com/"):
+                run_args["url"] = origin
+        try:
+            result = self._dispatch(ACTION_PATHS[operation], run_args)
+        except Exception as exc:
+            actions = STATE.load_actions()
+            record = actions.get(action_id) or {}
+            record.update({"status": "failed", "finished_at": time.time(), "error": f"{type(exc).__name__}: {exc}"})
+            actions[action_id] = record
+            STATE.save_actions(actions)
+            STATE.log("action.journal.finish", id=action_id, op=operation, ok=False, error=record["error"][:500])
+            raise
+        actions = STATE.load_actions()
+        record = actions.get(action_id) or {}
+        record.update({"status": "succeeded", "finished_at": time.time(), "result": result})
+        actions[action_id] = record
+        STATE.save_actions(actions)
+        STATE.log("action.journal.finish", id=action_id, op=operation, ok=True)
+        return {"id": action_id, "status": "succeeded", "replayed": False, "result": result}
+
     def _dispatch(self, path, payload):
+        if path == "/v1/action/execute":
+            return self._action_execute(payload)
+        if path == "/v1/action/get":
+            record = self._action_get(payload.get("id"))
+            return {"found": record is not None, "action": record}
         if path == "/v1/exec":
             argv = command_from_payload(payload)
             cp = subprocess.run(argv, cwd=payload.get("cwd") or None, env=merged_env(payload.get("env")), input=payload.get("stdin"), text=True, capture_output=True, timeout=float(payload.get("timeout") or 300))

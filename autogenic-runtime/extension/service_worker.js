@@ -1,6 +1,7 @@
 import { TF_RESIDENT_URL, TF_RESIDENT_TOKEN } from './runtime_config.js';
 
 const ALLOWED_PATHS = new Set([
+  '/v1/action/execute', '/v1/action/get',
   '/v1/health', '/v1/exec', '/v1/process/start', '/v1/process/kill', '/v1/process/list',
   '/v1/fs/read', '/v1/fs/write', '/v1/fs/delete',
   '/v1/browser/launch', '/v1/browser/restart', '/v1/browser/status',

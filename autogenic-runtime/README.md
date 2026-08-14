@@ -50,7 +50,7 @@ An assistant message can request a machine operation using:
 [[/TF_ACTION]]
 ```
 
-The ScriptCat bridge executes it through the elevated resident and automatically submits a `TORSIONFIELD MACHINE RESULT /1` turn back into the same ChatGPT conversation. The assistant can then continue from observed machine state.
+The ScriptCat bridge first commits every explicit action ID to the resident action journal, executes it exactly once, and automatically submits a `TORSIONFIELD MACHINE RESULT /1` turn back into the same ChatGPT conversation. If the browser/page disappears mid-action, the reloaded userscript submits the same ID again; the resident waits for or replays the durable result instead of re-running the operation. For `browser.restart`, the originating ChatGPT URL becomes the recovery URL by default so the conversation that requested the restart is reacquired.
 
 The userscript also detects known human-handoff failure language. When the dependency is a reachable machine/browser/software operation, it submits an autonomy-intercept turn rather than asking the human to perform it.
 
@@ -89,7 +89,7 @@ TF_RESIDENT_TOKEN=... python3 tests/smoke.py
 Live authenticated full-loop acceptance, against an already-running dedicated browser:
 
 ```bash
-node tests/live_markup_loop.mjs --port 9448 --version 0.3.0
+node tests/live_markup_loop.mjs --port 9448 --version 0.4.0
 ```
 
 That test creates a fresh ChatGPT conversation, asks the model to emit one unique benign `TF_ACTION`, and requires exactly one automatic `TORSIONFIELD MACHINE RESULT /1` turn carrying the same machine stdout marker.

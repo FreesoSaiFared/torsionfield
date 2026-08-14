@@ -11,7 +11,6 @@ import browser_roots as base
 BRIDGE_CLIENT_SUFFIX = "-reboot-v3"
 BRIDGE_FILES = ("reboot_bridge_v3.html", "reboot_bridge_v3.js")
 
-# Re-export stable primitives used by the supervisor.
 CHAT_URL_RE = base.CHAT_URL_RE
 BRIDGE_HOST = base.BRIDGE_HOST
 BRIDGE_PORT = base.BRIDGE_PORT
@@ -103,6 +102,12 @@ def root_inventory(
     cdp_helper: str | Path,
     auto_bridge: bool = True,
 ) -> dict:
+    """Inventory one browser root.
+
+    v3 intentionally requires live coverage for *every* running browser root.
+    Session files remain useful discovery evidence, but absence of a recognizable
+    ChatGPT URL cannot prove that an opaque browser root contains no ChatGPT tab.
+    """
     evidence = scan_session_urls(root.get("profilePath") or "")
     extension = extension_record(root)
     coverage = "none"
@@ -110,7 +115,9 @@ def root_inventory(
     errors: list[str] = []
     bridge = None
 
-    if auto_bridge and evidence and not bridge_healthy(root["client"]):
+    # Prefer the browser-native extension whenever this profile already has a
+    # suitable Torsionfield extension, regardless of what binary session files say.
+    if auto_bridge and extension and not bridge_healthy(root["client"]):
         try:
             bridge = ensure_bridge(root, bridge_source)
         except Exception as exc:
@@ -118,13 +125,12 @@ def root_inventory(
 
     if bridge_healthy(root["client"]):
         try:
-            # The v3 page bounds every individual tab capture. A root-level timeout
-            # remains as a second independent guard against a wedged extension page.
             inventory = bridge_rpc(root["client"], "inventory", {}, 25_000)
             coverage = "extension"
         except Exception as exc:
             errors.append("bridge:" + repr(exc))
 
+    # A working CDP endpoint is the fallback, not a command-line-flag assumption.
     if inventory is None and cdp_alive(root.get("debugPort")):
         try:
             inventory = node_call(cdp_helper, "inventory", root["debugPort"], {}, 35)
@@ -139,16 +145,18 @@ def root_inventory(
             if not tab.get("chatgpt"):
                 continue
             tabs.append(tab)
-            # A tab that is known to be ChatGPT but whose page state was not read is
-            # not safe. Never let a partial inventory silently certify the root.
             if tab.get("error") or not tab.get("state"):
-                errors.append(f"chatgpt-tab-unobserved:{tab.get('id')}:{tab.get('error') or 'missing-state'}")
+                errors.append(
+                    f"chatgpt-tab-unobserved:{tab.get('id')}:{tab.get('error') or 'missing-state'}"
+                )
 
     discovered = bool(evidence or tabs)
-    covered = bool(
-        (not discovered)
-        or (inventory is not None and coverage in ("extension", "cdp") and not errors)
-    )
+    if inventory is None and not errors:
+        errors.append("no-live-browser-control-path")
+
+    # Every running root must be positively observed. An opaque root cannot be
+    # certified safe merely because no ChatGPT string was found on disk.
+    covered = bool(inventory is not None and coverage in ("extension", "cdp") and not errors)
     return {
         **root,
         "extension": extension,

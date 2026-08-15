@@ -24,7 +24,7 @@ jobs:
       - name: Stage two exact Chromium headers
         run: |
           set -euxo pipefail
-          rev=a19b2ac55d4a8f904b658e562bde0a6a47d899b2
+          rev=67505133bc3ef1c64e069cf8de9c853ebf3fb79b
           root=/tmp/chromium-source
           mkdir -p "$root/base/types"
           curl -fsSLo "$root/base/types/pass_key.h" \
@@ -37,7 +37,7 @@ jobs:
           python3 tools/chromium-mesh/mesh.py chromium-header-demo \
             --root /tmp/chromium-header-mesh \
             --source-root /tmp/chromium-source \
-            --source-revision a19b2ac55d4a8f904b658e562bde0a6a47d899b2
+            --source-revision 67505133bc3ef1c64e069cf8de9c853ebf3fb79b
           cat /tmp/chromium-header-mesh/CHROMIUM_HEADER_DEMO_RESULT.json
 
   kajiya-mailbox-contract:

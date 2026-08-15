@@ -1,0 +1,41 @@
+name: Chromium Mesh v0
+
+on:
+  push:
+    branches:
+      - chatgpt/chromium-mesh-v0
+    paths:
+      - 'tools/chromium-mesh/**'
+      - '.github/workflows/chromium-mesh.yml'
+  workflow_dispatch:
+
+jobs:
+  mailbox-cas-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tools/chromium-mesh/tests -v
+      - name: Run two-worker mixed-object proof
+        run: |
+          rm -rf /tmp/chromium-mesh-demo
+          python3 tools/chromium-mesh/mesh.py demo --root /tmp/chromium-mesh-demo
+          cat /tmp/chromium-mesh-demo/DEMO_RESULT.json
+      - name: Stage two exact Chromium headers
+        run: |
+          set -euxo pipefail
+          rev=a19b2ac55d4a8f904b658e562bde0a6a47d899b2
+          root=/tmp/chromium-source
+          mkdir -p "$root/base/types"
+          curl -fsSLo "$root/base/types/pass_key.h" \
+            "https://raw.githubusercontent.com/chromium/chromium/$rev/base/types/pass_key.h"
+          curl -fsSLo "$root/base/types/cxx26_projected_value_t.h" \
+            "https://raw.githubusercontent.com/chromium/chromium/$rev/base/types/cxx26_projected_value_t.h"
+      - name: Compile real Chromium code across mailbox workers
+        run: |
+          rm -rf /tmp/chromium-header-mesh
+          python3 tools/chromium-mesh/mesh.py chromium-header-demo \
+            --root /tmp/chromium-header-mesh \
+            --source-root /tmp/chromium-source \
+            --source-revision a19b2ac55d4a8f904b658e562bde0a6a47d899b2
+          cat /tmp/chromium-header-mesh/CHROMIUM_HEADER_DEMO_RESULT.json

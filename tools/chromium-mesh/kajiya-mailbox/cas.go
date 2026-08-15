@@ -6,19 +6,8 @@ import (
 
 	repb "go.chromium.org/build/remote-apis/build/bazel/remote/execution/v2"
 	"go.chromium.org/build/kajiya/blobstore"
-	"go.chromium.org/build/kajiya/digest"
 	"go.chromium.org/build/kajiya/execution/model"
 )
-
-// BlobCAS is the smallest Kajiya CAS surface required by the mailbox executor.
-// Keep this interface local so tests can exercise the exact data plane without
-// constructing a full Kajiya server.
-type BlobCAS interface {
-	Get(d digest.Digest) ([]byte, error)
-	Put(data []byte) (digest.Digest, error)
-}
-
-var _ BlobCAS = (*blobstore.ContentAddressableStorage)(nil)
 
 // OutputFileData is returned by a worker for a declared regular-file output.
 type OutputFileData struct {
@@ -26,7 +15,10 @@ type OutputFileData struct {
 	Executable bool   `json:"executable"`
 }
 
-func loadInputBlobs(action *model.Action, cas BlobCAS) (map[string][]byte, error) {
+// loadInputBlobs intentionally accepts Kajiya's concrete CAS. This allows the
+// exact digest type carried by KajiyaFile to flow directly into CAS.Get without
+// creating a second digest abstraction that can drift across Kajiya revisions.
+func loadInputBlobs(action *model.Action, cas *blobstore.ContentAddressableStorage) (map[string][]byte, error) {
 	if action == nil || action.InputTrie == nil {
 		return nil, fmt.Errorf("action has no Kajiya InputTrie")
 	}
@@ -60,7 +52,7 @@ func loadInputBlobs(action *model.Action, cas BlobCAS) (map[string][]byte, error
 	return blobs, nil
 }
 
-func storeOutputFiles(cas BlobCAS, tree ActionTree, returned map[string]OutputFileData) ([]*repb.OutputFile, error) {
+func storeOutputFiles(cas *blobstore.ContentAddressableStorage, tree ActionTree, returned map[string]OutputFileData) ([]*repb.OutputFile, error) {
 	if cas == nil {
 		return nil, fmt.Errorf("nil Kajiya CAS")
 	}

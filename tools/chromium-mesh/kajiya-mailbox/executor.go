@@ -29,14 +29,17 @@ type Request struct {
 	Platform        map[string][]string `json:"platform"`
 	ContainerImage  string              `json:"container_image,omitempty"`
 	Tree            ActionTree          `json:"tree"`
+	Blobs           map[string][]byte   `json:"blobs"`
 }
 
-// Response is the worker-facing result before Kajiya's CAS adapter imports
-// returned output bytes and constructs canonical REAPI output digests.
+// Response is the worker-facing result. Regular-file outputs are returned as
+// bytes and are inserted into Kajiya's canonical CAS by Executor before the
+// REAPI ActionResult is returned to Siso.
 type Response struct {
-	ExitCode int32
-	Stdout   []byte
-	Stderr   []byte
+	ExitCode    int32                     `json:"exit_code"`
+	Stdout      []byte                    `json:"stdout"`
+	Stderr      []byte                    `json:"stderr"`
+	OutputFiles map[string]OutputFileData `json:"output_files,omitempty"`
 }
 
 // Transport is intentionally smaller than REAPI. Kajiya remains the REAPI/CAS
@@ -46,11 +49,12 @@ type Transport interface {
 	Execute(Request) (Response, error)
 }
 
-// Executor implements Kajiya's execution.ExecutorInterface. CAS blob transport
-// is supplied by the next adapter layer; this layer already carries the exact
-// action semantics and declared input/output tree.
+// Executor implements Kajiya's execution.ExecutorInterface. CAS is the exact
+// Kajiya CAS used by the REAPI server; Transport may be a live remote worker or
+// an offline mailbox exporter/importer.
 type Executor struct {
 	Transport Transport
+	CAS       BlobCAS
 }
 
 var _ execution.ExecutorInterface = (*Executor)(nil)
@@ -62,8 +66,26 @@ func (e *Executor) Execute(action *model.Action) (*repb.ActionResult, error) {
 	if e.Transport == nil {
 		return nil, errors.New("nil mailbox transport")
 	}
+	if e.CAS == nil {
+		return nil, errors.New("nil Kajiya CAS")
+	}
+	if action.ContainerImage != "" {
+		return nil, fmt.Errorf("container-image actions are not admitted by mailbox v1")
+	}
+	if action.CaptureWholeTree {
+		return nil, fmt.Errorf("capture-whole-tree actions are not admitted by mailbox v1")
+	}
 
 	tree, err := FlattenAction(action)
+	if err != nil {
+		return nil, err
+	}
+	for _, out := range tree.Outputs {
+		if out.Type != int(model.File) {
+			return nil, fmt.Errorf("mailbox v1 supports regular-file outputs only: path=%q type=%d", out.Path, out.Type)
+		}
+	}
+	blobs, err := loadInputBlobs(action, e.CAS)
 	if err != nil {
 		return nil, err
 	}
@@ -84,16 +106,22 @@ func (e *Executor) Execute(action *model.Action) (*repb.ActionResult, error) {
 		Platform:        clonePlatform(action.Platform),
 		ContainerImage:  action.ContainerImage,
 		Tree:            tree,
+		Blobs:           blobs,
 	}
 
 	resp, err := e.Transport.Execute(req)
 	if err != nil {
 		return nil, err
 	}
+	outputs, err := storeOutputFiles(e.CAS, tree, resp.OutputFiles)
+	if err != nil {
+		return nil, err
+	}
 	return &repb.ActionResult{
-		ExitCode: resp.ExitCode,
-		StdoutRaw: append([]byte(nil), resp.Stdout...),
-		StderrRaw: append([]byte(nil), resp.Stderr...),
+		ExitCode:    resp.ExitCode,
+		StdoutRaw:   append([]byte(nil), resp.Stdout...),
+		StderrRaw:   append([]byte(nil), resp.Stderr...),
+		OutputFiles: outputs,
 	}, nil
 }
 

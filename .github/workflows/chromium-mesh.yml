@@ -74,7 +74,9 @@ jobs:
           git -C /tmp/nsjail checkout f78475530b46d0186111a9096b30725f816b55fe
           make -C /tmp/nsjail -j2
           sudo install -m 0755 /tmp/nsjail/nsjail /usr/local/bin/nsjail
-          nsjail --version
+          test -x /usr/local/bin/nsjail
+          /usr/local/bin/nsjail --help >/tmp/nsjail-help.txt 2>&1 || true
+          grep -F 'Usage: nsjail' /tmp/nsjail-help.txt
       - name: Install pinned Chromium build tools
         run: |
           set -euxo pipefail

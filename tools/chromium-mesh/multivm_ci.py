@@ -21,10 +21,18 @@ def compiler():
     return cxx
 
 
+def require_toolchain(expected: str):
+    actual = mesh.tool_digest(compiler())
+    if actual != expected:
+        raise RuntimeError(f"TOOLCHAIN_DIGEST_MISMATCH expected={expected} actual={actual}")
+    return actual
+
+
 def prepare(root: Path, source_root: Path):
     root.mkdir(parents=True, exist_ok=True)
     cas = mesh.CAS(root / "cas")
     cxx = compiler()
+    tool_digest = mesh.tool_digest(cxx)
     headers = {
         PASS_KEY: (source_root / PASS_KEY).read_bytes(),
         PROJECTED: (source_root / PROJECTED).read_bytes(),
@@ -33,7 +41,7 @@ def prepare(root: Path, source_root: Path):
     bid = mesh.build_id(
         REV,
         deps,
-        mesh.tool_digest(cxx),
+        tool_digest,
         mesh.h(b"github-ubuntu-host"),
         mesh.h(b"multivm-c++20-O0"),
     )
@@ -67,6 +75,7 @@ def prepare(root: Path, source_root: Path):
         "schema": "TORSIONFIELD_CHROMIUM_MESH_MULTIVM/1",
         "build_id": bid,
         "source_revision": REV,
+        "toolchain_digest": tool_digest,
         "source_manifest": {k: mesh.h(v) for k, v in headers.items()},
         "actions": actions,
     }
@@ -76,6 +85,7 @@ def prepare(root: Path, source_root: Path):
 
 def worker(root: Path, name: str, worker_id: str):
     meta = json.loads((root / "metadata.json").read_text())
+    require_toolchain(meta["toolchain_digest"])
     result = root / f"{name}.result.tgz"
     res = mesh.run_bundle(
         root / f"{name}.tgz",
@@ -91,6 +101,7 @@ def worker(root: Path, name: str, worker_id: str):
 
 def aggregate(root: Path):
     meta = json.loads((root / "metadata.json").read_text())
+    require_toolchain(meta["toolchain_digest"])
     cas = mesh.CAS(root / "aggregate-cas")
     objects = {}
     workers = {}
@@ -153,12 +164,13 @@ def aggregate(root: Path):
         "result": "PASS",
         "build_id": meta["build_id"],
         "source_revision": meta["source_revision"],
+        "toolchain_digest": meta["toolchain_digest"],
         "compile_workers": workers,
         "aggregate_worker": "aggregate-runner",
         "link_worker": "aggregate-link-runner",
         "final_digest": mesh.hf(exe),
         "stdout": cp.stdout.strip(),
-        "claim": "Objects compiled on separate CI runner VMs were admitted by build/action/content identity and linked on a separate aggregate runner.",
+        "claim": "Objects compiled on separate CI runner VMs with an identical verified compiler identity were admitted by build/action/content identity and linked on a separate aggregate runner.",
         "boundary": "This is not yet an actual GN/Siso Chromium product action or full chrome build.",
     }
     (root / "MULTIVM_RESULT.json").write_text(json.dumps(proof, indent=2, sort_keys=True))

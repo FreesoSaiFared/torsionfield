@@ -10,7 +10,7 @@ import browser_roots_v6 as base
 
 VERSION='0.7.0'
 CHRONICLE_SUFFIX='-chronicle-v7'
-CHRONICLE_FILES=('chronicle_v7.html','chronicle_v7.js')
+CHRONICLE_FILES=('chronicle_v7.html','chronicle_v7.js','chronicle_v7_focus_patch.js')
 
 
 def discover_roots():

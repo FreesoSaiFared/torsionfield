@@ -125,7 +125,7 @@ jobs:
                   time.sleep(.25)
           raise SystemExit("Kajiya did not open port 50051")
           PY
-      - name: Submit action with unmodified Siso recall
+      - name: Submit bounded action with unmodified Siso recall
         env:
           SISO_REAPI_ADDRESS: localhost:50051
           SISO_REAPI_INSTANCE: default_instance
@@ -133,7 +133,18 @@ jobs:
         run: |
           set -euxo pipefail
           SISO="$(go env GOPATH)/bin/siso"
-          "$SISO" recall -re_cache_enable_read=false /tmp/reapi-probe | tee /tmp/siso-recall.log
+          set +e
+          timeout --signal=TERM --kill-after=5s 30s \
+            "$SISO" recall -re_cache_enable_read=false /tmp/reapi-probe \
+            > /tmp/siso-recall.log 2>&1
+          status=$?
+          set -e
+          cat /tmp/siso-recall.log
+          if [ "$status" -eq 124 ] || [ "$status" -eq 137 ]; then
+            echo "TF_SISO_KAJIYA_TIMEOUT status=$status" >&2
+            exit "$status"
+          fi
+          test "$status" -eq 0
           grep -F 'exit=0' /tmp/siso-recall.log
           grep -F 'proof.txt' /tmp/siso-recall.log
           grep -E '^Action: [0-9a-f]+/[0-9]+$' /tmp/siso-recall.log
@@ -144,3 +155,7 @@ jobs:
           cat /tmp/siso-recall.log 2>/dev/null || true
           echo '=== Kajiya ==='
           cat /tmp/kajiya.log 2>/dev/null || true
+          echo '=== Kajiya process ==='
+          if [ -f /tmp/kajiya.pid ]; then
+            ps -fp "$(cat /tmp/kajiya.pid)" || true
+          fi

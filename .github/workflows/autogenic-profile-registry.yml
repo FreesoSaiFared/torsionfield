@@ -1,0 +1,27 @@
+name: Autogenic Profile Registry
+
+on:
+  push:
+    branches: [chatgpt/autogenic-runtime-v0]
+    paths:
+      - 'autogenic-runtime/resident/profile_registry.py'
+      - 'autogenic-runtime/tests/test_profile_registry.py'
+      - '.github/workflows/autogenic-profile-registry.yml'
+  pull_request:
+    paths:
+      - 'autogenic-runtime/resident/profile_registry.py'
+      - 'autogenic-runtime/tests/test_profile_registry.py'
+      - '.github/workflows/autogenic-profile-registry.yml'
+
+jobs:
+  profile-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile
+        run: python -m py_compile autogenic-runtime/resident/profile_registry.py autogenic-runtime/tests/test_profile_registry.py
+      - name: Isolation acceptance
+        run: python autogenic-runtime/tests/test_profile_registry.py

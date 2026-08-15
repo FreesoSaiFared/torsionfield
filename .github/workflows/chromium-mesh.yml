@@ -39,3 +39,79 @@ jobs:
             --source-root /tmp/chromium-source \
             --source-revision a19b2ac55d4a8f904b658e562bde0a6a47d899b2
           cat /tmp/chromium-header-mesh/CHROMIUM_HEADER_DEMO_RESULT.json
+
+  siso-kajiya-reapi-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25.x'
+          cache: false
+      - name: Install pinned Chromium build tools
+        run: |
+          set -euxo pipefail
+          go install go.chromium.org/build/siso@v1.5.25
+          go install go.chromium.org/build/kajiya@v0.0.0-20260723082236-b143068cd995
+          "$(go env GOPATH)/bin/siso" version
+          "$(go env GOPATH)/bin/kajiya" -help > /tmp/kajiya-help.txt 2>&1 || true
+          head -80 /tmp/kajiya-help.txt
+      - name: Prepare self-contained REAPI action
+        run: |
+          set -euxo pipefail
+          mkdir -p /tmp/reapi-probe/root
+          cat > /tmp/reapi-probe/probe.go <<'EOF'
+          package main
+          import (
+            "fmt"
+            "os"
+          )
+          func main() {
+            if err := os.WriteFile("proof.txt", []byte("TF_SISO_KAJIYA_OK\n"), 0644); err != nil { panic(err) }
+            fmt.Println("TF_SISO_KAJIYA_OK")
+          }
+          EOF
+          CGO_ENABLED=0 go build -trimpath -o /tmp/reapi-probe/root/probe /tmp/reapi-probe/probe.go
+          cat > /tmp/reapi-probe/command.txt <<'EOF'
+          arguments: "./probe"
+          output_paths: "proof.txt"
+          EOF
+          cat > /tmp/reapi-probe/action.txt <<'EOF'
+          do_not_cache: true
+          EOF
+      - name: Start pinned Kajiya REAPI backend
+        run: |
+          set -euxo pipefail
+          KAJIYA="$(go env GOPATH)/bin/kajiya"
+          "$KAJIYA" -sandbox=files >/tmp/kajiya.log 2>&1 &
+          echo $! >/tmp/kajiya.pid
+          python3 - <<'PY'
+          import socket,time
+          deadline=time.time()+15
+          while time.time()<deadline:
+              try:
+                  with socket.create_connection(("127.0.0.1",50051),timeout=.5):
+                      print("KAJIYA_PORT_READY")
+                      raise SystemExit(0)
+              except OSError:
+                  time.sleep(.25)
+          raise SystemExit("Kajiya did not open port 50051")
+          PY
+      - name: Submit action with unmodified Siso recall
+        env:
+          SISO_REAPI_ADDRESS: localhost:50051
+          SISO_REAPI_INSTANCE: default_instance
+          RBE_service_no_security: 'true'
+        run: |
+          set -euxo pipefail
+          SISO="$(go env GOPATH)/bin/siso"
+          "$SISO" recall -re_cache_enable_read=false /tmp/reapi-probe | tee /tmp/siso-recall.log
+          grep -F 'exit=0' /tmp/siso-recall.log
+          grep -F 'proof.txt' /tmp/siso-recall.log
+          grep -E '^Action: [0-9a-f]+/[0-9]+$' /tmp/siso-recall.log
+      - name: Preserve protocol evidence
+        if: always()
+        run: |
+          echo '=== Siso recall ==='
+          cat /tmp/siso-recall.log 2>/dev/null || true
+          echo '=== Kajiya ==='
+          cat /tmp/kajiya.log 2>/dev/null || true

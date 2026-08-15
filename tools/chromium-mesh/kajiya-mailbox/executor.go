@@ -15,9 +15,8 @@ import (
 const Protocol = "TORSIONFIELD_KAJIYA_MAILBOX/1"
 
 // Request is deliberately transport-neutral. Kajiya remains authoritative for
-// the REAPI Merkle input/output model. This first seam carries only fields that
-// are directly present in the exact pinned Kajiya Action model; CAS
-// materialization and output enumeration are added by the adapter layer.
+// the REAPI Merkle input/output model. Tree is derived directly from the exact
+// immutable Kajiya InputTrie, never from a second source/dependency scan.
 type Request struct {
 	Protocol        string              `json:"protocol"`
 	ActionDigest    string              `json:"action_digest"`
@@ -29,6 +28,7 @@ type Request struct {
 	Timeout         time.Duration       `json:"timeout"`
 	Platform        map[string][]string `json:"platform"`
 	ContainerImage  string              `json:"container_image,omitempty"`
+	Tree            ActionTree          `json:"tree"`
 }
 
 // Response is the worker-facing result before Kajiya's CAS adapter imports
@@ -46,9 +46,9 @@ type Transport interface {
 	Execute(Request) (Response, error)
 }
 
-// Executor implements Kajiya's execution.ExecutorInterface. The first version
-// proves the replaceable seam and stdout/stderr/exit-code round trip. Input and
-// output CAS materialization is added by the next adapter layer.
+// Executor implements Kajiya's execution.ExecutorInterface. CAS blob transport
+// is supplied by the next adapter layer; this layer already carries the exact
+// action semantics and declared input/output tree.
 type Executor struct {
 	Transport Transport
 }
@@ -63,6 +63,10 @@ func (e *Executor) Execute(action *model.Action) (*repb.ActionResult, error) {
 		return nil, errors.New("nil mailbox transport")
 	}
 
+	tree, err := FlattenAction(action)
+	if err != nil {
+		return nil, err
+	}
 	env := make(map[string]string, len(action.EnvVars))
 	for _, item := range action.EnvVars {
 		env[item.Name] = item.Value
@@ -79,6 +83,7 @@ func (e *Executor) Execute(action *model.Action) (*repb.ActionResult, error) {
 		Timeout:         action.Timeout,
 		Platform:        clonePlatform(action.Platform),
 		ContainerImage:  action.ContainerImage,
+		Tree:            tree,
 	}
 
 	resp, err := e.Transport.Execute(req)

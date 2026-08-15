@@ -1,0 +1,179 @@
+name: Chromium Mesh v0
+
+on:
+  push:
+    branches:
+      - chatgpt/chromium-mesh-v0
+    paths:
+      - 'tools/chromium-mesh/**'
+      - '.github/workflows/chromium-mesh.yml'
+  workflow_dispatch:
+
+jobs:
+  mailbox-cas-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tools/chromium-mesh/tests -v
+      - name: Run two-worker mixed-object proof
+        run: |
+          rm -rf /tmp/chromium-mesh-demo
+          python3 tools/chromium-mesh/mesh.py demo --root /tmp/chromium-mesh-demo
+          cat /tmp/chromium-mesh-demo/DEMO_RESULT.json
+      - name: Stage two exact Chromium headers
+        run: |
+          set -euxo pipefail
+          rev=67505133bc3ef1c64e069cf8de9c853ebf3fb79b
+          root=/tmp/chromium-source
+          mkdir -p "$root/base/types"
+          curl -fsSLo "$root/base/types/pass_key.h" \
+            "https://raw.githubusercontent.com/chromium/chromium/$rev/base/types/pass_key.h"
+          curl -fsSLo "$root/base/types/cxx26_projected_value_t.h" \
+            "https://raw.githubusercontent.com/chromium/chromium/$rev/base/types/cxx26_projected_value_t.h"
+      - name: Compile real Chromium code across mailbox workers
+        run: |
+          rm -rf /tmp/chromium-header-mesh
+          python3 tools/chromium-mesh/mesh.py chromium-header-demo \
+            --root /tmp/chromium-header-mesh \
+            --source-root /tmp/chromium-source \
+            --source-revision 67505133bc3ef1c64e069cf8de9c853ebf3fb79b
+          cat /tmp/chromium-header-mesh/CHROMIUM_HEADER_DEMO_RESULT.json
+
+  kajiya-mailbox-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+          cache: false
+      - name: Compile against exact Kajiya executor interface
+        working-directory: tools/chromium-mesh/kajiya-mailbox
+        run: |
+          set -euxo pipefail
+          go mod tidy
+          go test -v ./...
+          git diff -- go.mod go.sum || true
+
+  siso-kajiya-reapi-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+          cache: false
+      - name: Build pinned nsjail required by Kajiya
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            autoconf bison flex g++ gcc git libnl-route-3-dev libprotobuf-dev \
+            libtool make pkg-config protobuf-compiler
+          git clone --filter=blob:none https://github.com/google/nsjail.git /tmp/nsjail
+          git -C /tmp/nsjail checkout f78475530b46d0186111a9096b30725f816b55fe
+          make -C /tmp/nsjail -j2
+          sudo install -m 0755 /tmp/nsjail/nsjail /usr/local/bin/nsjail
+          test -x /usr/local/bin/nsjail
+      - name: Build Siso and minimally repaired pinned Kajiya
+        run: |
+          set -euxo pipefail
+          go install go.chromium.org/build/siso@v1.5.25
+          git clone --filter=blob:none https://chromium.googlesource.com/build /tmp/chromium-build
+          git -C /tmp/chromium-build checkout b143068cd995
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('/tmp/chromium-build/kajiya/execution/localexec/executor.go')
+          s=p.read_text()
+          needle='func(path string, d fs.DirEntry, err error) error {\n\t\tif d.IsDir() {'
+          replacement='func(path string, d fs.DirEntry, err error) error {\n\t\tif err != nil || d == nil {\n\t\t\treturn nil\n\t\t}\n\t\tif d.IsDir() {'
+          count=s.count(needle)
+          if count < 1:
+              raise SystemExit('expected Kajiya WalkDir cleanup pattern not found')
+          p.write_text(s.replace(needle,replacement))
+          print('patched cleanup callbacks:',count)
+          PY
+          (cd /tmp/chromium-build/kajiya && go build -o "$(go env GOPATH)/bin/kajiya" .)
+          "$(go env GOPATH)/bin/siso" version
+          git -C /tmp/chromium-build diff --check
+          git -C /tmp/chromium-build diff -- kajiya/execution/localexec/executor.go
+      - name: Prepare self-contained REAPI action
+        run: |
+          set -euxo pipefail
+          mkdir -p /tmp/reapi-probe/root
+          cat > /tmp/reapi-probe/probe.go <<'EOF'
+          package main
+          import (
+            "fmt"
+            "os"
+          )
+          func main() {
+            if err := os.WriteFile("proof.txt", []byte("TF_SISO_KAJIYA_OK\n"), 0644); err != nil { panic(err) }
+            fmt.Println("TF_SISO_KAJIYA_OK")
+          }
+          EOF
+          CGO_ENABLED=0 go build -trimpath -o /tmp/reapi-probe/root/probe /tmp/reapi-probe/probe.go
+          cat > /tmp/reapi-probe/command.txt <<'EOF'
+          arguments: "./probe"
+          output_paths: "proof.txt"
+          EOF
+          cat > /tmp/reapi-probe/action.txt <<'EOF'
+          do_not_cache: true
+          EOF
+      - name: Start pinned Kajiya REAPI backend
+        run: |
+          set -euxo pipefail
+          KAJIYA="$(go env GOPATH)/bin/kajiya"
+          rm -rf /tmp/kajiya-data
+          "$KAJIYA" -sandbox=files -allow_host_fs -dir=/tmp/kajiya-data >/tmp/kajiya.log 2>&1 &
+          echo $! >/tmp/kajiya.pid
+          python3 - <<'PY'
+          import socket,time
+          deadline=time.time()+15
+          while time.time()<deadline:
+              try:
+                  with socket.create_connection(("127.0.0.1",50051),timeout=.5):
+                      print("KAJIYA_PORT_READY")
+                      raise SystemExit(0)
+              except OSError:
+                  time.sleep(.25)
+          raise SystemExit("Kajiya did not open port 50051")
+          PY
+      - name: Submit bounded action with unmodified Siso recall
+        env:
+          SISO_REAPI_ADDRESS: localhost:50051
+          SISO_REAPI_INSTANCE: default_instance
+          RBE_service_no_security: 'true'
+        run: |
+          set -euxo pipefail
+          SISO="$(go env GOPATH)/bin/siso"
+          set +e
+          timeout --signal=TERM --kill-after=5s 30s \
+            "$SISO" recall -re_cache_enable_read=false /tmp/reapi-probe \
+            > /tmp/siso-recall.log 2>&1
+          status=$?
+          set -e
+          cat /tmp/siso-recall.log
+          stderr_spec="$(sed -n 's/^stderr: hash:"\([0-9a-f]*\)" size_bytes:\([0-9][0-9]*\)$/\1\/\2/p' /tmp/siso-recall.log | tail -1)"
+          if [ -n "$stderr_spec" ]; then
+            echo "=== remote action stderr ($stderr_spec) ==="
+            "$SISO" fetch -type raw "$stderr_spec" | tee /tmp/remote-action.stderr
+          fi
+          test "$status" -eq 0
+          grep -F 'exit=0' /tmp/siso-recall.log
+          grep -F 'TF_SISO_KAJIYA_OK' /tmp/siso-recall.log
+          grep -F 'proof.txt' /tmp/siso-recall.log
+          grep -E '^Action: [0-9a-f]+/[0-9]+$' /tmp/siso-recall.log
+      - name: Preserve protocol evidence
+        if: always()
+        run: |
+          echo '=== Siso recall ==='
+          cat /tmp/siso-recall.log 2>/dev/null || true
+          echo '=== fetched remote stderr ==='
+          cat /tmp/remote-action.stderr 2>/dev/null || true
+          echo '=== Kajiya ==='
+          cat /tmp/kajiya.log 2>/dev/null || true
+          echo '=== Kajiya process ==='
+          if [ -f /tmp/kajiya.pid ]; then
+            ps -fp "$(cat /tmp/kajiya.pid)" || true
+          fi

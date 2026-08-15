@@ -82,7 +82,8 @@ jobs:
         run: |
           set -euxo pipefail
           KAJIYA="$(go env GOPATH)/bin/kajiya"
-          "$KAJIYA" -sandbox=files >/tmp/kajiya.log 2>&1 &
+          rm -rf /tmp/kajiya-data
+          "$KAJIYA" -sandbox=files -allow_host_fs -dir=/tmp/kajiya-data >/tmp/kajiya.log 2>&1 &
           echo $! >/tmp/kajiya.pid
           python3 - <<'PY'
           import socket,time

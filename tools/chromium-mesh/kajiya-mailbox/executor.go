@@ -8,15 +8,13 @@ import (
 	"time"
 
 	repb "go.chromium.org/build/remote-apis/build/bazel/remote/execution/v2"
+	"go.chromium.org/build/kajiya/blobstore"
 	"go.chromium.org/build/kajiya/execution"
 	"go.chromium.org/build/kajiya/execution/model"
 )
 
 const Protocol = "TORSIONFIELD_KAJIYA_MAILBOX/1"
 
-// Request is deliberately transport-neutral. Kajiya remains authoritative for
-// the REAPI Merkle input/output model. Tree is derived directly from the exact
-// immutable Kajiya InputTrie, never from a second source/dependency scan.
 type Request struct {
 	Protocol        string              `json:"protocol"`
 	ActionDigest    string              `json:"action_digest"`
@@ -32,9 +30,6 @@ type Request struct {
 	Blobs           map[string][]byte   `json:"blobs"`
 }
 
-// Response is the worker-facing result. Regular-file outputs are returned as
-// bytes and are inserted into Kajiya's canonical CAS by Executor before the
-// REAPI ActionResult is returned to Siso.
 type Response struct {
 	ExitCode    int32                     `json:"exit_code"`
 	Stdout      []byte                    `json:"stdout"`
@@ -42,19 +37,16 @@ type Response struct {
 	OutputFiles map[string]OutputFileData `json:"output_files,omitempty"`
 }
 
-// Transport is intentionally smaller than REAPI. Kajiya remains the REAPI/CAS
-// authority; this transport only decides where an already-normalized action is
-// executed.
 type Transport interface {
 	Execute(Request) (Response, error)
 }
 
-// Executor implements Kajiya's execution.ExecutorInterface. CAS is the exact
-// Kajiya CAS used by the REAPI server; Transport may be a live remote worker or
-// an offline mailbox exporter/importer.
+// Executor implements Kajiya's execution.ExecutorInterface. Kajiya's concrete
+// CAS is kept as the sole digest authority; no parallel digest representation is
+// introduced by Chromium Mesh.
 type Executor struct {
 	Transport Transport
-	CAS       BlobCAS
+	CAS       *blobstore.ContentAddressableStorage
 }
 
 var _ execution.ExecutorInterface = (*Executor)(nil)

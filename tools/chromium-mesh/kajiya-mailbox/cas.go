@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 
+	"go.chromium.org/build/hashigo/digest"
 	repb "go.chromium.org/build/remote-apis/build/bazel/remote/execution/v2"
 	"go.chromium.org/build/kajiya/blobstore"
 	"go.chromium.org/build/kajiya/execution/model"
@@ -15,9 +16,11 @@ type OutputFileData struct {
 	Executable bool   `json:"executable"`
 }
 
-// loadInputBlobs intentionally accepts Kajiya's concrete CAS. This allows the
-// exact digest type carried by KajiyaFile to flow directly into CAS.Get without
-// creating a second digest abstraction that can drift across Kajiya revisions.
+// Mailbox v1 deliberately admits SHA-256 actions only. This is the digest
+// function used by the first Chromium/Siso acceptance lane. Multi-hash support
+// is a later extension after the first real Chromium compile action passes.
+var mailboxDigestFunction = digest.SHA256
+
 func loadInputBlobs(action *model.Action, cas *blobstore.ContentAddressableStorage) (map[string][]byte, error) {
 	if action == nil || action.InputTrie == nil {
 		return nil, fmt.Errorf("action has no Kajiya InputTrie")
@@ -37,7 +40,7 @@ func loadInputBlobs(action *model.Action, cas *blobstore.ContentAddressableStora
 			if _, ok := blobs[key]; ok {
 				continue
 			}
-			b, err := cas.Get(f.Digest)
+			b, err := cas.Get(mailboxDigestFunction, f.Digest)
 			if err != nil {
 				walkErr = fmt.Errorf("fetch input blob %s: %w", key, err)
 				return true
@@ -76,13 +79,13 @@ func storeOutputFiles(cas *blobstore.ContentAddressableStorage, tree ActionTree,
 			return nil, fmt.Errorf("worker returned undeclared output %q", p)
 		}
 		data := returned[p]
-		d, err := cas.Put(data.Data)
+		d, err := cas.Put(mailboxDigestFunction, data.Data)
 		if err != nil {
 			return nil, fmt.Errorf("store output %q: %w", p, err)
 		}
 		files = append(files, &repb.OutputFile{
 			Path:         p,
-			Digest:       d.ToProto(),
+			Digest:       d.Proto(),
 			IsExecutable: data.Executable,
 		})
 	}

@@ -40,6 +40,22 @@ jobs:
             --source-revision a19b2ac55d4a8f904b658e562bde0a6a47d899b2
           cat /tmp/chromium-header-mesh/CHROMIUM_HEADER_DEMO_RESULT.json
 
+  kajiya-mailbox-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+          cache: false
+      - name: Compile against exact Kajiya executor interface
+        working-directory: tools/chromium-mesh/kajiya-mailbox
+        run: |
+          set -euxo pipefail
+          go mod tidy
+          go test -v ./...
+          git diff -- go.mod go.sum || true
+
   siso-kajiya-reapi-proof:
     runs-on: ubuntu-latest
     steps:

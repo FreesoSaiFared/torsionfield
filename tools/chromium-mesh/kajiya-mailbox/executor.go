@@ -7,16 +7,17 @@ import (
 	"fmt"
 	"time"
 
-	repb "github.com/bazelbuild/remote-apis/build/bazel/remote/execution/v2"
+	repb "go.chromium.org/build/remote-apis/build/bazel/remote/execution/v2"
 	"go.chromium.org/build/kajiya/execution"
 	"go.chromium.org/build/kajiya/execution/model"
 )
 
 const Protocol = "TORSIONFIELD_KAJIYA_MAILBOX/1"
 
-// Request is deliberately transport-neutral. Input-root bytes remain owned by
-// the Kajiya/CAS adapter; this envelope carries action identity and execution
-// semantics to a live worker or an offline mailbox exporter.
+// Request is deliberately transport-neutral. Kajiya remains authoritative for
+// the REAPI Merkle input/output model. This first seam carries only fields that
+// are directly present in the exact pinned Kajiya Action model; CAS
+// materialization and output enumeration are added by the adapter layer.
 type Request struct {
 	Protocol        string              `json:"protocol"`
 	ActionDigest    string              `json:"action_digest"`
@@ -25,7 +26,6 @@ type Request struct {
 	Args            []string            `json:"args"`
 	Environment     map[string]string   `json:"environment"`
 	WorkingDir      string              `json:"working_dir"`
-	OutputPaths     []string            `json:"output_paths"`
 	Timeout         time.Duration       `json:"timeout"`
 	Platform        map[string][]string `json:"platform"`
 	ContainerImage  string              `json:"container_image,omitempty"`
@@ -76,7 +76,6 @@ func (e *Executor) Execute(action *model.Action) (*repb.ActionResult, error) {
 		Args:            append([]string(nil), action.Args...),
 		Environment:     env,
 		WorkingDir:      action.WorkingDir,
-		OutputPaths:     append([]string(nil), action.OutputPaths...),
 		Timeout:         action.Timeout,
 		Platform:        clonePlatform(action.Platform),
 		ContainerImage:  action.ContainerImage,

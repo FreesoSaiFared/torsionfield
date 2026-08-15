@@ -154,6 +154,11 @@ jobs:
           status=$?
           set -e
           cat /tmp/siso-recall.log
+          stderr_spec="$(sed -n 's/^stderr: hash:"\([0-9a-f]*\)" size_bytes:\([0-9][0-9]*\)$/\1\/\2/p' /tmp/siso-recall.log | tail -1)"
+          if [ -n "$stderr_spec" ]; then
+            echo "=== remote action stderr ($stderr_spec) ==="
+            "$SISO" fetch -type raw "$stderr_spec" | tee /tmp/remote-action.stderr
+          fi
           test "$status" -eq 0
           grep -F 'exit=0' /tmp/siso-recall.log
           grep -F 'TF_SISO_KAJIYA_OK' /tmp/siso-recall.log
@@ -164,6 +169,8 @@ jobs:
         run: |
           echo '=== Siso recall ==='
           cat /tmp/siso-recall.log 2>/dev/null || true
+          echo '=== fetched remote stderr ==='
+          cat /tmp/remote-action.stderr 2>/dev/null || true
           echo '=== Kajiya ==='
           cat /tmp/kajiya.log 2>/dev/null || true
           echo '=== Kajiya process ==='

@@ -61,7 +61,7 @@ jobs:
     steps:
       - uses: actions/setup-go@v5
         with:
-          go-version: '1.25.x'
+          go-version: '1.26.x'
           cache: false
       - name: Build pinned nsjail required by Kajiya
         run: |
@@ -75,14 +75,28 @@ jobs:
           make -C /tmp/nsjail -j2
           sudo install -m 0755 /tmp/nsjail/nsjail /usr/local/bin/nsjail
           test -x /usr/local/bin/nsjail
-      - name: Install pinned Chromium build tools
+      - name: Build Siso and minimally repaired pinned Kajiya
         run: |
           set -euxo pipefail
           go install go.chromium.org/build/siso@v1.5.25
-          go install go.chromium.org/build/kajiya@v0.0.0-20260723082236-b143068cd995
+          git clone --filter=blob:none https://chromium.googlesource.com/build /tmp/chromium-build
+          git -C /tmp/chromium-build checkout b143068cd995
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('/tmp/chromium-build/kajiya/execution/localexec/executor.go')
+          s=p.read_text()
+          needle='func(path string, d fs.DirEntry, err error) error {\n\t\tif d.IsDir() {'
+          replacement='func(path string, d fs.DirEntry, err error) error {\n\t\tif err != nil || d == nil {\n\t\t\treturn nil\n\t\t}\n\t\tif d.IsDir() {'
+          count=s.count(needle)
+          if count < 1:
+              raise SystemExit('expected Kajiya WalkDir cleanup pattern not found')
+          p.write_text(s.replace(needle,replacement))
+          print('patched cleanup callbacks:',count)
+          PY
+          (cd /tmp/chromium-build/kajiya && go build -o "$(go env GOPATH)/bin/kajiya" .)
           "$(go env GOPATH)/bin/siso" version
-          "$(go env GOPATH)/bin/kajiya" -help > /tmp/kajiya-help.txt 2>&1 || true
-          head -80 /tmp/kajiya-help.txt
+          git -C /tmp/chromium-build diff --check
+          git -C /tmp/chromium-build diff -- kajiya/execution/localexec/executor.go
       - name: Prepare self-contained REAPI action
         run: |
           set -euxo pipefail
@@ -140,12 +154,9 @@ jobs:
           status=$?
           set -e
           cat /tmp/siso-recall.log
-          if [ "$status" -eq 124 ] || [ "$status" -eq 137 ]; then
-            echo "TF_SISO_KAJIYA_TIMEOUT status=$status" >&2
-            exit "$status"
-          fi
           test "$status" -eq 0
           grep -F 'exit=0' /tmp/siso-recall.log
+          grep -F 'TF_SISO_KAJIYA_OK' /tmp/siso-recall.log
           grep -F 'proof.txt' /tmp/siso-recall.log
           grep -E '^Action: [0-9a-f]+/[0-9]+$' /tmp/siso-recall.log
       - name: Preserve protocol evidence

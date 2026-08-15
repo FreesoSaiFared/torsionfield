@@ -5,12 +5,11 @@ import argparse
 import json
 import shutil
 import subprocess
-import tarfile
 from pathlib import Path
 
 import mesh
 
-REV = "a19b2ac55d4a8f904b658e562bde0a6a47d899b2"
+REV = "67505133bc3ef1c64e069cf8de9c853ebf3fb79b"
 PASS_KEY = "base/types/pass_key.h"
 PROJECTED = "base/types/cxx26_projected_value_t.h"
 

@@ -1,0 +1,24 @@
+name: export-internal-vm-uml-artifact
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify committed capsule
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd artifacts/internal-vm-uml
+          echo '0f95e12d012d0fd73a1955967eb0808da053af02577fa8a5848081783711c681  internal-vm-uml-capsule.tar.gz' | sha256sum -c -
+      - name: Upload capsule for connector transport
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-vm-uml-capsule-export
+          path: artifacts/internal-vm-uml/internal-vm-uml-capsule.tar.gz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7

@@ -1,0 +1,162 @@
+name: Internal VM UML proof
+
+on:
+  push:
+    branches:
+      - experiment/internal-vm-uml-20260819
+  workflow_dispatch:
+
+jobs:
+  build-and-prove:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout pinned Linux source
+        uses: actions/checkout@v4
+        with:
+          repository: torvalds/linux
+          ref: v6.12.96
+          path: linux
+          fetch-depth: 1
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential flex bison bc libssl-dev libelf-dev libncurses-dev busybox-static e2fsprogs
+
+      - name: Configure hermetic UML kernel and initramfs
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd linux
+          mkdir -p uml-root/{bin,dev,proc,sys,mnt,tmp}
+          cp /bin/busybox uml-root/bin/busybox
+          cat > uml-root/init <<'EOF'
+          #!/bin/busybox sh
+          set -eu
+          /bin/busybox --install -s /bin
+          mount -t proc proc /proc
+          mount -t sysfs sysfs /sys
+          mount -t devtmpfs devtmpfs /dev
+          mkdir -p /mnt
+          echo "UML_GUEST_KERNEL=$(uname -srmo)"
+          echo "UML_GUEST_PID1=$$"
+          echo "UML_CMDLINE=$(cat /proc/cmdline)"
+          mount -t ext4 /dev/ubda /mnt
+          if [ -f /mnt/sentinel ]; then
+            echo "SENTINEL_BEFORE=$(cat /mnt/sentinel)"
+          else
+            echo "SENTINEL_BEFORE=ABSENT"
+          fi
+          echo "written-by-uml" > /mnt/sentinel
+          sync
+          echo "SENTINEL_AFTER=$(cat /mnt/sentinel)"
+          umount /mnt
+          sync
+          echo "UML_TEST_COMPLETE=1"
+          poweroff -f
+          EOF
+          chmod +x uml-root/init
+
+          make ARCH=um defconfig
+          scripts/config --enable BLK_DEV_UBD
+          scripts/config --enable EXT4_FS
+          scripts/config --enable DEVTMPFS
+          scripts/config --enable DEVTMPFS_MOUNT
+          scripts/config --enable TMPFS
+          scripts/config --disable HOSTFS
+          scripts/config --disable MODULES
+          scripts/config --set-str INITRAMFS_SOURCE "uml-root"
+          yes '' | make ARCH=um olddefconfig
+          grep -E 'CONFIG_(BLK_DEV_UBD|EXT4_FS|DEVTMPFS|DEVTMPFS_MOUNT|HOSTFS|MODULES|INITRAMFS_SOURCE)=' .config
+
+      - name: Build UML executable
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd linux
+          make -j2 ARCH=um linux
+          cp linux ../linux-uml
+          strip --strip-debug ../linux-uml || true
+          file ../linux-uml
+          sha256sum ../linux-uml
+
+      - name: Prove COW persistence and reset
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p proof seed
+          echo pristine-master > seed/baseline.txt
+          truncate -s 32M master.img
+          mkfs.ext4 -q -d seed master.img
+          sha256sum master.img | tee proof/master-before.sha256
+
+          run_uml() {
+            local cow="$1"
+            local log="$2"
+            set +e
+            timeout 60s ./linux-uml \
+              mem=128M \
+              "ubd0=${cow},master.img" \
+              init=/init \
+              con=null con0=fd:0,fd:1 \
+              >"${log}" 2>&1
+            local rc=$?
+            set -e
+            echo "uml_exit=${rc}" >> "${log}"
+            grep -E 'UML_GUEST_KERNEL=|SENTINEL_BEFORE=|SENTINEL_AFTER=|UML_TEST_COMPLETE=' "${log}"
+            grep -q 'UML_TEST_COMPLETE=1' "${log}"
+          }
+
+          run_uml run1.cow proof/run1-first.log
+          run_uml run1.cow proof/run1-second.log
+          run_uml run2.cow proof/run2-fresh.log
+
+          grep -q 'SENTINEL_BEFORE=ABSENT' proof/run1-first.log
+          grep -q 'SENTINEL_BEFORE=written-by-uml' proof/run1-second.log
+          grep -q 'SENTINEL_BEFORE=ABSENT' proof/run2-fresh.log
+
+          sha256sum master.img | tee proof/master-after.sha256
+          diff -u proof/master-before.sha256 proof/master-after.sha256
+          debugfs -R 'cat /baseline.txt' master.img 2>/dev/null | grep -q '^pristine-master$'
+          if debugfs -R 'stat /sentinel' master.img 2>&1 | grep -q 'Inode:'; then
+            echo 'ERROR: sentinel leaked into master image' >&2
+            exit 1
+          fi
+
+          printf 'UML_COW_PROOF=PASS\n' | tee proof/result.txt
+          du -h linux-uml master.img run1.cow run2.cow | tee proof/sizes.txt
+
+      - name: Package capsule
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p capsule
+          cp linux-uml master.img run1.cow run2.cow capsule/
+          cp -r proof capsule/
+          cat > capsule/run-local-proof.sh <<'EOF'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          rm -f local.cow
+          timeout 60s ./linux-uml mem=128M ubd0=local.cow,master.img init=/init con=null con0=fd:0,fd:1 | tee local-boot.log
+          grep -q 'UML_TEST_COMPLETE=1' local-boot.log
+          grep -q 'SENTINEL_BEFORE=ABSENT' local-boot.log
+          echo LOCAL_UML_BOOT=PASS
+          EOF
+          chmod +x capsule/run-local-proof.sh
+          (
+            cd capsule
+            sha256sum linux-uml master.img run1.cow run2.cow run-local-proof.sh proof/* > SHA256SUMS
+          )
+          tar --sort=name --mtime='UTC 2026-08-19' --owner=0 --group=0 --numeric-owner -czf internal-vm-uml-capsule.tar.gz -C capsule .
+          sha256sum internal-vm-uml-capsule.tar.gz | tee capsule.sha256
+
+      - name: Upload proven UML capsule
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-vm-uml-capsule
+          path: |
+            internal-vm-uml-capsule.tar.gz
+            capsule.sha256
+          if-no-files-found: error
+          retention-days: 30

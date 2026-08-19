@@ -5,6 +5,8 @@ on:
       - '.github/workflows/stage-internal-vm-uml.yml'
       - '.github/internal-vm-uml-trigger'
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   stage:
     runs-on: ubuntu-24.04
@@ -101,7 +103,8 @@ jobs:
           (cd bundle && sha256sum linux-uml master.img run1.cow run2.cow run-local-proof.sh proof/* > SHA256SUMS)
           tar --sort=name --mtime='UTC 2026-08-19' --owner=0 --group=0 --numeric-owner -czf internal-vm-uml-capsule.tar.gz -C bundle .
           sha256sum internal-vm-uml-capsule.tar.gz > capsule.sha256
-      - uses: actions/upload-artifact@v4
+      - id: upload
+        uses: actions/upload-artifact@v4
         with:
           name: internal-vm-uml-capsule
           path: |
@@ -109,3 +112,29 @@ jobs:
             capsule.sha256
           if-no-files-found: error
           retention-days: 30
+      - name: Record successful run identity
+        uses: actions/checkout@v4
+        with:
+          repository: FreesoSaiFared/torsionfield
+          ref: main
+          path: torsionfield-repo
+      - name: Publish run pointer
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd torsionfield-repo
+          mkdir -p artifacts/internal-vm-uml
+          {
+            echo "RUN_ID=${GITHUB_RUN_ID}"
+            echo "RUN_ATTEMPT=${GITHUB_RUN_ATTEMPT}"
+            echo "ARTIFACT_ID=${{ steps.upload.outputs.artifact-id }}"
+            echo "ARTIFACT_NAME=internal-vm-uml-capsule"
+            echo "SOURCE_WORKFLOW_SHA=${GITHUB_SHA}"
+            echo -n "CAPSULE_SHA256="
+            cut -d' ' -f1 ../capsule.sha256
+          } > artifacts/internal-vm-uml/latest-run.txt
+          git config user.name 'torsionfield-actions'
+          git config user.email 'actions@users.noreply.github.com'
+          git add artifacts/internal-vm-uml/latest-run.txt
+          git commit -m "record successful Internal VM UML staging run ${GITHUB_RUN_ID}"
+          git push origin HEAD:main

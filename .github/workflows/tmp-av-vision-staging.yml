@@ -1,4 +1,3 @@
-# trigger-20260820
 name: tmp-av-vision-staging
 on:
   push:
@@ -21,15 +20,13 @@ jobs:
           curl -fL --retry 3 'https://github.com/facebookresearch/sam2/archive/refs/heads/main.zip' -o artifact/sources/sam2-main.zip
           curl -fL --retry 3 'https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt' -o artifact/weights/sam2.1_hiera_tiny.pt
           sha256sum artifact/weights/* artifact/sources/* > artifact/SHA256SUMS
-          cat > artifact/provenance/SOURCES.txt <<'EOF'
-YOLOv9 source: https://github.com/WongKinYiu/yolov9 (GPL-3.0; research/source reference)
-YOLOv9 weight: official v0.1 yolov9-s-converted.pt
-YOLOv10 source: https://github.com/THU-MIG/yolov10
-YOLOv10 weight: https://huggingface.co/jameslahm/yolov10n
-DeepLabV3 MobileNetV3 weight: torchvision official model CDN
-SAM2 source: https://github.com/facebookresearch/sam2
-SAM2.1 Hiera tiny weight: Meta public model CDN
-EOF
+          printf '%s\n' 'YOLOv9 source: https://github.com/WongKinYiu/yolov9 (GPL-3.0; research/source reference)' > artifact/provenance/SOURCES.txt
+          printf '%s\n' 'YOLOv9 weight: official v0.1 yolov9-s-converted.pt' >> artifact/provenance/SOURCES.txt
+          printf '%s\n' 'YOLOv10 source: https://github.com/THU-MIG/yolov10' >> artifact/provenance/SOURCES.txt
+          printf '%s\n' 'YOLOv10 weight: https://huggingface.co/jameslahm/yolov10n' >> artifact/provenance/SOURCES.txt
+          printf '%s\n' 'DeepLabV3 MobileNetV3 weight: torchvision official model CDN' >> artifact/provenance/SOURCES.txt
+          printf '%s\n' 'SAM2 source: https://github.com/facebookresearch/sam2' >> artifact/provenance/SOURCES.txt
+          printf '%s\n' 'SAM2.1 Hiera tiny weight: Meta public model CDN' >> artifact/provenance/SOURCES.txt
           du -h artifact/weights/* artifact/sources/*
       - name: Upload staging artifact
         uses: actions/upload-artifact@v4

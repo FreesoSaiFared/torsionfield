@@ -1,0 +1,39 @@
+name: tmp-av-vision-staging
+on:
+  push:
+    paths:
+      - '.github/workflows/tmp-av-vision-staging.yml'
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download compact vision donors and weights
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifact/sources artifact/weights artifact/provenance
+          curl -fL --retry 3 'https://github.com/WongKinYiu/yolov9/archive/refs/heads/main.zip' -o artifact/sources/yolov9-main.zip
+          curl -fL --retry 3 'https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-s-converted.pt' -o artifact/weights/yolov9-s-converted.pt
+          curl -fL --retry 3 'https://github.com/THU-MIG/yolov10/archive/refs/heads/main.zip' -o artifact/sources/yolov10-main.zip
+          curl -fL --retry 3 'https://huggingface.co/jameslahm/yolov10n/resolve/main/yolov10n.pt' -o artifact/weights/yolov10n.pt
+          curl -fL --retry 3 'https://download.pytorch.org/models/deeplabv3_mobilenet_v3_large-fc3c493d.pth' -o artifact/weights/deeplabv3_mobilenet_v3_large-fc3c493d.pth
+          curl -fL --retry 3 'https://github.com/facebookresearch/sam2/archive/refs/heads/main.zip' -o artifact/sources/sam2-main.zip
+          curl -fL --retry 3 'https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt' -o artifact/weights/sam2.1_hiera_tiny.pt
+          sha256sum artifact/weights/* artifact/sources/* > artifact/SHA256SUMS
+          cat > artifact/provenance/SOURCES.txt <<'EOF'
+YOLOv9 source: https://github.com/WongKinYiu/yolov9 (GPL-3.0; research/source reference)
+YOLOv9 weight: official v0.1 yolov9-s-converted.pt
+YOLOv10 source: https://github.com/THU-MIG/yolov10
+YOLOv10 weight: https://huggingface.co/jameslahm/yolov10n
+DeepLabV3 MobileNetV3 weight: torchvision official model CDN
+SAM2 source: https://github.com/facebookresearch/sam2
+SAM2.1 Hiera tiny weight: Meta public model CDN
+EOF
+          du -h artifact/weights/* artifact/sources/*
+      - name: Upload staging artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: av-vision-staging
+          path: artifact/
+          retention-days: 1
+          compression-level: 0

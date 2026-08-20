@@ -15,18 +15,15 @@ jobs:
           curl -fL --retry 3 'https://github.com/WongKinYiu/yolov9/archive/refs/heads/main.zip' -o artifact/sources/yolov9-main.zip
           curl -fL --retry 3 'https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-s-converted.pt' -o artifact/weights/yolov9-s-converted.pt
           curl -fL --retry 3 'https://github.com/THU-MIG/yolov10/archive/refs/heads/main.zip' -o artifact/sources/yolov10-main.zip
-          curl -fL --retry 3 'https://huggingface.co/jameslahm/yolov10n/resolve/main/yolov10n.pt' -o artifact/weights/yolov10n.pt
+          curl -fL --retry 3 'https://huggingface.co/onnx-community/yolov10n/resolve/main/onnx/model.onnx' -o artifact/weights/yolov10n.onnx
           curl -fL --retry 3 'https://download.pytorch.org/models/deeplabv3_mobilenet_v3_large-fc3c493d.pth' -o artifact/weights/deeplabv3_mobilenet_v3_large-fc3c493d.pth
           curl -fL --retry 3 'https://github.com/facebookresearch/sam2/archive/refs/heads/main.zip' -o artifact/sources/sam2-main.zip
           curl -fL --retry 3 'https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt' -o artifact/weights/sam2.1_hiera_tiny.pt
           sha256sum artifact/weights/* artifact/sources/* > artifact/SHA256SUMS
-          printf '%s\n' 'YOLOv9 source: https://github.com/WongKinYiu/yolov9 (GPL-3.0; research/source reference)' > artifact/provenance/SOURCES.txt
-          printf '%s\n' 'YOLOv9 weight: official v0.1 yolov9-s-converted.pt' >> artifact/provenance/SOURCES.txt
-          printf '%s\n' 'YOLOv10 source: https://github.com/THU-MIG/yolov10' >> artifact/provenance/SOURCES.txt
-          printf '%s\n' 'YOLOv10 weight: https://huggingface.co/jameslahm/yolov10n' >> artifact/provenance/SOURCES.txt
+          printf '%s\n' 'YOLOv9 source + official v0.1 yolov9-s-converted.pt; source GPL-3.0 research/source reference' > artifact/provenance/SOURCES.txt
+          printf '%s\n' 'YOLOv10 source: https://github.com/THU-MIG/yolov10; runtime probe uses onnx-community/yolov10n ONNX under AGPL-3.0 as research/runtime experiment' >> artifact/provenance/SOURCES.txt
           printf '%s\n' 'DeepLabV3 MobileNetV3 weight: torchvision official model CDN' >> artifact/provenance/SOURCES.txt
-          printf '%s\n' 'SAM2 source: https://github.com/facebookresearch/sam2' >> artifact/provenance/SOURCES.txt
-          printf '%s\n' 'SAM2.1 Hiera tiny weight: Meta public model CDN' >> artifact/provenance/SOURCES.txt
+          printf '%s\n' 'SAM2 source: https://github.com/facebookresearch/sam2; SAM2.1 Hiera tiny weight: Meta public model CDN' >> artifact/provenance/SOURCES.txt
           du -h artifact/weights/* artifact/sources/*
       - name: Upload staging artifact
         uses: actions/upload-artifact@v4

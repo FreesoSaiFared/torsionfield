@@ -1,1 +1,0 @@
-{"name":"torsionfield-runtime-site","private":true,"version":"0.1.0","scripts":{"dev":"wrangler dev","check":"wrangler deploy --dry-run","deploy":"wrangler deploy --minify","db:migrate":"wrangler d1 migrations apply torsionfield-network --remote"},"devDependencies":{"wrangler":"^4.118.0"}}

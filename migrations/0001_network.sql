@@ -1,2 +1,0 @@
-CREATE TABLE IF NOT EXISTS network_registrations (id TEXT PRIMARY KEY,email TEXT NOT NULL COLLATE NOCASE,display_name TEXT NOT NULL,interests TEXT NOT NULL DEFAULT '[]',node_intent TEXT NOT NULL DEFAULT 'explore',source_host TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'pending',created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
-CREATE UNIQUE INDEX IF NOT EXISTS idx_network_registration_email ON network_registrations(email);

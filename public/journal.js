@@ -3,26 +3,45 @@
  const target=document.getElementById('feed-items'),status=document.getElementById('feed-state');
  if(!target)return;
  try{
-   const resp=await fetch('/research-feed.json',{headers:{'accept':'application/json'}});
-   if(!resp.ok)throw new Error('Feed HTTP '+resp.status);
-   const data=await resp.json();
-   if(!Array.isArray(data.items)||!data.items.length)throw new Error('No entries');
+   const [feedResponse,editorResponse]=await Promise.all([
+     fetch('/api/research/articles',{headers:{accept:'application/json'}}),
+     fetch('/api/research/editorial',{headers:{accept:'application/json'}})
+   ]);
+   if(!feedResponse.ok||!editorResponse.ok)throw new Error('Source or editorial manifest unavailable');
+   const [data,editorial]=await Promise.all([feedResponse.json(),editorResponse.json()]);
+   if(!Array.isArray(data.items)||editorial.schema!=='torsionfield-editorial/1'||!editorial.entries)throw new Error('Unexpected manifests');
    const fragment=document.createDocumentFragment();
-   const sample=[];for(let j=0;j<3;j++)for(const source of data.sources||[]){const item=data.items.filter(x=>x.source===source.name)[j];if(item)sample.push(item)}
-   for(const item of sample){
-     const url=new URL(item.url);
-     if(url.protocol!=='https:'||!data.sources?.some(s=>new URL(s.feed).hostname===url.hostname))continue;
-     const row=document.createElement('article');row.className='feed-item';
-     const time=document.createElement('time');time.dateTime=item.date||'';time.textContent=item.date?new Date(item.date).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):'RESEARCH';
-     const content=document.createElement('div'),heading=document.createElement('h3'),link=document.createElement('a');
-     link.href=url.href;link.rel='noopener noreferrer';link.target='_blank';link.textContent=item.title+' ↗';
-     heading.appendChild(link);content.appendChild(heading);
-     const label=document.createElement('p');label.textContent=(item.source||'EXTERNAL RESEARCH').toUpperCase()+' / ORIGINAL SOURCE';content.appendChild(label);
-     row.append(time,content);fragment.appendChild(row);
+   const selected=[];
+   let awaiting=0;
+   for(let rank=0;rank<4;rank++)for(const source of data.sources||[]){
+     const candidates=data.items.filter(x=>x.source===source.name);
+     const row=candidates[rank];
+     if(!row)continue;
+     const edit=editorial.entries[row.url];
+     if(!edit||edit.editorialStatus!=='reviewed'||edit.sourceTitleAtReview!==row.title||!edit.headline||!edit.relevance){awaiting++;continue;}
+     selected.push({row,edit});
    }
-   if(!fragment.childElementCount)throw new Error('No valid source links');
-   target.replaceChildren(fragment);status.textContent='SOURCE CONNECTED';
- }catch(e){status.textContent='SOURCE UNAVAILABLE';console.warn('Research feed:',e);}
+   for(const {row:item,edit} of selected){
+     const url=new URL(item.url);
+     if(url.protocol!=='https:'||!data.sources.some(s=>new URL(s.feed).hostname===url.hostname))continue;
+     const article=document.createElement('article');article.className='feed-item';
+     const time=document.createElement('time');time.dateTime=item.date||'';
+     time.textContent=item.date?new Date(item.date).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}):'RESEARCH';
+     const content=document.createElement('div'),heading=document.createElement('h3'),link=document.createElement('a');
+     link.href=url.href;link.rel='noopener noreferrer';link.target='_blank';link.textContent=edit.headline+' ↗';
+     heading.appendChild(link);content.appendChild(heading);
+     const original=document.createElement('p');original.className='original-title';
+     original.textContent='ORIGINAL / '+item.title;content.appendChild(original);
+     const relevance=document.createElement('p');relevance.className='research-relevance';
+     relevance.textContent=edit.relevance;content.appendChild(relevance);
+     const topic=document.createElement('p');topic.className='topic-line';
+     topic.textContent=item.source.toUpperCase()+' / '+edit.topic;content.appendChild(topic);
+     article.append(time,content);fragment.appendChild(article);
+   }
+   if(!fragment.childElementCount)throw new Error('No current reviewed interpretations');
+   target.replaceChildren(fragment);
+   status.textContent=selected.length+' INTERPRETED / '+awaiting+' AWAITING REVIEW';
+ }catch(e){status.textContent='EDITORIAL REVIEW UNAVAILABLE';console.warn('Research interpretation:',e);}
 })();
 
 (async function(){
@@ -49,6 +68,18 @@
   const caution=document.createElement('p');caution.className='muted';
   caution.textContent=data.auditFindings.length+' independent verification checks recorded; ingestion does not imply endorsement.';
   body.appendChild(caution);
+  try{
+   const evidenceReply=await fetch('/api/research/evidence',{headers:{accept:'application/json'}});
+   if(evidenceReply.ok){
+    const audit=await evidenceReply.json();
+    if(audit.schema==='torsionfield-evidence-audit/1'&&audit.summary){
+     const result=document.createElement('p');result.className='watch-summary';
+     result.textContent='PRIMARY-SOURCE CHECKS / '+audit.summary.potentialConflicts+' CONFLICT FLAGS / '+audit.summary.independentlyVerifiedClaims+' CLAIMS INDEPENDENTLY VERIFIED';
+     const link=document.createElement('a');link.href='/api/research/evidence';link.textContent='INSPECT THE EVIDENCE RECORD ↗';link.className='read';
+     body.append(result,link);
+    }
+   }
+  }catch(e){console.warn('Evidence audit unavailable:',e);}
   target.replaceChildren(body);state.textContent='SOURCE TRACKED';
  }catch(error){
   state.textContent='STATUS UNAVAILABLE';

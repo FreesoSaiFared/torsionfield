@@ -1,0 +1,15 @@
+{
+  "name": "torsionfield-local-editorial",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@mlc-ai/web-llm": "0.2.85"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Torsionfield · Local Editorial Model</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{background:#eae8e0;color:#202c30;font:16px/1.55 system-ui;margin:0;padding:3rem;max-width:850px}
+h1{font:600 clamp(2rem,5vw,3.5rem)/1.05 Georgia,serif;letter-spacing:-.05em}
+p,small{color:#5e686b}textarea{display:block;width:100%;min-height:150px;padding:14px;background:white;border:1px solid #7a8889;font:inherit;box-sizing:border-box}
+button{margin:14px 0;padding:12px 18px;border:0;background:#1c292d;color:#f5f2e9;cursor:pointer}
+button:disabled{opacity:.4}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-left:3px solid #ae523b;background:#f7f5ed}
+</style>
+<body><p>TF / LOCAL MODEL · PRIVATE BROWSER GPU</p><h1>Editorial interpretation lab</h1>
+<p id="status" role="status">Checking browser WebGPU and model cache…</p>
+<p>The model warms in a dedicated worker. First load may fetch model weights; later visits reuse the browser cache. Outputs are drafts, not verified claims.</p>
+<label for="source">Source article title and a short factual extract</label>
+<textarea id="source">The model isn't cooperating — James Kettle explains how broad security-research prompts may yield shallow investigations despite no explicit refusal.</textarea>
+<button id="draft" disabled>Draft a plain-language title and relevance paragraph</button>
+<pre id="result">MODEL NOT READY</pre><script type="module" src="./dist/app.js"></script>
+</body></html>

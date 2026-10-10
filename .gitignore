@@ -11,3 +11,5 @@ artifacts/
 
 __pycache__/
 .runtime/
+
+tools/webllm-personalizer/dist/

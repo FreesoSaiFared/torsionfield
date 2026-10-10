@@ -1,0 +1,189 @@
+{
+  "schema": "torsionfield-editorial/1",
+  "editorialPolicy": "Our headlines interpret relevance; original titles appear beneath. Editorial drafts never become factual verification.",
+  "updatedAt": "2026-10-10",
+  "entries": {
+    "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/": {
+      "headline": "Which small model should decide what an agent does next?",
+      "topic": "MODEL ROUTING",
+      "relevance": "Cloudflare describes new Clef model variants. For Torsionfield, the question is whether cheap decision models can reliably classify tool calls before an expensive reasoning model is engaged.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash"
+    },
+    "https://labs.watchtowr.com/death-by-a-thousand-papercuts-papercut-pre-auth-rce-chain-and-patch-bypasses-wt-2026-0141-0144-cve-2026-82077-cve-2026-82078-cve-2026-81578/": {
+      "headline": "One patch may not fix the whole security problem",
+      "topic": "PATCH VALIDATION",
+      "relevance": "A complex vulnerability chain and bypass research is a reminder to test a fix against related entry points, not merely the original proof of concept.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Death By A Thousand PaperCuts (PaperCut Pre-Auth RCE Chain and Patch Bypasses WT-2026-0141-0144/CVE-2026-82077/CVE-2026-82078/CVE-2026-81578)"
+    },
+    "https://blog.cloudflare.com/workers-on-demand-profiling/": {
+      "headline": "Find the slow part of a running Cloudflare Worker",
+      "topic": "RUNTIME DIAGNOSTICS",
+      "relevance": "CPU and memory profiles could help distinguish slow code from network or model latency in the participant edge, rather than treating every stall as an agent failure.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects"
+    },
+    "https://blog.cloudflare.com/deno-joins-cloudflare/": {
+      "headline": "What happens when Deno and Cloudflare share infrastructure?",
+      "topic": "EDGE INFRASTRUCTURE",
+      "relevance": "Useful when choosing where scripts, Workers, and developer tools should run. We should evaluate actual compatibility before changing our deployment runtime.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Deno is joining Cloudflare"
+    },
+    "https://blog.cloudflare.com/radar-redesign/": {
+      "headline": "A data dashboard should help people understand, not decorate",
+      "topic": "INTERFACE DESIGN",
+      "relevance": "Cloudflare’s design account is a reference for evidence-heavy interfaces. We can test its information hierarchy against our diagnostics and research observatory.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Bridging technical depth and usability: The story behind Radar’s redesign"
+    },
+    "https://unit42.paloaltonetworks.com/web3-cloud-supply-chain-attacks/": {
+      "headline": "Your cloud system inherits risks from its dependencies",
+      "topic": "SUPPLY CHAIN",
+      "relevance": "Map how externally maintained packages and deployment processes acquire authority inside Torsionfield’s Workers and browser integrations.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Evolution of Web3 in Cloud Supply Chain Attacks"
+    },
+    "https://blog.cloudflare.com/agentic-security-operations/": {
+      "headline": "Security agents need evidence before they take action",
+      "topic": "AGENT VERIFICATION",
+      "relevance": "Cloudflare explores an evidence-grounded security operations harness. Compare its trace, evidence, and approval mechanisms with our guardian–executor–auditor loop.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Building an evidence-grounded agentic security operations harness on Cloudflare"
+    },
+    "https://portswigger.net/research/the-model-isnt-cooperating": {
+      "headline": "A model can agree to research a problem yet avoid the hard part",
+      "topic": "AGENT EVALUATION",
+      "relevance": "James Kettle tested differences between narrow tasks and open-ended security research, including Daybreak. We should measure genuine discoveries instead of counting task-completion language.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "The model isn't cooperating"
+    },
+    "https://labs.watchtowr.com/you-wont-hear-about-these-even-in-myths-atlassian-jira-confluence-and-more-pre-auth-arbitrary-file-read-cve-2026-21589/": {
+      "headline": "When collaboration software exposes private files",
+      "topic": "TRUST BOUNDARIES",
+      "relevance": "This investigation can inform threat models for connected document systems and agent tools that handle authenticated files.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "You Won’t Hear About These, Even In Myths (Atlassian Jira, Confluence (and more) Pre-Auth Arbitrary File Read CVE-2026-21589)"
+    },
+    "https://portswigger.net/research/smashing-the-token-limit": {
+      "headline": "A browser can reveal long secrets with CSS alone",
+      "topic": "BROWSER SECURITY",
+      "relevance": "Overlapping fragments reconstruct sensitive strings through browser styling behavior. Review whether our privileged agent pages and session surfaces permit unintended data exposure.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Smashing the token limit with overlapping fragments"
+    },
+    "https://blog.trailofbits.com/2026/10/02/sequencehash-multihashing-for-the-rest-of-us/": {
+      "headline": "Give artifacts identities that survive hashing changes",
+      "topic": "ARTIFACT PROVENANCE",
+      "relevance": "Compare this hashing design with our evidence receipts, content-addressed assets, and ability to track one artifact across different systems.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "SequenceHash: multihashing for the rest of us"
+    },
+    "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/": {
+      "headline": "Two gateway bugs show why current patch status matters",
+      "topic": "EXPOSURE WATCH",
+      "relevance": "Operational relevance is limited unless we operate affected systems, but the verification method helps assess public claims of active exploitation.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)"
+    },
+    "https://labs.watchtowr.com/here-we-go-again-citrix-netscaler-dtls-preauth-memory-overflow-cve-2026-88772/": {
+      "headline": "Test exposed gateways before trusting a patch",
+      "topic": "SECURITY REPRODUCTION",
+      "relevance": "The patch and exploitation evidence matter as a reproducible test case for independent verification and regression detection.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Here We Go Again (Citrix NetScaler DTLS Preauth Memory Overflow CVE-2026-88772)"
+    },
+    "https://unit42.paloaltonetworks.com/agentic-ai-kubernetes-operator-risks/": {
+      "headline": "An autonomous operator can misuse its own permissions",
+      "topic": "AGENT AUTHORITY",
+      "relevance": "Kubernetes operators are useful analogues for resident agents with powerful credentials. Test what each operator is authorized to change and how actions are observed.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "OperTraitors: How Kubernetes Operators Betray Your Security Posture"
+    },
+    "https://blog.trailofbits.com/2026/09/25/dont-let-tees-break-your-mpc/": {
+      "headline": "Trusted hardware can conflict with distributed privacy",
+      "topic": "TRUST ARCHITECTURE",
+      "relevance": "Useful when evaluating claims that secure enclaves alone make distributed participant computations trustworthy.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Don't let TEEs break your MPC"
+    },
+    "https://labs.watchtowr.com/is-this-a-joke-in-the-auth-header-f5-big-ip-unauth-heap-overflow-to-rce-cve-2026-94127/": {
+      "headline": "Authentication headers can be an attack surface",
+      "topic": "AUTHENTICATION",
+      "relevance": "Relevant to designing narrow, testable trust boundaries at our browser, proxy, and local-node interfaces.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Is This A Joke? In The Auth Header? (F5 BIG-IP UnAuth Heap-Overflow to RCE CVE-2026-94127)"
+    },
+    "https://portswigger.net/research/http3-in-burp-suite": {
+      "headline": "Modern HTTP changes what security tools can observe",
+      "topic": "BROWSER PROTOCOLS",
+      "relevance": "Protocol-level behavior can undermine familiar assumptions in browser tests. Useful for ABP traffic inspection and protocol-differential harnesses.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "HTTP/3 in Burp Suite - it’s time to find a bigger wordlist"
+    },
+    "https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/": {
+      "headline": "Single sign-on is more fragile than it looks",
+      "topic": "IDENTITY BOUNDARIES",
+      "relevance": "SAML complexity reinforces the need to keep browser authentication, tool authority, and delegated agent identity separate.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "SAML: A fractal of bad design"
+    },
+    "https://www.sentinelone.com/labs/dont-call-us-well-call-your-apis-tradertraitor-backdoors-resurface-on-victim-with-no-crypto-ties/": {
+      "headline": "Unexpected API callbacks can reveal a persistent compromise",
+      "topic": "NETWORK OBSERVABILITY",
+      "relevance": "Relevant for detecting autonomous or hidden processes through outbound effects and service logs.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Don’t Call Us, We’ll Call Your APIs | TraderTraitor Backdoors Resurface on Victim With No Crypto Ties"
+    },
+    "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/": {
+      "headline": "Better audit tools can matter more than a bigger model",
+      "topic": "RESEARCH METHODS",
+      "relevance": "Trail of Bits built intermediate representations and verifiable analysis tools. Apply that principle to source quarrying and Torsionfield repair experiments.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Auditing in the age of (good enough) AI"
+    },
+    "https://www.sentinelone.com/labs/agents-at-large-tracing-illicit-openai-agent-activity-on-hugging-face/": {
+      "headline": "AI agents can hide in ordinary developer infrastructure",
+      "topic": "AGENT THREAT MODEL",
+      "relevance": "Track how legitimate tools and public hosting platforms can become part of malicious automation, then translate the findings into defensive instrumentation.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Agents at Large | Tracing Illicit OpenAI Agent Activity on Hugging Face"
+    },
+    "https://blog.trailofbits.com/2026/09/15/1passwords-ai-patching-benchmark-is-misleading/": {
+      "headline": "A security benchmark can score a patch that is still wrong",
+      "topic": "BENCHMARK CRITIQUE",
+      "relevance": "A warning for Praxis Gold: validate the original failure, test the repaired version, and probe related behavior before calling an AI-generated fix successful.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "1Password's AI patching benchmark is misleading"
+    },
+    "https://portswigger.net/research/whats-in-a-tag-name-javascript-apparently": {
+      "headline": "A strange HTML tag can become a security issue",
+      "topic": "DOM SEMANTICS",
+      "relevance": "Agent DOM tooling must distinguish browser parsing behavior from the interpretation of generated markup. Build tests against real browser semantics.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "What's in a tag name? JavaScript, apparently"
+    },
+    "https://www.sentinelone.com/labs/the-model-is-the-malware-what-four-agentic-intrusions-tell-defenders/": {
+      "headline": "The AI system itself can be part of an intrusion",
+      "topic": "AGENT SECURITY",
+      "relevance": "The relevant question is what an agent actually did: tool calls, network effects, persistence, and retained credentials. This belongs in our trace-based auditor tests.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "The Model Is the Malware | What Four Agentic Intrusions Tell Defenders"
+    },
+    "https://portswigger.net/research/css-the-bomb-inside-your-inbox": {
+      "headline": "CSS can expose data without JavaScript",
+      "topic": "BROWSER ISOLATION",
+      "relevance": "The technique motivates hard boundaries for authenticated content rendered beside browser agents and connected credentials.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "CSS:the bomb inside your inbox"
+    },
+    "https://www.sentinelone.com/labs/frontier-models-tackle-autonomous-long-horizon-malware-analysis/": {
+      "headline": "Can an AI follow a malware investigation all the way through?",
+      "topic": "LONG-HORIZON EVALS",
+      "relevance": "A potential comparator for our continuation, memory, and recovery experiments. Track successful evidence chains rather than raw generated reports.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Sol Searching | Can Frontier Models Tackle Autonomous Long-Horizon Malware Analysis?"
+    }
+  }
+}

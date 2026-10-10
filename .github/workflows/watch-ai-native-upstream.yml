@@ -15,22 +15,25 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Verify the ingestion contract
-        run: python3 -m unittest discover -s tests -p 'test_watch_hitchhikers.py' -v
+      - name: Verify ingestion and evidence audit contracts
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
       - name: Check upstream SHA and record relevant changes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 tools/watch_hitchhikers.py --receipt .runtime/hitchhikers-receipt.json
-      - name: Commit changed metadata, never upstream article contents
+      - name: Ground selected claims in primary AISI and Willison sources
+        continue-on-error: true
+        run: python3 tools/verify_research_claims.py
+      - name: Commit changed metadata and evidence flags, never upstream article bodies
         run: |
-          if git diff --quiet -- public/research/hitchhikers-upstream.json; then
+          if git diff --quiet -- public/research/hitchhikers-upstream.json public/research/evidence-audit.json; then
             echo 'No upstream change; no commit'
             exit 0
           fi
           git config user.name torsionfield-research-bot
           git config user.email research-bot@users.noreply.github.com
-          git add public/research/hitchhikers-upstream.json
-          git commit -m 'data: track upstream AI-native research changes'
+          git add public/research/hitchhikers-upstream.json public/research/evidence-audit.json
+          git commit -m 'data: update source watch and bounded evidence audit'
           for attempt in 1 2 3; do
             git pull --rebase origin main
             if git push origin HEAD:main; then exit 0; fi

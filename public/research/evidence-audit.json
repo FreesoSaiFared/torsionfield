@@ -1,12 +1,13 @@
 {
   "schema": "torsionfield-evidence-audit/1",
+  "auditMethodRevision": "2026-10-10.r2",
   "upstreamSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
   "sourceNote": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
   "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
   "originalPublisher": "UK AI Security Institute",
   "primaryUrl": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
   "commentaryUrl": "https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/",
-  "checkedAt": "2026-10-10T08:14:30+00:00",
+  "checkedAt": "2026-10-10T08:56:57+00:00",
   "sourceHashes": {
     "noteSha256": "16d29dda629d9ee79632d55e75a92d0781ab986916f21ed01490a665ac5a0657",
     "primarySha256": "a2d87157a4188c5b622848a4d282c930c5ca519c42a30300986ebdb766423ed4",
@@ -16,7 +17,7 @@
     {
       "claimId": 1,
       "heading": "GPT-5.5 is comparable to Claude Mythos Preview on AISI cyber benchmarks and is generally available today, unlike Mythos",
-      "quoteStatus": "not-tested",
+      "quoteStatus": "quote-not-located",
       "reviewStatus": "pending-independent-judgment",
       "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
@@ -30,28 +31,28 @@
     {
       "claimId": 3,
       "heading": "GPT-5.5 is the second model ever to complete AISI's \"The Last Ones\" corporate network attack simulation, doing so in 2 of 10 attempts",
-      "quoteStatus": "not-tested",
+      "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
       "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 4,
       "heading": "TLO performance continues to scale with the amount of inference compute spent",
-      "quoteStatus": "not-tested",
+      "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
       "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 5,
       "heading": "GPT-5.5 solved the rust_vm reverse-engineering CTF challenge in 10 minutes 22 seconds at $1.73 cost; a human expert required approximately 12 hours",
-      "quoteStatus": "not-tested",
+      "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
       "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 6,
       "heading": "AISI expert red-teamers found a universal jailbreak effective across all malicious cyber queries in approximately 6 hours; OpenAI made safeguard updates but verification was blocked by a configuration issue",
-      "quoteStatus": "not-tested",
+      "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
       "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
@@ -109,17 +110,18 @@
       "id": "cooling-tower-interpretation",
       "noteIndicator": "ICS/OT attack requires different domain knowledge",
       "primaryIndicator": "failure does not tell us how capable it would be",
-      "status": "needs-review",
+      "status": "potential-conflict",
       "primaryEvidenceLocated": true,
-      "secondaryInterpretationLocated": false
+      "secondaryInterpretationLocated": true
     }
   ],
   "summary": {
     "candidateClaims": 8,
-    "locatedQuotes": 2,
-    "potentialConflicts": 1,
+    "locatedQuotes": 5,
+    "potentialConflicts": 2,
     "independentlyVerifiedClaims": 0
   },
   "publicationState": "review-required",
-  "method": "Literal text checks are mechanical provenance signals, not semantic verification. Independent editorial review required."
+  "method": "Literal text checks are mechanical provenance signals, not semantic verification. Independent editorial review required.",
+  "otherChangedNotes": []
 }

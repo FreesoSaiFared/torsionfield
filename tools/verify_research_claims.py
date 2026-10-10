@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 INPUT = ROOT / 'public/research/hitchhikers-upstream.json'
 OUTPUT = ROOT / 'public/research/evidence-audit.json'
 VERSION = 'torsionfield-evidence-audit/1'
+METHOD_REVISION = '2026-10-10.r2'
 WILLISON = 'https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/'
 MAX_BYTES = 1_000_000
 
@@ -103,7 +104,7 @@ def build(source_sha, note_text, primary_html, willison_html, note_hash, primary
          'status':'potential-conflict' if domain_inference and it_caveat else 'needs-review',
          'primaryEvidenceLocated':it_caveat,'secondaryInterpretationLocated':domain_inference},
     ]
-    return {'schema':VERSION,'upstreamSha':source_sha,'sourceNote':NOTE,'sourceUrl':f'https://github.com/{REPO}/blob/{source_sha}/{NOTE}',
+    return {'schema':VERSION,'auditMethodRevision':METHOD_REVISION,'upstreamSha':source_sha,'sourceNote':NOTE,'sourceUrl':f'https://github.com/{REPO}/blob/{source_sha}/{NOTE}',
             'originalPublisher':'UK AI Security Institute','primaryUrl':PRIMARY,
             'commentaryUrl':WILLISON,'checkedAt':now,
             'sourceHashes':{'noteSha256':note_hash,'primarySha256':primary_hash,'commentarySha256':willison_hash},
@@ -122,7 +123,7 @@ def run(watch_path=INPUT,output=OUTPUT,clock=None,loader=fetch):
     if output.exists():
         previous=json.loads(output.read_text(encoding='utf-8'))
         note_changed=(previous.get('upstreamSha')!=sha and any(x.get('path')==NOTE for x in watch.get('changed',[])))
-        if previous.get('schema')==VERSION and not note_changed:
+        if previous.get('schema')==VERSION and previous.get('auditMethodRevision')==METHOD_REVISION and not note_changed:
             last=datetime.fromisoformat(previous['checkedAt'])
             if clock-last<timedelta(hours=24):
                 print('EVIDENCE_UNCHANGED: SHA and primary recheck window intact')

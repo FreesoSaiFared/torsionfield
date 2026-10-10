@@ -57,4 +57,14 @@ class EvidenceTests(unittest.TestCase):
    audit.run(watch,out,now,fake_loader)
    watch.write_text(json.dumps({'upstreamSha':'b'*40,'changed':[{'path':'source-notes/else.md'}]}))
    self.assertEqual(audit.run(watch,out,now+timedelta(hours=2),lambda _:None)['status'],'unchanged')
+ def test_method_revision_invalidates_cached_audit(self):
+  with tempfile.TemporaryDirectory() as temp:
+   d=Path(temp);watch=d/'watch.json';out=d/'audit.json'
+   now=datetime(2026,10,10,8,tzinfo=timezone.utc)
+   watch.write_text(json.dumps({'upstreamSha':SHA,'changed':[{'path':audit.NOTE}]}))
+   audit.run(watch,out,now,fake_loader)
+   stale=json.loads(out.read_text());stale.pop('auditMethodRevision')
+   out.write_text(json.dumps(stale))
+   self.assertEqual(audit.run(watch,out,now+timedelta(minutes=10),fake_loader)['status'],'updated')
+   self.assertEqual(json.loads(out.read_text())['auditMethodRevision'],audit.METHOD_REVISION)
 if __name__=='__main__':unittest.main()

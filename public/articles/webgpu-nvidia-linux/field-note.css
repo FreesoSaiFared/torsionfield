@@ -1,0 +1,5 @@
+.essay-body code{white-space:normal;overflow-wrap:anywhere;word-break:break-all}
+.essay-body pre{white-space:pre-wrap;overflow-wrap:anywhere;font:.9rem/1.6 Consolas,monospace;padding:20px 0;border-block:1px solid #98a4a4;color:#22343b;margin:25px 0 34px}
+.measure{border-collapse:collapse;width:100%;margin:26px 0 38px;font:.91rem/1.6 Consolas,monospace}
+.measure td,.measure th{border-bottom:1px solid #adb4b2;padding:12px 10px;text-align:left}
+.measure th{font-weight:750;color:#a6432c}

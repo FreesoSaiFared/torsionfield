@@ -47,4 +47,11 @@ class BrowserModelContractTests(unittest.TestCase):
         self.assertIn("t.disabled===false",s)
         self.assertIn("refusing to close unknown model state",s)
 
+    def test_public_field_note_styles_obey_csp(self):
+        html=(ROOT/'public/articles/webgpu-nvidia-linux/index.html').read_text()
+        css=(ROOT/'public/articles/webgpu-nvidia-linux/field-note.css').read_text()
+        self.assertNotIn('<style>',html)
+        self.assertIn('/articles/webgpu-nvidia-linux/field-note.css',html)
+        self.assertIn('overflow-wrap:anywhere',css)
+        self.assertIn('word-break:break-all',css)
 if __name__=="__main__":unittest.main()

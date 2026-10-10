@@ -6,19 +6,20 @@
 <p>One canonical HTML document, three claims, two fictional sources, and a cinematographic projection that can be interrogated or reconstructed at any instant.</p></section>
 <div class="workbench"><section class="paper" id="paper" aria-label="Article and animated projection">
 <div class="ruler"><span>CANONICAL DOCUMENT</span><span>ILLUSTRATIVE / NO EMPIRICAL CLAIMS</span></div>
-<article id="article"><small>ONE TOY EQUATION / THREE CLAIMS</small><h2>A signal, a parameter, a conclusion.</h2>
+<article id="article"><small>ONE TOY EQUATION / THREE CLAIMS</small><h2>A signal, a parameter, a conclusion.</h2><p class="plain-explainer"><strong>Imagine a ringing bell.</strong> Its sound fades after you strike it. In this invented example, λ controls how quickly it fades. The strands are a visualization of the claims, not evidence that every physical system behaves this way.</p>
 <p id="claim-1"><b>C1 / MODEL.</b> <mark id="anchor-1">The signal envelope decays exponentially</mark> in the toy model <code>e<sup>−λt</sup></code>. <a href="#source-1">Source 1</a> defines it.</p>
 <p id="claim-2"><b>C2 / DERIVED.</b> <mark id="anchor-2">Increasing λ reduces the envelope</mark> at any fixed positive time, within the model.</p>
 <p id="claim-3"><b>C3 / HYPOTHESIS.</b> <mark id="anchor-3">The same conclusion always holds in physical systems.</mark> This extrapolation is <strong id="claim-status">unverified</strong>.</p>
 <p id="prediction">At t=4 with λ=0.40, the model predicts <strong id="model-value">0.202</strong>; not an empirical measurement.</p>
 </article><svg id="matter" role="group" aria-label="Interactive claim filaments"><g id="filaments"></g></svg>
 <div class="ruler bottom"><span>CANONICAL TEXT: HTML</span><span id="scene">DOCUMENT</span></div></section>
-<aside class="controls"><small>DIRECTOR / SIMULATION / SEMANTICS</small><h2>Control the argument.</h2>
+<aside class="controls"><small>DIRECTOR / SIMULATION / SEMANTICS</small><h2>Control the argument.</h2><div class="claim-key" aria-label="Filament colors"><span><i class="key-c1"></i>C1 / model</span><span><i class="key-c2"></i>C2 / result</span><span><i class="key-c3"></i>C3 / unproven</span></div>
 <div class="modes"><button id="read" aria-pressed="true">READ</button><button id="watch" aria-pressed="false">WATCH</button><button id="investigate" aria-pressed="false">INVESTIGATE</button></div>
 <label for="time">NARRATIVE TIME <output id="clock">00:00</output></label><input id="time" type="range" min="0" max="20" step=".05" value="0">
 <div class="transport"><button id="play">▶ PLAY</button><button id="pause">Ⅱ PAUSE</button><button id="reconstruct">↶ RECONSTRUCT</button></div>
 <label for="damping">COUNTERFACTUAL DAMPING λ <output id="damping-value">0.40</output></label>
 <input id="damping" type="range" min=".1" max="1.2" step=".05" value=".4">
+<label for="filament-weight">FILAMENT THICKNESS <output id="filament-weight-value">1.7×</output></label><input id="filament-weight" type="range" min="0.7" max="3.2" step="0.1" value="1.7">
 <label for="revision">DOCUMENT REVISION</label><select id="revision"><option value="1">VERSION 1 / UNVERIFIED</option><option value="2">VERSION 2 / DISPUTED</option></select>
 <label class="voice"><input type="checkbox" id="voice"> Speak narration on Play (browser voice)</label>
 <p class="quiet">Audio requires an explicit Play click. Click a moving filament to pause and inspect its original passage.</p>

@@ -14,6 +14,8 @@ let pointer={x:0,y:0,pull:0},dimensions=[0,0],dpr=1,quality=1;
 let lastSnapshot='',lastSegments=[],ready=false;
 const COLORS=['#bd4029','#27828a','#bd7540'];
 const MASK_STEP=2;
+const thicknessControl=document.getElementById('filament-weight');
+let lineWeight=Number(thicknessControl.value);
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const pick=(arr,limit)=>Array.from({length:limit},(_,i)=>arr[Math.floor((i+.47)*arr.length/limit)]).filter(Boolean);
 async function load(){
@@ -74,7 +76,7 @@ function draw(){
  if(!ready||!seedCount||state.mode==='read'){ctx.clearRect(0,0,...dimensions);canvas.style.pointerEvents='none';return}
  canvas.style.pointerEvents='auto';
  const [w,h]=dimensions,t=state.time;
- const sig=[t,state.lambda,state.revision,pointer.x,pointer.y,pointer.pull,w,h].join('|');
+ const sig=[t,state.lambda,state.revision,pointer.x,pointer.y,pointer.pull,w,h,lineWeight].join('|');
  if(sig===lastSnapshot&&!state.playing)return;
  lastSnapshot=sig;frames++;
  ex.cm_build(t,state.lambda,state.revision,pointer.x,pointer.y,pointer.pull);
@@ -92,8 +94,8 @@ function draw(){
    if(k===Math.floor(segments/2))lastSegments.push({x,y,group});
   }
   ctx.strokeStyle=COLORS[group];
-  ctx.lineWidth=i%9===0?1.85:0.94;
-  ctx.globalAlpha=clamp(alpha*(.45+.55*motion)*(strong?.98:.84),0,1);
+  ctx.lineWidth=(i%9===0?1.85:0.94)*lineWeight;
+  ctx.globalAlpha=clamp(alpha*(.45+.55*motion)*(strong?.98:.92),0,1);
   if(strong)ctx.setLineDash([5,7]);else ctx.setLineDash([]);
   ctx.stroke();
  }
@@ -127,6 +129,11 @@ canvas.addEventListener('pointerdown',e=>{dragging=true;const q=cursor(e);pointe
 canvas.addEventListener('pointermove',e=>{if(!dragging)return;const q=cursor(e);pointer={...q,pull:.8};lastSnapshot='';draw()});
 canvas.addEventListener('pointerup',e=>{const q=cursor(e);pointer={...q,pull:0};dragging=false;inspectAt(q.x*dimensions[0],q.y*dimensions[1]);lastSnapshot='';draw()});
 canvas.addEventListener('pointercancel',()=>{dragging=false;pointer.pull=0});
+thicknessControl.addEventListener('input',()=>{
+ lineWeight=Number(thicknessControl.value);
+ document.getElementById('filament-weight-value').value=lineWeight.toFixed(1)+'×';
+ lastSnapshot='';draw();
+});
 window.addEventListener('resize',()=>{size();lastSnapshot=''});
 window.addEventListener('pagehide',()=>{ready=false});
 function cycle(){if(ready)draw();requestAnimationFrame(cycle)}
@@ -136,7 +143,7 @@ try{
  hint.title='Optimized Rust wasm32-unknown-unknown; '+bytes+' bytes, no JS geometry fallback while active.';
  document.querySelector('#matter').style.opacity='.19';
  requestAnimationFrame(cycle);
- window.CinematicMatterWasm={exports:ex,get state(){return {ready,seedCount,frames,bytes}},draw,seedFromText,get vertices(){
+ window.CinematicMatterWasm={exports:ex,get state(){return {ready,seedCount,frames,bytes,lineWeight}},draw,seedFromText,get vertices(){
  return Array.from(new Float32Array(ex.memory.buffer,ex.cm_output_ptr()>>>0,seedCount*ex.cm_samples()*3));
  }};
 }catch(err){hint.textContent='WASM UNAVAILABLE / ORIGINAL SVG FALLBACK';console.error('Cinematic Matter WASM',err);canvas.remove();}

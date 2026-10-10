@@ -34,6 +34,9 @@ try{
  assert('actual WASM module loads',meta.wasm.ready);
  assert('glyphs produce hundreds of seeds',meta.wasm.seedCount>=150);
  assert('canonical three HTML claims present',meta.claims===3);
+ assert('colors and meanings visible during playback',await evaluate("document.querySelectorAll('.claim-key span').length===3"));
+ const weight=await evaluate("(()=>{const w=window.CinematicMatterWasm;const initial=w.state.lineWeight;let control=document.querySelector('#filament-weight');control.value='2.5';control.dispatchEvent(new Event('input',{bubbles:true}));const changed=w.state.lineWeight;const label=document.querySelector('#filament-weight-value').value;control.value='1.7';control.dispatchEvent(new Event('input',{bubbles:true}));return {initial,changed,label,restored:w.state.lineWeight,explainer:document.querySelector('.plain-explainer')?.textContent.includes('ringing bell')}})()");
+ assert('filament weight control changes actual Canvas rendering and restores default',weight.initial===1.7&&weight.changed===2.5&&weight.restored===1.7&&weight.label==='2.5×'&&weight.explainer);
  await evaluate("document.querySelector('.workbench').scrollIntoView({block:'start'})");
  const snapshots=[];
  for(const t of [0,4,8,13,19.8]){

@@ -16,3 +16,12 @@ footer{padding:38px 0 56px;display:flex;justify-content:space-between;gap:20px;f
 @media(max-width:960px){.intro{grid-template-columns:1fr}.workbench,.sources{grid-template-columns:1fr}.paper{border-right:0;border-bottom:1px solid var(--ink)}.controls{padding:30px}.intro h1{max-width:720px}}
 @media(max-width:540px){body>header span{display:none}.paper{min-height:680px}article{padding:0 15px;margin-top:25px}article p{font-size:15px}.ruler{font-size:9px}.intro h1{font-size:3.3rem}footer{flex-wrap:wrap}}
 .matter-canvas{position:absolute;inset:0;z-index:3;display:block;touch-action:none;mix-blend-mode:multiply}.wasm-status{font:700 11px/1.5 monospace;color:#bd4029;letter-spacing:.075em;margin:7px 0 14px;padding:8px 0;border-bottom:1px solid var(--line)}.controls h2{margin-top:10px}#paper:has(.matter-canvas) #matter{opacity:.16;pointer-events:none}#paper:has(.matter-canvas) #matter path{pointer-events:none}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Explanatory fixture remains legible in Read mode. */
+article .plain-explainer{font-size:14px;line-height:1.55;color:var(--muted);border-left:2px solid var(--accent);padding:8px 0 8px 16px;margin:20px 0 24px}
+article .plain-explainer strong{color:var(--ink)}
+
+/* Persistent semantics key: visible even when the document is in cinematic mode. */
+.claim-key{display:flex;flex-wrap:wrap;gap:8px 12px;margin:-11px 0 18px;font:700 10px/1.45 monospace;text-transform:uppercase}
+.claim-key span{display:inline-flex;align-items:center;gap:5px}.claim-key i{display:inline-block;width:8px;height:8px;border-radius:50%;flex:none}
+.claim-key .key-c1{background:#bd4029}.claim-key .key-c2{background:#27828a}.claim-key .key-c3{background:#bd7540}

@@ -120,3 +120,25 @@ separately verified fallback.
 has the requested format. It does not certify that generated scientific or
 security claims are true. First-party blog interpretations require source
 review before moving from private drafts to curated editorial JSON.
+
+## Field-note browser regression acceptance (10 October 2026)
+
+The published WebGPU field note initially overflowed horizontally on phones:
+a long inline code expression was 511 px wide at a 390 px viewport.
+An attempted inline CSS fix could not work because the website's
+Content-Security-Policy only authorizes same-origin external stylesheets.
+The fix lives in public/articles/webgpu-nvidia-linux/field-note.css.
+
+Use an actual isolated **Brave browser** to check CSP and layout:
+
+    node tools/verify-responsive-article.mjs --local
+    node tools/verify-responsive-article.mjs --live
+
+The first tests the checked-out HTML with a strict self-only CSS policy.
+The second tests Cloudflare's served page after deployment. Both verify
+1280/390/320 px viewports, no horizontal overflow, the loaded same-origin
+stylesheet, and computed code wrapping. Each uses an ephemeral browser profile,
+closes its own process and writes a JSON receipt under .runtime/.
+A static CSS file existing in Git is insufficient: browser-computed styles
+and live CSP behavior must also pass. This is a publication acceptance gate,
+independent of the WebLLM inference acceptance gate.

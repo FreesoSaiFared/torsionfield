@@ -54,4 +54,16 @@ class BrowserModelContractTests(unittest.TestCase):
         self.assertIn('/articles/webgpu-nvidia-linux/field-note.css',html)
         self.assertIn('overflow-wrap:anywhere',css)
         self.assertIn('word-break:break-all',css)
+    def test_responsive_browser_check_verifies_csp_and_mobile(self):
+        s=(ROOT/'tools/verify-responsive-article.mjs').read_text()
+        self.assertIn("node tools/verify-responsive-article.mjs", (ROOT/'docs/EDITORIAL-INTELLIGENCE.md').read_text())
+        self.assertIn("style-src 'self'",s)
+        self.assertIn("externalCSS",s)
+        self.assertIn("overflowWrap",s)
+        self.assertIn("wordBreak",s)
+        self.assertIn("measure(client,390,true)",s)
+        self.assertIn("measure(client,320,true)",s)
+        self.assertIn("mkdtempSync",s)
+        self.assertIn("child.kill('SIGTERM')",s)
+
 if __name__=="__main__":unittest.main()

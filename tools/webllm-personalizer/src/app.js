@@ -11,6 +11,25 @@ async function boot(){
  status.textContent='MODEL LOADED: '+MODEL+' · inference has not yet passed a timed test';
  button.disabled=false; result.textContent='READY FOR PERSONALIZATION';
 }
+globalThis.__tfSmokeTest=async()=>{
+ if(!engine)return {ready:false,error:'MODEL_NOT_INITIALIZED'};
+ const started=performance.now();
+ try{
+  const response=await Promise.race([
+   engine.chat.completions.create({messages:[{role:'user',content:'Reply with one word: OK'}],max_tokens:4,temperature:0}),
+   new Promise((_,reject)=>setTimeout(()=>reject(new Error('SMOKE_TIMEOUT')),20000))
+  ]);
+  const output=response.choices?.[0]?.message?.content||'';
+  const receipt={ready:true,elapsedMs:Math.round(performance.now()-started),output};
+  status.textContent='LOCAL WEBLLM INFERENCE VERIFIED · '+receipt.elapsedMs+' ms';
+  return receipt;
+ }catch(error){
+  try{engine.interruptGenerate()}catch{}
+  const receipt={ready:false,elapsedMs:Math.round(performance.now()-started),error:String(error)};
+  status.textContent='LOCAL MODEL LOADED; INFERENCE NOT VERIFIED';
+  return receipt;
+ }
+};
 button.addEventListener('click',async()=>{
  if(!engine)return;
  button.disabled=true;

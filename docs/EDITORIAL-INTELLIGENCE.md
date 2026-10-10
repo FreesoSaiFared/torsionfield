@@ -35,3 +35,20 @@ The experimental **owner-side** i9ES lane is:
 
 This is a separate local model workflow, not a claim that every browser has
 working WebGPU acceleration. Verify runtime readiness and generation explicitly.
+
+## Verified owner-side local drafting fallback (10 October 2026)
+Browser WebLLM weights cache successfully and a simple WebGPU compute test succeeds,
+but the initial SmolLM2 WebLLM generation attempts lost their GPU device. A separate
+NVIDIA PRIME browser probe proved the RTX 3060 as its primary GPU, though the
+larger browser model inference still failed. Model initialization is not generation proof.
+
+For practical editorial drafting use the already-installed, local Ollama model:
+`python3 tools/editorial_draft_local.py --limit 4` on i9ES.
+`tf-qwen25-7b:latest` was verified as 100% GPU on the RTX 3060 and generated
+122 tokens in 2.52 seconds. The tool reads publisher introductions over HTTPS,
+creates a local source-hashed JSON draft under `.runtime/`, and **never publishes**.
+The generated suggestions must be rewritten and checked against the publisher's
+text before modifying `public/research/editorial.json`. The Qwen output often
+summarizes events rather than explaining what our engineering stack can learn.
+Preserve first-party relevance, publisher provenance, cautious attribution and
+explicit uncertainty. `tools/editorial_backlog.py` identifies remaining gaps.

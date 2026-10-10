@@ -37,3 +37,5 @@
 .correction-note{font:.73rem/1.6 Consolas,monospace;color:var(--grey);margin-top:21px}
 .correction-note a{text-decoration:underline}
 @media(max-width:950px){.correction-head{grid-template-columns:1fr}.correction-cases{grid-template-columns:1fr}.correction-cases article+article{border-left:0;border-top:1px solid var(--line);padding-left:0}}
+
+.archive-link{display:inline-block;margin-top:22px;padding:10px 0;border-bottom:2px solid var(--accent);font:750 .75rem Consolas,monospace;letter-spacing:.055em;color:var(--ink)}

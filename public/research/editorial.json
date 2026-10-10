@@ -184,6 +184,42 @@
       "relevance": "A potential comparator for our continuation, memory, and recovery experiments. Track successful evidence chains rather than raw generated reports.",
       "editorialStatus": "reviewed",
       "sourceTitleAtReview": "Sol Searching | Can Frontier Models Tackle Autonomous Long-Horizon Malware Analysis?"
+    },
+    "https://unit42.paloaltonetworks.com/blinder-tunnel-targets-critical-infrastructure/": {
+      "headline": "A coding challenge can deliver malware",
+      "topic": "UNTRUSTED CODE",
+      "relevance": "Unit 42 reports trojanized recruitment coding challenges impersonating Dubai Airports IT, with GitHub used for command-and-control. It is a concrete reason to treat externally supplied programming tasks as untrusted input to Torsionfield’s browser-to-script pipeline.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Blinder Tunnel Campaign Targets Iraqi Infrastructure",
+      "reviewBasis": "Source introduction and publisher metadata; contextual interpretation, not independent verification of whole report.",
+      "editorialReviewDate": "2026-10-10"
+    },
+    "https://labs.watchtowr.com/oh-look-the-foot-gun-went-off-again-citrix-netscaler-preauth-command-injection-cve-2026-88771/": {
+      "headline": "A vulnerability report still needs independent checks",
+      "topic": "EVIDENCE VALIDATION",
+      "relevance": "watchTowr reports active exploitation of a NetScaler command-injection vulnerability. For the research radar, keep early reports, independent corroboration, vendor advisories and reproducible tests distinct rather than giving all four the same certainty.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Oh Look, The Foot Gun Went Off Again (Citrix NetScaler PreAuth Command Injection CVE-2026-88771)",
+      "reviewBasis": "Source introduction and publisher metadata; contextual interpretation, not independent verification of whole report.",
+      "editorialReviewDate": "2026-10-10"
+    },
+    "https://unit42.paloaltonetworks.com/3-consulting-myths-debunked-by-unit-42-experts/": {
+      "headline": "More security tools can make security harder",
+      "topic": "TOOLING DISCIPLINE",
+      "relevance": "Unit 42 consultants caution that adding specialized tools without a unified strategy can create operational gaps. Before adding another MCP or agent integration, Torsionfield should test what its existing tools already cover and what genuinely remains missing.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "3 Consulting Myths Debunked by Unit 42 Experts",
+      "reviewBasis": "Source introduction and publisher metadata; contextual interpretation, not independent verification of whole report.",
+      "editorialReviewDate": "2026-10-10"
+    },
+    "https://www.sentinelone.com/labs/iran-war-cyber-threat-landscape-a-midyear-assessment-on-what-matters/": {
+      "headline": "Threat-actor names are not dependable identities",
+      "topic": "ATTRIBUTION & PROVENANCE",
+      "relevance": "SentinelLABS explains that vendor labels can refer to actor groups, campaigns, personas, malware or infrastructure rather than identical entities. ForkSense must retain who made each attribution instead of merging similar-looking labels into one verified identity.",
+      "editorialStatus": "reviewed",
+      "sourceTitleAtReview": "Iran War Cyber Threat Landscape | A Midyear Assessment on What Matters",
+      "reviewBasis": "Source introduction and publisher metadata; contextual interpretation, not independent verification of whole report.",
+      "editorialReviewDate": "2026-10-10"
     }
   }
 }

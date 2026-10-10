@@ -1,37 +1,222 @@
 {
-  "source": "Trail of Bits",
-  "sourceUrl": "https://blog.trailofbits.com/index.xml",
-  "updatedAt": "2026-10-10T07:16:28.143387+00:00",
+  "sources": [
+    {
+      "name": "Trail of Bits",
+      "feed": "https://blog.trailofbits.com/index.xml",
+      "status": "live"
+    },
+    {
+      "name": "SpecterOps",
+      "feed": "https://specterops.io/blog/feed/",
+      "status": "unavailable"
+    },
+    {
+      "name": "SentinelLABS",
+      "feed": "https://www.sentinelone.com/labs/feed/",
+      "status": "live"
+    },
+    {
+      "name": "Unit 42",
+      "feed": "https://unit42.paloaltonetworks.com/feed/",
+      "status": "live"
+    },
+    {
+      "name": "Cloudflare",
+      "feed": "https://blog.cloudflare.com/rss/",
+      "status": "live"
+    },
+    {
+      "name": "watchTowr Labs",
+      "feed": "https://labs.watchtowr.com/rss/",
+      "status": "live"
+    },
+    {
+      "name": "PortSwigger Research",
+      "feed": "https://portswigger.net/research/rss",
+      "status": "live"
+    }
+  ],
+  "updatedAt": "2026-10-10T07:32:57.043308+00:00",
   "items": [
     {
+      "source": "Cloudflare",
+      "title": "Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash",
+      "url": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/",
+      "date": "2026-10-09T18:27:34+00:00"
+    },
+    {
+      "source": "watchTowr Labs",
+      "title": "Death By A Thousand PaperCuts (PaperCut Pre-Auth RCE Chain and Patch Bypasses WT-2026-0141-0144/CVE-2026-82077/CVE-2026-82078/CVE-2026-81578)",
+      "url": "https://labs.watchtowr.com/death-by-a-thousand-papercuts-papercut-pre-auth-rce-chain-and-patch-bypasses-wt-2026-0141-0144-cve-2026-82077-cve-2026-82078-cve-2026-81578/",
+      "date": "2026-10-09T17:31:14+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
+      "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "date": "2026-10-09T13:00:00+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Deno is joining Cloudflare",
+      "url": "https://blog.cloudflare.com/deno-joins-cloudflare/",
+      "date": "2026-10-09T12:50:00+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Bridging technical depth and usability: The story behind Radar’s redesign",
+      "url": "https://blog.cloudflare.com/radar-redesign/",
+      "date": "2026-10-08T13:00:00+00:00"
+    },
+    {
+      "source": "Unit 42",
+      "title": "Evolution of Web3 in Cloud Supply Chain Attacks",
+      "url": "https://unit42.paloaltonetworks.com/web3-cloud-supply-chain-attacks/",
+      "date": "2026-10-07T22:00:16+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Building an evidence-grounded agentic security operations harness on Cloudflare",
+      "url": "https://blog.cloudflare.com/agentic-security-operations/",
+      "date": "2026-10-07T16:30:36+00:00"
+    },
+    {
+      "source": "PortSwigger Research",
+      "title": "The model isn't cooperating",
+      "url": "https://portswigger.net/research/the-model-isnt-cooperating",
+      "date": "2026-10-06T17:14:53+00:00"
+    },
+    {
+      "source": "watchTowr Labs",
+      "title": "You Won’t Hear About These, Even In Myths (Atlassian Jira, Confluence (and more) Pre-Auth Arbitrary File Read CVE-2026-21589)",
+      "url": "https://labs.watchtowr.com/you-wont-hear-about-these-even-in-myths-atlassian-jira-confluence-and-more-pre-auth-arbitrary-file-read-cve-2026-21589/",
+      "date": "2026-10-06T17:01:36+00:00"
+    },
+    {
+      "source": "Unit 42",
+      "title": "Blinder Tunnel Campaign Targets Iraqi Infrastructure",
+      "url": "https://unit42.paloaltonetworks.com/blinder-tunnel-targets-critical-infrastructure/",
+      "date": "2026-10-06T10:00:33+00:00"
+    },
+    {
+      "source": "PortSwigger Research",
+      "title": "Smashing the token limit with overlapping fragments",
+      "url": "https://portswigger.net/research/smashing-the-token-limit",
+      "date": "2026-10-05T15:04:55+00:00"
+    },
+    {
+      "source": "Trail of Bits",
       "title": "SequenceHash: multihashing for the rest of us",
       "url": "https://blog.trailofbits.com/2026/10/02/sequencehash-multihashing-for-the-rest-of-us/",
       "date": "2026-10-02T11:00:00+00:00"
     },
     {
+      "source": "Unit 42",
+      "title": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)",
+      "url": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
+      "date": "2026-09-30T20:00:04+00:00"
+    },
+    {
+      "source": "watchTowr Labs",
+      "title": "Here We Go Again (Citrix NetScaler DTLS Preauth Memory Overflow CVE-2026-88772)",
+      "url": "https://labs.watchtowr.com/here-we-go-again-citrix-netscaler-dtls-preauth-memory-overflow-cve-2026-88772/",
+      "date": "2026-09-29T13:55:35+00:00"
+    },
+    {
+      "source": "Unit 42",
+      "title": "OperTraitors: How Kubernetes Operators Betray Your Security Posture",
+      "url": "https://unit42.paloaltonetworks.com/agentic-ai-kubernetes-operator-risks/",
+      "date": "2026-09-29T10:00:48+00:00"
+    },
+    {
+      "source": "watchTowr Labs",
+      "title": "Oh Look, The Foot Gun Went Off Again (Citrix NetScaler PreAuth Command Injection CVE-2026-88771)",
+      "url": "https://labs.watchtowr.com/oh-look-the-foot-gun-went-off-again-citrix-netscaler-preauth-command-injection-cve-2026-88771/",
+      "date": "2026-09-28T10:55:54+00:00"
+    },
+    {
+      "source": "Unit 42",
+      "title": "3 Consulting Myths Debunked by Unit 42 Experts",
+      "url": "https://unit42.paloaltonetworks.com/3-consulting-myths-debunked-by-unit-42-experts/",
+      "date": "2026-09-25T23:00:28+00:00"
+    },
+    {
+      "source": "Trail of Bits",
       "title": "Don't let TEEs break your MPC",
       "url": "https://blog.trailofbits.com/2026/09/25/dont-let-tees-break-your-mpc/",
       "date": "2026-09-25T11:00:00+00:00"
     },
     {
+      "source": "watchTowr Labs",
+      "title": "Is This A Joke? In The Auth Header? (F5 BIG-IP UnAuth Heap-Overflow to RCE CVE-2026-94127)",
+      "url": "https://labs.watchtowr.com/is-this-a-joke-in-the-auth-header-f5-big-ip-unauth-heap-overflow-to-rce-cve-2026-94127/",
+      "date": "2026-09-23T23:19:19+00:00"
+    },
+    {
+      "source": "PortSwigger Research",
+      "title": "HTTP/3 in Burp Suite - it’s time to find a bigger wordlist",
+      "url": "https://portswigger.net/research/http3-in-burp-suite",
+      "date": "2026-09-23T14:00:00+00:00"
+    },
+    {
+      "source": "Trail of Bits",
       "title": "SAML: A fractal of bad design",
       "url": "https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/",
       "date": "2026-09-21T11:00:00+00:00"
     },
     {
+      "source": "SentinelLABS",
+      "title": "Don’t Call Us, We’ll Call Your APIs | TraderTraitor Backdoors Resurface on Victim With No Crypto Ties",
+      "url": "https://www.sentinelone.com/labs/dont-call-us-well-call-your-apis-tradertraitor-backdoors-resurface-on-victim-with-no-crypto-ties/",
+      "date": "2026-09-18T17:00:16+00:00"
+    },
+    {
+      "source": "Trail of Bits",
       "title": "Auditing in the age of (good enough) AI",
       "url": "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/",
       "date": "2026-09-18T11:00:00+00:00"
     },
     {
+      "source": "SentinelLABS",
+      "title": "Agents at Large | Tracing Illicit OpenAI Agent Activity on Hugging Face",
+      "url": "https://www.sentinelone.com/labs/agents-at-large-tracing-illicit-openai-agent-activity-on-hugging-face/",
+      "date": "2026-09-16T10:00:34+00:00"
+    },
+    {
+      "source": "Trail of Bits",
       "title": "1Password's AI patching benchmark is misleading",
       "url": "https://blog.trailofbits.com/2026/09/15/1passwords-ai-patching-benchmark-is-misleading/",
       "date": "2026-09-15T11:00:00+00:00"
     },
     {
-      "title": "A “proof” of Fermat’s Last Theorem that fits the margin",
-      "url": "https://blog.trailofbits.com/2026/09/09/a-proof-of-fermats-last-theorem-that-fits-the-margin/",
-      "date": "2026-09-09T11:00:00+00:00"
+      "source": "PortSwigger Research",
+      "title": "What's in a tag name? JavaScript, apparently",
+      "url": "https://portswigger.net/research/whats-in-a-tag-name-javascript-apparently",
+      "date": "2026-08-25T14:24:32+00:00"
+    },
+    {
+      "source": "SentinelLABS",
+      "title": "The Model Is the Malware | What Four Agentic Intrusions Tell Defenders",
+      "url": "https://www.sentinelone.com/labs/the-model-is-the-malware-what-four-agentic-intrusions-tell-defenders/",
+      "date": "2026-08-13T13:00:40+00:00"
+    },
+    {
+      "source": "PortSwigger Research",
+      "title": "CSS:the bomb inside your inbox",
+      "url": "https://portswigger.net/research/css-the-bomb-inside-your-inbox",
+      "date": "2026-08-06T22:00:00+00:00"
+    },
+    {
+      "source": "SentinelLABS",
+      "title": "Sol Searching | Can Frontier Models Tackle Autonomous Long-Horizon Malware Analysis?",
+      "url": "https://www.sentinelone.com/labs/frontier-models-tackle-autonomous-long-horizon-malware-analysis/",
+      "date": "2026-07-22T16:55:29+00:00"
+    },
+    {
+      "source": "SentinelLABS",
+      "title": "Iran War Cyber Threat Landscape | A Midyear Assessment on What Matters",
+      "url": "https://www.sentinelone.com/labs/iran-war-cyber-threat-landscape-a-midyear-assessment-on-what-matters/",
+      "date": "2026-07-21T13:00:21+00:00"
     }
   ]
 }

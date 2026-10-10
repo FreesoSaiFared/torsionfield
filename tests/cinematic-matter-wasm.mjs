@@ -13,7 +13,7 @@ const server=createServer((req,res)=>{
  res.end(readFileSync(path));
 });
 await new Promise(ok=>server.listen(0,'127.0.0.1',ok));
-const url='http://127.0.0.1:'+server.address().port+'/cinematic-matter/';
+const url=process.env.CM_URL||'http://127.0.0.1:'+server.address().port+'/cinematic-matter/';
 const profile=mkdtempSync(join(tmpdir(),'cm-wasm-'));
 const chrome=spawn('chromium',['--headless=new','--no-first-run','--no-default-browser-check','--disable-gpu','--window-size=1420,1080','--remote-debugging-port=0','--user-data-dir='+profile,url],{stdio:'ignore'});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));

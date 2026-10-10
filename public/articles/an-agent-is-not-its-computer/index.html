@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>An Agent Is Not Its Computer — Torsionfield Field Notes</title>
+<meta name="description" content="A source-backed critical examination of invisible_dots: durable agents, virtual machines, verified effects, browser identity, and portable capabilities.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Agent Is Not Its Computer">
+<link rel="canonical" href="https://torsionfield.de/articles/an-agent-is-not-its-computer/">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/journal.css">
+<link rel="stylesheet" href="/articles/article.css">
+</head>
+<body>
+<header class="mast"><div class="shell bar">
+<a href="/" class="logo">TORSION<span>FIELD</span><small>ENGINEERING JOURNAL</small></a>
+<nav><a href="/" aria-current="page">Field notes</a><a href="/runtime/">Runtime</a><a href="https://spec.torsionfield.de/">Specification</a><a href="https://docs.torsionfield.de/">Documentation</a><a href="https://github.com/FreesoSaiFared/torsionfield">Source ↗</a></nav>
+</div></header>
+<main class="shell essay-shell">
+<a class="essay-back" href="/#notes">← FIELD NOTES / CRITICAL ARCHITECTURE</a>
+<div class="essay-grid">
+<aside class="essay-rail" aria-label="Article metadata and contents">
+<p class="meta">TF / CRITICAL ESSAY 001</p>
+<p class="essay-date"><time datetime="2026-10-10">10 OCTOBER 2026</time></p>
+<p class="essay-source-label">PRIMARY SUBJECT</p>
+<p><a href="https://github.com/feder-cr/invisible_dots">feder-cr / invisible_dots ↗</a></p>
+<p class="essay-status">SOURCE ANALYSIS / INDEPENDENT BENCHMARK PENDING</p>
+<nav aria-label="Contents"><p class="essay-source-label">IN THIS NOTE</p><ol>
+<li><a href="#the-engineering-deserves-credit">The engineering deserves credit</a></li>
+<li><a href="#persistence-is-not-yet-continuity">Persistence is not yet continuity</a></li>
+<li><a href="#a-recorded-action-is-not-a-verified-effect">A recorded action is not a verified effect</a></li>
+<li><a href="#the-browser-profile-is-an-excellent-container-not-an-identity-theory">The browser profile is an excellent container, not an identity theory</a></li>
+<li><a href="#skills-are-not-yet-learned-procedures">Skills are not yet learned procedures</a></li>
+<li><a href="#what-would-change-our-minds">What would change our minds?</a></li>
+<li><a href="#the-transductive-alternative">The transductive alternative</a></li>
+</ol></nav>
+</aside>
+<article class="essay-body" id="article">
+<h1>An Agent Is Not Its Computer</h1>
+<p><em>What invisible_dots gets right about persistent AI — and why a virtual machine should be a possible home, not the definition of an agent.</em></p>
+<p>An AI agent opens a browser, signs in, retrieves an invoice, writes a note, and shuts down. Tomorrow it starts again. The remarkable part is not that it can use a computer. The remarkable part is that tomorrow's work can belong to the same continuing undertaking. What, exactly, must persist for that to be true?</p>
+<p><a href="https://github.com/feder-cr/invisible_dots">invisible_dots</a>, developed by feder-cr, answers with unusual concreteness: give each Dot its own hardware-accelerated QEMU virtual machine, persistent disk, browser identities, notes, skills, approvals, and scheduled work. The machine sleeps when idle and wakes to continue. There is a real control plane, durable task delivery, and an explicit account of what happens when an operation is interrupted.</p>
+<p>This is more interesting than another demonstration of an agent clicking buttons. It is an attempt to make autonomous work survive contact with the ordinary instability of computers.</p>
+<p>It also puts an architectural question in unusually sharp relief: <strong>must the agent and its computer share a lifetime?</strong></p>
+<h2 id="the-engineering-deserves-credit">The engineering deserves credit</h2>
+<p>The project's most compelling feature is not the patched Firefox browser. It is its treatment of interrupted work. The host persists accepted messages and tasks; the guest records its reasoning steps and their corresponding events transactionally. An in-flight tool call whose result was never recorded is not automatically retried. It becomes an explicitly uncertain outcome that the agent must investigate.</p>
+<p>That distinction is fundamental. A system that silently repeats a payment, a deletion, or a publication after a crash is not reliable merely because its queue survived. invisible_dots does not confuse an unfinished invocation with permission to invoke it again.</p>
+<p>There are other thoughtful choices. Golden VM images are separated from the runtime code supplied on a read-only disk. Approvals can wait across restarts. Browser profiles keep session state. Resource limits and permission categories are visible rather than being hidden in an optimistic system prompt. The <a href="https://github.com/feder-cr/invisible_dots/blob/main/docs/architecture.md">architecture document</a> is unusually explicit about mechanisms, failure cases, and constraints.</p>
+<p>A criticism worth publishing must begin there. A persistent VM is a defensible unit of <em>isolation</em>. In some circumstances it is precisely the right one.</p>
+<h2 id="persistence-is-not-yet-continuity">Persistence is not yet continuity</h2>
+<p>A Dot has a durable identifier and host-side configuration, so it would be inaccurate to say that the project literally identifies an agent with a QEMU process. But the working continuity of its conversation, memory, skills, and browser identities is housed inside that particular guest filesystem. In the current release there is no multi-host orchestration, no snapshot-and-restore facility, and no supported migration to a newer golden image.</p>
+<p>This is not evidence of poor engineering. It is a deliberate product boundary. It is also the point at which we would choose another primitive.</p>
+<p>An agent has several kinds of continuity. It can remember what was said. It can retain the authority it was granted, or recognize when that authority has expired. It can resume an undertaking whose previous steps were performed elsewhere. Most importantly, it can distinguish what it <em>attempted</em> from what actually became true.</p>
+<p>None of those continuities logically requires the same machine, disk, browser engine, model provider, or active conversation window. A machine can preserve them conveniently, but convenience should not quietly become identity.</p>
+<p>Our proposed alternative is a durable actor and operation history whose execution environment is replaceable. A VM could be provisioned for a risky task, a browser attached for a web interaction, a remote host selected for a workload, and a different reasoning model used for review. The identity of the undertaking would remain stable across those changes. That is a research direction, not a capability we claim to have fully demonstrated.</p>
+<h2 id="a-recorded-action-is-not-a-verified-effect">A recorded action is not a verified effect</h2>
+<p>invisible_dots correctly marks interrupted tool calls as uncertain. We would extend that principle beyond crash recovery into the definition of success.</p>
+<p>Suppose an agent clicks “Submit” and its browser crashes before receiving confirmation. The event log can show that the click was attempted. The site's server may have processed it, rejected it, or processed it twice through behavior outside the agent's control. At-most-once <em>tool invocation</em> is not exactly-once <em>real-world effect</em>.</p>
+<p>A useful execution record therefore needs more than a tool name, arguments, and completion status. It needs an intended postcondition, the observations that bear on it, the authority under which the action was attempted, and a procedure for resolving ambiguity without carelessly repeating the action.</p>
+<p>This is the distinction behind Torsionfield's formulation: <strong>intelligence must leave evidence</strong>. The machine's account is evidence of what the machine did. It is not automatically evidence of what happened in the world.</p>
+<h2 id="the-browser-profile-is-an-excellent-container-not-an-identity-theory">The browser profile is an excellent container, not an identity theory</h2>
+<p>invisible_dots uses separate persistent Firefox profiles, backed by a modified browser engine intended to reduce automation fingerprints. That is practical. It keeps cookies and logins available to a Dot across restarts, and its guide sensibly stops short of promising that a website cannot detect or refuse automation.</p>
+<p>But a profile is a bundle of executable state, credentials, storage, browser-specific assumptions, and contingent permissions. Copying it elsewhere is not the same as transferring legitimate authority. Nor should portability require leaking session secrets to every execution environment.</p>
+<p>The more difficult design is a browser identity that can be <em>referenced</em>, <em>delegated</em>, <em>revoked</em>, and <em>reconstituted</em> through explicitly authorized mechanisms, while sensitive credentials remain inside appropriate trust boundaries. A browser session can then be an attachment to an agent rather than the agent's permanent residence.</p>
+<p>This matters particularly for work spanning browser automation, desktop tools, command-line programs, hosted services, and MCP capabilities. The current Dot deliberately offers general file and shell tools but exposes only its own browser through MCP. That gives it a coherent, inspectable boundary; it also limits what can become a shared capability in a wider execution network.</p>
+<h2 id="skills-are-not-yet-learned-procedures">Skills are not yet learned procedures</h2>
+<p>The Dot can write notes and skill files describing how it performs recurring work. This is useful memory. It is not the same thing as learning a reliable procedure from the execution itself.</p>
+<p>Imagine watching a successful interaction unfold: the selectors tried, the dialogs dismissed, the page states observed, the requests made, the permissions exercised, and the final effect independently checked. The valuable object is not merely a prose summary that says how to repeat the task. It is an evidence-backed trace that can be generalized, challenged, and selectively turned into reusable operations.</p>
+<p>We want such traces to become capabilities: sometimes deterministic browser steps, sometimes a prompt with explicit constraints, sometimes a script, sometimes an MCP tool, and sometimes a deliberately unresolved experimental branch. A procedure should improve when its assumptions fail, without rewriting the history that showed those assumptions failing.</p>
+<p>That is a larger ambition than persistent skill files, not an argument against them. They may be one of the best human-readable projections of a more substantial record.</p>
+<h2 id="what-would-change-our-minds">What would change our minds?</h2>
+<p>The fair response to an architectural thesis is an experiment, not a diagram. We would first reproduce the project's documented recovery scenario on a real accelerated VM: accept a task, interrupt it between a consequential action and its result, recover it, and compare the agent's account with the external system's actual state. The published guide reports a fifteen-step Linux/KVM acceptance run, but we have <strong>not</strong> independently reproduced it.</p>
+<p>Next, we would test a different question: can the <em>same undertaking</em> continue when its computer, browser implementation, or model changes, without copying a privileged entire guest filesystem? That capability is explicitly outside the present invisible_dots scope; the experiment would compare it with an alternative design rather than count its absence as a failed promise.</p>
+<p>Finally, we would ask whether a workflow learned once can be recovered from its evidence, adapted to a changed interface, executed with narrower delegated authority, and independently checked. Not “did the model say it succeeded?”, but “can another observer establish the result?”</p>
+<p>These tests have different success criteria. A persistent private computer may win on isolation and simplicity. A portable capability system may win on reconstruction, interoperability, and shared learning. The answer could be hybrid.</p>
+<h2 id="the-transductive-alternative">The transductive alternative</h2>
+<p>The conventional picture of a personal agent is a small digital worker sitting inside a small digital office. Give it a desk, a browser, files, and an identity; make the office persistent; and the worker can resume tomorrow.</p>
+<p>Our proposition is more radical: <strong>agency should reside in the continuity of accountable action, not in the persistence of a particular workspace.</strong></p>
+<p>A website interaction can become a reusable method. A failed method can become an explicit counterexample. A completed operation can change a shared knowledge structure only to the extent that its effects were observed. A capability can move between execution environments while its authorization remains bounded and revocable. The user should not have to supervise the machinery that makes this possible; the user should retain control over purposes, permissions, and consequential decisions.</p>
+<p>That does not abolish virtual machines. It gives them a more precise role. A Dot-like VM could become a temporary, isolated execution habitat within a larger fabric of identities, capabilities, histories, and evidence. Some agents might live there for months. Others might inhabit it for a single transaction. Neither choice should determine whether the underlying work can continue.</p>
+<p>invisible_dots has built an impressively concrete answer to the question, “How do we give an agent a computer that remembers?” The question we want to pursue is different: <strong>“How do we give an undertaking continuity even when every computer involved is replaceable?”</strong></p>
+<p>A Dot is an interesting container for persistence. The next architectural step is to make continuity independent of the container.</p>
+<hr />
+<p><strong>Evidence and status — 10 October 2026.</strong> This is a source-based critical interpretation, not an independent security audit, performance benchmark, or real-VM acceptance report. Product descriptions and stated limitations are drawn from the <a href="https://github.com/feder-cr/invisible_dots/blob/main/docs/guide.md">invisible_dots guide</a>, <a href="https://github.com/feder-cr/invisible_dots/blob/main/docs/architecture.md">architecture contract</a>, and <a href="https://github.com/feder-cr/invisible_dots">repository</a>. The proposed alternative and experiments are Torsionfield research hypotheses. No test results for them are claimed here.</p>
+
+</article>
+
+</div>
+<div class="essay-next"><span>TF / CONTINUATION</span><p>Questions generate work. Capabilities perform it. Evidence changes the graph. Authority remains revocable.</p><a href="/runtime/">EXPLORE THE RUNTIME →</a></div>
+</main>
+<footer><div class="shell foot"><div><strong>TORSIONFIELD</strong><p>A research journal from Transductive Science.</p></div><a href="https://transductive.science">TRANSDUCTIVE.SCIENCE ↗</a><a href="/">FIELD NOTES ↗</a><a href="/runtime/">THE RUNTIME ↗</a></div></footer>
+</body>
+</html>

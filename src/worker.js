@@ -6,7 +6,23 @@ async function asset(e,r,p){const u=new URL(r.url);u.pathname=p;return wrap(awai
 async function docs(e,r,u){let p=u.pathname;if(p==="/")p="/index.html";else if(p.endsWith("/"))p+="index.html";else if(!p.split("/").pop().includes("."))p+=".html";let x=await asset(e,r,"/docs"+p);if(x.status!==404)return x;const f=await asset(e,r,"/docs/404.html");return new Response(f.body,{status:404,headers:f.headers})}
 async function forksense(e,r,u){let p=u.pathname;if(p==="/")p="/forksense/index.html";else if(p.endsWith("/"))p="/forksense"+p+"index.html";else if(!p.split("/").pop().includes("."))p="/forksense"+p+".html";else p="/forksense"+p;let x=await asset(e,r,p);if(x.status!==404)return x;const f=await asset(e,r,"/forksense/index.html");return new Response(f.body,{status:404,headers:f.headers})}
 async function spec(e,r,u){let p=u.pathname;if(p==="/")p="/spec/index.html";else if(p.startsWith("/spec/")){if(p.endsWith("/"))p+="index.html";else if(!p.split("/").pop().includes("."))p+=".html"}else if(p.endsWith("/"))p="/spec"+p+"index.html";else if(!p.split("/").pop().includes("."))p="/spec"+p+".html";else p="/spec"+p;let x=await asset(e,r,p);if(x.status!==404)return x;const f=await asset(e,r,"/spec/index.html");return new Response(f.body,{status:404,headers:f.headers})}
+async function trackedCorpus(e,r){
+  const source="https://raw.githubusercontent.com/FreesoSaiFared/torsionfield/main/public/research/hitchhikers-upstream.json";
+  try{
+    const upstream=await fetch(source,{cf:{cacheTtl:180,cacheEverything:true}});
+    if(!upstream.ok)throw new Error("source HTTP "+upstream.status);
+    const d=await upstream.json();
+    if(d?.schema!=="torsionfield-source-watch/1"||d.upstreamRepo!=="steveash/hitchhikers-guide-to-ai-native-engineering"||!Array.isArray(d.events)||!/^[a-f0-9]{40}$/.test(d.upstreamSha||""))throw new Error("invalid upstream metadata");
+    return wrap(new Response(JSON.stringify(d),{headers:{"content-type":"application/json; charset=utf-8","cache-control":"public, max-age=180"}}));
+  }catch(err){
+    console.error("tracked corpus unavailable:",err);
+    const fallback=await asset(e,r,"/research/hitchhikers-upstream.json");
+    if(fallback.status===200)return fallback;
+    return json({ok:false,error:"UPSTREAM_WATCH_UNAVAILABLE"},503);
+  }
+}
 export default{async fetch(r,e){const u=new URL(r.url),host=u.hostname.toLowerCase();
+if(u.pathname==="/api/research/hitchhikers"&&r.method==="GET"&&(host==="torsionfield.de"||host.endsWith(".workers.dev")))return trackedCorpus(e,r);
 if(host==="www.torsionfield.de")return Response.redirect(`https://torsionfield.de${u.pathname}${u.search}`,308);
 if(u.pathname==="/api/status")return json({product:"Torsionfield Runtime",siteRevision:"2026.08.03-spec-3.2",specVersion:"3.2",networkRegistration:"alpha",documentation:"online",participantEdge:"bounded-pilot"});
 if(u.pathname==="/api/site-manifest")return json({protocol:"torsionfield-site/1",domains:{product:"https://torsionfield.de",docs:"https://docs.torsionfield.de",community:"https://transductive.org",science:"https://transductive.science",art:"https://transductive.art"},localFirst:true,specification:"https://spec.torsionfield.de/",participantEdge:{status:"bounded-pilot",referenceProvider:"cloudflare-oauth-cell/1"}});

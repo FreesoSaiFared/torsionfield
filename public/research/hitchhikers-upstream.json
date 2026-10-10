@@ -1,0 +1,54 @@
+{
+  "schema": "torsionfield-source-watch/1",
+  "source": "Hitchhiker's Guide to AI-Native Engineering",
+  "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
+  "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
+  "upstreamSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
+  "previousSha": null,
+  "checkedAt": "2026-10-10T07:57:11+00:00",
+  "sourceCommitAt": "2026-10-10T07:36:35Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/98fb16824e212fb82b7010bdd9bebb736eb5dc2b...98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
+  "trackedNote": {
+    "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
+    "status": "secondary synthesis — verify primary evidence"
+  },
+  "auditFindings": [
+    {
+      "id": "uncertainty-unit",
+      "finding": "The source note labels one standard error as a 95% confidence interval.",
+      "status": "review-required",
+      "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities"
+    },
+    {
+      "id": "industrial-control",
+      "finding": "AISI says Cooling Tower stalled on IT steps; its results cannot establish OT-specific model ability.",
+      "status": "review-required",
+      "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities"
+    }
+  ],
+  "changed": [
+    {
+      "atSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
+      "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+      "change": "initial tracking",
+      "priority": 100,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+      "detectedAt": "2026-10-10T07:57:11+00:00"
+    }
+  ],
+  "events": [
+    {
+      "atSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
+      "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+      "change": "initial tracking",
+      "priority": 100,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+      "detectedAt": "2026-10-10T07:57:11+00:00"
+    }
+  ],
+  "relevantCount": 1,
+  "reviewNeeded": true,
+  "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
+}

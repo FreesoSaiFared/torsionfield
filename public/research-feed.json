@@ -1,0 +1,37 @@
+{
+  "source": "Trail of Bits",
+  "sourceUrl": "https://blog.trailofbits.com/index.xml",
+  "updatedAt": "2026-10-10T07:16:28.143387+00:00",
+  "items": [
+    {
+      "title": "SequenceHash: multihashing for the rest of us",
+      "url": "https://blog.trailofbits.com/2026/10/02/sequencehash-multihashing-for-the-rest-of-us/",
+      "date": "2026-10-02T11:00:00+00:00"
+    },
+    {
+      "title": "Don't let TEEs break your MPC",
+      "url": "https://blog.trailofbits.com/2026/09/25/dont-let-tees-break-your-mpc/",
+      "date": "2026-09-25T11:00:00+00:00"
+    },
+    {
+      "title": "SAML: A fractal of bad design",
+      "url": "https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/",
+      "date": "2026-09-21T11:00:00+00:00"
+    },
+    {
+      "title": "Auditing in the age of (good enough) AI",
+      "url": "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/",
+      "date": "2026-09-18T11:00:00+00:00"
+    },
+    {
+      "title": "1Password's AI patching benchmark is misleading",
+      "url": "https://blog.trailofbits.com/2026/09/15/1passwords-ai-patching-benchmark-is-misleading/",
+      "date": "2026-09-15T11:00:00+00:00"
+    },
+    {
+      "title": "A “proof” of Fermat’s Last Theorem that fits the margin",
+      "url": "https://blog.trailofbits.com/2026/09/09/a-proof-of-fermats-last-theorem-that-fits-the-margin/",
+      "date": "2026-09-09T11:00:00+00:00"
+    }
+  ]
+}

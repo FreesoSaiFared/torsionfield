@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cinematic Matter / Torsionfield experimental document</title><meta name="description" content="Reversible cinematic document with inspectable provenance and counterfactuals.">
+<link rel="stylesheet" href="./matter.css"></head><body>
+<header><a href="/">TORSIONFIELD</a><span>CM-001 / ENGINEERING EXPERIMENT</span><a href="/">BACK TO JOURNAL ↗</a></header>
+<main><section class="intro"><small>DOCUMENT LAB / 001</small><h1>An argument that <em>performs itself.</em></h1>
+<p>One canonical HTML document, three claims, two fictional sources, and a cinematographic projection that can be interrogated or reconstructed at any instant.</p></section>
+<div class="workbench"><section class="paper" id="paper" aria-label="Article and animated projection">
+<div class="ruler"><span>CANONICAL DOCUMENT</span><span>ILLUSTRATIVE / NO EMPIRICAL CLAIMS</span></div>
+<article id="article"><small>ONE TOY EQUATION / THREE CLAIMS</small><h2>A signal, a parameter, a conclusion.</h2>
+<p id="claim-1"><b>C1 / MODEL.</b> <mark id="anchor-1">The signal envelope decays exponentially</mark> in the toy model <code>e<sup>−λt</sup></code>. <a href="#source-1">Source 1</a> defines it.</p>
+<p id="claim-2"><b>C2 / DERIVED.</b> <mark id="anchor-2">Increasing λ reduces the envelope</mark> at any fixed positive time, within the model.</p>
+<p id="claim-3"><b>C3 / HYPOTHESIS.</b> <mark id="anchor-3">The same conclusion always holds in physical systems.</mark> This extrapolation is <strong id="claim-status">unverified</strong>.</p>
+<p id="prediction">At t=4 with λ=0.40, the model predicts <strong id="model-value">0.202</strong>; not an empirical measurement.</p>
+</article><svg id="matter" role="group" aria-label="Interactive claim filaments"><g id="filaments"></g></svg>
+<div class="ruler bottom"><span>CANONICAL TEXT: HTML</span><span id="scene">DOCUMENT</span></div></section>
+<aside class="controls"><small>DIRECTOR / SIMULATION / SEMANTICS</small><h2>Control the argument.</h2>
+<div class="modes"><button id="read" aria-pressed="true">READ</button><button id="watch" aria-pressed="false">WATCH</button><button id="investigate" aria-pressed="false">INVESTIGATE</button></div>
+<label for="time">NARRATIVE TIME <output id="clock">00:00</output></label><input id="time" type="range" min="0" max="20" step=".05" value="0">
+<div class="transport"><button id="play">▶ PLAY</button><button id="pause">Ⅱ PAUSE</button><button id="reconstruct">↶ RECONSTRUCT</button></div>
+<label for="damping">COUNTERFACTUAL DAMPING λ <output id="damping-value">0.40</output></label>
+<input id="damping" type="range" min=".1" max="1.2" step=".05" value=".4">
+<label for="revision">DOCUMENT REVISION</label><select id="revision"><option value="1">VERSION 1 / UNVERIFIED</option><option value="2">VERSION 2 / DISPUTED</option></select>
+<label class="voice"><input type="checkbox" id="voice"> Speak narration on Play (browser voice)</label>
+<p class="quiet">Audio requires an explicit Play click. Click a moving filament to pause and inspect its original passage.</p>
+<section class="inspector" aria-live="polite"><small>LINEAGE / REVEAL</small><h3 id="inspector-title">Select a filament.</h3>
+<p id="inspector-body">The curves retain a traceable relationship to the text.</p><button id="reveal" disabled>REVEAL SOURCE TEXT ↗</button></section>
+</aside></div>
+<section class="sources"><div><small>SOURCES / FICTIONAL FIXTURES</small><h2>Inspect what the matter means.</h2>
+<p>These are deliberately not real studies. They demonstrate a semantic contract without implying empirical support.</p></div>
+<div><p id="source-1"><b>S1 / EQUATION.</b> <code>f(t,λ) = e<sup>−λt</sup></code>, with t≥0 and λ&gt;0. An illustrative definition, not a paper.</p>
+<p id="source-2"><b>S2 / UNVERIFIED NOTE.</b> A hypothetical laboratory assertion, provided only as a disputed-link fixture.</p></div></section>
+<footer>EXPERIMENTAL CONCEPT / NO AUTONOMOUS SCIENTIFIC CLAIMS <a href="/">TORSIONFIELD.DE ↗</a></footer>
+</main><script src="./matter.js" defer></script><script src="./matter-engine.js" defer></script></body></html>

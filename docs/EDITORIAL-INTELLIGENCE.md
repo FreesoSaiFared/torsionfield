@@ -24,9 +24,9 @@ or present generated suggestions as verified claims.
 
 The experimental **owner-side** i9ES lane is:
 - Run: bash tools/webllm-personalizer/prewarm-i9es.sh
-- Dedicated Brave headless profile on i9ES; WebGPU model runs in a Web Worker.
+- Dedicated Brave X11 profile on i9ES, using NVIDIA Vulkan/ANGLE; model runs in a Web Worker.
 - Private HTTP on 127.0.0.1:8989; CDP on 127.0.0.1:9235.
-- Model: SmolLM2-360M-Instruct-q4f32_1-MLC, from WebLLM official config.
+- Default model: Qwen3.5-2B-q4f32_1-MLC (WebLLM 0.2.85); this works without shader-f16.
 - First session downloads model files; later sessions reuse the browser cache.
 - Local workbench input may be a source headline and a short verified excerpt.
 - Generated output is a candidate; humans/independent evidence must approve it.
@@ -69,3 +69,54 @@ separately from actual WebGPU vendor/architecture and marks production inference
 ready only after hardware selection **and** a verified text-generation result.
 The native Ollama Qwen 7B fallback remains independently proven at 100% NVIDIA
 GPU. Do not confuse `gpu.devices[0].vendorId` with the selected WebGPU adapter.
+
+## Accepted NVIDIA WebGPU in Brave — 10 October 2026 (supersedes historical failure)
+
+The earlier SwiftShader findings above describe the **old browser configuration**.
+They are preserved as negative controls, not the current i9ES status.
+
+**Verified positive path:** Brave 155, Ubuntu 24.04 X11, NVIDIA RTX 3060,
+driver 580.178.04, isolated model profile, NVIDIA PRIME offload and:
+
+- --enable-unsafe-webgpu
+- --ozone-platform=x11
+- --use-angle=vulkan
+- --enable-features=Vulkan,VulkanFromANGLE
+
+These X11 flags match the GPUWeb implementation notes. Crucially,
+navigator.gpu.requestAdapter({powerPreference:'high-performance'}).info
+reports **vendor nvidia, architecture ampere**. Browser SystemInfo
+reporting NVIDIA as primary GPU was insufficient and previously misleading.
+The browser executes a WebGPU compute shader returning 42 from input 41.
+
+**Model:** Qwen3.5-2B-q4f32_1-MLC, WebLLM 0.2.85. The adapter does not expose
+shader-f16; use the q4f32 model (not q4f16). The local workbench now requests
+the no-thinking response mode, removes thought delimiters from its draft,
+requires explicit TITLE and RELEVANCE fields, and does not publish any output.
+
+**Acceptance:** Restarted the isolated browser through its canonical
+prewarm-i9es.sh script. The script identified and closed exactly one idle
+duplicate tab. After cached model load, the source-controlled accept-i9es.mjs
+passed both a literal TF_READY smoke and a complete editorial draft.
+
+Restart-run timings: 1.284 s for smoke, 2.261 s for editorial draft.
+Three additional warm trials: 3/3 passed; smoke median 0.320 s,
+editorial median 3.017 s. These are observed on i9ES, not general benchmarks.
+Evidence: docs/evidence/webllm-nvidia-x11-2026-10-10.json
+
+**Runbook, on the authorized i9ES desktop:**
+1. bash tools/webllm-personalizer/prewarm-i9es.sh
+2. node tools/webllm-personalizer/check-gpu.mjs 9235
+3. node tools/webllm-personalizer/accept-i9es.mjs
+
+Local HTTP server 127.0.0.1:8989 and CDP 127.0.0.1:9235 are private
+to i9ES; the public site NEVER automatically downloads model weights.
+The prewarm script skips startup if NVIDIA X11 cannot be proven or less
+than 4.5 GB free GPU memory is available. Running inference may still
+consume significant GPU memory; the existing Ollama Qwen 7B remains a
+separately verified fallback.
+
+**Publication is independently gated:** acceptance checks that the response
+has the requested format. It does not certify that generated scientific or
+security claims are true. First-party blog interpretations require source
+review before moving from private drafts to curated editorial JSON.

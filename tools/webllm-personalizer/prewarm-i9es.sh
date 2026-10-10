@@ -22,8 +22,13 @@ if ! curl -fsS --max-time 2 "http://127.0.0.1:$CDP/json/version" >/dev/null; the
   if ! DISPLAY=:0 XAUTHORITY=/home/ned/.Xauthority __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo -B 2>/dev/null | grep -q 'OpenGL renderer string: NVIDIA'; then
     echo 'WEBLLM_PREWARM_SKIPPED: NVIDIA X11 unavailable'; exit 0
   fi
-  DISPLAY=:0 XAUTHORITY=/home/ned/.Xauthority __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only nohup brave-browser --no-sandbox --disable-dev-shm-usage \
-    --enable-unsafe-webgpu --ignore-gpu-blocklist --disable-extensions \
+  GPU_FREE_MB=$(nvidia-smi --query-gpu=memory.free --format=csv,noheader,nounits 2>/dev/null | head -1 | tr -d '[:space:]')
+  if ! [[ "$GPU_FREE_MB" =~ ^[0-9]+$ ]] || [ "$GPU_FREE_MB" -lt 4500 ]; then
+    echo "WEBLLM_PREWARM_SKIPPED: insufficient verified free NVIDIA VRAM ($GPU_FREE_MB MiB)"; exit 0
+  fi
+  DISPLAY=:0 XAUTHORITY=/home/ned/.Xauthority __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only nohup nice -n 5 /opt/brave.com/brave/brave --no-sandbox --disable-dev-shm-usage \
+    --enable-unsafe-webgpu --ignore-gpu-blocklist --disable-extensions --no-first-run --no-default-browser-check \
+    --ozone-platform=x11 --use-angle=vulkan --enable-features=Vulkan,VulkanFromANGLE \
     --remote-debugging-address=127.0.0.1 --remote-debugging-port="$CDP" \
     --user-data-dir="$PROFILE" --window-position=-1800,-1600 --window-size=760,640 "http://127.0.0.1:$PORT/" \
     > "$RUN/local-webllm-browser.log" 2>&1 </dev/null &
@@ -31,4 +36,5 @@ if ! curl -fsS --max-time 2 "http://127.0.0.1:$CDP/json/version" >/dev/null; the
 fi
 sleep 1
 curl -fsS --max-time 3 "http://127.0.0.1:$CDP/json/version" >/dev/null
+node "$HERE/normalize-tabs.mjs" "$CDP"
 node "$HERE/check-gpu.mjs" "$CDP" | tee "$RUN/webllm-prewarm-receipt.json"

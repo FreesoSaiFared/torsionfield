@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The GPU Was There. WebGPU Wasn't Using It. — Torsionfield</title>
+<meta name="description" content="A reproducible field note on getting NVIDIA-backed WebGPU and Qwen3.5 browser-local model inference working in Brave on Linux.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The GPU Was There. WebGPU Wasn't Using It.">
+<link rel="canonical" href="https://torsionfield.de/articles/webgpu-nvidia-linux/">
+<link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/journal.css"><link rel="stylesheet" href="/articles/article.css">
+<style>
+.essay-body pre{white-space:pre-wrap;overflow-wrap:anywhere;font:.9rem/1.6 Consolas,monospace;padding:20px 0;border-block:1px solid #98a4a4;color:#22343b;margin:25px 0 34px}
+.measure{border-collapse:collapse;width:100%;margin:26px 0 38px;font:.91rem/1.6 Consolas,monospace}
+.measure td,.measure th{border-bottom:1px solid #adb4b2;padding:12px 10px;text-align:left}
+.measure th{font-weight:750;color:#a6432c}
+</style>
+</head><body>
+<header class="mast"><div class="shell bar">
+<a class="logo" href="/">TORSION<span>FIELD</span><small>ENGINEERING JOURNAL</small></a>
+<nav><a href="/">Field notes</a><a href="/research/">Research archive</a><a href="/runtime/">Runtime</a><a href="https://spec.torsionfield.de/">Specification</a></nav>
+</div></header>
+<main class="shell essay-shell"><a class="essay-back" href="/#notes">← FIELD NOTES / MEASURED ENGINEERING</a>
+<div class="essay-grid">
+<aside class="essay-rail" aria-label="Article metadata">
+<p class="meta">TF / EXPERIMENT 002</p>
+<p class="essay-date"><time datetime="2026-10-10">10 OCTOBER 2026</time></p>
+<p class="essay-source-label">EXECUTION HOST</p>
+<p>i9ES / Ubuntu 24.04 / RTX 3060</p>
+<p class="essay-status">HARDWARE ADAPTER + INFERENCE VERIFIED / ONE HOST</p>
+<nav aria-label="Contents"><p class="essay-source-label">IN THIS NOTE</p><ol>
+<li><a href="#mistake">The deceptive GPU reading</a></li>
+<li><a href="#correction">The actual fix</a></li>
+<li><a href="#model">A model that produces text</a></li>
+<li><a href="#measurements">Measured results</a></li>
+<li><a href="#reproduction">Reproduce and challenge it</a></li></ol></nav>
+</aside>
+<article class="essay-body" id="article">
+<h1>The GPU was there. WebGPU wasn't using it.</h1>
+<p><em>A local AI model was running far too slowly. The graphics panel said NVIDIA. The WebGPU adapter told another story.</em></p>
+<p>We wanted an inexpensive local model to write draft headlines and relevance explanations for Torsionfield's research journal. Brave could load the model, and its GPU diagnostics listed an NVIDIA GeForce RTX 3060. That looked promising. Yet inference barely progressed and sometimes lost its GPU device.</p>
+<p>The failure was not in the model's download, and a successful WebGPU compute demonstration did not settle the question either. The browser was executing that demonstration through <strong>Google SwiftShader, a CPU implementation</strong>.</p>
+<h2 id="mistake">The deceptive GPU reading</h2>
+<p>Chromium's browser-level GPU inventory and the graphics adapter used by a webpage are different measurements. Our first test verified NVIDIA in the browser's GPU list and then executed a compute shader that incremented 41 to 42. We prematurely treated the two observations as proof of NVIDIA-backed WebGPU.</p>
+<p>A direct check of <code>navigator.gpu.requestAdapter({powerPreference:'high-performance'}).info</code> identified the adapter as <strong>vendor Google, architecture SwiftShader</strong>. The same result appeared for the default and low-power preferences. The CPU was doing the work.</p>
+<p>That distinction is particularly important for agents that diagnose software by reading plausible system-status fields. The observation supporting a claim must measure the thing the claim is about.</p>
+<h2 id="correction">The actual fix</h2>
+<p>We ran separate Brave profiles on i9ES, preserving the main browser. Chromium's <a href="https://github.com/gpuweb/gpuweb/wiki/Implementation-Status">WebGPU implementation-status documentation</a> recommends an experimental Vulkan/ANGLE configuration for Linux X11. On this machine, the decisive flags were:</p>
+<pre>--enable-unsafe-webgpu
+--ozone-platform=x11
+--use-angle=vulkan
+--enable-features=Vulkan,VulkanFromANGLE</pre>
+<p>With NVIDIA PRIME offload enabled, the WebGPU adapter itself reported <strong>NVIDIA / Ampere</strong>. A new independent compute test returned 42 from input 41. The browser was now executing on the card rather than merely listing it. The <a href="https://github.com/gpuweb/gpuweb/issues/5022">GPUWeb implementation discussion</a> provides additional context on the Linux flags.</p>
+<h2 id="model">A model that produces text</h2>
+<p>We first reproduced browser-local text generation with SmolLM2 360M. It was quick, but it produced poor editorial copy. We then tested <strong>Qwen3.5 2B, quantized as q4f32</strong> through WebLLM in an isolated local worker. The NVIDIA adapter on this host did not expose <code>shader-f16</code>, so the q4f32 variant was the appropriate tested configuration.</p>
+<p>The generated text was no longer an empty response or an error. With no-thinking generation requested, it returned a headline and relevance paragraph. Those fields are useful drafts; matching an output format does not establish that all claims inside the draft are true.</p>
+<h2 id="measurements">Measured results</h2>
+<table class="measure">
+<thead><tr><th>Acceptance</th><th>Observed result</th></tr></thead>
+<tbody>
+<tr><td>Actual adapter</td><td>NVIDIA / Ampere</td></tr>
+<tr><td>WebGPU computation</td><td>41 → 42</td></tr>
+<tr><td>Model</td><td>Qwen3.5 2B / q4f32</td></tr>
+<tr><td>Cold browser-restart smoke</td><td>1.284 seconds</td></tr>
+<tr><td>Cold browser-restart editorial draft</td><td>2.261 seconds</td></tr>
+<tr><td>Three warm editorial trials</td><td>3/3 passed; median 3.017 seconds</td></tr>
+<tr><td>Three warm smoke trials</td><td>3/3 passed; median 0.320 seconds</td></tr>
+</tbody></table>
+<p>These timings describe this specific cached-model i9ES setup, not a cross-hardware benchmark. The experimental browser profile and localhost service are private to the machine; visitors to the website do not silently download model weights.</p>
+<h2 id="reproduction">Reproduce and challenge it</h2>
+<p>The <a href="https://github.com/FreesoSaiFared/torsionfield/blob/main/docs/evidence/webllm-nvidia-x11-2026-10-10.json">machine-readable receipt</a> records the configuration, negative controls, restart test, and repeated-run measurements. The <a href="https://github.com/FreesoSaiFared/torsionfield/tree/main/tools/webllm-personalizer">source-controlled local workbench</a> includes a prewarm launcher, adapter inspector, duplicate-tab recovery, and a bounded end-to-end acceptance test.</p>
+<pre>bash tools/webllm-personalizer/prewarm-i9es.sh
+node tools/webllm-personalizer/check-gpu.mjs 9235
+node tools/webllm-personalizer/accept-i9es.mjs</pre>
+<p>Our next question is not whether the model can emit plausible text. It can. The next experiment asks whether its interpretations improve source comprehension without inventing facts. That needs independent source validation, not another successful GPU benchmark.</p>
+<hr><p>FIELD RECORD TF/WEBGPU/2026-10-10 · Reproducible on i9ES · Experimental Brave flags are specific to an isolated profile. The native Ollama Qwen 7B fallback remains separately available.</p>
+</article></div>
+<div class="essay-next"><span>TF / BACK TO JOURNAL</span><p>A runtime result becomes research when the observation can be reproduced and challenged.</p><a href="/">FIELD NOTES →</a></div>
+</main>
+<footer><div class="shell foot"><div><strong>TORSIONFIELD</strong><p>Research and experiments from Transductive Science.</p></div><a href="/research/">RESEARCH INDEX ↗</a><a href="https://github.com/FreesoSaiFared/torsionfield">SOURCE ↗</a></div></footer>
+</body></html>

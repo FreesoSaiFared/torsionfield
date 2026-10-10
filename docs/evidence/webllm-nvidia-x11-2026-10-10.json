@@ -1,0 +1,58 @@
+{
+  "schema": "torsionfield-webllm-hardware-evidence/1",
+  "recordedAt": "2026-10-10T12:36:41.451999+00:00",
+  "host": "i9ES",
+  "browser": "Brave 155 / Chromium 155",
+  "os": "Ubuntu 24.04 / X11",
+  "driver": "NVIDIA 580.178.04",
+  "gpu": "GeForce RTX 3060 12GB",
+  "sourceRefs": [
+    "https://github.com/gpuweb/gpuweb/wiki/Implementation-Status",
+    "https://github.com/gpuweb/gpuweb/issues/5022"
+  ],
+  "runtimeFlags": [
+    "--enable-unsafe-webgpu",
+    "--ozone-platform=x11",
+    "--use-angle=vulkan",
+    "--enable-features=Vulkan,VulkanFromANGLE"
+  ],
+  "acceptanceGate": "navigator.gpu.requestAdapter().info.vendor and architecture, NOT Chrome SystemInfo primary GPU",
+  "actualWebGPU": {
+    "vendor": "nvidia",
+    "architecture": "ampere",
+    "shaderF16": false,
+    "computeInput": 41,
+    "computeOutput": 42
+  },
+  "chosenModel": "Qwen3.5-2B-q4f32_1-MLC",
+  "webllmVersion": "0.2.85",
+  "coldRestart": {
+    "accepted": true,
+    "smokeMs": 1284,
+    "editorialMs": 2261,
+    "tabNormalizer": "closed one verified idle duplicate"
+  },
+  "repeatedAcceptance": {
+    "runs": 3,
+    "passes": 3,
+    "smokeMs": [
+      398,
+      277,
+      320
+    ],
+    "editorialMs": [
+      3018,
+      3012,
+      3017
+    ],
+    "smokeMedianMs": 320,
+    "editorialMedianMs": 3017
+  },
+  "modelOutput": "source-specific editorial candidate; NOT independently factual verified",
+  "outputFormat": "TITLE + RELEVANCE confirmed; no publication or unreviewed blog mutation",
+  "negativeControls": {
+    "legacy": "browser primary NVIDIA but navigator.gpu reported google/swiftshader",
+    "f16": "shader-f16 unavailable, q4f32 model compatible"
+  },
+  "relatedIssue": "https://github.com/FreesoSaiFared/torsionfield/issues/7"
+}

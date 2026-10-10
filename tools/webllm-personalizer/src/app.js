@@ -3,9 +3,13 @@ const status=document.querySelector('#status'), button=document.querySelector('#
 const MODEL='SmolLM2-360M-Instruct-q4f32_1-MLC';
 let engine=null;
 async function boot(){
- const gpu=!!navigator.gpu && !!(await navigator.gpu.requestAdapter());
- if(!gpu){status.textContent='WebGPU unavailable — model not loaded';return;}
- status.textContent='WebGPU available. Starting background model load ('+MODEL+')';
+ const adapter=await navigator.gpu?.requestAdapter({powerPreference:'high-performance'});
+ if(!adapter){status.textContent='WEBLLM DEFERRED: WebGPU unavailable';return;}
+ const vendor=(adapter.info?.vendor||'').toLowerCase();
+ const architecture=(adapter.info?.architecture||'').toLowerCase();
+ const hardware=['nvidia','intel','amd','apple'].includes(vendor)&&!/(swiftshader|llvmpipe|lavapipe|softpipe)/.test(architecture);
+ if(!hardware){status.textContent='WEBLLM DEFERRED: Software or unverified WebGPU adapter ('+(vendor||'unknown')+' / '+(architecture||'unknown')+'). Use the native GPU fallback.';result.textContent='No model inference attempted on the software GPU';return;}
+ status.textContent='Hardware WebGPU adapter identified. Starting model load ('+MODEL+')';
  const worker=new Worker('./dist/worker.js',{type:'module'});
  engine=await webllm.CreateWebWorkerMLCEngine(worker,MODEL,{initProgressCallback:r=>{status.textContent='Local WebLLM: '+r.text;}});
  status.textContent='MODEL LOADED: '+MODEL+' · inference has not yet passed a timed test';

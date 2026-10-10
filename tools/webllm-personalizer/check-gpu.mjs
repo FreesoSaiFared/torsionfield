@@ -21,8 +21,8 @@ const info=await cdp(version.webSocketDebuggerUrl,'SystemInfo.getInfo');
 const tabs=(await(await fetch(base+'/json')).json()).filter(t=>t.type==='page'&&t.url==='http://127.0.0.1:8989/');
 const main=tabs[0];
 const observation=main?await cdp(main.webSocketDebuggerUrl,'Runtime.evaluate',{
- expression:'JSON.stringify({status:document.querySelector("#status")?.textContent,result:document.querySelector("#result")?.textContent,draftDisabled:document.querySelector("#draft")?.disabled})',
- returnByValue:true
+ expression:'(async()=>{const a=await navigator.gpu?.requestAdapter({powerPreference:"high-performance"});return JSON.stringify({status:document.querySelector("#status")?.textContent,result:document.querySelector("#result")?.textContent,draftDisabled:document.querySelector("#draft")?.disabled,actualAdapterVendor:a?.info?.vendor||"",actualAdapterArchitecture:a?.info?.architecture||"",shaderF16:a?.features.has("shader-f16")||false})})()',
+ awaitPromise:true,returnByValue:true
 }):null;
 const ui=observation?.result?.value?JSON.parse(observation.result.value):{};
 const gpu=info?.gpu?.devices?.[0]||{};
@@ -33,7 +33,12 @@ const record={
  modelLoaded:/MODEL LOADED|INFERENCE VERIFIED|LOCAL GENERATION COMPLETED/.test(ui.status||''),
  inferenceVerified:/INFERENCE VERIFIED|LOCAL GENERATION COMPLETED/.test(ui.status||''),
  status:ui.status||'TARGET_NOT_READY',
- gpuHardwareCandidate:gpu.vendorId===4318&&info?.gpu?.featureStatus?.webgpu==='enabled'
+ browserPrimaryNvidia:gpu.vendorId===4318,
+ actualAdapterVendor:ui.actualAdapterVendor||'unknown',
+ actualAdapterArchitecture:ui.actualAdapterArchitecture||'unknown',
+ shaderF16:Boolean(ui.shaderF16),
+ actualWebgpuHardware:['nvidia','intel','amd','apple'].includes((ui.actualAdapterVendor||'').toLowerCase())&&!/(swiftshader|llvmpipe|lavapipe|softpipe)/i.test(ui.actualAdapterArchitecture||''),
 };
+record.readyForEditorialInference=record.actualWebgpuHardware&&record.inferenceVerified;
 console.log(JSON.stringify(record));
-if(!record.gpuHardwareCandidate||!tabs.length)process.exitCode=2;
+if(!tabs.length)process.exitCode=2;

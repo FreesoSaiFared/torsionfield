@@ -52,3 +52,20 @@ text before modifying `public/research/editorial.json`. The Qwen output often
 summarizes events rather than explaining what our engineering stack can learn.
 Preserve first-party relevance, publisher provenance, cautious attribution and
 explicit uncertainty. `tools/editorial_backlog.py` identifies remaining gaps.
+
+## Correction: browser GPU identity is not WebGPU adapter identity
+A later, stricter adapter probe on 10 October 2026 established that the X11
+Brave profile can list NVIDIA RTX 3060 (vendor ID 4318) as its **primary browser
+GPU**, while `navigator.gpu.requestAdapter({powerPreference:'high-performance'})`
+selected **Google SwiftShader**, architecture `swiftshader`. The WebGPU compute
+result 42 therefore did NOT prove NVIDIA acceleration. After device loss the
+adapter may instead be null. A separate SmolLM2-135M/f16 test could not load
+because SwiftShader did not expose `shader-f16`. No WebLLM text generation has
+passed acceptance. The test browser/server were stopped; cached profiles kept.
+
+The workbench now refuses model initialization when the selected adapter is
+software or unverified. The readiness checker records browser-primary NVIDIA
+separately from actual WebGPU vendor/architecture and marks production inference
+ready only after hardware selection **and** a verified text-generation result.
+The native Ollama Qwen 7B fallback remains independently proven at 100% NVIDIA
+GPU. Do not confuse `gpu.devices[0].vendorId` with the selected WebGPU adapter.

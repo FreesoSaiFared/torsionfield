@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
-  "previousSha": null,
-  "checkedAt": "2026-10-10T07:57:11+00:00",
-  "sourceCommitAt": "2026-10-10T07:36:35Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/98fb16824e212fb82b7010bdd9bebb736eb5dc2b...98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
+  "upstreamSha": "3b846b6815f4a91d827a75fe653387a43d421e56",
+  "previousSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
+  "checkedAt": "2026-10-11T07:47:10+00:00",
+  "sourceCommitAt": "2026-10-11T06:11:21Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/98fb16824e212fb82b7010bdd9bebb736eb5dc2b...3b846b6815f4a91d827a75fe653387a43d421e56",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3b846b6815f4a91d827a75fe653387a43d421e56/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
-      "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-      "change": "initial tracking",
-      "priority": 100,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-      "detectedAt": "2026-10-10T07:57:11+00:00"
+      "atSha": "3b846b6815f4a91d827a75fe653387a43d421e56",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3b846b6815f4a91d827a75fe653387a43d421e56/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-11T07:47:10+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "3b846b6815f4a91d827a75fe653387a43d421e56",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3b846b6815f4a91d827a75fe653387a43d421e56/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-11T07:47:10+00:00"
+    },
     {
       "atSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
       "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
@@ -49,6 +57,6 @@
     }
   ],
   "relevantCount": 1,
-  "reviewNeeded": true,
+  "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

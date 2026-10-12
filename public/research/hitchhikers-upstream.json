@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "b1deaad181e1733b316c702a7c74971486d239fa",
-  "previousSha": "3b846b6815f4a91d827a75fe653387a43d421e56",
-  "checkedAt": "2026-10-11T19:29:12+00:00",
-  "sourceCommitAt": "2026-10-11T16:17:49Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/3b846b6815f4a91d827a75fe653387a43d421e56...b1deaad181e1733b316c702a7c74971486d239fa",
+  "upstreamSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+  "previousSha": "b1deaad181e1733b316c702a7c74971486d239fa",
+  "checkedAt": "2026-10-12T09:42:18+00:00",
+  "sourceCommitAt": "2026-10-12T07:59:25Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/b1deaad181e1733b316c702a7c74971486d239fa...14de1c640b478e907723bbd92dcf14e13b919c7c",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b1deaad181e1733b316c702a7c74971486d239fa/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -28,8 +28,57 @@
       "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities"
     }
   ],
-  "changed": [],
+  "changed": [
+    {
+      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+      "path": "source-notes/blog-anthropic-block-fable-orchestration-migrations.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-anthropic-block-fable-orchestration-migrations.md",
+      "detectedAt": "2026-10-12T09:42:18+00:00"
+    },
+    {
+      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+      "path": "source-notes/blog-claude-dev-building-effective-agent-automations.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-claude-dev-building-effective-agent-automations.md",
+      "detectedAt": "2026-10-12T09:42:18+00:00"
+    },
+    {
+      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-12T09:42:18+00:00"
+    }
+  ],
   "events": [
+    {
+      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+      "path": "source-notes/blog-anthropic-block-fable-orchestration-migrations.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-anthropic-block-fable-orchestration-migrations.md",
+      "detectedAt": "2026-10-12T09:42:18+00:00"
+    },
+    {
+      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+      "path": "source-notes/blog-claude-dev-building-effective-agent-automations.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-claude-dev-building-effective-agent-automations.md",
+      "detectedAt": "2026-10-12T09:42:18+00:00"
+    },
+    {
+      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-12T09:42:18+00:00"
+    },
     {
       "atSha": "3b846b6815f4a91d827a75fe653387a43d421e56",
       "path": "registry/trusted-feeds-state.json",
@@ -47,7 +96,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 0,
+  "relevantCount": 3,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

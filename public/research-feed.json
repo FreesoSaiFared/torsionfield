@@ -36,8 +36,14 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-12T13:14:43.632286+00:00",
+  "updatedAt": "2026-10-13T12:45:47.383650+00:00",
   "items": [
+    {
+      "source": "Cloudflare",
+      "title": "Filter, reshape, and redact logs before export with Transformers",
+      "url": "https://blog.cloudflare.com/transformers-on-logpush/",
+      "date": "2026-10-12T14:44:59+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash",
@@ -73,12 +79,6 @@
       "title": "Evolution of Web3 in Cloud Supply Chain Attacks",
       "url": "https://unit42.paloaltonetworks.com/web3-cloud-supply-chain-attacks/",
       "date": "2026-10-07T22:00:16+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Building an evidence-grounded agentic security operations harness on Cloudflare",
-      "url": "https://blog.cloudflare.com/agentic-security-operations/",
-      "date": "2026-10-07T16:30:36+00:00"
     },
     {
       "source": "PortSwigger Research",

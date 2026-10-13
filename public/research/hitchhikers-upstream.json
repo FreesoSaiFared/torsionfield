@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
-  "previousSha": "b1deaad181e1733b316c702a7c74971486d239fa",
-  "checkedAt": "2026-10-12T09:42:18+00:00",
-  "sourceCommitAt": "2026-10-12T07:59:25Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/b1deaad181e1733b316c702a7c74971486d239fa...14de1c640b478e907723bbd92dcf14e13b919c7c",
+  "upstreamSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
+  "previousSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+  "checkedAt": "2026-10-13T09:19:10+00:00",
+  "sourceCommitAt": "2026-10-13T08:47:19Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/14de1c640b478e907723bbd92dcf14e13b919c7c...a8e4fb164eda60dedc31dc00e89aceea720a2deb",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,31 +30,55 @@
   ],
   "changed": [
     {
-      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
-      "path": "source-notes/blog-anthropic-block-fable-orchestration-migrations.md",
+      "atSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
+      "path": "source-notes/blog-simonwillison-wikimedia-rogue-openai-agents.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-anthropic-block-fable-orchestration-migrations.md",
-      "detectedAt": "2026-10-12T09:42:18+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/source-notes/blog-simonwillison-wikimedia-rogue-openai-agents.md",
+      "detectedAt": "2026-10-13T09:19:10+00:00"
     },
     {
-      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
-      "path": "source-notes/blog-claude-dev-building-effective-agent-automations.md",
+      "atSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
+      "path": "source-notes/blog-thoughtworks-kamelman-agentic-payments-executable-authority.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/source-notes/blog-claude-dev-building-effective-agent-automations.md",
-      "detectedAt": "2026-10-12T09:42:18+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/source-notes/blog-thoughtworks-kamelman-agentic-payments-executable-authority.md",
+      "detectedAt": "2026-10-13T09:19:10+00:00"
     },
     {
-      "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
+      "atSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14de1c640b478e907723bbd92dcf14e13b919c7c/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-12T09:42:18+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-13T09:19:10+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
+      "path": "source-notes/blog-simonwillison-wikimedia-rogue-openai-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/source-notes/blog-simonwillison-wikimedia-rogue-openai-agents.md",
+      "detectedAt": "2026-10-13T09:19:10+00:00"
+    },
+    {
+      "atSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
+      "path": "source-notes/blog-thoughtworks-kamelman-agentic-payments-executable-authority.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/source-notes/blog-thoughtworks-kamelman-agentic-payments-executable-authority.md",
+      "detectedAt": "2026-10-13T09:19:10+00:00"
+    },
+    {
+      "atSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-13T09:19:10+00:00"
+    },
     {
       "atSha": "14de1c640b478e907723bbd92dcf14e13b919c7c",
       "path": "source-notes/blog-anthropic-block-fable-orchestration-migrations.md",

@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-13T12:45:47.383650+00:00",
+  "updatedAt": "2026-10-14T10:17:56.719916+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "The Noise Inside the Network: How an Unsophisticated Attack Exposed a Third-Party Risk",
+      "url": "https://unit42.paloaltonetworks.com/noise-inside-network-third-party-risk/",
+      "date": "2026-10-13T22:00:04+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Under the hood, off the hot path: How D1 scales to millions of databases",
+      "url": "https://blog.cloudflare.com/d1-control-plane/",
+      "date": "2026-10-13T16:20:18+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Rewinding the exponential: How we keep hardware usage down",
+      "url": "https://blog.cloudflare.com/rewinding-the-exponential/",
+      "date": "2026-10-13T15:51:41+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "Filter, reshape, and redact logs before export with Transformers",
@@ -61,18 +79,6 @@
       "title": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
       "url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
       "date": "2026-10-09T13:00:00+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Deno is joining Cloudflare",
-      "url": "https://blog.cloudflare.com/deno-joins-cloudflare/",
-      "date": "2026-10-09T12:50:00+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Bridging technical depth and usability: The story behind Radar’s redesign",
-      "url": "https://blog.cloudflare.com/radar-redesign/",
-      "date": "2026-10-08T13:00:00+00:00"
     },
     {
       "source": "Unit 42",
@@ -133,12 +139,6 @@
       "title": "Oh Look, The Foot Gun Went Off Again (Citrix NetScaler PreAuth Command Injection CVE-2026-88771)",
       "url": "https://labs.watchtowr.com/oh-look-the-foot-gun-went-off-again-citrix-netscaler-preauth-command-injection-cve-2026-88771/",
       "date": "2026-09-28T10:55:54+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "3 Consulting Myths Debunked by Unit 42 Experts",
-      "url": "https://unit42.paloaltonetworks.com/3-consulting-myths-debunked-by-unit-42-experts/",
-      "date": "2026-09-25T23:00:28+00:00"
     },
     {
       "source": "Trail of Bits",

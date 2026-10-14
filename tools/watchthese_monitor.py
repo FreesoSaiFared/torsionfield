@@ -44,8 +44,9 @@ def main():
    digest=hashlib.sha256(text.encode('utf-8')).hexdigest()
    missing=[a for a in source.get('anchors',[]) if a.casefold() not in text.casefold()]
    change='first-observation' if not prev else ('unchanged' if prev['sha256']==digest else 'changed')
-   obs.update(status='observed',sha256=digest,change=change,anchorsMissing=missing,needsEditorialReview=bool(missing) or change=='changed')
-   nextstate[sid]={'sha256':digest,'lastObserved':now}
+   pending=bool(missing) or change=='changed' or bool(prev.get('pendingReview'))
+   obs.update(status='observed',sha256=digest,change=change,anchorsMissing=missing,needsEditorialReview=pending)
+   nextstate[sid]={'sha256':digest,'lastObserved':now,'pendingReview':pending}
    success+=1
   except Exception as err:
    obs.update(status='fetch-failed',change='unavailable',error=str(err)[:180],needsEditorialReview=True)

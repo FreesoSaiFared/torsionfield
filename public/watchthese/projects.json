@@ -1,0 +1,70 @@
+{
+  "schema": "torsionfield-watchthese/1",
+  "updated": "2026-10-14",
+  "projects": [
+    {
+      "id": "build-ai",
+      "name": "Build AI",
+      "url": "https://www.build.ai/",
+      "category": "Physical AI / human activity datasets",
+      "stage": "emerging-funded",
+      "stageLabel": "Emerging / funded",
+      "reviewed": "2026-10-14",
+      "summary": "Building egocentric, real-world human labor datasets for training physical AI and robotics.",
+      "whyWatch": "An ambitious attempt to scale observation of physical work into a reusable research substrate. Track actual dataset releases, access terms, quality evidence, and downstream utility.",
+      "claims": [
+        {
+          "text": "Build AI describes itself as a public benefit corporation with fewer than 30 staff and more than $30 million raised.",
+          "attribution": "Company website, checked 14 October 2026",
+          "source": "https://www.build.ai/",
+          "verification": "self-reported"
+        },
+        {
+          "text": "Egocentric-10K and Egocentric-100K have public Hugging Face dataset catalogue pages; access conditions apply.",
+          "attribution": "Dataset pages, checked 14 October 2026",
+          "source": "https://huggingface.co/datasets/builddotai/Egocentric-10K",
+          "verification": "catalogue-observed"
+        }
+      ],
+      "milestones": [
+        {
+          "name": "Egocentric-10K",
+          "date": "2025-08",
+          "status": "listed"
+        },
+        {
+          "name": "Egocentric-100K",
+          "date": "2025-12",
+          "status": "listed"
+        },
+        {
+          "name": "Egocentric-1M",
+          "date": "2026-03",
+          "status": "listed"
+        },
+        {
+          "name": "Egocentric-10M",
+          "date": "2026-11",
+          "status": "target"
+        },
+        {
+          "name": "Egocentric-100M",
+          "date": "2027-10",
+          "status": "target"
+        },
+        {
+          "name": "Egocentric-1B",
+          "date": "2028-12",
+          "status": "target"
+        }
+      ],
+      "watchFor": [
+        "Accessible releases, licenses and restrictions",
+        "Independent quality and robotics-transfer tests",
+        "Changed public scale targets",
+        "Evidence of diverse and consented real-world collection"
+      ],
+      "researchContact": "research@build.ai"
+    }
+  ]
+}

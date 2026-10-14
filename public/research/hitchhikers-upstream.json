@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "47a5db27447911f25e3e7d8f449cd38320225ed1",
-  "previousSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
-  "checkedAt": "2026-10-14T06:39:46+00:00",
-  "sourceCommitAt": "2026-10-14T06:09:38Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/a8e4fb164eda60dedc31dc00e89aceea720a2deb...47a5db27447911f25e3e7d8f449cd38320225ed1",
+  "upstreamSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+  "previousSha": "47a5db27447911f25e3e7d8f449cd38320225ed1",
+  "checkedAt": "2026-10-14T12:49:55+00:00",
+  "sourceCommitAt": "2026-10-14T10:31:44Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/47a5db27447911f25e3e7d8f449cd38320225ed1...43200583c13ddec81cf76f27068eaeea5d8512d4",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/47a5db27447911f25e3e7d8f449cd38320225ed1/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,71 @@
   ],
   "changed": [
     {
-      "atSha": "47a5db27447911f25e3e7d8f449cd38320225ed1",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/47a5db27447911f25e3e7d8f449cd38320225ed1/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-14T06:39:46+00:00"
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-anthropic-redesigning-source-control-scion.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-anthropic-redesigning-source-control-scion.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
+    },
+    {
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-fowler-jain-are-harnesses-worth-the-cost.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-fowler-jain-are-harnesses-worth-the-cost.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
+    },
+    {
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-latentspace-openai-devday-cua-and-api-interview.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-latentspace-openai-devday-cua-and-api-interview.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
+    },
+    {
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-simonwillison-claude-haiku-55.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-simonwillison-claude-haiku-55.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-anthropic-redesigning-source-control-scion.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-anthropic-redesigning-source-control-scion.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
+    },
+    {
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-fowler-jain-are-harnesses-worth-the-cost.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-fowler-jain-are-harnesses-worth-the-cost.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
+    },
+    {
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-latentspace-openai-devday-cua-and-api-interview.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-latentspace-openai-devday-cua-and-api-interview.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
+    },
+    {
+      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
+      "path": "source-notes/blog-simonwillison-claude-haiku-55.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-simonwillison-claude-haiku-55.md",
+      "detectedAt": "2026-10-14T12:49:55+00:00"
+    },
     {
       "atSha": "47a5db27447911f25e3e7d8f449cd38320225ed1",
       "path": "registry/trusted-feeds-state.json",
@@ -112,7 +168,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 4,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

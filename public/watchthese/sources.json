@@ -1,0 +1,4 @@
+{
+  "schema":"torsionfield-watchthese-sources/1",
+  "sources":[{"id":"build-ai","url":"https://www.build.ai/","projectId":"build-ai","anchors":["About Build AI","Egocentric-10K","Egocentric-100K"],"watchTokens":["Egocentric-10M","Egocentric-100M","Egocentric-1B"]}]
+}

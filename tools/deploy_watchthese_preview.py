@@ -48,7 +48,7 @@ def main():
  tid=matching[0]["id"]
  creds=HOME/".cloudflared"/(tid+".json")
  assert creds.is_file(),"Missing named tunnel credential"
- tunnel_cfg=f"tunnel: {tid}\ncredentials-file: {creds}\ningress:\n  - hostname: {HOST}\n    service: http://127.0.0.1:{PORT}\n  - service: http_status:404\n"
+ tunnel_cfg=f"tunnel: {tid}\ncredentials-file: {creds}\ningress:\n  - hostname: {HOST}\n    service: http://127.0.0.1:{PORT}\n  - hostname: watchthese.torsionfield.de\n    service: http://127.0.0.1:{PORT}\n  - service: http_status:404\n"
  save(OPS/"tunnel.yml",tunnel_cfg,0o600)
  route=run([cloudflared,"tunnel","route","dns",tid,HOST],False)
  detail=(route.stdout+route.stderr)

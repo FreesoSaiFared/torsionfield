@@ -2,6 +2,8 @@
 
 Canonical source: `public/watchthese/` in `FreesoSaiFared/torsionfield`.
 
+Operational host: **i9ES only**, not Windows laptop. Use `dc-i9es` for code, shell, Caddy, Cloudflare CLI and receipts; `abp-i9es` for logged-in browser interactions and acceptance; `vnc-i9es-desktop` for native UI and controls inaccessible to ABP. Preserve the ordinary authenticated ABP session, do not invoke laptop-based browser tooling for this deployment.
+
 LIVE canonical hostname: `https://watchthese.torsionfield.de/` (verified HTTPS 200 and ABP-i9ES page content on 2026-10-14). Alternative hostname: `https://watchthese.transductive.art/`. Both serve the dedicated Caddy origin on i9ES port 8441 via named tunnel `torsionfield-watchthese-20261014` (ID `27d34d00-4a2b-42f0-9896-5c1268547eaf`). DNS for canonical host is a proxied CNAME to the same tunnel in Cloudflare's torsionfield.de zone. The main Torsionfield Worker is not the host of this subdomain.
 
 ## Add a project

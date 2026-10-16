@@ -36,8 +36,32 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-15T10:01:02.174118+00:00",
+  "updatedAt": "2026-10-16T09:54:34.611365+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
+      "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+      "date": "2026-10-15T22:00:09+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "A fully programmable secure web gateway",
+      "url": "https://blog.cloudflare.com/programmable-gateway-dlp/",
+      "date": "2026-10-15T17:11:12+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Deploy with Void",
+      "url": "https://blog.cloudflare.com/deploy-with-void/",
+      "date": "2026-10-15T14:00:00+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Cloudflare and OpenAI: Making AI discovery better for everyone",
+      "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/",
+      "date": "2026-10-15T13:00:00+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "Unit 42 Uncovers PEERSTITCH, a Stealthy FortiGate Implant",
@@ -67,24 +91,6 @@
       "title": "The Noise Inside the Network: How an Unsophisticated Attack Exposed a Third-Party Risk",
       "url": "https://unit42.paloaltonetworks.com/noise-inside-network-third-party-risk/",
       "date": "2026-10-13T22:00:04+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Under the hood, off the hot path: How D1 scales to millions of databases",
-      "url": "https://blog.cloudflare.com/d1-control-plane/",
-      "date": "2026-10-13T16:20:18+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Rewinding the exponential: How we keep hardware usage down",
-      "url": "https://blog.cloudflare.com/rewinding-the-exponential/",
-      "date": "2026-10-13T15:51:41+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Filter, reshape, and redact logs before export with Transformers",
-      "url": "https://blog.cloudflare.com/transformers-on-logpush/",
-      "date": "2026-10-12T14:44:59+00:00"
     },
     {
       "source": "watchTowr Labs",
@@ -127,12 +133,6 @@
       "title": "SequenceHash: multihashing for the rest of us",
       "url": "https://blog.trailofbits.com/2026/10/02/sequencehash-multihashing-for-the-rest-of-us/",
       "date": "2026-10-02T11:00:00+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)",
-      "url": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
-      "date": "2026-09-30T20:00:04+00:00"
     },
     {
       "source": "watchTowr Labs",

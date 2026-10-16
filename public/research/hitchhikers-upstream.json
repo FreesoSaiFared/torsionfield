@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-  "previousSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
-  "checkedAt": "2026-10-15T09:22:39+00:00",
-  "sourceCommitAt": "2026-10-15T08:39:57Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/43200583c13ddec81cf76f27068eaeea5d8512d4...c9fff920c78f0a1c00122b7c583c8d299313c9ae",
+  "upstreamSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+  "previousSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
+  "checkedAt": "2026-10-16T09:41:28+00:00",
+  "sourceCommitAt": "2026-10-16T09:33:54Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/c9fff920c78f0a1c00122b7c583c8d299313c9ae...f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,39 +30,87 @@
   ],
   "changed": [
     {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-      "path": "source-notes/blog-anthropic-agent-observability-claude-platform.md",
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-15.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-anthropic-agent-observability-claude-platform.md",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-ghaw-agent-of-the-day-2026-10-15.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
     },
     {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-14.md",
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-google-developers-evaluating-agents-vibe-check.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-ghaw-agent-of-the-day-2026-10-14.md",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-google-developers-evaluating-agents-vibe-check.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
     },
     {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-      "path": "source-notes/blog-latentspace-alex-zhang-rlm-harnesses.md",
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-jetbrains-netflix-ide-intelligence-agents.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-latentspace-alex-zhang-rlm-harnesses.md",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-jetbrains-netflix-ide-intelligence-agents.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
     },
     {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-simonwillison-newsletters-built-using-voice.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-simonwillison-newsletters-built-using-voice.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
+    },
+    {
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-15.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-ghaw-agent-of-the-day-2026-10-15.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
+    },
+    {
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-google-developers-evaluating-agents-vibe-check.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-google-developers-evaluating-agents-vibe-check.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
+    },
+    {
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-jetbrains-netflix-ide-intelligence-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-jetbrains-netflix-ide-intelligence-agents.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
+    },
+    {
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "source-notes/blog-simonwillison-newsletters-built-using-voice.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-simonwillison-newsletters-built-using-voice.md",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
+    },
+    {
+      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-16T09:41:28+00:00"
+    },
     {
       "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
       "path": "source-notes/blog-anthropic-agent-observability-claude-platform.md",
@@ -200,7 +248,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 4,
+  "relevantCount": 5,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

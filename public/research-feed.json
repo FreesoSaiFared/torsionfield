@@ -36,8 +36,20 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-16T09:54:34.611365+00:00",
+  "updatedAt": "2026-10-17T09:27:39.107678+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Top 5 Initial Access Threat Vectors Observed by Unit 42 in September 2026",
+      "url": "https://unit42.paloaltonetworks.com/top-5-initial-access-vectors-september-2026/",
+      "date": "2026-10-16T17:47:54+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Continuous accountability for Verified bots",
+      "url": "https://blog.cloudflare.com/verified-bots-accountability/",
+      "date": "2026-10-16T13:00:00+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
@@ -75,12 +87,6 @@
       "date": "2026-10-14T20:24:19+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "Inside Hyperdrive: How we solved a rare Hyperdrive MySQL caching bug",
-      "url": "https://blog.cloudflare.com/hyperdrive-mysql/",
-      "date": "2026-10-14T13:00:00+00:00"
-    },
-    {
       "source": "Trail of Bits",
       "title": "Package managers have an integrity problem",
       "url": "https://blog.trailofbits.com/2026/10/14/package-managers-have-an-integrity-problem/",
@@ -115,12 +121,6 @@
       "title": "You Won’t Hear About These, Even In Myths (Atlassian Jira, Confluence (and more) Pre-Auth Arbitrary File Read CVE-2026-21589)",
       "url": "https://labs.watchtowr.com/you-wont-hear-about-these-even-in-myths-atlassian-jira-confluence-and-more-pre-auth-arbitrary-file-read-cve-2026-21589/",
       "date": "2026-10-06T17:01:36+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "Blinder Tunnel Campaign Targets Iraqi Infrastructure",
-      "url": "https://unit42.paloaltonetworks.com/blinder-tunnel-targets-critical-infrastructure/",
-      "date": "2026-10-06T10:00:33+00:00"
     },
     {
       "source": "PortSwigger Research",

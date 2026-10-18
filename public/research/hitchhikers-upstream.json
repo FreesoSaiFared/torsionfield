@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "7618955d34d1b562826ce79cf7a0a7969652bf5f",
-  "previousSha": "2780add6b42ff9951687265e23c4a64a71118915",
-  "checkedAt": "2026-10-18T06:33:03+00:00",
-  "sourceCommitAt": "2026-10-18T06:10:01Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/2780add6b42ff9951687265e23c4a64a71118915...7618955d34d1b562826ce79cf7a0a7969652bf5f",
+  "upstreamSha": "43ff124c407647076d8c3c5bacbd33d294a9fe14",
+  "previousSha": "7618955d34d1b562826ce79cf7a0a7969652bf5f",
+  "checkedAt": "2026-10-18T11:38:48+00:00",
+  "sourceCommitAt": "2026-10-18T06:44:01Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/7618955d34d1b562826ce79cf7a0a7969652bf5f...43ff124c407647076d8c3c5bacbd33d294a9fe14",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/7618955d34d1b562826ce79cf7a0a7969652bf5f/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43ff124c407647076d8c3c5bacbd33d294a9fe14/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "7618955d34d1b562826ce79cf7a0a7969652bf5f",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/7618955d34d1b562826ce79cf7a0a7969652bf5f/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-18T06:33:03+00:00"
+      "atSha": "43ff124c407647076d8c3c5bacbd33d294a9fe14",
+      "path": "source-notes/blog-openai-ironclad-computer-use-contracting.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43ff124c407647076d8c3c5bacbd33d294a9fe14/source-notes/blog-openai-ironclad-computer-use-contracting.md",
+      "detectedAt": "2026-10-18T11:38:48+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "43ff124c407647076d8c3c5bacbd33d294a9fe14",
+      "path": "source-notes/blog-openai-ironclad-computer-use-contracting.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43ff124c407647076d8c3c5bacbd33d294a9fe14/source-notes/blog-openai-ironclad-computer-use-contracting.md",
+      "detectedAt": "2026-10-18T11:38:48+00:00"
+    },
     {
       "atSha": "7618955d34d1b562826ce79cf7a0a7969652bf5f",
       "path": "registry/trusted-feeds-state.json",

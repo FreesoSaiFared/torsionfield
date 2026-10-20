@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "d8ec356475efc77c76e6d35105f42a195f6be803",
-  "previousSha": "43ff124c407647076d8c3c5bacbd33d294a9fe14",
-  "checkedAt": "2026-10-19T13:52:52+00:00",
-  "sourceCommitAt": "2026-10-19T07:48:02Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/43ff124c407647076d8c3c5bacbd33d294a9fe14...d8ec356475efc77c76e6d35105f42a195f6be803",
+  "upstreamSha": "204490e182fb10bfa6891dc8a07622d595b68508",
+  "previousSha": "d8ec356475efc77c76e6d35105f42a195f6be803",
+  "checkedAt": "2026-10-20T07:26:02+00:00",
+  "sourceCommitAt": "2026-10-20T06:47:41Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/d8ec356475efc77c76e6d35105f42a195f6be803...204490e182fb10bfa6891dc8a07622d595b68508",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d8ec356475efc77c76e6d35105f42a195f6be803/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/204490e182fb10bfa6891dc8a07622d595b68508/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,31 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "d8ec356475efc77c76e6d35105f42a195f6be803",
-      "path": "source-notes/blog-openai-sharing-ai-progress-mathematics.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d8ec356475efc77c76e6d35105f42a195f6be803/source-notes/blog-openai-sharing-ai-progress-mathematics.md",
-      "detectedAt": "2026-10-19T13:52:52+00:00"
-    },
-    {
-      "atSha": "d8ec356475efc77c76e6d35105f42a195f6be803",
-      "path": "source-notes/blog-simonwillison-python-315-web-edit-profiling.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d8ec356475efc77c76e6d35105f42a195f6be803/source-notes/blog-simonwillison-python-315-web-edit-profiling.md",
-      "detectedAt": "2026-10-19T13:52:52+00:00"
-    },
-    {
-      "atSha": "d8ec356475efc77c76e6d35105f42a195f6be803",
+      "atSha": "204490e182fb10bfa6891dc8a07622d595b68508",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d8ec356475efc77c76e6d35105f42a195f6be803/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-19T13:52:52+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/204490e182fb10bfa6891dc8a07622d595b68508/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-20T07:26:02+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "204490e182fb10bfa6891dc8a07622d595b68508",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/204490e182fb10bfa6891dc8a07622d595b68508/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-20T07:26:02+00:00"
+    },
     {
       "atSha": "d8ec356475efc77c76e6d35105f42a195f6be803",
       "path": "source-notes/blog-openai-sharing-ai-progress-mathematics.md",
@@ -304,7 +296,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 3,
+  "relevantCount": 1,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

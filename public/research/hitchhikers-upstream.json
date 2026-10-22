@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "cb169a71cac8247b218e0a4e5612dce8322dd719",
-  "previousSha": "f838227ec59436ffc3133690b4c0a9955a410f23",
-  "checkedAt": "2026-10-22T06:32:45+00:00",
-  "sourceCommitAt": "2026-10-22T06:10:33Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/f838227ec59436ffc3133690b4c0a9955a410f23...cb169a71cac8247b218e0a4e5612dce8322dd719",
+  "upstreamSha": "00e3630c88af6ede3668161c5fd768073f5d7266",
+  "previousSha": "cb169a71cac8247b218e0a4e5612dce8322dd719",
+  "checkedAt": "2026-10-22T12:19:20+00:00",
+  "sourceCommitAt": "2026-10-22T08:40:14Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/cb169a71cac8247b218e0a4e5612dce8322dd719...00e3630c88af6ede3668161c5fd768073f5d7266",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/cb169a71cac8247b218e0a4e5612dce8322dd719/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/00e3630c88af6ede3668161c5fd768073f5d7266/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,39 @@
   ],
   "changed": [
     {
-      "atSha": "cb169a71cac8247b218e0a4e5612dce8322dd719",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/cb169a71cac8247b218e0a4e5612dce8322dd719/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-22T06:32:45+00:00"
+      "atSha": "00e3630c88af6ede3668161c5fd768073f5d7266",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-21.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/00e3630c88af6ede3668161c5fd768073f5d7266/source-notes/blog-ghaw-agent-of-the-day-2026-10-21.md",
+      "detectedAt": "2026-10-22T12:19:20+00:00"
+    },
+    {
+      "atSha": "00e3630c88af6ede3668161c5fd768073f5d7266",
+      "path": "source-notes/blog-simonwillison-latex-renderer.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/00e3630c88af6ede3668161c5fd768073f5d7266/source-notes/blog-simonwillison-latex-renderer.md",
+      "detectedAt": "2026-10-22T12:19:20+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "00e3630c88af6ede3668161c5fd768073f5d7266",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-21.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/00e3630c88af6ede3668161c5fd768073f5d7266/source-notes/blog-ghaw-agent-of-the-day-2026-10-21.md",
+      "detectedAt": "2026-10-22T12:19:20+00:00"
+    },
+    {
+      "atSha": "00e3630c88af6ede3668161c5fd768073f5d7266",
+      "path": "source-notes/blog-simonwillison-latex-renderer.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/00e3630c88af6ede3668161c5fd768073f5d7266/source-notes/blog-simonwillison-latex-renderer.md",
+      "detectedAt": "2026-10-22T12:19:20+00:00"
+    },
     {
       "atSha": "cb169a71cac8247b218e0a4e5612dce8322dd719",
       "path": "registry/trusted-feeds-state.json",
@@ -336,7 +360,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 2,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

@@ -36,8 +36,44 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-21T10:16:01.337946+00:00",
+  "updatedAt": "2026-10-22T10:16:52.196305+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619",
+      "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+      "date": "2026-10-21T16:30:34+00:00"
+    },
+    {
+      "source": "Trail of Bits",
+      "title": "Your AI agent fixed the bug, but what else did it change?",
+      "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/",
+      "date": "2026-10-21T15:00:00+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Introducing full transaction detection for Cloudflare WAF",
+      "url": "https://blog.cloudflare.com/full-transaction-waf/",
+      "date": "2026-10-21T14:10:42+00:00"
+    },
+    {
+      "source": "Unit 42",
+      "title": "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities",
+      "url": "https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/",
+      "date": "2026-10-21T14:00:24+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Cloudflare deploys protections against php2shell vulnerability",
+      "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/",
+      "date": "2026-10-21T13:56:45+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "How Commerce.com and Cloudflare are getting storefronts ready for AI agents",
+      "url": "https://blog.cloudflare.com/webmcp-commerce/",
+      "date": "2026-10-21T13:00:00+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "8 eMudhra certificates are compromised. Here's what you need to know",
@@ -57,24 +93,6 @@
       "date": "2026-10-20T13:00:00+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "Cutting our inference bill by 68% by being obsessive about optimization",
-      "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
-      "date": "2026-10-19T19:12:53+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Introducing Clairic, a new System One class of extraction models",
-      "url": "https://blog.cloudflare.com/clairic-extraction-model/",
-      "date": "2026-10-19T17:48:26+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Beyond the patch: Protecting your NetScaler gateway against future vulnerabilities",
-      "url": "https://blog.cloudflare.com/protect-your-netscaler-gateway/",
-      "date": "2026-10-19T13:00:00+00:00"
-    },
-    {
       "source": "Unit 42",
       "title": "Top 5 Initial Access Threat Vectors Observed by Unit 42 in September 2026",
       "url": "https://unit42.paloaltonetworks.com/top-5-initial-access-vectors-september-2026/",
@@ -87,22 +105,10 @@
       "date": "2026-10-15T22:00:09+00:00"
     },
     {
-      "source": "Unit 42",
-      "title": "Unit 42 Uncovers PEERSTITCH, a Stealthy FortiGate Implant",
-      "url": "https://unit42.paloaltonetworks.com/fortimanager-cve-2024-47575-peerstitch-malware/",
-      "date": "2026-10-14T22:00:44+00:00"
-    },
-    {
       "source": "Trail of Bits",
       "title": "Package managers have an integrity problem",
       "url": "https://blog.trailofbits.com/2026/10/14/package-managers-have-an-integrity-problem/",
       "date": "2026-10-14T11:00:00+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "The Noise Inside the Network: How an Unsophisticated Attack Exposed a Third-Party Risk",
-      "url": "https://unit42.paloaltonetworks.com/noise-inside-network-third-party-risk/",
-      "date": "2026-10-13T22:00:04+00:00"
     },
     {
       "source": "watchTowr Labs",
@@ -175,12 +181,6 @@
       "title": "Don’t Call Us, We’ll Call Your APIs | TraderTraitor Backdoors Resurface on Victim With No Crypto Ties",
       "url": "https://www.sentinelone.com/labs/dont-call-us-well-call-your-apis-tradertraitor-backdoors-resurface-on-victim-with-no-crypto-ties/",
       "date": "2026-09-18T17:00:16+00:00"
-    },
-    {
-      "source": "Trail of Bits",
-      "title": "Auditing in the age of (good enough) AI",
-      "url": "https://blog.trailofbits.com/2026/09/18/auditing-in-the-age-of-good-enough-ai/",
-      "date": "2026-09-18T11:00:00+00:00"
     },
     {
       "source": "SentinelLABS",

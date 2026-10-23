@@ -1,0 +1,98 @@
+name: Chromium Mesh Multi-VM Proof
+
+on:
+  push:
+    branches:
+      - chatgpt/chromium-mesh-v0
+    paths:
+      - 'tools/chromium-mesh/**'
+      - '.github/workflows/chromium-mesh-multivm.yml'
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage exact target Chromium inputs
+        run: |
+          set -euxo pipefail
+          rev=67505133bc3ef1c64e069cf8de9c853ebf3fb79b
+          root=/tmp/chromium-source
+          mkdir -p "$root/base/types"
+          curl -fsSLo "$root/base/types/pass_key.h" \
+            "https://raw.githubusercontent.com/chromium/chromium/$rev/base/types/pass_key.h"
+          curl -fsSLo "$root/base/types/cxx26_projected_value_t.h" \
+            "https://raw.githubusercontent.com/chromium/chromium/$rev/base/types/cxx26_projected_value_t.h"
+      - name: Create immutable action bundles
+        run: |
+          rm -rf /tmp/mesh-actions
+          python3 tools/chromium-mesh/multivm_ci.py prepare \
+            --root /tmp/mesh-actions \
+            --source-root /tmp/chromium-source
+          rm -rf /tmp/mesh-upload
+          mkdir -p /tmp/mesh-upload
+          cp /tmp/mesh-actions/metadata.json /tmp/mesh-actions/a.tgz /tmp/mesh-actions/b.tgz /tmp/mesh-upload/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mesh-actions
+          path: /tmp/mesh-upload
+          if-no-files-found: error
+
+  compile:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [a, b]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: mesh-actions
+          path: /tmp/mesh-actions
+      - name: Execute shard on independent runner VM
+        run: |
+          set -euxo pipefail
+          python3 tools/chromium-mesh/multivm_ci.py worker \
+            --root /tmp/mesh-actions \
+            --name '${{ matrix.shard }}' \
+            --worker-id 'github-vm-${{ matrix.shard }}-${{ github.run_id }}-${{ strategy.job-index }}'
+          mkdir -p /tmp/result
+          cp "/tmp/mesh-actions/${{ matrix.shard }}.result.tgz" /tmp/result/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mesh-result-${{ matrix.shard }}
+          path: /tmp/result
+          if-no-files-found: error
+
+  aggregate:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: mesh-actions
+          path: /tmp/mesh-final
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: mesh-result-*
+          path: /tmp/mesh-final
+          merge-multiple: true
+      - name: Admit outputs, link on third VM, and execute
+        run: |
+          set -euxo pipefail
+          ls -la /tmp/mesh-final
+          python3 tools/chromium-mesh/multivm_ci.py aggregate --root /tmp/mesh-final
+          cat /tmp/mesh-final/MULTIVM_RESULT.json
+          grep -F '"result": "PASS"' /tmp/mesh-final/MULTIVM_RESULT.json
+          grep -F '"stdout": "42"' /tmp/mesh-final/MULTIVM_RESULT.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chromium-mesh-multivm-evidence
+          path: |
+            /tmp/mesh-final/MULTIVM_RESULT.json
+            /tmp/mesh-final/chromium-mesh-multivm
+          if-no-files-found: error

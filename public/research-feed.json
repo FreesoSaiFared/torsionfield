@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-22T10:16:52.196305+00:00",
+  "updatedAt": "2026-10-23T10:10:13.575506+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "EMudhra Intermediate CA Certificates Compromised",
+      "url": "https://unit42.paloaltonetworks.com/emudhra-certificate-compromise/",
+      "date": "2026-10-22T17:15:32+00:00"
+    },
+    {
+      "source": "Unit 42",
+      "title": "The Current Landscape of OAuth Attacks",
+      "url": "https://unit42.paloaltonetworks.com/current-landscape-oauth-attacks/",
+      "date": "2026-10-22T17:00:25+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Localizing compliance at scale: achieving South Korea’s ISMS certification",
+      "url": "https://blog.cloudflare.com/k-isms/",
+      "date": "2026-10-22T13:00:00+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619",
@@ -82,27 +100,9 @@
     },
     {
       "source": "Unit 42",
-      "title": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 (Updated October 20)",
+      "title": "Threat Brief: Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20)",
       "url": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/",
       "date": "2026-10-20T20:30:42+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Introducing tsrs: A port of TypeScript to Rust",
-      "url": "https://blog.cloudflare.com/typescript-rust-port/",
-      "date": "2026-10-20T13:00:00+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "Top 5 Initial Access Threat Vectors Observed by Unit 42 in September 2026",
-      "url": "https://unit42.paloaltonetworks.com/top-5-initial-access-vectors-september-2026/",
-      "date": "2026-10-16T17:47:54+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
-      "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
-      "date": "2026-10-15T22:00:09+00:00"
     },
     {
       "source": "Trail of Bits",

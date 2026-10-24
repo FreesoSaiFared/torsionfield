@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-23T10:10:13.575506+00:00",
+  "updatedAt": "2026-10-24T09:36:11.257504+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23)",
+      "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+      "date": "2026-10-23T19:00:34+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Origin Range Requests: Serving large files without range-request tuning",
+      "url": "https://blog.cloudflare.com/origin-range-requests/",
+      "date": "2026-10-23T18:22:59+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Bringing post-quantum cryptography to geographically fenced key management",
+      "url": "https://blog.cloudflare.com/post-quantum-geo-key-manager/",
+      "date": "2026-10-23T18:06:56+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "EMudhra Intermediate CA Certificates Compromised",
@@ -55,12 +73,6 @@
       "title": "Localizing compliance at scale: achieving South Korea’s ISMS certification",
       "url": "https://blog.cloudflare.com/k-isms/",
       "date": "2026-10-22T13:00:00+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619",
-      "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "date": "2026-10-21T16:30:34+00:00"
     },
     {
       "source": "Trail of Bits",
@@ -87,20 +99,8 @@
       "date": "2026-10-21T13:56:45+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "How Commerce.com and Cloudflare are getting storefronts ready for AI agents",
-      "url": "https://blog.cloudflare.com/webmcp-commerce/",
-      "date": "2026-10-21T13:00:00+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "8 eMudhra certificates are compromised. Here's what you need to know",
-      "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/",
-      "date": "2026-10-20T22:20:16+00:00"
-    },
-    {
       "source": "Unit 42",
-      "title": "Threat Brief: Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20)",
+      "title": "Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20)",
       "url": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/",
       "date": "2026-10-20T20:30:42+00:00"
     },

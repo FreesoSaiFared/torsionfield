@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "fa1f6b005d8d0f1cf96664ba36734b1dd61801f5",
-  "previousSha": "00e3630c88af6ede3668161c5fd768073f5d7266",
-  "checkedAt": "2026-10-23T09:33:41+00:00",
-  "sourceCommitAt": "2026-10-23T06:11:20Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/00e3630c88af6ede3668161c5fd768073f5d7266...fa1f6b005d8d0f1cf96664ba36734b1dd61801f5",
+  "upstreamSha": "51cf840689d292c2b25ad2fce522914369647b90",
+  "previousSha": "fa1f6b005d8d0f1cf96664ba36734b1dd61801f5",
+  "checkedAt": "2026-10-24T09:27:07+00:00",
+  "sourceCommitAt": "2026-10-24T08:36:48Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/fa1f6b005d8d0f1cf96664ba36734b1dd61801f5...51cf840689d292c2b25ad2fce522914369647b90",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa1f6b005d8d0f1cf96664ba36734b1dd61801f5/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/51cf840689d292c2b25ad2fce522914369647b90/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,55 @@
   ],
   "changed": [
     {
-      "atSha": "fa1f6b005d8d0f1cf96664ba36734b1dd61801f5",
+      "atSha": "51cf840689d292c2b25ad2fce522914369647b90",
+      "path": "source-notes/blog-anthropic-fold-subagents-into-main-agent-loop.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/51cf840689d292c2b25ad2fce522914369647b90/source-notes/blog-anthropic-fold-subagents-into-main-agent-loop.md",
+      "detectedAt": "2026-10-24T09:27:07+00:00"
+    },
+    {
+      "atSha": "51cf840689d292c2b25ad2fce522914369647b90",
+      "path": "source-notes/blog-google-agents-cli-extension-system.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/51cf840689d292c2b25ad2fce522914369647b90/source-notes/blog-google-agents-cli-extension-system.md",
+      "detectedAt": "2026-10-24T09:27:07+00:00"
+    },
+    {
+      "atSha": "51cf840689d292c2b25ad2fce522914369647b90",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa1f6b005d8d0f1cf96664ba36734b1dd61801f5/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-23T09:33:41+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/51cf840689d292c2b25ad2fce522914369647b90/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-24T09:27:07+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "51cf840689d292c2b25ad2fce522914369647b90",
+      "path": "source-notes/blog-anthropic-fold-subagents-into-main-agent-loop.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/51cf840689d292c2b25ad2fce522914369647b90/source-notes/blog-anthropic-fold-subagents-into-main-agent-loop.md",
+      "detectedAt": "2026-10-24T09:27:07+00:00"
+    },
+    {
+      "atSha": "51cf840689d292c2b25ad2fce522914369647b90",
+      "path": "source-notes/blog-google-agents-cli-extension-system.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/51cf840689d292c2b25ad2fce522914369647b90/source-notes/blog-google-agents-cli-extension-system.md",
+      "detectedAt": "2026-10-24T09:27:07+00:00"
+    },
+    {
+      "atSha": "51cf840689d292c2b25ad2fce522914369647b90",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/51cf840689d292c2b25ad2fce522914369647b90/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-24T09:27:07+00:00"
+    },
     {
       "atSha": "fa1f6b005d8d0f1cf96664ba36734b1dd61801f5",
       "path": "registry/trusted-feeds-state.json",
@@ -360,7 +400,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 3,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "cecd64db42595b9706da1b059bf399d439c6b336",
-  "previousSha": "51cf840689d292c2b25ad2fce522914369647b90",
-  "checkedAt": "2026-10-24T13:33:41+00:00",
-  "sourceCommitAt": "2026-10-24T10:28:42Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/51cf840689d292c2b25ad2fce522914369647b90...cecd64db42595b9706da1b059bf399d439c6b336",
+  "upstreamSha": "2d7870997954153367182cda924774d747fb3d61",
+  "previousSha": "cecd64db42595b9706da1b059bf399d439c6b336",
+  "checkedAt": "2026-10-25T10:05:36+00:00",
+  "sourceCommitAt": "2026-10-25T06:10:33Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/cecd64db42595b9706da1b059bf399d439c6b336...2d7870997954153367182cda924774d747fb3d61",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/cecd64db42595b9706da1b059bf399d439c6b336/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2d7870997954153367182cda924774d747fb3d61/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,23 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "cecd64db42595b9706da1b059bf399d439c6b336",
-      "path": "source-notes/blog-google-chrysalis-governed-self-evolving-agents.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/cecd64db42595b9706da1b059bf399d439c6b336/source-notes/blog-google-chrysalis-governed-self-evolving-agents.md",
-      "detectedAt": "2026-10-24T13:33:41+00:00"
-    },
-    {
-      "atSha": "cecd64db42595b9706da1b059bf399d439c6b336",
-      "path": "source-notes/blog-openai-oracle-chatgpt-codex-case-study.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/cecd64db42595b9706da1b059bf399d439c6b336/source-notes/blog-openai-oracle-chatgpt-codex-case-study.md",
-      "detectedAt": "2026-10-24T13:33:41+00:00"
+      "atSha": "2d7870997954153367182cda924774d747fb3d61",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2d7870997954153367182cda924774d747fb3d61/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-25T10:05:36+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "2d7870997954153367182cda924774d747fb3d61",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2d7870997954153367182cda924774d747fb3d61/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-25T10:05:36+00:00"
+    },
     {
       "atSha": "cecd64db42595b9706da1b059bf399d439c6b336",
       "path": "source-notes/blog-google-chrysalis-governed-self-evolving-agents.md",
@@ -408,7 +408,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 2,
+  "relevantCount": 1,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

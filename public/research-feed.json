@@ -36,11 +36,11 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-25T09:52:52.604497+00:00",
+  "updatedAt": "2026-10-26T11:12:17.206324+00:00",
   "items": [
     {
       "source": "Unit 42",
-      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 23)",
+      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 25)",
       "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
       "date": "2026-10-23T19:00:34+00:00"
     },

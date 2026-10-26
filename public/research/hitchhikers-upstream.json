@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "2d7870997954153367182cda924774d747fb3d61",
-  "previousSha": "cecd64db42595b9706da1b059bf399d439c6b336",
-  "checkedAt": "2026-10-25T10:05:36+00:00",
-  "sourceCommitAt": "2026-10-25T06:10:33Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/cecd64db42595b9706da1b059bf399d439c6b336...2d7870997954153367182cda924774d747fb3d61",
+  "upstreamSha": "4856550bba0f0b074ec2b21a10f13e432098c03e",
+  "previousSha": "2d7870997954153367182cda924774d747fb3d61",
+  "checkedAt": "2026-10-26T06:56:45+00:00",
+  "sourceCommitAt": "2026-10-26T06:13:34Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/2d7870997954153367182cda924774d747fb3d61...4856550bba0f0b074ec2b21a10f13e432098c03e",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2d7870997954153367182cda924774d747fb3d61/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/4856550bba0f0b074ec2b21a10f13e432098c03e/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "2d7870997954153367182cda924774d747fb3d61",
+      "atSha": "4856550bba0f0b074ec2b21a10f13e432098c03e",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2d7870997954153367182cda924774d747fb3d61/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-25T10:05:36+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/4856550bba0f0b074ec2b21a10f13e432098c03e/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-26T06:56:45+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "4856550bba0f0b074ec2b21a10f13e432098c03e",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/4856550bba0f0b074ec2b21a10f13e432098c03e/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-26T06:56:45+00:00"
+    },
     {
       "atSha": "2d7870997954153367182cda924774d747fb3d61",
       "path": "registry/trusted-feeds-state.json",

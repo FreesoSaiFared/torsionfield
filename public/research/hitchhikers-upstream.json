@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "3063f8a5cf146dfaccfa3067cc99f256342b943a",
-  "previousSha": "4856550bba0f0b074ec2b21a10f13e432098c03e",
-  "checkedAt": "2026-10-26T14:08:50+00:00",
-  "sourceCommitAt": "2026-10-26T07:48:09Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/4856550bba0f0b074ec2b21a10f13e432098c03e...3063f8a5cf146dfaccfa3067cc99f256342b943a",
+  "upstreamSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+  "previousSha": "3063f8a5cf146dfaccfa3067cc99f256342b943a",
+  "checkedAt": "2026-10-27T10:25:57+00:00",
+  "sourceCommitAt": "2026-10-27T07:41:39Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/3063f8a5cf146dfaccfa3067cc99f256342b943a...8f824344f8157a9576fda17c398642e7ca1166e9",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3063f8a5cf146dfaccfa3067cc99f256342b943a/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,71 @@
   ],
   "changed": [
     {
-      "atSha": "3063f8a5cf146dfaccfa3067cc99f256342b943a",
-      "path": "source-notes/blog-openai-third-moment-research-case-study.md",
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "source-notes/blog-anthropic-llm-formal-software-verification-at-scale.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3063f8a5cf146dfaccfa3067cc99f256342b943a/source-notes/blog-openai-third-moment-research-case-study.md",
-      "detectedAt": "2026-10-26T14:08:50+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-anthropic-llm-formal-software-verification-at-scale.md",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
+    },
+    {
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-26.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-ghaw-agent-of-the-day-2026-10-26.md",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
+    },
+    {
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "source-notes/blog-thoughtworks-tiffany-product-risk-gdpr-ai-act-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-thoughtworks-tiffany-product-risk-gdpr-ai-act-agents.md",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
+    },
+    {
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "source-notes/blog-anthropic-llm-formal-software-verification-at-scale.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-anthropic-llm-formal-software-verification-at-scale.md",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
+    },
+    {
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-26.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-ghaw-agent-of-the-day-2026-10-26.md",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
+    },
+    {
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "source-notes/blog-thoughtworks-tiffany-product-risk-gdpr-ai-act-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-thoughtworks-tiffany-product-risk-gdpr-ai-act-agents.md",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
+    },
+    {
+      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-27T10:25:57+00:00"
+    },
     {
       "atSha": "3063f8a5cf146dfaccfa3067cc99f256342b943a",
       "path": "source-notes/blog-openai-third-moment-research-case-study.md",
@@ -424,7 +480,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 4,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

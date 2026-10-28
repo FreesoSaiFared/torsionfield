@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-27T10:39:25.989188+00:00",
+  "updatedAt": "2026-10-28T11:24:10.722797+00:00",
   "items": [
+    {
+      "source": "PortSwigger Research",
+      "title": "Scalable Vector Grief",
+      "url": "https://portswigger.net/research/scalable-vector-grief",
+      "date": "2026-10-27T14:29:26+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Introducing the Cloudflare PHP Capture the Flag challenge",
+      "url": "https://blog.cloudflare.com/php-ctf/",
+      "date": "2026-10-27T13:00:00+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "What took the Internet offline in Q3 2026",
+      "url": "https://blog.cloudflare.com/q3-2026-internet-disruption-summary/",
+      "date": "2026-10-27T13:00:00+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang",
@@ -75,22 +93,10 @@
       "date": "2026-10-22T17:00:25+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "Localizing compliance at scale: achieving South Korea’s ISMS certification",
-      "url": "https://blog.cloudflare.com/k-isms/",
-      "date": "2026-10-22T13:00:00+00:00"
-    },
-    {
       "source": "Trail of Bits",
       "title": "Your AI agent fixed the bug, but what else did it change?",
       "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/",
       "date": "2026-10-21T15:00:00+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Introducing full transaction detection for Cloudflare WAF",
-      "url": "https://blog.cloudflare.com/full-transaction-waf/",
-      "date": "2026-10-21T14:10:42+00:00"
     },
     {
       "source": "Unit 42",
@@ -199,12 +205,6 @@
       "title": "The Model Is the Malware | What Four Agentic Intrusions Tell Defenders",
       "url": "https://www.sentinelone.com/labs/the-model-is-the-malware-what-four-agentic-intrusions-tell-defenders/",
       "date": "2026-08-13T13:00:40+00:00"
-    },
-    {
-      "source": "PortSwigger Research",
-      "title": "CSS:the bomb inside your inbox",
-      "url": "https://portswigger.net/research/css-the-bomb-inside-your-inbox",
-      "date": "2026-08-06T22:00:00+00:00"
     },
     {
       "source": "SentinelLABS",

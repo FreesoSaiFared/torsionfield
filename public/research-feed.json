@@ -36,8 +36,20 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-10-28T11:24:10.722797+00:00",
+  "updatedAt": "2026-10-29T11:34:37.851076+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Unwrapping Retail Peak Season Cyber Threats",
+      "url": "https://unit42.paloaltonetworks.com/unwrapping-retail-cyber-threats/",
+      "date": "2026-10-28T18:00:10+00:00"
+    },
+    {
+      "source": "SentinelLABS",
+      "title": "LABScon26 Replay | Keynote: A Sober Analysis of AI Impact",
+      "url": "https://www.sentinelone.com/labs/labscon26-replay-keynote-a-sober-analysis-of-ai-impact/",
+      "date": "2026-10-28T13:00:00+00:00"
+    },
     {
       "source": "PortSwigger Research",
       "title": "Scalable Vector Grief",
@@ -103,12 +115,6 @@
       "title": "“Next Exploit Opportunities”: How a Threat Actor Used AI to Help Plan and Execute Multiple Types of Cybercrime Activities",
       "url": "https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/",
       "date": "2026-10-21T14:00:24+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20)",
-      "url": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/",
-      "date": "2026-10-20T20:30:42+00:00"
     },
     {
       "source": "Trail of Bits",
@@ -211,12 +217,6 @@
       "title": "Sol Searching | Can Frontier Models Tackle Autonomous Long-Horizon Malware Analysis?",
       "url": "https://www.sentinelone.com/labs/frontier-models-tackle-autonomous-long-horizon-malware-analysis/",
       "date": "2026-07-22T16:55:29+00:00"
-    },
-    {
-      "source": "SentinelLABS",
-      "title": "Iran War Cyber Threat Landscape | A Midyear Assessment on What Matters",
-      "url": "https://www.sentinelone.com/labs/iran-war-cyber-threat-landscape-a-midyear-assessment-on-what-matters/",
-      "date": "2026-07-21T13:00:21+00:00"
     }
   ]
 }

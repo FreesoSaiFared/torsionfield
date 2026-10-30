@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "ff69a924faebb76906bf7a725dc2709a5a06c566",
-  "previousSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
-  "checkedAt": "2026-10-30T06:22:34+00:00",
-  "sourceCommitAt": "2026-10-30T06:09:22Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/161320a23b52f158e280d2abb7ffa140f0e2a6c8...ff69a924faebb76906bf7a725dc2709a5a06c566",
+  "upstreamSha": "e3d7845cbaedc41db659d317e64af3e7350ae851",
+  "previousSha": "ff69a924faebb76906bf7a725dc2709a5a06c566",
+  "checkedAt": "2026-10-30T13:28:40+00:00",
+  "sourceCommitAt": "2026-10-30T08:31:43Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/ff69a924faebb76906bf7a725dc2709a5a06c566...e3d7845cbaedc41db659d317e64af3e7350ae851",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/ff69a924faebb76906bf7a725dc2709a5a06c566/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/e3d7845cbaedc41db659d317e64af3e7350ae851/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,39 @@
   ],
   "changed": [
     {
-      "atSha": "ff69a924faebb76906bf7a725dc2709a5a06c566",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/ff69a924faebb76906bf7a725dc2709a5a06c566/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-30T06:22:34+00:00"
+      "atSha": "e3d7845cbaedc41db659d317e64af3e7350ae851",
+      "path": "source-notes/blog-laycock-good-developers-wary-agentic.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/e3d7845cbaedc41db659d317e64af3e7350ae851/source-notes/blog-laycock-good-developers-wary-agentic.md",
+      "detectedAt": "2026-10-30T13:28:40+00:00"
+    },
+    {
+      "atSha": "e3d7845cbaedc41db659d317e64af3e7350ae851",
+      "path": "source-notes/blog-simonwillison-vibe-game-development.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/e3d7845cbaedc41db659d317e64af3e7350ae851/source-notes/blog-simonwillison-vibe-game-development.md",
+      "detectedAt": "2026-10-30T13:28:40+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "e3d7845cbaedc41db659d317e64af3e7350ae851",
+      "path": "source-notes/blog-laycock-good-developers-wary-agentic.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/e3d7845cbaedc41db659d317e64af3e7350ae851/source-notes/blog-laycock-good-developers-wary-agentic.md",
+      "detectedAt": "2026-10-30T13:28:40+00:00"
+    },
+    {
+      "atSha": "e3d7845cbaedc41db659d317e64af3e7350ae851",
+      "path": "source-notes/blog-simonwillison-vibe-game-development.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/e3d7845cbaedc41db659d317e64af3e7350ae851/source-notes/blog-simonwillison-vibe-game-development.md",
+      "detectedAt": "2026-10-30T13:28:40+00:00"
+    },
     {
       "atSha": "ff69a924faebb76906bf7a725dc2709a5a06c566",
       "path": "registry/trusted-feeds-state.json",
@@ -528,7 +552,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 2,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
-  "previousSha": "e8978d1a8f639480bd2c92ee9291b3a59f0f8e15",
-  "checkedAt": "2026-10-29T08:23:06+00:00",
-  "sourceCommitAt": "2026-10-29T07:28:24Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/e8978d1a8f639480bd2c92ee9291b3a59f0f8e15...161320a23b52f158e280d2abb7ffa140f0e2a6c8",
+  "upstreamSha": "ff69a924faebb76906bf7a725dc2709a5a06c566",
+  "previousSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
+  "checkedAt": "2026-10-30T06:22:34+00:00",
+  "sourceCommitAt": "2026-10-30T06:09:22Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/161320a23b52f158e280d2abb7ffa140f0e2a6c8...ff69a924faebb76906bf7a725dc2709a5a06c566",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/161320a23b52f158e280d2abb7ffa140f0e2a6c8/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/ff69a924faebb76906bf7a725dc2709a5a06c566/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,39 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-28.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/161320a23b52f158e280d2abb7ffa140f0e2a6c8/source-notes/blog-ghaw-agent-of-the-day-2026-10-28.md",
-      "detectedAt": "2026-10-29T08:23:06+00:00"
-    },
-    {
-      "atSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
-      "path": "source-notes/blog-google-agents-cli-eval-hill-climbing.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/161320a23b52f158e280d2abb7ffa140f0e2a6c8/source-notes/blog-google-agents-cli-eval-hill-climbing.md",
-      "detectedAt": "2026-10-29T08:23:06+00:00"
-    },
-    {
-      "atSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
-      "path": "source-notes/blog-simonwillison-webframe-evaluation.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/161320a23b52f158e280d2abb7ffa140f0e2a6c8/source-notes/blog-simonwillison-webframe-evaluation.md",
-      "detectedAt": "2026-10-29T08:23:06+00:00"
-    },
-    {
-      "atSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
+      "atSha": "ff69a924faebb76906bf7a725dc2709a5a06c566",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/161320a23b52f158e280d2abb7ffa140f0e2a6c8/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-29T08:23:06+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/ff69a924faebb76906bf7a725dc2709a5a06c566/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-30T06:22:34+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "ff69a924faebb76906bf7a725dc2709a5a06c566",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/ff69a924faebb76906bf7a725dc2709a5a06c566/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-10-30T06:22:34+00:00"
+    },
     {
       "atSha": "161320a23b52f158e280d2abb7ffa140f0e2a6c8",
       "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-28.md",
@@ -544,7 +528,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 4,
+  "relevantCount": 1,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

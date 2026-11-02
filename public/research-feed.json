@@ -36,8 +36,14 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-01T11:52:59.671314+00:00",
+  "updatedAt": "2026-11-02T13:36:15.901062+00:00",
   "items": [
+    {
+      "source": "Trail of Bits",
+      "title": "Backporting security fixes at scale with Codex",
+      "url": "https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex/",
+      "date": "2026-11-02T12:00:00+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "4 real? Tracking exploitation and patching of eMudhra’s weak keys",
@@ -181,12 +187,6 @@
       "title": "HTTP/3 in Burp Suite - it’s time to find a bigger wordlist",
       "url": "https://portswigger.net/research/http3-in-burp-suite",
       "date": "2026-09-23T14:00:00+00:00"
-    },
-    {
-      "source": "Trail of Bits",
-      "title": "SAML: A fractal of bad design",
-      "url": "https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/",
-      "date": "2026-09-21T11:00:00+00:00"
     },
     {
       "source": "SentinelLABS",

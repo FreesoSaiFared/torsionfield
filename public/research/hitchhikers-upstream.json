@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
-  "previousSha": "e14ace613852b1971f98d1cb564ab4cb22fdc968",
-  "checkedAt": "2026-11-01T09:10:02+00:00",
-  "sourceCommitAt": "2026-11-01T07:24:32Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/e14ace613852b1971f98d1cb564ab4cb22fdc968...35771860dbb93e8bd4225834971f2d0ee5a45e85",
+  "upstreamSha": "1659794e2a316661ca2f65d891671f7cfcb6dde2",
+  "previousSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
+  "checkedAt": "2026-11-02T06:47:43+00:00",
+  "sourceCommitAt": "2026-11-02T06:40:35Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/35771860dbb93e8bd4225834971f2d0ee5a45e85...1659794e2a316661ca2f65d891671f7cfcb6dde2",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/35771860dbb93e8bd4225834971f2d0ee5a45e85/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/1659794e2a316661ca2f65d891671f7cfcb6dde2/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,31 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
-      "path": "source-notes/blog-simonwillison-spawn-ai-pilled-company.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/35771860dbb93e8bd4225834971f2d0ee5a45e85/source-notes/blog-simonwillison-spawn-ai-pilled-company.md",
-      "detectedAt": "2026-11-01T09:10:02+00:00"
-    },
-    {
-      "atSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
-      "path": "source-notes/discussion-latentspace-tenex-ai-native-sdlc-metaharness.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/35771860dbb93e8bd4225834971f2d0ee5a45e85/source-notes/discussion-latentspace-tenex-ai-native-sdlc-metaharness.md",
-      "detectedAt": "2026-11-01T09:10:02+00:00"
-    },
-    {
-      "atSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
+      "atSha": "1659794e2a316661ca2f65d891671f7cfcb6dde2",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/35771860dbb93e8bd4225834971f2d0ee5a45e85/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-01T09:10:02+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/1659794e2a316661ca2f65d891671f7cfcb6dde2/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-02T06:47:43+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "1659794e2a316661ca2f65d891671f7cfcb6dde2",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/1659794e2a316661ca2f65d891671f7cfcb6dde2/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-02T06:47:43+00:00"
+    },
     {
       "atSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
       "path": "source-notes/blog-simonwillison-spawn-ai-pilled-company.md",
@@ -616,7 +608,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 3,
+  "relevantCount": 1,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

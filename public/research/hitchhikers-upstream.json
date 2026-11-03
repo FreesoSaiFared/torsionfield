@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a",
-  "previousSha": "1659794e2a316661ca2f65d891671f7cfcb6dde2",
-  "checkedAt": "2026-11-02T16:59:09+00:00",
-  "sourceCommitAt": "2026-11-02T07:25:16Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/1659794e2a316661ca2f65d891671f7cfcb6dde2...8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a",
+  "upstreamSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
+  "previousSha": "8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a",
+  "checkedAt": "2026-11-03T06:35:56+00:00",
+  "sourceCommitAt": "2026-11-03T06:32:56Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a...80af08fef272bc3ef005850257e14b9b2efa5664",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/80af08fef272bc3ef005850257e14b9b2efa5664/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a",
-      "path": "source-notes/failure-jepsen-particledb-llm-assisted-database.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a/source-notes/failure-jepsen-particledb-llm-assisted-database.md",
-      "detectedAt": "2026-11-02T16:59:09+00:00"
+      "atSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/80af08fef272bc3ef005850257e14b9b2efa5664/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-03T06:35:56+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/80af08fef272bc3ef005850257e14b9b2efa5664/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-03T06:35:56+00:00"
+    },
     {
       "atSha": "8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a",
       "path": "source-notes/failure-jepsen-particledb-llm-assisted-database.md",

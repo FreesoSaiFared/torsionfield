@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
-  "previousSha": "8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a",
-  "checkedAt": "2026-11-03T06:35:56+00:00",
-  "sourceCommitAt": "2026-11-03T06:32:56Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a...80af08fef272bc3ef005850257e14b9b2efa5664",
+  "upstreamSha": "fe7aba0c06bb9232233d98f07800c6ea6da58663",
+  "previousSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
+  "checkedAt": "2026-11-03T14:38:22+00:00",
+  "sourceCommitAt": "2026-11-03T07:23:52Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/80af08fef272bc3ef005850257e14b9b2efa5664...fe7aba0c06bb9232233d98f07800c6ea6da58663",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/80af08fef272bc3ef005850257e14b9b2efa5664/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fe7aba0c06bb9232233d98f07800c6ea6da58663/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -28,16 +28,7 @@
       "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities"
     }
   ],
-  "changed": [
-    {
-      "atSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/80af08fef272bc3ef005850257e14b9b2efa5664/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-03T06:35:56+00:00"
-    }
-  ],
+  "changed": [],
   "events": [
     {
       "atSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
@@ -624,7 +615,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 0,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

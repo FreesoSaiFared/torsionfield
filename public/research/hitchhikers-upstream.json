@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "fe7aba0c06bb9232233d98f07800c6ea6da58663",
-  "previousSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
-  "checkedAt": "2026-11-03T14:38:22+00:00",
-  "sourceCommitAt": "2026-11-03T07:23:52Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/80af08fef272bc3ef005850257e14b9b2efa5664...fe7aba0c06bb9232233d98f07800c6ea6da58663",
+  "upstreamSha": "0614744cd51d2e2f01cf39eb7f30ece271c738a7",
+  "previousSha": "fe7aba0c06bb9232233d98f07800c6ea6da58663",
+  "checkedAt": "2026-11-04T07:57:42+00:00",
+  "sourceCommitAt": "2026-11-04T07:25:35Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/fe7aba0c06bb9232233d98f07800c6ea6da58663...0614744cd51d2e2f01cf39eb7f30ece271c738a7",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fe7aba0c06bb9232233d98f07800c6ea6da58663/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0614744cd51d2e2f01cf39eb7f30ece271c738a7/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -28,8 +28,41 @@
       "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities"
     }
   ],
-  "changed": [],
+  "changed": [
+    {
+      "atSha": "0614744cd51d2e2f01cf39eb7f30ece271c738a7",
+      "path": "source-notes/blog-simonwillison-qwen-interpret-model-weights.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0614744cd51d2e2f01cf39eb7f30ece271c738a7/source-notes/blog-simonwillison-qwen-interpret-model-weights.md",
+      "detectedAt": "2026-11-04T07:57:42+00:00"
+    },
+    {
+      "atSha": "0614744cd51d2e2f01cf39eb7f30ece271c738a7",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0614744cd51d2e2f01cf39eb7f30ece271c738a7/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-04T07:57:42+00:00"
+    }
+  ],
   "events": [
+    {
+      "atSha": "0614744cd51d2e2f01cf39eb7f30ece271c738a7",
+      "path": "source-notes/blog-simonwillison-qwen-interpret-model-weights.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0614744cd51d2e2f01cf39eb7f30ece271c738a7/source-notes/blog-simonwillison-qwen-interpret-model-weights.md",
+      "detectedAt": "2026-11-04T07:57:42+00:00"
+    },
+    {
+      "atSha": "0614744cd51d2e2f01cf39eb7f30ece271c738a7",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0614744cd51d2e2f01cf39eb7f30ece271c738a7/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-04T07:57:42+00:00"
+    },
     {
       "atSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
       "path": "registry/trusted-feeds-state.json",
@@ -615,7 +648,7 @@
       "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 0,
+  "relevantCount": 2,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

@@ -36,8 +36,20 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-03T12:51:11.962406+00:00",
+  "updatedAt": "2026-11-04T13:03:40.397370+00:00",
   "items": [
+    {
+      "source": "SentinelLABS",
+      "title": "Defrost and Disrupt | An Assessment of Europe’s Refrigeration Attacks",
+      "url": "https://www.sentinelone.com/labs/defrost-and-disrupt-an-assessment-of-europe-s-refrigeration-attacks/",
+      "date": "2026-11-03T14:57:27+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Introducing Zero Wire, a hub for investigating critical Internet vulnerabilities",
+      "url": "https://blog.cloudflare.com/zero-wire/",
+      "date": "2026-11-03T14:00:00+00:00"
+    },
     {
       "source": "Trail of Bits",
       "title": "The cryptography behind electronic voting (and why paper ballots are still essential)",
@@ -103,12 +115,6 @@
       "title": "Scalable Vector Grief",
       "url": "https://portswigger.net/research/scalable-vector-grief",
       "date": "2026-10-27T14:29:26+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Introducing the Cloudflare PHP Capture the Flag challenge",
-      "url": "https://blog.cloudflare.com/php-ctf/",
-      "date": "2026-10-27T13:00:00+00:00"
     },
     {
       "source": "Unit 42",
@@ -211,12 +217,6 @@
       "title": "The Model Is the Malware | What Four Agentic Intrusions Tell Defenders",
       "url": "https://www.sentinelone.com/labs/the-model-is-the-malware-what-four-agentic-intrusions-tell-defenders/",
       "date": "2026-08-13T13:00:40+00:00"
-    },
-    {
-      "source": "SentinelLABS",
-      "title": "Sol Searching | Can Frontier Models Tackle Autonomous Long-Horizon Malware Analysis?",
-      "url": "https://www.sentinelone.com/labs/frontier-models-tackle-autonomous-long-horizon-malware-analysis/",
-      "date": "2026-07-22T16:55:29+00:00"
     }
   ]
 }

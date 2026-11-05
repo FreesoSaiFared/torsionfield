@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-04T13:03:40.397370+00:00",
+  "updatedAt": "2026-11-05T13:16:50.764773+00:00",
   "items": [
+    {
+      "source": "PortSwigger Research",
+      "title": "Making HTTP header injection critical with one prompt",
+      "url": "https://portswigger.net/research/making-http-header-injection-critical-with-one-prompt",
+      "date": "2026-11-04T15:12:29+00:00"
+    },
+    {
+      "source": "SentinelLABS",
+      "title": "VerifiedIDA | Making LLM-Driven Reverse Engineering Inspectable, Continuable and Reusable",
+      "url": "https://www.sentinelone.com/labs/verifiedida-making-llm-driven-reverse-engineering-inspectable-continuable-and-reusable/",
+      "date": "2026-11-04T14:00:03+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "See the agents, set the terms: new visibility and control for personal agents",
+      "url": "https://blog.cloudflare.com/personal-agents-visibility-control/",
+      "date": "2026-11-04T14:00:00+00:00"
+    },
     {
       "source": "SentinelLABS",
       "title": "Defrost and Disrupt | An Assessment of Europe’s Refrigeration Attacks",
@@ -91,12 +109,6 @@
       "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
       "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
       "date": "2026-10-29T18:00:34+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Cloudflare DDoS Threat Report 2026 Q3: More swarms, fewer giants",
-      "url": "https://blog.cloudflare.com/ddos-threat-report-2026-q3/",
-      "date": "2026-10-29T12:55:00+00:00"
     },
     {
       "source": "Unit 42",
@@ -205,18 +217,6 @@
       "title": "Agents at Large | Tracing Illicit OpenAI Agent Activity on Hugging Face",
       "url": "https://www.sentinelone.com/labs/agents-at-large-tracing-illicit-openai-agent-activity-on-hugging-face/",
       "date": "2026-09-16T10:00:34+00:00"
-    },
-    {
-      "source": "PortSwigger Research",
-      "title": "What's in a tag name? JavaScript, apparently",
-      "url": "https://portswigger.net/research/whats-in-a-tag-name-javascript-apparently",
-      "date": "2026-08-25T14:24:32+00:00"
-    },
-    {
-      "source": "SentinelLABS",
-      "title": "The Model Is the Malware | What Four Agentic Intrusions Tell Defenders",
-      "url": "https://www.sentinelone.com/labs/the-model-is-the-malware-what-four-agentic-intrusions-tell-defenders/",
-      "date": "2026-08-13T13:00:40+00:00"
     }
   ]
 }

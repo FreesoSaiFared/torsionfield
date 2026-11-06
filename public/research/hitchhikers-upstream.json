@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
-  "previousSha": "0614744cd51d2e2f01cf39eb7f30ece271c738a7",
-  "checkedAt": "2026-11-05T10:44:04+00:00",
-  "sourceCommitAt": "2026-11-05T07:25:22Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/0614744cd51d2e2f01cf39eb7f30ece271c738a7...6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
+  "upstreamSha": "f3bd727c0db933295fa3e1d6df68539e668d1fed",
+  "previousSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
+  "checkedAt": "2026-11-06T06:32:32+00:00",
+  "sourceCommitAt": "2026-11-06T06:32:17Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b...f3bd727c0db933295fa3e1d6df68539e668d1fed",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f3bd727c0db933295fa3e1d6df68539e668d1fed/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,47 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-04.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b/source-notes/blog-ghaw-agent-of-the-day-2026-11-04.md",
-      "detectedAt": "2026-11-05T10:44:04+00:00"
-    },
-    {
-      "atSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
-      "path": "source-notes/blog-openai-coordinated-disclosure-critical-vulnerabilities.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b/source-notes/blog-openai-coordinated-disclosure-critical-vulnerabilities.md",
-      "detectedAt": "2026-11-05T10:44:04+00:00"
-    },
-    {
-      "atSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
-      "path": "source-notes/blog-simonwillison-datasette-agent-0-5a0-panel.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b/source-notes/blog-simonwillison-datasette-agent-0-5a0-panel.md",
-      "detectedAt": "2026-11-05T10:44:04+00:00"
-    },
-    {
-      "atSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
-      "path": "source-notes/blog-thoughtworks-geraldo-harness-is-a-product.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b/source-notes/blog-thoughtworks-geraldo-harness-is-a-product.md",
-      "detectedAt": "2026-11-05T10:44:04+00:00"
-    },
-    {
-      "atSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
+      "atSha": "f3bd727c0db933295fa3e1d6df68539e668d1fed",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-05T10:44:04+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f3bd727c0db933295fa3e1d6df68539e668d1fed/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-06T06:32:32+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "f3bd727c0db933295fa3e1d6df68539e668d1fed",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f3bd727c0db933295fa3e1d6df68539e668d1fed/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-06T06:32:32+00:00"
+    },
     {
       "atSha": "6ddc5ee580c7e783a441e6c5983ed2a1dbdefe7b",
       "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-04.md",
@@ -702,17 +678,9 @@
       "priority": 60,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3b846b6815f4a91d827a75fe653387a43d421e56/registry/trusted-feeds-state.json",
       "detectedAt": "2026-10-11T07:47:10+00:00"
-    },
-    {
-      "atSha": "98fb16824e212fb82b7010bdd9bebb736eb5dc2b",
-      "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-      "change": "initial tracking",
-      "priority": 100,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/98fb16824e212fb82b7010bdd9bebb736eb5dc2b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-      "detectedAt": "2026-10-10T07:57:11+00:00"
     }
   ],
-  "relevantCount": 5,
+  "relevantCount": 1,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

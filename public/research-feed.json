@@ -36,8 +36,20 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-05T13:16:50.764773+00:00",
+  "updatedAt": "2026-11-06T12:59:59.402864+00:00",
   "items": [
+    {
+      "source": "watchTowr Labs",
+      "title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 / CVE-2026-111560)",
+      "url": "https://labs.watchtowr.com/barracuda-networks-is-your-new-best-friend-barracuda-email-security-gateway-pre-auth-remote-root-rce-cve-2026-116606-cve-2026-111560/",
+      "date": "2026-11-05T21:19:58+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Agents aren’t humans (but they kinda are)",
+      "url": "https://blog.cloudflare.com/trusted-agent-delegation/",
+      "date": "2026-11-05T17:03:04+00:00"
+    },
     {
       "source": "PortSwigger Research",
       "title": "Making HTTP header injection critical with one prompt",
@@ -97,12 +109,6 @@
       "title": "4 real? Tracking exploitation and patching of eMudhra’s weak keys",
       "url": "https://blog.cloudflare.com/emudhra-patching/",
       "date": "2026-10-30T17:38:50+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Cloudflare services for private origins is now generally available",
-      "url": "https://blog.cloudflare.com/private-origins-public-to-private/",
-      "date": "2026-10-30T14:23:43+00:00"
     },
     {
       "source": "Unit 42",
@@ -193,12 +199,6 @@
       "title": "Oh Look, The Foot Gun Went Off Again (Citrix NetScaler PreAuth Command Injection CVE-2026-88771)",
       "url": "https://labs.watchtowr.com/oh-look-the-foot-gun-went-off-again-citrix-netscaler-preauth-command-injection-cve-2026-88771/",
       "date": "2026-09-28T10:55:54+00:00"
-    },
-    {
-      "source": "watchTowr Labs",
-      "title": "Is This A Joke? In The Auth Header? (F5 BIG-IP UnAuth Heap-Overflow to RCE CVE-2026-94127)",
-      "url": "https://labs.watchtowr.com/is-this-a-joke-in-the-auth-header-f5-big-ip-unauth-heap-overflow-to-rce-cve-2026-94127/",
-      "date": "2026-09-23T23:19:19+00:00"
     },
     {
       "source": "PortSwigger Research",

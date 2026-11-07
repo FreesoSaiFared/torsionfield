@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-06T12:59:59.402864+00:00",
+  "updatedAt": "2026-11-07T11:46:24.476223+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Turning Up the Heat: Inside the Attacks on Europe’s Refrigeration System",
+      "url": "https://unit42.paloaltonetworks.com/europes-refrigeration-systems-attacks/",
+      "date": "2026-11-06T21:15:09+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "The post-quantum future of web privacy",
+      "url": "https://blog.cloudflare.com/vole-mole/",
+      "date": "2026-11-06T14:00:00+00:00"
+    },
+    {
+      "source": "Trail of Bits",
+      "title": "After Binance, check what your signing systems can approve",
+      "url": "https://blog.trailofbits.com/2026/11/06/after-binance-check-what-your-signing-systems-can-approve/",
+      "date": "2026-11-06T12:00:00+00:00"
+    },
     {
       "source": "watchTowr Labs",
       "title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 / CVE-2026-111560)",
@@ -105,12 +123,6 @@
       "date": "2026-11-02T12:00:00+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "4 real? Tracking exploitation and patching of eMudhra’s weak keys",
-      "url": "https://blog.cloudflare.com/emudhra-patching/",
-      "date": "2026-10-30T17:38:50+00:00"
-    },
-    {
       "source": "Unit 42",
       "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
       "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
@@ -139,12 +151,6 @@
       "title": "EMudhra Intermediate CA Certificates Compromised",
       "url": "https://unit42.paloaltonetworks.com/emudhra-certificate-compromise/",
       "date": "2026-10-22T17:15:32+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "The Current Landscape of OAuth Attacks",
-      "url": "https://unit42.paloaltonetworks.com/current-landscape-oauth-attacks/",
-      "date": "2026-10-22T17:00:25+00:00"
     },
     {
       "source": "Trail of Bits",
@@ -181,12 +187,6 @@
       "title": "Smashing the token limit with overlapping fragments",
       "url": "https://portswigger.net/research/smashing-the-token-limit",
       "date": "2026-10-05T15:04:55+00:00"
-    },
-    {
-      "source": "Trail of Bits",
-      "title": "SequenceHash: multihashing for the rest of us",
-      "url": "https://blog.trailofbits.com/2026/10/02/sequencehash-multihashing-for-the-rest-of-us/",
-      "date": "2026-10-02T11:00:00+00:00"
     },
     {
       "source": "watchTowr Labs",

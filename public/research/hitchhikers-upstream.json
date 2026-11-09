@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "0954ee7af633f19a25293512a1bbc12599a462cd",
-  "previousSha": "d164111c2aa7ea9feb2567fb20071f08bd1ba1fb",
-  "checkedAt": "2026-11-08T08:54:16+00:00",
-  "sourceCommitAt": "2026-11-08T06:30:38Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/d164111c2aa7ea9feb2567fb20071f08bd1ba1fb...0954ee7af633f19a25293512a1bbc12599a462cd",
+  "upstreamSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+  "previousSha": "0954ee7af633f19a25293512a1bbc12599a462cd",
+  "checkedAt": "2026-11-09T16:06:50+00:00",
+  "sourceCommitAt": "2026-11-09T08:28:33Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/0954ee7af633f19a25293512a1bbc12599a462cd...3718968658ae905f4d2acabaa55a171a4f0f473d",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0954ee7af633f19a25293512a1bbc12599a462cd/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,55 @@
   ],
   "changed": [
     {
-      "atSha": "0954ee7af633f19a25293512a1bbc12599a462cd",
+      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+      "path": "source-notes/blog-latentspace-jindal-offline-coding-agent.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-latentspace-jindal-offline-coding-agent.md",
+      "detectedAt": "2026-11-09T16:06:50+00:00"
+    },
+    {
+      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+      "path": "source-notes/blog-simonwillison-parse-number-sqlite-c-vs-rust.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-simonwillison-parse-number-sqlite-c-vs-rust.md",
+      "detectedAt": "2026-11-09T16:06:50+00:00"
+    },
+    {
+      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0954ee7af633f19a25293512a1bbc12599a462cd/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-08T08:54:16+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-09T16:06:50+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+      "path": "source-notes/blog-latentspace-jindal-offline-coding-agent.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-latentspace-jindal-offline-coding-agent.md",
+      "detectedAt": "2026-11-09T16:06:50+00:00"
+    },
+    {
+      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+      "path": "source-notes/blog-simonwillison-parse-number-sqlite-c-vs-rust.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-simonwillison-parse-number-sqlite-c-vs-rust.md",
+      "detectedAt": "2026-11-09T16:06:50+00:00"
+    },
+    {
+      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-09T16:06:50+00:00"
+    },
     {
       "atSha": "0954ee7af633f19a25293512a1bbc12599a462cd",
       "path": "registry/trusted-feeds-state.json",
@@ -654,33 +694,9 @@
       "priority": 70,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-latentspace-openai-devday-cua-and-api-interview.md",
       "detectedAt": "2026-10-14T12:49:55+00:00"
-    },
-    {
-      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
-      "path": "source-notes/blog-simonwillison-claude-haiku-55.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-simonwillison-claude-haiku-55.md",
-      "detectedAt": "2026-10-14T12:49:55+00:00"
-    },
-    {
-      "atSha": "47a5db27447911f25e3e7d8f449cd38320225ed1",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/47a5db27447911f25e3e7d8f449cd38320225ed1/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-14T06:39:46+00:00"
-    },
-    {
-      "atSha": "a8e4fb164eda60dedc31dc00e89aceea720a2deb",
-      "path": "source-notes/blog-simonwillison-wikimedia-rogue-openai-agents.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/a8e4fb164eda60dedc31dc00e89aceea720a2deb/source-notes/blog-simonwillison-wikimedia-rogue-openai-agents.md",
-      "detectedAt": "2026-10-13T09:19:10+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 3,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

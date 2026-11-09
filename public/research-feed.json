@@ -36,8 +36,14 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-08T11:58:41.036851+00:00",
+  "updatedAt": "2026-11-09T13:58:41.338051+00:00",
   "items": [
+    {
+      "source": "Cloudflare",
+      "title": "Launching the Vite Ecosystem Fund",
+      "url": "https://blog.cloudflare.com/launching-vite-ecosystem-fund/",
+      "date": "2026-11-09T13:00:00+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "Turning Up the Heat: Inside the Attacks on Europe’s Refrigeration System",
@@ -109,12 +115,6 @@
       "title": "Unit 42 Threat Intelligence Highlights - Nov. 2, 2026",
       "url": "https://unit42.paloaltonetworks.com/u42-threat-intelligence-highlights-oct-2026/",
       "date": "2026-11-02T23:00:45+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "How we halved DNS build delay and cut memory use by 85%",
-      "url": "https://blog.cloudflare.com/dns-targeted-zone-builds/",
-      "date": "2026-11-02T14:00:00+00:00"
     },
     {
       "source": "Trail of Bits",

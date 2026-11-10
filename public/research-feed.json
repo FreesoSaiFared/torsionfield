@@ -36,7 +36,7 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-09T13:58:41.338051+00:00",
+  "updatedAt": "2026-11-10T13:32:58.804192+00:00",
   "items": [
     {
       "source": "Cloudflare",
@@ -46,7 +46,7 @@
     },
     {
       "source": "Unit 42",
-      "title": "Turning Up the Heat: Inside the Attacks on Europe’s Refrigeration System",
+      "title": "Turning Up the Heat: Inside the Attacks on Europe’s Refrigeration Systems",
       "url": "https://unit42.paloaltonetworks.com/europes-refrigeration-systems-attacks/",
       "date": "2026-11-06T21:15:09+00:00"
     },
@@ -88,7 +88,7 @@
     },
     {
       "source": "Cloudflare",
-      "title": "See the agents, set the terms: new visibility and control for personal agents",
+      "title": "See the agents, set the terms: New visibility and control for personal agents",
       "url": "https://blog.cloudflare.com/personal-agents-visibility-control/",
       "date": "2026-11-04T14:00:00+00:00"
     },

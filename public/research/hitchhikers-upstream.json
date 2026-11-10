@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
-  "previousSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
-  "checkedAt": "2026-11-10T07:41:36+00:00",
-  "sourceCommitAt": "2026-11-10T06:32:54Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/3718968658ae905f4d2acabaa55a171a4f0f473d...b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+  "upstreamSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
+  "previousSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+  "checkedAt": "2026-11-10T16:22:55+00:00",
+  "sourceCommitAt": "2026-11-10T08:27:33Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/b62b7486195ab28d8b964f4bd486e9b3af2883f9...fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,31 +30,39 @@
   ],
   "changed": [
     {
-      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
-      "path": "source-notes/blog-anthropic-safely-scaling-multi-agent-teams-fable-5-2.md",
+      "atSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
+      "path": "source-notes/blog-simonwillison-details-summary-pr-descriptions.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-anthropic-safely-scaling-multi-agent-teams-fable-5-2.md",
-      "detectedAt": "2026-11-10T07:41:36+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-simonwillison-details-summary-pr-descriptions.md",
+      "detectedAt": "2026-11-10T16:22:55+00:00"
     },
     {
-      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
-      "path": "source-notes/blog-simonwillison-mysterious-beeps.md",
+      "atSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
+      "path": "source-notes/blog-sourcegraph-ship-show-ask-pr-routing.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-simonwillison-mysterious-beeps.md",
-      "detectedAt": "2026-11-10T07:41:36+00:00"
-    },
-    {
-      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-10T07:41:36+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-sourcegraph-ship-show-ask-pr-routing.md",
+      "detectedAt": "2026-11-10T16:22:55+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
+      "path": "source-notes/blog-simonwillison-details-summary-pr-descriptions.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-simonwillison-details-summary-pr-descriptions.md",
+      "detectedAt": "2026-11-10T16:22:55+00:00"
+    },
+    {
+      "atSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
+      "path": "source-notes/blog-sourcegraph-ship-show-ask-pr-routing.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-sourcegraph-ship-show-ask-pr-routing.md",
+      "detectedAt": "2026-11-10T16:22:55+00:00"
+    },
     {
       "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
       "path": "source-notes/blog-anthropic-safely-scaling-multi-agent-teams-fable-5-2.md",
@@ -678,25 +686,9 @@
       "priority": 70,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-ghaw-agent-of-the-day-2026-10-14.md",
       "detectedAt": "2026-10-15T09:22:39+00:00"
-    },
-    {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-      "path": "source-notes/blog-latentspace-alex-zhang-rlm-harnesses.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-latentspace-alex-zhang-rlm-harnesses.md",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
-    },
-    {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
     }
   ],
-  "relevantCount": 3,
+  "relevantCount": 2,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

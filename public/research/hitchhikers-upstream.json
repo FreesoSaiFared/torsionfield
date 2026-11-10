@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
-  "previousSha": "0954ee7af633f19a25293512a1bbc12599a462cd",
-  "checkedAt": "2026-11-09T16:06:50+00:00",
-  "sourceCommitAt": "2026-11-09T08:28:33Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/0954ee7af633f19a25293512a1bbc12599a462cd...3718968658ae905f4d2acabaa55a171a4f0f473d",
+  "upstreamSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+  "previousSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+  "checkedAt": "2026-11-10T07:41:36+00:00",
+  "sourceCommitAt": "2026-11-10T06:32:54Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/3718968658ae905f4d2acabaa55a171a4f0f473d...b62b7486195ab28d8b964f4bd486e9b3af2883f9",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,31 +30,55 @@
   ],
   "changed": [
     {
-      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
-      "path": "source-notes/blog-latentspace-jindal-offline-coding-agent.md",
+      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+      "path": "source-notes/blog-anthropic-safely-scaling-multi-agent-teams-fable-5-2.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-latentspace-jindal-offline-coding-agent.md",
-      "detectedAt": "2026-11-09T16:06:50+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-anthropic-safely-scaling-multi-agent-teams-fable-5-2.md",
+      "detectedAt": "2026-11-10T07:41:36+00:00"
     },
     {
-      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
-      "path": "source-notes/blog-simonwillison-parse-number-sqlite-c-vs-rust.md",
+      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+      "path": "source-notes/blog-simonwillison-mysterious-beeps.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/source-notes/blog-simonwillison-parse-number-sqlite-c-vs-rust.md",
-      "detectedAt": "2026-11-09T16:06:50+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-simonwillison-mysterious-beeps.md",
+      "detectedAt": "2026-11-10T07:41:36+00:00"
     },
     {
-      "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
+      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3718968658ae905f4d2acabaa55a171a4f0f473d/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-09T16:06:50+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-10T07:41:36+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+      "path": "source-notes/blog-anthropic-safely-scaling-multi-agent-teams-fable-5-2.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-anthropic-safely-scaling-multi-agent-teams-fable-5-2.md",
+      "detectedAt": "2026-11-10T07:41:36+00:00"
+    },
+    {
+      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+      "path": "source-notes/blog-simonwillison-mysterious-beeps.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/source-notes/blog-simonwillison-mysterious-beeps.md",
+      "detectedAt": "2026-11-10T07:41:36+00:00"
+    },
+    {
+      "atSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b62b7486195ab28d8b964f4bd486e9b3af2883f9/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-10T07:41:36+00:00"
+    },
     {
       "atSha": "3718968658ae905f4d2acabaa55a171a4f0f473d",
       "path": "source-notes/blog-latentspace-jindal-offline-coding-agent.md",
@@ -670,30 +694,6 @@
       "priority": 60,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/registry/trusted-feeds-state.json",
       "detectedAt": "2026-10-15T09:22:39+00:00"
-    },
-    {
-      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
-      "path": "source-notes/blog-anthropic-redesigning-source-control-scion.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-anthropic-redesigning-source-control-scion.md",
-      "detectedAt": "2026-10-14T12:49:55+00:00"
-    },
-    {
-      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
-      "path": "source-notes/blog-fowler-jain-are-harnesses-worth-the-cost.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-fowler-jain-are-harnesses-worth-the-cost.md",
-      "detectedAt": "2026-10-14T12:49:55+00:00"
-    },
-    {
-      "atSha": "43200583c13ddec81cf76f27068eaeea5d8512d4",
-      "path": "source-notes/blog-latentspace-openai-devday-cua-and-api-interview.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/43200583c13ddec81cf76f27068eaeea5d8512d4/source-notes/blog-latentspace-openai-devday-cua-and-api-interview.md",
-      "detectedAt": "2026-10-14T12:49:55+00:00"
     }
   ],
   "relevantCount": 3,

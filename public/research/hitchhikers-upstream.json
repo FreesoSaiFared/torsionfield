@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
-  "previousSha": "b62b7486195ab28d8b964f4bd486e9b3af2883f9",
-  "checkedAt": "2026-11-10T16:22:55+00:00",
-  "sourceCommitAt": "2026-11-10T08:27:33Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/b62b7486195ab28d8b964f4bd486e9b3af2883f9...fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
+  "upstreamSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+  "previousSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
+  "checkedAt": "2026-11-11T09:15:19+00:00",
+  "sourceCommitAt": "2026-11-11T08:27:54Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae...5c5736c78a55899447e68f3cfaf0a74ea156cc13",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,23 +30,119 @@
   ],
   "changed": [
     {
-      "atSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
-      "path": "source-notes/blog-simonwillison-details-summary-pr-descriptions.md",
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-anthropic-claude-electronics-design.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-simonwillison-details-summary-pr-descriptions.md",
-      "detectedAt": "2026-11-10T16:22:55+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-anthropic-claude-electronics-design.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
     },
     {
-      "atSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
-      "path": "source-notes/blog-sourcegraph-ship-show-ask-pr-routing.md",
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-anthropic-claude-fable-and-mythos-5-2.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/fa5745a7474fecd3158aa8bb4e75dc6b22bdffae/source-notes/blog-sourcegraph-ship-show-ask-pr-routing.md",
-      "detectedAt": "2026-11-10T16:22:55+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-anthropic-claude-fable-and-mythos-5-2.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-claude-dev-osmani-which-claude-model-to-build-with.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-claude-dev-osmani-which-claude-model-to-build-with.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-fowler-prakash-long-horizon-agents-durable-execution.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-fowler-prakash-long-horizon-agents-durable-execution.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-simonwillison-llm-anthropic-031.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-simonwillison-llm-anthropic-031.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-simonwillison-prompting-fable-52-code-ownership.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-simonwillison-prompting-fable-52-code-ownership.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-anthropic-claude-electronics-design.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-anthropic-claude-electronics-design.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-anthropic-claude-fable-and-mythos-5-2.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-anthropic-claude-fable-and-mythos-5-2.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-claude-dev-osmani-which-claude-model-to-build-with.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-claude-dev-osmani-which-claude-model-to-build-with.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-fowler-prakash-long-horizon-agents-durable-execution.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-fowler-prakash-long-horizon-agents-durable-execution.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-simonwillison-llm-anthropic-031.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-simonwillison-llm-anthropic-031.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "source-notes/blog-simonwillison-prompting-fable-52-code-ownership.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/source-notes/blog-simonwillison-prompting-fable-52-code-ownership.md",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
+    {
+      "atSha": "5c5736c78a55899447e68f3cfaf0a74ea156cc13",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5c5736c78a55899447e68f3cfaf0a74ea156cc13/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-11T09:15:19+00:00"
+    },
     {
       "atSha": "fa5745a7474fecd3158aa8bb4e75dc6b22bdffae",
       "path": "source-notes/blog-simonwillison-details-summary-pr-descriptions.md",
@@ -630,65 +726,9 @@
       "priority": 60,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2780add6b42ff9951687265e23c4a64a71118915/registry/trusted-feeds-state.json",
       "detectedAt": "2026-10-17T09:13:46+00:00"
-    },
-    {
-      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-15.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-ghaw-agent-of-the-day-2026-10-15.md",
-      "detectedAt": "2026-10-16T09:41:28+00:00"
-    },
-    {
-      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
-      "path": "source-notes/blog-google-developers-evaluating-agents-vibe-check.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-google-developers-evaluating-agents-vibe-check.md",
-      "detectedAt": "2026-10-16T09:41:28+00:00"
-    },
-    {
-      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
-      "path": "source-notes/blog-jetbrains-netflix-ide-intelligence-agents.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-jetbrains-netflix-ide-intelligence-agents.md",
-      "detectedAt": "2026-10-16T09:41:28+00:00"
-    },
-    {
-      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
-      "path": "source-notes/blog-simonwillison-newsletters-built-using-voice.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/source-notes/blog-simonwillison-newsletters-built-using-voice.md",
-      "detectedAt": "2026-10-16T09:41:28+00:00"
-    },
-    {
-      "atSha": "f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f92fcd6f19f790828228c1a2bbda6f5a0d5f7d04/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-16T09:41:28+00:00"
-    },
-    {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-      "path": "source-notes/blog-anthropic-agent-observability-claude-platform.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-anthropic-agent-observability-claude-platform.md",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
-    },
-    {
-      "atSha": "c9fff920c78f0a1c00122b7c583c8d299313c9ae",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-10-14.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c9fff920c78f0a1c00122b7c583c8d299313c9ae/source-notes/blog-ghaw-agent-of-the-day-2026-10-14.md",
-      "detectedAt": "2026-10-15T09:22:39+00:00"
     }
   ],
-  "relevantCount": 2,
+  "relevantCount": 7,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

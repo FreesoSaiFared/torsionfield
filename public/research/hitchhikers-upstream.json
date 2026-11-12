@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "96fc781456beb8e74c8e34e85299284e96a45e60",
-  "previousSha": "846611361a87813c985fbe29953e1948755af887",
-  "checkedAt": "2026-11-12T07:00:27+00:00",
-  "sourceCommitAt": "2026-11-12T06:34:15Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/846611361a87813c985fbe29953e1948755af887...96fc781456beb8e74c8e34e85299284e96a45e60",
+  "upstreamSha": "96e2e233a5649bc4deb14eaa6b40ba1f33de1544",
+  "previousSha": "96fc781456beb8e74c8e34e85299284e96a45e60",
+  "checkedAt": "2026-11-12T15:55:31+00:00",
+  "sourceCommitAt": "2026-11-12T09:23:57Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/96fc781456beb8e74c8e34e85299284e96a45e60...96e2e233a5649bc4deb14eaa6b40ba1f33de1544",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/96fc781456beb8e74c8e34e85299284e96a45e60/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/96e2e233a5649bc4deb14eaa6b40ba1f33de1544/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -28,24 +28,7 @@
       "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities"
     }
   ],
-  "changed": [
-    {
-      "atSha": "96fc781456beb8e74c8e34e85299284e96a45e60",
-      "path": "source-notes/blog-anthropic-curative-gwen-provider-contracts-agents.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/96fc781456beb8e74c8e34e85299284e96a45e60/source-notes/blog-anthropic-curative-gwen-provider-contracts-agents.md",
-      "detectedAt": "2026-11-12T07:00:27+00:00"
-    },
-    {
-      "atSha": "96fc781456beb8e74c8e34e85299284e96a45e60",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/96fc781456beb8e74c8e34e85299284e96a45e60/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-12T07:00:27+00:00"
-    }
-  ],
+  "changed": [],
   "events": [
     {
       "atSha": "96fc781456beb8e74c8e34e85299284e96a45e60",
@@ -688,7 +671,7 @@
       "detectedAt": "2026-10-17T09:13:46+00:00"
     }
   ],
-  "relevantCount": 2,
+  "relevantCount": 0,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

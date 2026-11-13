@@ -36,8 +36,20 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-12T13:50:09.547290+00:00",
+  "updatedAt": "2026-11-13T13:11:46.052903+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors",
+      "url": "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/",
+      "date": "2026-11-12T15:00:31+00:00"
+    },
+    {
+      "source": "SentinelLABS",
+      "title": "LABScon26 Replay | Let’s Get Physical: Why Cybersecurity Needs Hardware-Based Security to Survive AI",
+      "url": "https://www.sentinelone.com/labs/labscon26-replay-let-s-get-physical-why-cybersecurity-needs-hardware-based-security-to-survive-ai/",
+      "date": "2026-11-12T14:00:02+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
@@ -141,12 +153,6 @@
       "date": "2026-11-02T12:00:00+00:00"
     },
     {
-      "source": "Unit 42",
-      "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
-      "url": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
-      "date": "2026-10-29T18:00:34+00:00"
-    },
-    {
       "source": "SentinelLABS",
       "title": "LABScon26 Replay | Keynote: A Sober Analysis of AI Impact",
       "url": "https://www.sentinelone.com/labs/labscon26-replay-keynote-a-sober-analysis-of-ai-impact/",
@@ -211,12 +217,6 @@
       "title": "Don’t Call Us, We’ll Call Your APIs | TraderTraitor Backdoors Resurface on Victim With No Crypto Ties",
       "url": "https://www.sentinelone.com/labs/dont-call-us-well-call-your-apis-tradertraitor-backdoors-resurface-on-victim-with-no-crypto-ties/",
       "date": "2026-09-18T17:00:16+00:00"
-    },
-    {
-      "source": "SentinelLABS",
-      "title": "Agents at Large | Tracing Illicit OpenAI Agent Activity on Hugging Face",
-      "url": "https://www.sentinelone.com/labs/agents-at-large-tracing-illicit-openai-agent-activity-on-hugging-face/",
-      "date": "2026-09-16T10:00:34+00:00"
     }
   ]
 }

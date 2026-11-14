@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-13T13:11:46.052903+00:00",
+  "updatedAt": "2026-11-14T12:15:51.090517+00:00",
   "items": [
+    {
+      "source": "Cloudflare",
+      "title": "Kitesurf is now open source",
+      "url": "https://blog.cloudflare.com/kitesurf-open-source/",
+      "date": "2026-11-13T20:20:21+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Adapting to AI penetration testing orchestrators: The Modern Security Model",
+      "url": "https://blog.cloudflare.com/adapting-to-ai-penetration-testing-orchestrators/",
+      "date": "2026-11-13T19:26:07+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Introducing Spend Management: Spending limits and alerts for Cloudflare",
+      "url": "https://blog.cloudflare.com/spend-management/",
+      "date": "2026-11-13T14:00:00+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors",
@@ -87,12 +105,6 @@
       "date": "2026-11-06T21:15:09+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "The post-quantum future of web privacy",
-      "url": "https://blog.cloudflare.com/vole-mole/",
-      "date": "2026-11-06T14:00:00+00:00"
-    },
-    {
       "source": "Trail of Bits",
       "title": "After Binance, check what your signing systems can approve",
       "url": "https://blog.trailofbits.com/2026/11/06/after-binance-check-what-your-signing-systems-can-approve/",
@@ -105,12 +117,6 @@
       "date": "2026-11-05T21:19:58+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "Agents aren’t humans (but they kinda are)",
-      "url": "https://blog.cloudflare.com/trusted-agent-delegation/",
-      "date": "2026-11-05T17:03:04+00:00"
-    },
-    {
       "source": "PortSwigger Research",
       "title": "Making HTTP header injection critical with one prompt",
       "url": "https://portswigger.net/research/making-http-header-injection-critical-with-one-prompt",
@@ -121,12 +127,6 @@
       "title": "VerifiedIDA | Making LLM-Driven Reverse Engineering Inspectable, Continuable and Reusable",
       "url": "https://www.sentinelone.com/labs/verifiedida-making-llm-driven-reverse-engineering-inspectable-continuable-and-reusable/",
       "date": "2026-11-04T14:00:03+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "See the agents, set the terms: New visibility and control for personal agents",
-      "url": "https://blog.cloudflare.com/personal-agents-visibility-control/",
-      "date": "2026-11-04T14:00:00+00:00"
     },
     {
       "source": "SentinelLABS",

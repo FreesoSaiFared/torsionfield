@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
-  "previousSha": "96e2e233a5649bc4deb14eaa6b40ba1f33de1544",
-  "checkedAt": "2026-11-13T10:50:18+00:00",
-  "sourceCommitAt": "2026-11-13T09:24:22Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/96e2e233a5649bc4deb14eaa6b40ba1f33de1544...c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
+  "upstreamSha": "c619aded9f8f7997500775b464310e1c10741750",
+  "previousSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
+  "checkedAt": "2026-11-14T06:07:51+00:00",
+  "sourceCommitAt": "2026-11-14T06:07:33Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/c1bac9c1f16bf076299942ad3a1fef6e54a56b03...c619aded9f8f7997500775b464310e1c10741750",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c1bac9c1f16bf076299942ad3a1fef6e54a56b03/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c619aded9f8f7997500775b464310e1c10741750/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,47 +30,23 @@
   ],
   "changed": [
     {
-      "atSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
-      "path": "source-notes/blog-google-agent-anomaly-detection-benchmarks.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c1bac9c1f16bf076299942ad3a1fef6e54a56b03/source-notes/blog-google-agent-anomaly-detection-benchmarks.md",
-      "detectedAt": "2026-11-13T10:50:18+00:00"
-    },
-    {
-      "atSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
-      "path": "source-notes/blog-latentspace-arca-agents-prompt-people.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c1bac9c1f16bf076299942ad3a1fef6e54a56b03/source-notes/blog-latentspace-arca-agents-prompt-people.md",
-      "detectedAt": "2026-11-13T10:50:18+00:00"
-    },
-    {
-      "atSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
-      "path": "source-notes/blog-simonwillison-aws-emulator.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c1bac9c1f16bf076299942ad3a1fef6e54a56b03/source-notes/blog-simonwillison-aws-emulator.md",
-      "detectedAt": "2026-11-13T10:50:18+00:00"
-    },
-    {
-      "atSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
-      "path": "source-notes/failure-railway-october-build-escape-to-kms-decrypt.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c1bac9c1f16bf076299942ad3a1fef6e54a56b03/source-notes/failure-railway-october-build-escape-to-kms-decrypt.md",
-      "detectedAt": "2026-11-13T10:50:18+00:00"
-    },
-    {
-      "atSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
+      "atSha": "c619aded9f8f7997500775b464310e1c10741750",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c1bac9c1f16bf076299942ad3a1fef6e54a56b03/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-13T10:50:18+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c619aded9f8f7997500775b464310e1c10741750/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-14T06:07:51+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "c619aded9f8f7997500775b464310e1c10741750",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c619aded9f8f7997500775b464310e1c10741750/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-14T06:07:51+00:00"
+    },
     {
       "atSha": "c1bac9c1f16bf076299942ad3a1fef6e54a56b03",
       "path": "source-notes/blog-google-agent-anomaly-detection-benchmarks.md",
@@ -702,17 +678,9 @@
       "priority": 70,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d8ec356475efc77c76e6d35105f42a195f6be803/source-notes/blog-openai-sharing-ai-progress-mathematics.md",
       "detectedAt": "2026-10-19T13:52:52+00:00"
-    },
-    {
-      "atSha": "d8ec356475efc77c76e6d35105f42a195f6be803",
-      "path": "source-notes/blog-simonwillison-python-315-web-edit-profiling.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d8ec356475efc77c76e6d35105f42a195f6be803/source-notes/blog-simonwillison-python-315-web-edit-profiling.md",
-      "detectedAt": "2026-10-19T13:52:52+00:00"
     }
   ],
-  "relevantCount": 5,
+  "relevantCount": 1,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

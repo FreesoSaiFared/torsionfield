@@ -1,17 +1,17 @@
 {
   "schema": "torsionfield-evidence-audit/1",
   "auditMethodRevision": "2026-10-10.r2",
-  "upstreamSha": "b39402151c5c478e4b78cfbf6ead2bd1714f5a21",
+  "upstreamSha": "366d2acb7c8a62bf4e70ff6760ae0265ee161147",
   "sourceNote": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-  "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+  "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
   "originalPublisher": "UK AI Security Institute",
   "primaryUrl": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
   "commentaryUrl": "https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/",
-  "checkedAt": "2026-11-14T18:49:42+00:00",
+  "checkedAt": "2026-11-15T21:41:36+00:00",
   "sourceHashes": {
     "noteSha256": "16d29dda629d9ee79632d55e75a92d0781ab986916f21ed01490a665ac5a0657",
     "primarySha256": "725fe08775209a3b992389b4985789ae57e0ade011faf9fe4465c5674e8127a2",
-    "commentarySha256": "535837864dd6fe96157960f4b4505e5f9e0daa0c4513e7333db66859073dbd9b"
+    "commentarySha256": "7f883dc23bb05a861281a0f570b9e0958aaea96ae6dfe58ca00190863a6e0f4a"
   },
   "claims": [
     {
@@ -19,56 +19,56 @@
       "heading": "GPT-5.5 is comparable to Claude Mythos Preview on AISI cyber benchmarks and is generally available today, unlike Mythos",
       "quoteStatus": "quote-not-located",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 2,
       "heading": "GPT-5.5 achieves 71.4% (±8.0%) on Expert-level cyber tasks — the highest score AISI has recorded on this benchmark tier",
       "quoteStatus": "quote-not-located",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 3,
       "heading": "GPT-5.5 is the second model ever to complete AISI's \"The Last Ones\" corporate network attack simulation, doing so in 2 of 10 attempts",
       "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 4,
       "heading": "TLO performance continues to scale with the amount of inference compute spent",
       "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 5,
       "heading": "GPT-5.5 solved the rust_vm reverse-engineering CTF challenge in 10 minutes 22 seconds at $1.73 cost; a human expert required approximately 12 hours",
       "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 6,
       "heading": "AISI expert red-teamers found a universal jailbreak effective across all malicious cyber queries in approximately 6 hours; OpenAI made safeguard updates but verification was blocked by a configuration issue",
       "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 7,
       "heading": "GPT-5.5 cannot solve the \"Cooling Tower\" industrial control system simulation — no model has yet succeeded on this range",
       "quoteStatus": "not-tested",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     },
     {
       "claimId": 8,
       "heading": "Rapid improvement on cyber tasks may be part of a more general trend in frontier model capability",
       "quoteStatus": "primary-text-located",
       "reviewStatus": "pending-independent-judgment",
-      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/b39402151c5c478e4b78cfbf6ead2bd1714f5a21/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
+      "sourceUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/366d2acb7c8a62bf4e70ff6760ae0265ee161147/source-notes/blog-simonwillison-aisi-gpt55-cyber.md"
     }
   ],
   "literalAnchors": [
@@ -124,11 +124,7 @@
   "publicationState": "review-required",
   "method": "Literal text checks are mechanical provenance signals, not semantic verification. Independent editorial review required.",
   "otherChangedNotes": [
-    "source-notes/blog-anthropic-building-strong-safety-evaluations.md",
-    "source-notes/blog-anthropic-self-hosted-claude-managed-agents.md",
-    "source-notes/blog-cursor-security-incident-update.md",
-    "source-notes/blog-ghaw-agent-of-the-day-2026-11-13.md",
-    "source-notes/blog-simonwillison-gemini-decisions-api.md",
-    "source-notes/discussion-latentspace-lauritzen-legora-legal-agents-no-traces.md"
+    "source-notes/blog-anthropic-building-always-on-agents.md",
+    "source-notes/blog-ghaw-ecosystem-spotlight-svennijhuis-agentic-workflows.md"
   ]
 }

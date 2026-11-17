@@ -36,8 +36,14 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-16T13:44:33.896633+00:00",
+  "updatedAt": "2026-11-17T14:33:56.756556+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "QUIC and Covert: Novel HTTP/3-Powered RATs Target Southeast Asian Governments",
+      "url": "https://unit42.paloaltonetworks.com/custom-rats-target-southeast-asia-governments/",
+      "date": "2026-11-16T23:00:55+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "Kitesurf is now open source",
@@ -139,12 +145,6 @@
       "title": "The cryptography behind electronic voting (and why paper ballots are still essential)",
       "url": "https://blog.trailofbits.com/2026/11/03/the-cryptography-behind-electronic-voting-and-why-paper-ballots-are-still-essential/",
       "date": "2026-11-03T12:00:00+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "Unit 42 Threat Intelligence Highlights - Nov. 2, 2026",
-      "url": "https://unit42.paloaltonetworks.com/u42-threat-intelligence-highlights-oct-2026/",
-      "date": "2026-11-02T23:00:45+00:00"
     },
     {
       "source": "Trail of Bits",

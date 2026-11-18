@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
-  "previousSha": "6957082a44bca55bda119e9edd4ba47db2806497",
-  "checkedAt": "2026-11-17T11:41:30+00:00",
-  "sourceCommitAt": "2026-11-17T08:28:33Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/6957082a44bca55bda119e9edd4ba47db2806497...311d534d9b4deaba5310f7cda6249d3faecfdccf",
+  "upstreamSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+  "previousSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
+  "checkedAt": "2026-11-18T11:29:35+00:00",
+  "sourceCommitAt": "2026-11-18T11:24:40Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/311d534d9b4deaba5310f7cda6249d3faecfdccf...05103ca6b4a68e2bad30ba24489000e0e70cc15f",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/311d534d9b4deaba5310f7cda6249d3faecfdccf/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,47 +30,71 @@
   ],
   "changed": [
     {
-      "atSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-16.md",
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-17.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/311d534d9b4deaba5310f7cda6249d3faecfdccf/source-notes/blog-ghaw-agent-of-the-day-2026-11-16.md",
-      "detectedAt": "2026-11-17T11:41:30+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/source-notes/blog-ghaw-agent-of-the-day-2026-11-17.md",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
     },
     {
-      "atSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
-      "path": "source-notes/blog-google-agent-anomaly-detection-hands-on.md",
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+      "path": "source-notes/blog-simonwillison-datasette-lite-service-workers.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/311d534d9b4deaba5310f7cda6249d3faecfdccf/source-notes/blog-google-agent-anomaly-detection-hands-on.md",
-      "detectedAt": "2026-11-17T11:41:30+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/source-notes/blog-simonwillison-datasette-lite-service-workers.md",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
     },
     {
-      "atSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
-      "path": "source-notes/blog-google-agents-are-sessions-not-requests-gke-node-pools.md",
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+      "path": "source-notes/blog-simonwillison-gpt62-astra-and-sol.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/311d534d9b4deaba5310f7cda6249d3faecfdccf/source-notes/blog-google-agents-are-sessions-not-requests-gke-node-pools.md",
-      "detectedAt": "2026-11-17T11:41:30+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/source-notes/blog-simonwillison-gpt62-astra-and-sol.md",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
     },
     {
-      "atSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
-      "path": "source-notes/blog-simonwillison-datasette-1-0a43.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/311d534d9b4deaba5310f7cda6249d3faecfdccf/source-notes/blog-simonwillison-datasette-1-0a43.md",
-      "detectedAt": "2026-11-17T11:41:30+00:00"
-    },
-    {
-      "atSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/311d534d9b4deaba5310f7cda6249d3faecfdccf/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-17T11:41:30+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-17.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/source-notes/blog-ghaw-agent-of-the-day-2026-11-17.md",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
+    },
+    {
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+      "path": "source-notes/blog-simonwillison-datasette-lite-service-workers.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/source-notes/blog-simonwillison-datasette-lite-service-workers.md",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
+    },
+    {
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+      "path": "source-notes/blog-simonwillison-gpt62-astra-and-sol.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/source-notes/blog-simonwillison-gpt62-astra-and-sol.md",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
+    },
+    {
+      "atSha": "05103ca6b4a68e2bad30ba24489000e0e70cc15f",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/05103ca6b4a68e2bad30ba24489000e0e70cc15f/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-18T11:29:35+00:00"
+    },
     {
       "atSha": "311d534d9b4deaba5310f7cda6249d3faecfdccf",
       "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-16.md",
@@ -678,41 +702,9 @@
       "priority": 70,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/source-notes/blog-thoughtworks-tiffany-product-risk-gdpr-ai-act-agents.md",
       "detectedAt": "2026-10-27T10:25:57+00:00"
-    },
-    {
-      "atSha": "8f824344f8157a9576fda17c398642e7ca1166e9",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8f824344f8157a9576fda17c398642e7ca1166e9/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-27T10:25:57+00:00"
-    },
-    {
-      "atSha": "3063f8a5cf146dfaccfa3067cc99f256342b943a",
-      "path": "source-notes/blog-openai-third-moment-research-case-study.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3063f8a5cf146dfaccfa3067cc99f256342b943a/source-notes/blog-openai-third-moment-research-case-study.md",
-      "detectedAt": "2026-10-26T14:08:50+00:00"
-    },
-    {
-      "atSha": "4856550bba0f0b074ec2b21a10f13e432098c03e",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/4856550bba0f0b074ec2b21a10f13e432098c03e/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-26T06:56:45+00:00"
-    },
-    {
-      "atSha": "2d7870997954153367182cda924774d747fb3d61",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2d7870997954153367182cda924774d747fb3d61/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-10-25T10:05:36+00:00"
     }
   ],
-  "relevantCount": 5,
+  "relevantCount": 4,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

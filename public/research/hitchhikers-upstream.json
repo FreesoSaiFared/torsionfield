@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "5999ca3c9b69c9fe16ab0337c274481191b72700",
-  "previousSha": "05b5495bfa56bc178cfa7e986036befa302ef646",
-  "checkedAt": "2026-11-19T18:37:00+00:00",
-  "sourceCommitAt": "2026-11-19T10:24:37Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/05b5495bfa56bc178cfa7e986036befa302ef646...5999ca3c9b69c9fe16ab0337c274481191b72700",
+  "upstreamSha": "d795032df17ffb39af88e6c73b4e22c83799e9a6",
+  "previousSha": "5999ca3c9b69c9fe16ab0337c274481191b72700",
+  "checkedAt": "2026-11-20T08:26:06+00:00",
+  "sourceCommitAt": "2026-11-20T07:25:45Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/5999ca3c9b69c9fe16ab0337c274481191b72700...d795032df17ffb39af88e6c73b4e22c83799e9a6",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5999ca3c9b69c9fe16ab0337c274481191b72700/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d795032df17ffb39af88e6c73b4e22c83799e9a6/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -28,8 +28,25 @@
       "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities"
     }
   ],
-  "changed": [],
+  "changed": [
+    {
+      "atSha": "d795032df17ffb39af88e6c73b4e22c83799e9a6",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d795032df17ffb39af88e6c73b4e22c83799e9a6/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-20T08:26:06+00:00"
+    }
+  ],
   "events": [
+    {
+      "atSha": "d795032df17ffb39af88e6c73b4e22c83799e9a6",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/d795032df17ffb39af88e6c73b4e22c83799e9a6/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-20T08:26:06+00:00"
+    },
     {
       "atSha": "05b5495bfa56bc178cfa7e986036befa302ef646",
       "path": "source-notes/blog-anthropic-chaos-loop-claude-docs-launch.md",
@@ -661,17 +678,9 @@
       "priority": 60,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/161320a23b52f158e280d2abb7ffa140f0e2a6c8/registry/trusted-feeds-state.json",
       "detectedAt": "2026-10-29T08:23:06+00:00"
-    },
-    {
-      "atSha": "e8978d1a8f639480bd2c92ee9291b3a59f0f8e15",
-      "path": "source-notes/blog-anthropic-claude-code-google-cloud-costs-roi.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/e8978d1a8f639480bd2c92ee9291b3a59f0f8e15/source-notes/blog-anthropic-claude-code-google-cloud-costs-roi.md",
-      "detectedAt": "2026-10-28T11:34:54+00:00"
     }
   ],
-  "relevantCount": 0,
+  "relevantCount": 1,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

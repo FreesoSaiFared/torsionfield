@@ -36,8 +36,14 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-19T14:29:16.650658+00:00",
+  "updatedAt": "2026-11-20T14:05:54.877552+00:00",
   "items": [
+    {
+      "source": "Cloudflare",
+      "title": "nginx2root: Five new nginx vulnerabilities, and how Cloudflare protects origins from the worst of them",
+      "url": "https://blog.cloudflare.com/nginx2root/",
+      "date": "2026-11-20T01:58:29+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "Internet traffic and attacks during the 2026 U.S. midterm elections",
@@ -85,12 +91,6 @@
       "title": "QUIC and Covert: Novel HTTP/3-Powered RATs Target Southeast Asian Governments",
       "url": "https://unit42.paloaltonetworks.com/custom-rats-target-southeast-asia-governments/",
       "date": "2026-11-16T23:00:55+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Kitesurf is now open source",
-      "url": "https://blog.cloudflare.com/kitesurf-open-source/",
-      "date": "2026-11-13T20:20:21+00:00"
     },
     {
       "source": "Unit 42",

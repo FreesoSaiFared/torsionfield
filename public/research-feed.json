@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-20T14:05:54.877552+00:00",
+  "updatedAt": "2026-11-21T13:31:06.278253+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Dialing for Data: Inside the Com’s High-Profile Heists",
+      "url": "https://unit42.paloaltonetworks.com/com-affiliate-vishing-attacks/",
+      "date": "2026-11-20T22:00:25+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "How Cloudflare WAF protects against ruby2shell (CVE-2026-132825)",
+      "url": "https://blog.cloudflare.com/ruby2shell-waf-protection/",
+      "date": "2026-11-20T20:24:38+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "How Cloudflare WAF helps protect against phpAfterShell and other critical PHP flaws",
+      "url": "https://blog.cloudflare.com/phpaftershell-waf-protection/",
+      "date": "2026-11-20T20:00:45+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "nginx2root: Five new nginx vulnerabilities, and how Cloudflare protects origins from the worst of them",
@@ -57,12 +75,6 @@
       "date": "2026-11-18T22:00:00+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938)",
-      "url": "https://blog.cloudflare.com/java4shell-waf-protection/",
-      "date": "2026-11-18T14:52:10+00:00"
-    },
-    {
       "source": "PortSwigger Research",
       "title": "Achieving the impossible: XSS in innerHTML without equals",
       "url": "https://portswigger.net/research/achieving-the-impossible-xss-in-innerhtml-without-equals",
@@ -79,12 +91,6 @@
       "title": "Borrowed Code, Real Consequences: What OPTIMJACK Teaches Us",
       "url": "https://unit42.paloaltonetworks.com/optimjack-supply-chain-attack/",
       "date": "2026-11-17T20:43:14+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "Quad9’s withdrawal from France: A canary in the coal mine",
-      "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
-      "date": "2026-11-17T20:24:27+00:00"
     },
     {
       "source": "Unit 42",
@@ -109,12 +115,6 @@
       "title": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
       "url": "https://unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools/",
       "date": "2026-11-11T23:00:53+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "The XG Files: Falcon C2 Flying Under The (Browser) Radar",
-      "url": "https://unit42.paloaltonetworks.com/falcon-c2-browser-compromise/",
-      "date": "2026-11-11T15:00:23+00:00"
     },
     {
       "source": "PortSwigger Research",

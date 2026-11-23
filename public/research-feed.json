@@ -36,8 +36,14 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-22T13:25:28.576265+00:00",
+  "updatedAt": "2026-11-23T16:05:48.634279+00:00",
   "items": [
+    {
+      "source": "Cloudflare",
+      "title": "Probing DNS at Cloudflare",
+      "url": "https://blog.cloudflare.com/probing-dns-at-cloudflare/",
+      "date": "2026-11-23T14:00:00+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "Dialing for Data: Inside the Com’s High-Profile Heists",
@@ -67,12 +73,6 @@
       "title": "Internet traffic and attacks during the 2026 U.S. midterm elections",
       "url": "https://blog.cloudflare.com/internet-traffic-2026-us-election/",
       "date": "2026-11-19T14:00:00+00:00"
-    },
-    {
-      "source": "Cloudflare",
-      "title": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team",
-      "url": "https://blog.cloudflare.com/open-clairic/",
-      "date": "2026-11-18T22:00:00+00:00"
     },
     {
       "source": "PortSwigger Research",

@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "3d9029ad2cdca60f94415a3ee09af8568b407e7b",
-  "previousSha": "56b09eca678b8b503e5d9e9be0bb0814f8d08c47",
-  "checkedAt": "2026-11-24T06:21:02+00:00",
-  "sourceCommitAt": "2026-11-24T06:08:07Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/56b09eca678b8b503e5d9e9be0bb0814f8d08c47...3d9029ad2cdca60f94415a3ee09af8568b407e7b",
+  "upstreamSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+  "previousSha": "3d9029ad2cdca60f94415a3ee09af8568b407e7b",
+  "checkedAt": "2026-11-24T18:14:04+00:00",
+  "sourceCommitAt": "2026-11-24T08:29:04Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/3d9029ad2cdca60f94415a3ee09af8568b407e7b...2df506bbfa17cea0ffa468e2010bcb16a43882f6",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3d9029ad2cdca60f94415a3ee09af8568b407e7b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,15 +30,103 @@
   ],
   "changed": [
     {
-      "atSha": "3d9029ad2cdca60f94415a3ee09af8568b407e7b",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/3d9029ad2cdca60f94415a3ee09af8568b407e7b/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-24T06:21:02+00:00"
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-anthropic-enterprise-guide-securing-coding-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-anthropic-enterprise-guide-securing-coding-agents.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-anthropic-introducing-claude-ship.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-anthropic-introducing-claude-ship.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-23.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-ghaw-agent-of-the-day-2026-11-23.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-google-semantic-governance-intent-hijacking-agentdojo.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-google-semantic-governance-intent-hijacking-agentdojo.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-latentspace-rocha-resend-designing-for-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-latentspace-rocha-resend-designing-for-agents.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-thoughtworks-wang-context-development-lifecycle.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-thoughtworks-wang-context-development-lifecycle.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-anthropic-enterprise-guide-securing-coding-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-anthropic-enterprise-guide-securing-coding-agents.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-anthropic-introducing-claude-ship.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-anthropic-introducing-claude-ship.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-23.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-ghaw-agent-of-the-day-2026-11-23.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-google-semantic-governance-intent-hijacking-agentdojo.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-google-semantic-governance-intent-hijacking-agentdojo.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-latentspace-rocha-resend-designing-for-agents.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-latentspace-rocha-resend-designing-for-agents.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
+    {
+      "atSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
+      "path": "source-notes/blog-thoughtworks-wang-context-development-lifecycle.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/2df506bbfa17cea0ffa468e2010bcb16a43882f6/source-notes/blog-thoughtworks-wang-context-development-lifecycle.md",
+      "detectedAt": "2026-11-24T18:14:04+00:00"
+    },
     {
       "atSha": "3d9029ad2cdca60f94415a3ee09af8568b407e7b",
       "path": "registry/trusted-feeds-state.json",
@@ -630,57 +718,9 @@
       "priority": 70,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0614744cd51d2e2f01cf39eb7f30ece271c738a7/source-notes/blog-simonwillison-qwen-interpret-model-weights.md",
       "detectedAt": "2026-11-04T07:57:42+00:00"
-    },
-    {
-      "atSha": "0614744cd51d2e2f01cf39eb7f30ece271c738a7",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/0614744cd51d2e2f01cf39eb7f30ece271c738a7/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-04T07:57:42+00:00"
-    },
-    {
-      "atSha": "80af08fef272bc3ef005850257e14b9b2efa5664",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/80af08fef272bc3ef005850257e14b9b2efa5664/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-03T06:35:56+00:00"
-    },
-    {
-      "atSha": "8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a",
-      "path": "source-notes/failure-jepsen-particledb-llm-assisted-database.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/8df77c0dd35aa0ae93ad9f5bb5965e37ff4d0c1a/source-notes/failure-jepsen-particledb-llm-assisted-database.md",
-      "detectedAt": "2026-11-02T16:59:09+00:00"
-    },
-    {
-      "atSha": "1659794e2a316661ca2f65d891671f7cfcb6dde2",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/1659794e2a316661ca2f65d891671f7cfcb6dde2/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-02T06:47:43+00:00"
-    },
-    {
-      "atSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
-      "path": "source-notes/blog-simonwillison-spawn-ai-pilled-company.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/35771860dbb93e8bd4225834971f2d0ee5a45e85/source-notes/blog-simonwillison-spawn-ai-pilled-company.md",
-      "detectedAt": "2026-11-01T09:10:02+00:00"
-    },
-    {
-      "atSha": "35771860dbb93e8bd4225834971f2d0ee5a45e85",
-      "path": "source-notes/discussion-latentspace-tenex-ai-native-sdlc-metaharness.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/35771860dbb93e8bd4225834971f2d0ee5a45e85/source-notes/discussion-latentspace-tenex-ai-native-sdlc-metaharness.md",
-      "detectedAt": "2026-11-01T09:10:02+00:00"
     }
   ],
-  "relevantCount": 1,
+  "relevantCount": 6,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }

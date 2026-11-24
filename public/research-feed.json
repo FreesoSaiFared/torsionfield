@@ -36,8 +36,14 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-23T16:05:48.634279+00:00",
+  "updatedAt": "2026-11-24T15:57:14.747445+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "Recent Trends and Tactics of Agentic AI Attacks",
+      "url": "https://unit42.paloaltonetworks.com/autonomous-ai-agent-threat-campaigns/",
+      "date": "2026-11-24T15:00:19+00:00"
+    },
     {
       "source": "Cloudflare",
       "title": "Probing DNS at Cloudflare",
@@ -109,12 +115,6 @@
       "title": "LABScon26 Replay | Let’s Get Physical: Why Cybersecurity Needs Hardware-Based Security to Survive AI",
       "url": "https://www.sentinelone.com/labs/labscon26-replay-let-s-get-physical-why-cybersecurity-needs-hardware-based-security-to-survive-ai/",
       "date": "2026-11-12T14:00:02+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
-      "url": "https://unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools/",
-      "date": "2026-11-11T23:00:53+00:00"
     },
     {
       "source": "PortSwigger Research",

@@ -36,8 +36,26 @@
       "status": "live"
     }
   ],
-  "updatedAt": "2026-11-24T15:57:14.747445+00:00",
+  "updatedAt": "2026-11-25T15:43:07.480164+00:00",
   "items": [
+    {
+      "source": "Unit 42",
+      "title": "The AI Threat Horizon: Why Speed, Edge AI and Baselines Are Our Best Defense",
+      "url": "https://unit42.paloaltonetworks.com/ai-threat-horizon/",
+      "date": "2026-11-25T15:00:09+00:00"
+    },
+    {
+      "source": "Cloudflare",
+      "title": "Introducing Search for Agents",
+      "url": "https://blog.cloudflare.com/search-for-agents/",
+      "date": "2026-11-25T14:00:00+00:00"
+    },
+    {
+      "source": "Unit 42",
+      "title": "NGINX HTTP/2 Use-After-Free: CVE-2026-123633",
+      "url": "https://unit42.paloaltonetworks.com/cve-2026-123633-nginx-http2-vulnerability/",
+      "date": "2026-11-24T23:00:14+00:00"
+    },
     {
       "source": "Unit 42",
       "title": "Recent Trends and Tactics of Agentic AI Attacks",
@@ -75,12 +93,6 @@
       "date": "2026-11-20T01:58:29+00:00"
     },
     {
-      "source": "Cloudflare",
-      "title": "Internet traffic and attacks during the 2026 U.S. midterm elections",
-      "url": "https://blog.cloudflare.com/internet-traffic-2026-us-election/",
-      "date": "2026-11-19T14:00:00+00:00"
-    },
-    {
       "source": "PortSwigger Research",
       "title": "Achieving the impossible: XSS in innerHTML without equals",
       "url": "https://portswigger.net/research/achieving-the-impossible-xss-in-innerhtml-without-equals",
@@ -97,18 +109,6 @@
       "title": "Borrowed Code, Real Consequences: What OPTIMJACK Teaches Us",
       "url": "https://unit42.paloaltonetworks.com/optimjack-supply-chain-attack/",
       "date": "2026-11-17T20:43:14+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "QUIC and Covert: Novel HTTP/3-Powered RATs Target Southeast Asian Governments",
-      "url": "https://unit42.paloaltonetworks.com/custom-rats-target-southeast-asia-governments/",
-      "date": "2026-11-16T23:00:55+00:00"
-    },
-    {
-      "source": "Unit 42",
-      "title": "Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors",
-      "url": "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/",
-      "date": "2026-11-12T15:00:31+00:00"
     },
     {
       "source": "SentinelLABS",

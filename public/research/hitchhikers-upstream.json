@@ -3,14 +3,14 @@
   "source": "Hitchhiker's Guide to AI-Native Engineering",
   "upstreamRepo": "steveash/hitchhikers-guide-to-ai-native-engineering",
   "upstreamUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering",
-  "upstreamSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
-  "previousSha": "2df506bbfa17cea0ffa468e2010bcb16a43882f6",
-  "checkedAt": "2026-11-25T12:39:55+00:00",
-  "sourceCommitAt": "2026-11-25T09:25:29Z",
-  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/2df506bbfa17cea0ffa468e2010bcb16a43882f6...c246ac755db72e043b3e046902a22b1f33bd0c5b",
+  "upstreamSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+  "previousSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
+  "checkedAt": "2026-11-26T14:20:47+00:00",
+  "sourceCommitAt": "2026-11-26T08:29:23Z",
+  "comparisonUrl": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/compare/c246ac755db72e043b3e046902a22b1f33bd0c5b...5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
   "trackedNote": {
     "path": "source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
-    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c246ac755db72e043b3e046902a22b1f33bd0c5b/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
+    "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-simonwillison-aisi-gpt55-cyber.md",
     "primarySource": "https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities",
     "status": "secondary synthesis — verify primary evidence"
   },
@@ -30,55 +30,87 @@
   ],
   "changed": [
     {
-      "atSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-24.md",
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-anthropic-skills-over-mcp-tasks-elicitation.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c246ac755db72e043b3e046902a22b1f33bd0c5b/source-notes/blog-ghaw-agent-of-the-day-2026-11-24.md",
-      "detectedAt": "2026-11-25T12:39:55+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-anthropic-skills-over-mcp-tasks-elicitation.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
     },
     {
-      "atSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
-      "path": "source-notes/blog-google-agent-retrieval-managed-ingestion-searchdocuments.md",
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-25.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c246ac755db72e043b3e046902a22b1f33bd0c5b/source-notes/blog-google-agent-retrieval-managed-ingestion-searchdocuments.md",
-      "detectedAt": "2026-11-25T12:39:55+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-ghaw-agent-of-the-day-2026-11-25.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
     },
     {
-      "atSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
-      "path": "source-notes/blog-latentspace-macmanus-codex-new-ways-of-working.md",
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-simonwillison-three-llm-inflection-points.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c246ac755db72e043b3e046902a22b1f33bd0c5b/source-notes/blog-latentspace-macmanus-codex-new-ways-of-working.md",
-      "detectedAt": "2026-11-25T12:39:55+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-simonwillison-three-llm-inflection-points.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
     },
     {
-      "atSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
-      "path": "source-notes/blog-openai-accelerating-engineering-physical-world.md",
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-thoughtworks-code-argus-hackathon-agentic-devsecops.md",
       "change": "added",
       "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c246ac755db72e043b3e046902a22b1f33bd0c5b/source-notes/blog-openai-accelerating-engineering-physical-world.md",
-      "detectedAt": "2026-11-25T12:39:55+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-thoughtworks-code-argus-hackathon-agentic-devsecops.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
     },
     {
-      "atSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
-      "path": "source-notes/blog-simonwillison-datasette-charts-0-2a0.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c246ac755db72e043b3e046902a22b1f33bd0c5b/source-notes/blog-simonwillison-datasette-charts-0-2a0.md",
-      "detectedAt": "2026-11-25T12:39:55+00:00"
-    },
-    {
-      "atSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
       "path": "registry/trusted-feeds-state.json",
       "change": "modified",
       "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/c246ac755db72e043b3e046902a22b1f33bd0c5b/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-25T12:39:55+00:00"
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
     }
   ],
   "events": [
+    {
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-anthropic-skills-over-mcp-tasks-elicitation.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-anthropic-skills-over-mcp-tasks-elicitation.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
+    },
+    {
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-25.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-ghaw-agent-of-the-day-2026-11-25.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
+    },
+    {
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-simonwillison-three-llm-inflection-points.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-simonwillison-three-llm-inflection-points.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
+    },
+    {
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "source-notes/blog-thoughtworks-code-argus-hackathon-agentic-devsecops.md",
+      "change": "added",
+      "priority": 70,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/source-notes/blog-thoughtworks-code-argus-hackathon-agentic-devsecops.md",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
+    },
+    {
+      "atSha": "5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a",
+      "path": "registry/trusted-feeds-state.json",
+      "change": "modified",
+      "priority": 60,
+      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/5e15c0fdb0ccced43f9b80b6c210f5e8f3194c7a/registry/trusted-feeds-state.json",
+      "detectedAt": "2026-11-26T14:20:47+00:00"
+    },
     {
       "atSha": "c246ac755db72e043b3e046902a22b1f33bd0c5b",
       "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-24.md",
@@ -678,49 +710,9 @@
       "priority": 70,
       "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/635f17a325680122aed88aee5a31fba1b8007fae/source-notes/blog-anthropic-components-of-agent-memory.md",
       "detectedAt": "2026-11-07T06:31:34+00:00"
-    },
-    {
-      "atSha": "635f17a325680122aed88aee5a31fba1b8007fae",
-      "path": "source-notes/blog-google-developers-saccone-agent-distraction.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/635f17a325680122aed88aee5a31fba1b8007fae/source-notes/blog-google-developers-saccone-agent-distraction.md",
-      "detectedAt": "2026-11-07T06:31:34+00:00"
-    },
-    {
-      "atSha": "635f17a325680122aed88aee5a31fba1b8007fae",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/635f17a325680122aed88aee5a31fba1b8007fae/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-07T06:31:34+00:00"
-    },
-    {
-      "atSha": "14acc2bafc2d4ff3012b323863d5edd6b8ebc31f",
-      "path": "source-notes/blog-ghaw-agent-of-the-day-2026-11-05.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14acc2bafc2d4ff3012b323863d5edd6b8ebc31f/source-notes/blog-ghaw-agent-of-the-day-2026-11-05.md",
-      "detectedAt": "2026-11-06T14:33:49+00:00"
-    },
-    {
-      "atSha": "14acc2bafc2d4ff3012b323863d5edd6b8ebc31f",
-      "path": "source-notes/blog-thoughtworks-sonawane-context-rot-in-ai-agents.md",
-      "change": "added",
-      "priority": 70,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/14acc2bafc2d4ff3012b323863d5edd6b8ebc31f/source-notes/blog-thoughtworks-sonawane-context-rot-in-ai-agents.md",
-      "detectedAt": "2026-11-06T14:33:49+00:00"
-    },
-    {
-      "atSha": "f3bd727c0db933295fa3e1d6df68539e668d1fed",
-      "path": "registry/trusted-feeds-state.json",
-      "change": "modified",
-      "priority": 60,
-      "url": "https://github.com/steveash/hitchhikers-guide-to-ai-native-engineering/blob/f3bd727c0db933295fa3e1d6df68539e668d1fed/registry/trusted-feeds-state.json",
-      "detectedAt": "2026-11-06T06:32:32+00:00"
     }
   ],
-  "relevantCount": 6,
+  "relevantCount": 5,
   "reviewNeeded": false,
   "publicationPolicy": "Metadata and review leads only. No automatic claim acceptance."
 }
